@@ -24,7 +24,7 @@ Nhân viên đọc phần đầu là đủ. Quản lý nên đọc cả hai trư
 
 ### Chương 1 — Cấu hình hệ thống
 
-- [1.1 Làm quen giao diện và cấu hình thông tin ban đầu](/chuong-01-cau-hinh-he-thong/1-1-lam-quen-giao-dien-va-cau-hinh-ban-dau) — đăng nhập, nhận biết ba vùng màn hình và khai 8 nhóm cấu hình nền trước khi bán hàng.
+- [1.1 Làm quen giao diện và cấu hình thông tin ban đầu](/chuong-01-cau-hinh-he-thong/1-1-cau-hinh-ban-dau) — đăng nhập, nhận biết ba vùng màn hình và khai 8 nhóm cấu hình nền trước khi bán hàng.
 
 ### Chương 2 — Thiết lập kho hàng, sản phẩm
 
