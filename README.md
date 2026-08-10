@@ -1,6 +1,6 @@
-# Cẩm nang sử dụng TRCF ERP
+# Cẩm nang sử dụng TNTDRINK ERP
 
-Tài liệu hướng dẫn vận hành hệ thống quản trị quán cà phê TRCF ERP, viết cho cả
+Tài liệu hướng dẫn vận hành hệ thống quản trị quán cà phê TNTDRINK ERP, viết cho cả
 nhân viên đứng quầy (làm từng bước) lẫn quản lý (lưu ý nghiệp vụ).
 
 Mỗi mục là một bài riêng; mỗi chương là một thư mục. Mục lục đầy đủ ở

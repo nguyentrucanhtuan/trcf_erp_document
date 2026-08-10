@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "CẨM NANG TNTDRINK ERP",
-  "description": "Hướng dẫn vận hành hệ thống quản trị quán cà phê TRCF ERP.",
+  "description": "Hướng dẫn vận hành hệ thống quản trị quán cà phê TNTDRINK ERP.",
   "colors": {
     "primary": "#6F4E37",
     "light": "#B08968",

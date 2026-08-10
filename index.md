@@ -1,11 +1,11 @@
 ---
-title: "Cẩm nang sử dụng TRCF ERP"
-description: "Hướng dẫn vận hành hệ thống quản trị quán cà phê TRCF ERP, từ cấu hình ban đầu tới bán hàng, kho, nhân sự và báo cáo."
+title: "Cẩm nang sử dụng TNTDRINK ERP"
+description: "Hướng dẫn vận hành hệ thống quản trị quán cà phê TNTDRINK ERP, từ cấu hình ban đầu tới bán hàng, kho, nhân sự và báo cáo."
 ---
 
-# Cẩm nang sử dụng TRCF ERP
+# Cẩm nang sử dụng TNTDRINK ERP
 
-Tài liệu này hướng dẫn dùng TRCF ERP theo đúng thứ tự một quán mới sẽ đi qua: cấu
+Tài liệu này hướng dẫn dùng TNTDRINK ERP theo đúng thứ tự một quán mới sẽ đi qua: cấu
 hình hệ thống → dựng kho và sản phẩm → thiết lập quầy bán → bán hàng hằng ngày →
 các nghiệp vụ kho → nhân sự → đọc báo cáo.
 
