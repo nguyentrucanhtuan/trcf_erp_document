@@ -1,11 +1,10 @@
 ---
 title: "1.1 Làm quen giao diện và cấu hình thông tin ban đầu"
-description: "Đăng nhập, nhận biết ba vùng màn hình và khai 8 nhóm cấu hình nền trước khi bán hàng."
 ---
 
-**Đường dẫn:** *Thiết lập cửa hàng → Cấu hình hệ thống*
-**Ai làm:** Chủ quán (chỉ tài khoản chủ quán mở được trang này)
-**Khi nào:** Một lần khi cài đặt, làm trước mọi việc khác
+- **Đường dẫn:** *Thiết lập cửa hàng → Cấu hình hệ thống*.
+- **Ai làm:** Chủ quán (chỉ tài khoản chủ quán mở được trang này).
+- **Khi nào:** Một lần khi cài đặt, làm trước mọi việc khác.
 
 ## Khai cấu hình nền — các bước
 
