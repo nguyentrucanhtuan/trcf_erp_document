@@ -1,44 +1,37 @@
 ---
 title: "3.1 Tạo danh mục sản phẩm POS"
-description: "Tạo danh mục để nhóm món trên màn bán hàng."
+description: "Tạo nhóm món trên màn bán hàng — 4 trường, kéo thả đổi thứ tự."
 ---
 
-Đây là chương dài nhất và cũng là chương quyết định chất lượng số liệu về sau.
-Khai sản phẩm sai thì tồn kho sai, giá vốn sai, báo cáo lãi lỗ sai theo.
+**Đường dẫn:** *Quản lý sản phẩm → Danh mục*
+**Là gì:** Các nút nhóm món trên màn bán hàng (Cà phê, Trà, Bánh). Thu ngân bấm nhóm rồi mới chọn món.
+**Thứ tự làm cả chương 3:** danh mục → sản phẩm → thuộc tính → biến thể → công thức
 
-Thứ tự làm: **danh mục → sản phẩm → thuộc tính → biến thể → công thức**.
-
-*Quản lý sản phẩm → Danh mục*
-
-Danh mục là **các nút nhóm món trên màn bán hàng**: Cà phê, Trà, Bánh, Đồ ăn
-vặt. Thu ngân bấm nhóm rồi mới chọn món.
-
-## Làm từng bước
+## Các bước
 
 1. Bấm **Thêm danh mục**.
-2. Điền:
-
-   | Trường | Điền gì |
-   |---|---|
-   | **Tên danh mục** | VD "Cà phê", "Trà trái cây". |
-   | **Màu sắc đại diện** | Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh. |
-   | **Mô tả** | Không bắt buộc. |
-   | **Hiển thị ngoài POS** | Bật = hiện trên màn bán hàng. Tắt = chỉ dùng nội bộ (VD nhóm "Nguyên liệu"). |
-
+2. Điền 4 trường theo bảng dưới.
 3. Bấm **Lưu**.
+4. Kéo biểu tượng ⠿ ở danh sách để xếp nhóm bán chạy lên đầu.
 
 ![Thêm danh mục sản phẩm](/images/03-danh-muc-them.png)
 
-## Sắp xếp thứ tự hiển thị
+## Giải thích các trường
 
-Danh sách danh mục **kéo thả được**. Nhóm nào bán chạy thì kéo lên đầu để thu
-ngân bấm ít hơn. Thứ tự này chính là thứ tự hiện trên màn bán hàng.
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Tên danh mục | VD "Cà phê", "Trà trái cây" | ✅ |
+| Màu sắc đại diện | Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh | — |
+| Mô tả | Ghi chú nội bộ | — |
+| Hiển thị ngoài POS | **Bật** = hiện trên màn bán hàng · **Tắt** = chỉ dùng nội bộ | — |
 
-## Lưu ý nghiệp vụ
+## Kiểm tra đã đúng
 
-⚠️ Danh mục đang gắn sản phẩm thì **không xoá được** — hệ thống báo và liệt kê.
-Muốn ẩn khỏi màn bán hàng thì tắt *Hiển thị ngoài POS*, đừng xoá.
+- [ ] Danh mục hiện đúng thứ tự đã kéo
+- [ ] Nhóm nguyên liệu đã **tắt** *Hiển thị ngoài POS*
 
-💡 Nguyên liệu (cà phê hạt, sữa, đường) nên gom vào một danh mục riêng và **tắt**
-*Hiển thị ngoài POS*. Như vậy quản lý vẫn lọc được, còn thu ngân không thấy rác
-trên màn bán hàng.
+## Lưu ý
+
+⚠️ Danh mục đang gắn sản phẩm thì **không xoá được** — hệ thống liệt kê chỗ dùng. Muốn ẩn khỏi POS thì tắt *Hiển thị ngoài POS*, đừng xoá.
+
+💡 Nguyên liệu (cà phê hạt, sữa, đường) gom vào một danh mục riêng và **tắt** hiển thị. Quản lý vẫn lọc được, thu ngân không thấy rác trên màn bán hàng.

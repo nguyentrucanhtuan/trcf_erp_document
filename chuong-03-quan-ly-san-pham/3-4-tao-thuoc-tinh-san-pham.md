@@ -1,47 +1,50 @@
 ---
 title: "3.4 Tạo thuộc tính sản phẩm (Size S/M/L)"
-description: "Tạo thuộc tính sinh biến thể (Size) và thuộc tính ghi chú pha chế."
+description: "Hai loại thuộc tính: sinh biến thể (khác giá) và ghi chú pha chế (chỉ là chữ)."
 ---
 
-*Quản lý sản phẩm → Thuộc tính*
+**Đường dẫn:** *Quản lý sản phẩm → Thuộc tính*
+**Quyết định quan trọng nhất:** bật hay tắt công tắc *Tạo biến thể*
 
 ![Danh sách thuộc tính](/images/03-thuoc-tinh-danh-sach.png)
 
-## Hai loại thuộc tính — phân biệt trước khi tạo
-
-Cột **Tạo biến thể** trong ảnh trên là điểm mấu chốt:
+## Chọn loại thuộc tính trước khi tạo
 
 | | **Tạo biến thể = Có** | **Tạo biến thể = Không** |
 |---|---|---|
-| Dùng cho | Size, loại đế bánh — thứ **khác giá, khác định lượng** | Mức đá, mức đường — thứ **chỉ là yêu cầu pha chế** |
-| Sinh ra | Món riêng, có giá riêng, có công thức riêng | Không sinh món mới |
-| Ảnh hưởng tiền | Có — mỗi biến thể một mức giá | Không |
-| Ảnh hưởng kho | Có — công thức riêng, trừ nguyên liệu riêng | Không |
-| Hiện ở đâu | Món trên POS tách thành *Trà đào (VỪA)*, *Trà đào (LỚN)* | Ghép vào tên món: *Trà đào (VỪA + ÍT ĐÁ)* |
+| Dùng cho | Size, loại đế bánh — thứ **khác giá, khác định lượng** | Mức đá, mức đường — **chỉ là yêu cầu pha chế** |
+| Sinh ra | Món riêng, giá riêng, công thức riêng | Không sinh món mới |
+| Ảnh hưởng tiền | ✅ mỗi biến thể một giá | ❌ |
+| Ảnh hưởng kho | ✅ công thức riêng, trừ nguyên liệu riêng | ❌ |
+| Hiện trên POS | *Trà đào (VỪA)*, *Trà đào (LỚN)* | Ghép vào tên: *Trà đào (VỪA + ÍT ĐÁ)* |
 
-Trong ảnh: **Size** có tạo biến thể (VỪA, LỚN) — hai size hai giá. **ĐÁ** không
-tạo biến thể (ÍT ĐÁ, VỪA) — chỉ là ghi chú cho bạn pha chế.
-
-## Làm từng bước
+## Các bước
 
 1. Bấm **Thêm thuộc tính**.
-2. Điền *Tên thuộc tính* (VD "Size").
-3. **Bật hoặc tắt *Tạo biến thể*** theo bảng trên.
-4. Nhập các *Giá trị thuộc tính*, mỗi giá trị một dòng (VD NHỎ, VỪA, LỚN).
-   Kéo biểu tượng ⠿ để đổi thứ tự — thứ tự này là thứ tự hiện trên POS.
-5. Bấm **Lưu**.
+2. Điền các trường theo bảng dưới.
+3. Kéo biểu tượng ⠿ để xếp thứ tự giá trị — đây là thứ tự hiện trên POS.
+4. Bấm **Lưu**.
 
 ![Thêm thuộc tính](/images/03-thuoc-tinh-them.png)
 
-## Lưu ý nghiệp vụ
+## Giải thích các trường
 
-⚠️ **Không tắt được *Tạo biến thể*** khi thuộc tính đó đã sinh ra biến thể đang
-bán. Hệ thống chặn và báo rõ. Tắt được thì mọi biến thể sẽ mất giá riêng và
-công thức riêng mà không ai hay.
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Tên thuộc tính | VD "Size", "ĐÁ", "ĐƯỜNG" | ✅ |
+| Tạo biến thể | Bật/tắt theo bảng trên. **Chọn kỹ — khó đổi về sau** | ✅ |
+| Giá trị thuộc tính | Mỗi giá trị một dòng. VD NHỎ, VỪA, LỚN | ✅ |
 
-⚠️ **Đổi tên giá trị thì an toàn** (VD "VỪA" → "SIZE M"): biến thể giữ nguyên,
-chỉ đổi chữ hiển thị. Nhưng **xoá bớt giá trị** đang có biến thể thì bị chặn —
-xoá được thì biến thể tương ứng thành mồ côi.
+## Kiểm tra đã đúng
 
-💡 Muốn "ít đá" trừ ít đá thật trong kho thì phải làm bằng **biến thể có công
-thức riêng**, không phải bằng ghi chú pha chế. Ghi chú pha chế chỉ là chữ.
+- [ ] Thuộc tính khác giá (Size) → *Tạo biến thể* **bật**
+- [ ] Thuộc tính chỉ là yêu cầu pha chế (ĐÁ, ĐƯỜNG) → *Tạo biến thể* **tắt**
+- [ ] Thứ tự giá trị đúng như muốn hiện trên POS
+
+## Lưu ý
+
+⚠️ **Không tắt được *Tạo biến thể*** khi thuộc tính đã sinh biến thể đang bán. Hệ thống chặn và báo rõ — tắt được thì mọi biến thể mất giá riêng và công thức riêng mà không ai hay.
+
+⚠️ **Đổi tên giá trị an toàn** (VD "VỪA" → "SIZE M"): biến thể giữ nguyên, chỉ đổi chữ. Nhưng **xoá bớt giá trị** đang có biến thể thì bị chặn.
+
+💡 Muốn "ít đá" trừ ít đá thật trong kho thì phải làm bằng **biến thể có công thức riêng**, không phải ghi chú pha chế. Ghi chú pha chế chỉ là chữ.

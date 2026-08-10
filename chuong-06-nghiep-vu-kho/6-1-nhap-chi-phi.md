@@ -1,56 +1,56 @@
 ---
 title: "6.1 Nhập chi phí"
-description: "Lập phiếu chi cho các khoản chi tiêu của quán."
+description: "Lập phiếu chi cho khoản chi không phải mua hàng — tiền điện, ship, thuê mặt bằng."
 ---
 
-Mọi phiếu trong chương này đều theo **cùng một luật**:
+**Đường dẫn:** *Chi phí → Chi phí* hoặc *Vận hành → Chi phí*
+**Dùng cho:** Mọi khoản chi **không phải mua hàng hoá** — tiền điện, nước, ship, thuê mặt bằng, mua chổi lau nhà
 
-> **Nháp thì chưa đụng gì. Xác nhận rồi thì không sửa được.**
->
-> Phiếu mới tạo là *Nháp* — kho và tiền chưa thay đổi, xoá thoải mái. Bấm xác
-> nhận là hệ thống ghi vào kho/sổ quỹ **ngay lập tức và không thể quay lui**.
-> Sai thì lập phiếu ngược lại chứ không sửa phiếu cũ.
-
-Vào các phiếu này bằng hai đường: từ menu bên trái, hoặc nhanh hơn là nút
-**VẬN HÀNH** trên màn bán hàng.
-
-*Chi phí → Chi phí* · hoặc *Vận hành → Chi phí*
-
-Dùng cho mọi khoản chi **không phải mua hàng hoá**: tiền điện, tiền nước, tiền
-ship, thuê mặt bằng, mua chổi lau nhà.
+> **Luật chung cho mọi phiếu chương 6:** Nháp thì chưa đụng gì, xoá thoải mái. Bấm xác nhận là ghi vào kho/sổ quỹ **ngay và không quay lui được**. Sai thì lập phiếu ngược lại, không sửa phiếu cũ.
 
 ![Thêm chi phí](/images/06-chi-phi.png)
 
-## Làm từng bước
+## Các bước
 
 1. Bấm **Thêm chi phí**.
-2. Nhóm **Nội dung chi**:
-   - *Tên chi phí* — mô tả ngắn: "Tiền điện tháng 8".
-   - *Danh mục chi phí* — chọn nhóm để báo cáo lãi lỗ gom đúng chỗ.
-   - *Số tiền* và *Ngày thanh toán*.
-3. Nhóm **Thanh toán & trạng thái**:
-   - *Phương thức thanh toán* — tiền mặt hay chuyển khoản.
-   - *Quầy phát sinh* — chọn quầy nếu chi từ két của quầy; để *Ngoài ca* nếu chi
-     từ tài khoản công ty.
-   - *Trạng thái phiếu*: **Nháp** hay **Hoàn tất**.
-   - *Trạng thái thanh toán*: **Chưa thanh toán** hay **Đã thanh toán**.
+2. Điền nhóm **Nội dung chi**.
+3. Điền nhóm **Thanh toán & trạng thái**.
 4. Bấm **Thêm chi phí**.
+
+## Giải thích các trường
+
+**Nội dung chi**
+
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Tên chi phí | Mô tả ngắn: "Tiền điện tháng 8" | ✅ |
+| Danh mục chi phí | Nhóm để báo cáo lãi lỗ gom đúng chỗ | ✅ |
+| Số tiền | Số tiền chi | ✅ |
+| Ngày thanh toán | Ngày trả tiền thật | ✅ |
+
+**Thanh toán & trạng thái**
+
+| Trường | Điền gì |
+|---|---|
+| Phương thức thanh toán | Tiền mặt hay chuyển khoản |
+| Quầy phát sinh | Chọn quầy nếu chi **từ két của quầy** · để *Ngoài ca* nếu chi từ tài khoản công ty |
+| Trạng thái phiếu | **Nháp** hay **Hoàn tất** |
+| Trạng thái thanh toán | **Chưa thanh toán** hay **Đã thanh toán** |
 
 ## Khi nào tiền thật sự vào sổ quỹ
 
-Chỉ khi phiếu ở **Hoàn tất** **và** **Đã thanh toán**. Thiếu một trong hai thì
-phiếu chỉ là ghi nhớ, chưa động vào quỹ.
+Chỉ khi phiếu ở **Hoàn tất** **VÀ** **Đã thanh toán**. Thiếu một trong hai thì phiếu chỉ là ghi nhớ, chưa động vào quỹ.
 
-## Lưu ý nghiệp vụ
+## Kiểm tra đã đúng
 
-⚠️ **Chi tiền mặt lấy từ két thì bắt buộc chọn đúng quầy.** Không chọn thì khi
-đóng ca, số tiền chi đó không được trừ khỏi số dự kiến trong két → cuối ca hiện
-thiếu tiền mà không rõ lý do.
+- [ ] Chi từ két quầy → đã chọn đúng **Quầy phát sinh**
+- [ ] Phiếu ở *Hoàn tất* + *Đã thanh toán* nếu tiền đã trả
+- [ ] Số dư sổ quỹ đã giảm đúng số tiền
 
-⚠️ **Không được gỡ trạng thái "Đã thanh toán" rồi bật lại.** Hệ thống chặn và
-báo lỗi, đề nghị lập phiếu chi mới. Lý do: bút toán trong sổ quỹ là bản ghi vĩnh
-viễn — gỡ thanh toán sẽ sinh bút toán đảo, và khi bật lại thì tiền **biến mất**
-khỏi sổ mà không ai thấy. Trả tiền điện lần nữa thì lập phiếu chi mới cho lần đó.
+## Lưu ý
 
-💡 Khai danh mục chi phí gọn gàng ngay từ đầu (*Chi phí → Danh mục chi phí*) thì
-báo cáo lãi lỗ ở chương 8 đọc mới có nghĩa.
+⚠️ **Chi tiền mặt lấy từ két thì bắt buộc chọn đúng quầy.** Không chọn thì lúc đóng ca, khoản chi đó không được trừ khỏi số dự kiến trong két → cuối ca hiện thiếu tiền mà không rõ lý do.
+
+⚠️ **Không được gỡ "Đã thanh toán" rồi bật lại.** Hệ thống chặn và đề nghị lập phiếu mới. Lý do: bút toán sổ quỹ là bản ghi vĩnh viễn — gỡ thanh toán sinh bút toán đảo, bật lại thì tiền **biến mất** khỏi sổ mà không ai thấy.
+
+💡 Khai danh mục chi phí gọn gàng từ đầu (*Chi phí → Danh mục chi phí*) thì báo cáo lãi lỗ chương 8 mới đọc có nghĩa.

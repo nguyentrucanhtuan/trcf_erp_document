@@ -1,46 +1,50 @@
 ---
 title: "4.4 Cấu hình màn hình bếp và hiển thị công thức"
-description: "Tạo màn hình bếp, lọc theo danh mục và hiển thị công thức cho barista."
+description: "Tạo màn hình bếp lọc theo danh mục, hiện công thức rút gọn cho barista."
 ---
 
-*Thiết lập cửa hàng → Màn hình bếp*
-
-Màn hình bếp là màn hình đặt ở khu pha chế, tự hiện món cần làm ngay khi thu
-ngân lên đơn — **không cần bấm tải lại**.
+**Đường dẫn:** *Thiết lập cửa hàng → Màn hình bếp*
+**Là gì:** Màn hình đặt ở khu pha chế, tự hiện món cần làm ngay khi thu ngân lên đơn — **không cần bấm tải lại**
 
 ![Thêm màn hình bếp](/images/04-man-hinh-bep-them.png)
 
-## Làm từng bước
+## Các bước
 
 1. Bấm **Thêm màn hình**.
-2. Điền:
-
-   | Trường | Điền gì |
-   |---|---|
-   | **Tên màn hình** | VD "Bếp pha chế", "Bếp nóng". |
-   | **Quầy POS áp dụng** | Màn này chỉ nhận đơn của quầy đó. |
-   | **Danh mục hiển thị** | Chọn nhóm món màn này phụ trách. Để trống = nhận mọi món. |
-   | **Hoạt động** | Tắt = ngừng dùng màn này. |
-
+2. Điền 4 trường theo bảng dưới.
 3. Bấm **Lưu**.
-4. Mở màn hình đó trên thiết bị ở khu pha chế (bấm vào dòng vừa tạo để lấy đường
-   dẫn), để nguyên cả ngày.
+4. Bấm vào dòng vừa tạo để lấy đường dẫn, mở trên thiết bị ở khu pha chế, **để nguyên cả ngày**.
+
+## Giải thích các trường
+
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Tên màn hình | VD "Bếp pha chế", "Bếp nóng" | ✅ |
+| Quầy POS áp dụng | Màn này **chỉ nhận đơn của quầy đó** | ✅ |
+| Danh mục hiển thị | Nhóm món màn này phụ trách. Để trống = nhận mọi món | — |
+| Hoạt động | Tắt = ngừng dùng màn này | — |
 
 ## Món hiện gì trên màn bếp
 
-Mỗi món hiện: tên món (kèm ghi chú pha chế trong ngoặc, VD *Trà đào (VỪA + ÍT
-ĐÁ)*), số lượng, ghi chú của khách, và **Ghi chú công thức ⚡** đã khai ở
-[mục 3.2](/chuong-03-quan-ly-san-pham/3-2-them-san-pham-moi).
+| Thông tin | Nguồn |
+|---|---|
+| Tên món + ghi chú pha chế trong ngoặc — VD *Trà đào (VỪA + ÍT ĐÁ)* | Thuộc tính (3.4) |
+| Số lượng | Đơn hàng |
+| Ghi chú của khách | Thu ngân nhập lúc bán |
+| **Ghi chú công thức ⚡** | Trường đã khai ở [mục 3.2](/chuong-03-quan-ly-san-pham/3-2-them-san-pham-moi) |
 
-Bạn pha chế làm xong thì bấm vào món để đánh dấu hoàn thành — món biến khỏi màn.
+Pha chế xong → bấm vào món để đánh dấu hoàn thành → món biến khỏi màn.
 
-## Lưu ý nghiệp vụ
+## Kiểm tra đã đúng
 
-💡 **Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.** VD "30ml
-espresso + 150ml sữa + đá đầy ly". Nhân viên mới không cần nhớ, không cần hỏi.
+- [ ] Lên thử một đơn ở POS → món tự hiện trên màn bếp, không cần tải lại
+- [ ] Món của khu khác **không** hiện trên màn này
+- [ ] Bấm hoàn thành → món biến mất
 
-💡 Đơn bị huỷ hoặc đã hoàn sẽ **tự biến khỏi màn bếp** — bạn pha chế không làm
-nhầm món của đơn đã huỷ.
+## Lưu ý
 
-💡 Màn hình bếp chỉ hiển thị và đánh dấu xong. Mọi thao tác đụng tiền và kho đều
-phải làm ở màn bán hàng — đây là ranh giới an toàn cố ý.
+💡 **Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.** VD "30ml espresso + 150ml sữa + đá đầy ly". Nhân viên mới không cần nhớ, không cần hỏi.
+
+💡 Đơn bị huỷ hoặc đã hoàn **tự biến khỏi màn bếp** — pha chế không làm nhầm món của đơn đã huỷ.
+
+💡 Màn hình bếp chỉ hiển thị và đánh dấu xong. Mọi thao tác đụng tiền và kho phải làm ở màn bán hàng — ranh giới an toàn cố ý.

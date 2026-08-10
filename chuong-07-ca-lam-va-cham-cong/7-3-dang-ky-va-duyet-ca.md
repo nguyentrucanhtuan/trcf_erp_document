@@ -1,38 +1,44 @@
 ---
 title: "7.3 Đăng ký và duyệt ca cho nhân viên"
-description: "Nhân viên đăng ký ca, quản lý duyệt hoặc từ chối."
+description: "Đăng ký ca rồi duyệt — trạng thái Đã duyệt là đầu vào của sinh việc và phân tích trễ/sớm."
 ---
 
-*Quản lý nhân sự → Đăng ký ca*
+**Đường dẫn:** *Quản lý nhân sự → Đăng ký ca*
+**Hai cách xem:** *Lịch theo tuần* (nhìn tổng thể ai làm ca nào) · *Danh sách* (thao tác duyệt nhanh)
+**Ba trạng thái:** Chờ duyệt → Đã duyệt / Từ chối
 
 ![Đăng ký ca làm việc](/images/07-dang-ky-ca.png)
 
-Màn này có hai cách xem: **Lịch theo tuần** (nhìn tổng thể ai làm ca nào) và
-**Danh sách** (thao tác duyệt nhanh).
-
-## Làm từng bước
+## Các bước
 
 1. Bấm **Đăng ký ca**.
-2. Chọn *Nhân viên*, *Ca làm việc*, *Ngày*.
-3. Lưu — bản ghi ở trạng thái **Chờ duyệt**.
-4. Quản lý mở lại, bấm **Duyệt** hoặc **Từ chối**.
+2. Điền 3 trường theo bảng dưới → Lưu (trạng thái **Chờ duyệt**).
+3. Quản lý mở lại → bấm **Duyệt** hoặc **Từ chối**.
 
-Ba trạng thái: **Chờ duyệt → Đã duyệt / Từ chối**.
+## Giải thích các trường
 
-## Vì sao phải duyệt
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Nhân viên | Người làm ca | ✅ |
+| Ca làm việc | Ca đã khai ở mục 7.2 | ✅ |
+| Ngày | Ngày làm | ✅ |
 
-Trạng thái *Đã duyệt* là đầu vào của hai việc khác:
+## Vì sao bắt buộc phải duyệt
 
-- **Sinh checklist công việc** ([mục 7.5](/chuong-07-ca-lam-va-cham-cong/7-5-quan-ly-cong-viec-trong-ngay)) chỉ
-  chia việc cho người đã được duyệt ca hôm đó.
-- **Phân tích trễ/sớm** ([mục 7.4](/chuong-07-ca-lam-va-cham-cong/7-4-dong-bo-cham-cong-va-tinh-luong))
-  so giờ quẹt thẻ với giờ của ca **đã duyệt**. Chưa duyệt thì cột trễ/sớm để
-  trống.
+Trạng thái **Đã duyệt** là đầu vào của hai việc khác:
 
-## Lưu ý nghiệp vụ
+| Việc | Phụ thuộc thế nào |
+|---|---|
+| **Sinh checklist công việc** ([7.5](/chuong-07-ca-lam-va-cham-cong/7-5-quan-ly-cong-viec-trong-ngay)) | Chỉ chia việc cho người **đã được duyệt ca** hôm đó. Không ai duyệt → báo lỗi |
+| **Phân tích trễ/sớm** ([7.4](/chuong-07-ca-lam-va-cham-cong/7-4-dong-bo-cham-cong-va-tinh-luong)) | So giờ quẹt thẻ với giờ ca **đã duyệt**. Chưa duyệt → cột trễ/sớm để trống |
 
-⚠️ Bấm duyệt hai lần cho cùng bản ghi sẽ bị chặn — trạng thái chỉ đi một chiều
-từ *Chờ duyệt*.
+## Kiểm tra đã đúng
 
-💡 Đăng ký trùng (cùng người, cùng ca, cùng ngày) **được phép** — để nhân viên bị
-từ chối rồi đăng ký lại.
+- [ ] Mọi ngày trong tuần tới đều có người được duyệt ca
+- [ ] Lịch tuần hiện đủ người, đúng ca
+
+## Lưu ý
+
+⚠️ Bấm duyệt hai lần cho cùng bản ghi sẽ bị chặn — trạng thái chỉ đi một chiều từ *Chờ duyệt*.
+
+💡 Đăng ký trùng (cùng người, cùng ca, cùng ngày) **được phép** — để nhân viên bị từ chối rồi đăng ký lại.

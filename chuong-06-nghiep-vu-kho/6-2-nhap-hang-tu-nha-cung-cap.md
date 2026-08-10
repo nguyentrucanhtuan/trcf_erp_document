@@ -1,44 +1,61 @@
 ---
 title: "6.2 Nhập hàng từ nhà cung cấp"
-description: "Lập đơn mua, xác nhận và nhận hàng vào kho."
+description: "Lập đơn mua → xác nhận → nhận hàng. Nhận hàng mới cộng kho và cập nhật giá vốn."
 ---
 
-*Vận hành → Mua hàng* · hoặc *Vận hành → Nhập hàng* trên màn bán hàng
+**Đường dẫn:** *Vận hành → Mua hàng* hoặc *Vận hành → Nhập hàng* trên màn bán hàng
+**Ba trạng thái:** Nháp → Đã xác nhận → Đã nhập kho
 
 ![Tạo đơn mua hàng](/images/06-nhap-hang.png)
 
-## Làm từng bước
+## Các bước
 
 1. Bấm **Tạo đơn mua hàng**.
-2. Chọn *Nhà cung cấp*, *Kho nhập hàng*, *Ngày đặt hàng*, *Phương thức thanh
-   toán*.
-3. Bấm **Thêm dòng** cho từng mặt hàng: chọn sản phẩm, số lượng, đơn vị, đơn giá,
-   VAT. Tổng tiền tự tính ở dưới.
+2. Điền phần đầu phiếu (bảng dưới).
+3. Bấm **Thêm dòng** cho từng mặt hàng. Tổng tiền tự tính.
 4. Bấm **Lưu đơn nháp**.
-5. Kiểm tra lại rồi bấm **Xác nhận**.
-6. Khi hàng về tới quán, bấm **Nhận hàng** → hệ thống **cộng hàng vào kho** và
-   ghi tiền vào sổ quỹ nếu đơn đã đánh dấu thanh toán.
+5. Kiểm tra lại → bấm **Xác nhận**.
+6. Khi hàng về tới quán → bấm **Nhận hàng**.
 
-Ba trạng thái: **Nháp → Đã xác nhận → Đã nhập kho**.
+## Giải thích các trường
 
-## Giá vốn tự cập nhật
+**Đầu phiếu**
 
-Mỗi lần nhận hàng, hệ thống lấy đơn giá trên phiếu để cập nhật **giá vốn** của
-sản phẩm. Đây là nguồn giá vốn cho công thức và cho báo cáo lãi lỗ.
+| Trường | Điền gì | Bắt buộc |
+|---|---|---|
+| Nhà cung cấp | Bên giao hàng | ✅ |
+| Kho nhập hàng | Kho nhận hàng về | ✅ |
+| Ngày đặt hàng | Ngày đặt | ✅ |
+| Phương thức thanh toán | Tiền mặt / chuyển khoản | ✅ |
 
-Sản phẩm có bật *Sản xuất* thì **bỏ qua** — giá vốn của nó do công thức tính
-(xem [mục 3.5](/chuong-03-quan-ly-san-pham/3-5-cau-hinh-cong-thuc-va-bien-the)).
+**Từng dòng hàng**
 
-## Lưu ý nghiệp vụ
+| Trường | Điền gì |
+|---|---|
+| Sản phẩm | Hàng mua (chỉ hiện hàng đã bật *Có thể mua*) |
+| Số lượng, Đơn vị | Nhập theo đơn vị lớn được — mua 5 *Kg*, hệ thống quy ra 5000 g |
+| Đơn giá, VAT | Giá và thuế suất trên hoá đơn NCC |
 
-⚠️ **Nhận hàng chỉ bấm được một lần.** Bấm hai lần thì lần sau bị chặn — nếu
-không, kho sẽ cộng gấp đôi.
+## Nhận hàng làm gì
 
-⚠️ **Đơn đã nhập kho thì không sửa dòng hàng, không xoá.** Nhập nhầm số lượng
-thì lập **phiếu trả hàng NCC** (*Vận hành → Trả hàng NCC*) cho phần dư.
+Bấm **Nhận hàng** → hệ thống đồng thời:
 
-⚠️ Đơn đã thanh toán rồi gỡ thanh toán rồi bật lại cũng bị chặn — cùng lý do với
-phiếu chi ở mục 6.1.
+1. **Cộng hàng vào kho**
+2. **Ghi tiền vào sổ quỹ** (nếu đơn đã đánh dấu thanh toán)
+3. **Cập nhật giá vốn** sản phẩm theo đơn giá trên phiếu
 
-💡 Nhập theo đơn vị lớn được: mua 5 *Kg* cà phê trong khi kho quản lý theo
-*Gram*, hệ thống tự quy ra 5000 g.
+💡 Sản phẩm bật *Sản xuất* thì **bỏ qua bước cập nhật giá vốn** — giá vốn của nó do công thức tính ([mục 3.5](/chuong-03-quan-ly-san-pham/3-5-cau-hinh-cong-thuc-va-bien-the)).
+
+## Kiểm tra đã đúng
+
+- [ ] Đơn ở trạng thái **Đã nhập kho**
+- [ ] Tồn kho đã tăng đúng số lượng
+- [ ] Giá vốn nguyên liệu đã cập nhật (nếu là hàng thường)
+
+## Lưu ý
+
+⚠️ **Nhận hàng chỉ bấm được một lần.** Bấm lần hai bị chặn — nếu không, kho sẽ cộng gấp đôi.
+
+⚠️ **Đơn đã nhập kho thì không sửa dòng hàng, không xoá.** Nhập nhầm số lượng → lập **phiếu trả hàng NCC** (*Vận hành → Trả hàng NCC*) cho phần dư.
+
+⚠️ Đơn đã thanh toán rồi gỡ rồi bật lại cũng bị chặn — cùng lý do với phiếu chi ([mục 6.1](/chuong-06-nghiep-vu-kho/6-1-nhap-chi-phi)).
