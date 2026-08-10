@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Cẩm nang TRCF ERP",
+  "name": "CẨM NANG TNTDRINK ERP",
   "description": "Hướng dẫn vận hành hệ thống quản trị quán cà phê TRCF ERP.",
   "colors": {
     "primary": "#6F4E37",
@@ -9,36 +9,16 @@
     "dark": "#4A3226"
   },
   "navigation": {
-    "groups": [
-      {
-        "group": "Bắt đầu",
-        "pages": [
-          "index"
-        ]
-      },
-      {
-        "group": "Thiết lập hệ thống",
-        "pages": [
-          "chuong-01-cau-hinh-he-thong",
-          "chuong-02-kho-va-don-vi-tinh",
-          "chuong-03-quan-ly-san-pham",
-          "chuong-04-thiet-lap-pos"
-        ]
-      },
-      {
-        "group": "Vận hành hằng ngày",
-        "pages": [
-          "chuong-05-ban-hang-tai-quay",
-          "chuong-06-nghiep-vu-kho",
-          "chuong-07-ca-lam-va-cham-cong"
-        ]
-      },
-      {
-        "group": "Báo cáo",
-        "pages": [
-          "chuong-08-bao-cao-kinh-doanh"
-        ]
-      }
+    "pages": [
+      "index",
+      "chuong-01-cau-hinh-he-thong",
+      "chuong-02-kho-va-don-vi-tinh",
+      "chuong-03-quan-ly-san-pham",
+      "chuong-04-thiet-lap-pos",
+      "chuong-05-ban-hang-tai-quay",
+      "chuong-06-nghiep-vu-kho",
+      "chuong-07-ca-lam-va-cham-cong",
+      "chuong-08-bao-cao-kinh-doanh"
     ]
   },
   "footer": {
