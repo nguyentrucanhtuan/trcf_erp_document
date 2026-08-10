@@ -1,17 +1,9 @@
 ---
-title: "Chương 1 — Cấu hình hệ thống"
-description: "Làm quen giao diện TRCF ERP và khai báo các thông số nền mà mọi nghiệp vụ khác dựa vào."
+title: "1.1 Làm quen giao diện và cấu hình thông tin ban đầu"
+description: "Tổng quan giao diện quản trị và khai thông tin quán, thuế, kho mặc định trước khi bắt đầu."
 ---
 
-# Chương 1 — Cấu hình hệ thống
-
-[← Về mục lục](/) · [Chương 2 →](/chuong-02-kho-va-don-vi-tinh)
-
----
-
-## 1.1 Làm quen giao diện và cấu hình thông tin ban đầu
-
-### Đăng nhập
+## Đăng nhập
 
 Mở trình duyệt vào địa chỉ hệ thống của quán, nhập email và mật khẩu được cấp rồi
 bấm **Đăng nhập**.
@@ -20,7 +12,7 @@ Nếu quên mật khẩu, bấm **Quên mật khẩu?** để nhận đường d
 Đường dẫn này chỉ dùng được **một lần**; bấm lại lần hai sẽ báo hết hạn — khi đó
 xin gửi lại từ đầu.
 
-### Ba vùng của màn hình
+## Ba vùng của màn hình
 
 ![Giao diện tổng quan](/images/01-giao-dien-tong-quan.png)
 
@@ -37,7 +29,7 @@ xuất** hoặc mở trang cá nhân.
 > nhau sẽ thấy số mục khác nhau — đó là bình thường, không phải lỗi. Nhân viên
 > phục vụ thấy khoảng 4 nhóm, quản lý thấy gần như đủ.
 
-### Màn Tổng quan nói gì
+## Màn Tổng quan nói gì
 
 Bốn ô trên cùng là bốn con số của **hôm nay**:
 
@@ -49,7 +41,7 @@ Bốn ô trên cùng là bốn con số của **hôm nay**:
 
 Bên dưới là biểu đồ doanh thu 30 ngày và danh sách sản phẩm bán chạy.
 
-### Khai báo thông số nền
+## Khai báo thông số nền
 
 Vào *Thiết lập cửa hàng → Cấu hình hệ thống*.
 
@@ -58,7 +50,7 @@ Vào *Thiết lập cửa hàng → Cấu hình hệ thống*.
 Trang này chia thành các nhóm thẻ. Sửa xong nhớ bấm **Lưu cấu hình** ở cuối
 trang — không tự lưu.
 
-#### Làm từng bước
+### Làm từng bước
 
 1. **Cấu hình chung** — chọn *Tiền tệ* (mặc định VND), *Múi giờ*
    (Asia/Ho_Chi_Minh), *Ngôn ngữ*. Ô *Domain công khai* để trống nếu quán chưa
@@ -74,10 +66,10 @@ trang — không tự lưu.
 7. **Tài chính / Thuế** — bật *Giá bán đã bao gồm VAT* nếu giá niêm yết của quán
    đã gồm thuế.
 8. **Hoá đơn điện tử (Minvoice)** — chỉ điền khi quán có hợp đồng xuất hoá đơn
-   GTGT. Xem [mục 5.5](/chuong-05-ban-hang-tai-quay#55-cấu-hình-và-xuất-hoá-đơn-vat).
+   GTGT. Xem [mục 5.5](/chuong-05-ban-hang-tai-quay/5-5-cau-hinh-va-xuat-hoa-don-vat).
 9. Bấm **Lưu cấu hình**.
 
-### Lưu ý nghiệp vụ
+## Lưu ý nghiệp vụ
 
 ⚠️ **Ô *Phương thức tiền mặt* là ô quan trọng nhất trang này.** Hệ thống dựa vào
 nó để biết đâu là tiền mặt trong két. Bỏ trống thì mở ca và đóng ca **vẫn chạy
@@ -94,7 +86,7 @@ phiếu sẽ nhận thông báo lỗi "chưa cấu hình kho" và không lập �
 💡 Trang Cấu hình hệ thống chỉ **chủ quán (tài khoản superuser)** mở được. Đây là
 cố ý: trang này chứa khoá kết nối hoá đơn điện tử và cổng thanh toán.
 
-### Sau khi cài đặt xong, quán đã có sẵn gì
+## Sau khi cài đặt xong, quán đã có sẵn gì
 
 Lần đầu khởi động, hệ thống tự nạp một bộ dữ liệu tối thiểu để bán được ngay:
 
@@ -109,7 +101,3 @@ Lần đầu khởi động, hệ thống tự nạp một bộ dữ liệu tố
 Bộ này **chỉ nạp khi bảng còn trống**. Nếu bạn xoá bớt (ví dụ xoá phương thức
 Thẻ vì quán không dùng), khởi động lại hệ thống sẽ **không** hồi sinh nó — hệ
 thống tôn trọng việc bạn đã xoá.
-
----
-
-[← Về mục lục](/) · [Chương 2 — Thiết lập kho hàng, sản phẩm →](/chuong-02-kho-va-don-vi-tinh)
