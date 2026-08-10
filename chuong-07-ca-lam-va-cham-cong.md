@@ -5,7 +5,7 @@ description: "Hồ sơ nhân viên, ca làm việc, đăng ký và duyệt ca, �
 
 # Chương 7 — Quản lý ca làm và chấm công
 
-[← Chương 6](./chuong-06-nghiep-vu-kho.md) · [Về mục lục](./README.md) · [Chương 8 →](./chuong-08-bao-cao-kinh-doanh.md)
+[← Chương 6](/chuong-06-nghiep-vu-kho) · [Về mục lục](/) · [Chương 8 →](/chuong-08-bao-cao-kinh-doanh)
 
 Thứ tự làm: **nhân viên → ca làm việc → đăng ký & duyệt ca → chấm công →
 công việc**. Bỏ qua bước duyệt ca thì bước sinh việc và phân tích trễ/sớm không
@@ -17,7 +17,7 @@ chạy được.
 
 *Quản lý nhân sự → Nhân viên → **Thêm nhân viên***
 
-![Thêm nhân viên](./images/07-nhan-vien-them.png)
+![Thêm nhân viên](/images/07-nhan-vien-them.png)
 
 Form chia ba nhóm trên cùng một màn.
 
@@ -48,7 +48,7 @@ Bấm **Lưu nhân viên**.
 ⚠️ **Ô "Tài khoản đăng nhập" quyết định nhân viên có mở ca được hay không.**
 Chưa gắn tài khoản thì người đó đăng nhập vào sẽ **không mở được ca** và nhận
 thông báo "chưa gắn hồ sơ nhân viên". Đây là hệ quả của nguyên tắc *ai bán thì
-người đó mở ca của mình* (xem [mục 5.1](./chuong-05-ban-hang-tai-quay.md#51-hướng-dẫn-mở-phiên-và-bán-hàng)).
+người đó mở ca của mình* (xem [mục 5.1](/chuong-05-ban-hang-tai-quay#51-hướng-dẫn-mở-phiên-và-bán-hàng)).
 
 ⚠️ **Ô "ID chấm công" phải khớp mã trên máy.** Sai hoặc bỏ trống thì khi đồng bộ,
 lượt quẹt thẻ của người đó không ghép được vào ai — hệ thống liệt kê những mã
@@ -72,7 +72,7 @@ bao giờ mất.
 
 *Quản lý nhân sự → Ca làm việc → **Thêm ca làm việc***
 
-![Thêm ca làm việc](./images/07-ca-lam-viec.png)
+![Thêm ca làm việc](/images/07-ca-lam-viec.png)
 
 ### Làm từng bước
 
@@ -96,7 +96,7 @@ thay vì "Ca 1", "Ca 2" — lịch tuần dễ đọc hơn nhiều.
 
 *Quản lý nhân sự → Đăng ký ca*
 
-![Đăng ký ca làm việc](./images/07-dang-ky-ca.png)
+![Đăng ký ca làm việc](/images/07-dang-ky-ca.png)
 
 Màn này có hai cách xem: **Lịch theo tuần** (nhìn tổng thể ai làm ca nào) và
 **Danh sách** (thao tác duyệt nhanh).
@@ -155,7 +155,7 @@ Sau khi lưu, dùng menu ở dòng thiết bị:
 
 *Quản lý nhân sự → Chấm công → **Đồng bộ từ máy chấm công***
 
-![Đồng bộ chấm công](./images/07-dong-bo-cham-cong.png)
+![Đồng bộ chấm công](/images/07-dong-bo-cham-cong.png)
 
 1. Chọn *Máy chấm công*, *Từ ngày*, *Đến ngày*.
 2. Bấm **Kiểm tra kết nối** trước cho chắc.
@@ -187,7 +187,7 @@ hơn cả lệch đều.
 
 *Quản lý nhân sự → Chấm công*
 
-![Bảng chấm công](./images/07-cham-cong.png)
+![Bảng chấm công](/images/07-cham-cong.png)
 
 Lọc theo nhân viên và khoảng ngày ở hàng trên. Nút **Thêm chấm công** dùng để bù
 tay cho trường hợp máy chấm công hỏng hoặc nhân viên quên quẹt.
@@ -256,4 +256,4 @@ thì các việc đã sinh vẫn còn.
 
 ---
 
-[← Chương 6](./chuong-06-nghiep-vu-kho.md) · [Về mục lục](./README.md) · [Chương 8 — Báo cáo kinh doanh →](./chuong-08-bao-cao-kinh-doanh.md)
+[← Chương 6](/chuong-06-nghiep-vu-kho) · [Về mục lục](/) · [Chương 8 — Báo cáo kinh doanh →](/chuong-08-bao-cao-kinh-doanh)

@@ -5,7 +5,7 @@ description: "Làm quen giao diện TRCF ERP và khai báo các thông số nề
 
 # Chương 1 — Cấu hình hệ thống
 
-[← Về mục lục](./README.md) · [Chương 2 →](./chuong-02-kho-va-don-vi-tinh.md)
+[← Về mục lục](/) · [Chương 2 →](/chuong-02-kho-va-don-vi-tinh)
 
 ---
 
@@ -22,7 +22,7 @@ xin gửi lại từ đầu.
 
 ### Ba vùng của màn hình
 
-![Giao diện tổng quan](./images/01-giao-dien-tong-quan.png)
+![Giao diện tổng quan](/images/01-giao-dien-tong-quan.png)
 
 | Vùng | Ở đâu | Dùng để làm gì |
 |---|---|---|
@@ -53,7 +53,7 @@ Bên dưới là biểu đồ doanh thu 30 ngày và danh sách sản phẩm bá
 
 Vào *Thiết lập cửa hàng → Cấu hình hệ thống*.
 
-![Cấu hình hệ thống](./images/01-cau-hinh-he-thong.png)
+![Cấu hình hệ thống](/images/01-cau-hinh-he-thong.png)
 
 Trang này chia thành các nhóm thẻ. Sửa xong nhớ bấm **Lưu cấu hình** ở cuối
 trang — không tự lưu.
@@ -74,7 +74,7 @@ trang — không tự lưu.
 7. **Tài chính / Thuế** — bật *Giá bán đã bao gồm VAT* nếu giá niêm yết của quán
    đã gồm thuế.
 8. **Hoá đơn điện tử (Minvoice)** — chỉ điền khi quán có hợp đồng xuất hoá đơn
-   GTGT. Xem [mục 5.5](./chuong-05-ban-hang-tai-quay.md#55-cấu-hình-và-xuất-hoá-đơn-vat).
+   GTGT. Xem [mục 5.5](/chuong-05-ban-hang-tai-quay#55-cấu-hình-và-xuất-hoá-đơn-vat).
 9. Bấm **Lưu cấu hình**.
 
 ### Lưu ý nghiệp vụ
@@ -112,4 +112,4 @@ thống tôn trọng việc bạn đã xoá.
 
 ---
 
-[← Về mục lục](./README.md) · [Chương 2 — Thiết lập kho hàng, sản phẩm →](./chuong-02-kho-va-don-vi-tinh.md)
+[← Về mục lục](/) · [Chương 2 — Thiết lập kho hàng, sản phẩm →](/chuong-02-kho-va-don-vi-tinh)

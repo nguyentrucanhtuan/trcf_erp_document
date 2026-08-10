@@ -5,7 +5,7 @@ description: "Quầy bán hàng, phương thức thanh toán, máy in và màn h
 
 # Chương 4 — Thiết lập POS
 
-[← Chương 3](./chuong-03-quan-ly-san-pham.md) · [Về mục lục](./README.md) · [Chương 5 →](./chuong-05-ban-hang-tai-quay.md)
+[← Chương 3](/chuong-03-quan-ly-san-pham) · [Về mục lục](/) · [Chương 5 →](/chuong-05-ban-hang-tai-quay)
 
 Chương này dựng chỗ đứng bán hàng. Làm xong bốn mục dưới đây là quán bán được.
 
@@ -18,7 +18,7 @@ Chương này dựng chỗ đứng bán hàng. Làm xong bốn mục dưới đ�
 Một **quầy POS** là một điểm bán: một máy tính/máy tính bảng có người đứng thu
 tiền. Quán một quầy thì khai một; có quầy trong nhà và quầy mang đi thì khai hai.
 
-![Danh sách quầy bán hàng](./images/04-pos-danh-sach.png)
+![Danh sách quầy bán hàng](/images/04-pos-danh-sach.png)
 
 ### Làm từng bước
 
@@ -27,13 +27,13 @@ tiền. Quán một quầy thì khai một; có quầy trong nhà và quầy man
 3. Chọn **Phương thức thanh toán** áp dụng cho quầy này — chọn nhiều được.
 4. Bấm **Lưu**.
 
-![Thêm quầy bán hàng](./images/04-pos-them.png)
+![Thêm quầy bán hàng](/images/04-pos-them.png)
 
 ### Ba nút trên mỗi dòng quầy
 
 | Nút | Mở ra gì |
 |---|---|
-| **Mở ca** | Vào màn bán hàng của quầy đó. Xem [mục 5.1](./chuong-05-ban-hang-tai-quay.md#51-hướng-dẫn-mở-phiên-và-bán-hàng). |
+| **Mở ca** | Vào màn bán hàng của quầy đó. Xem [mục 5.1](/chuong-05-ban-hang-tai-quay#51-hướng-dẫn-mở-phiên-và-bán-hàng). |
 | **Màn khách** | Màn hình hướng về phía khách, hiện giỏ hàng và mã QR thanh toán. |
 | **Shop Online** | Đường dẫn đặt hàng online của quán. |
 
@@ -56,7 +56,7 @@ danh sách sau khi lưu đúng bằng những gì đang tick.
 
 *Thiết lập cửa hàng → Phương thức thanh toán*
 
-![Thêm phương thức thanh toán](./images/04-pttt-them.png)
+![Thêm phương thức thanh toán](/images/04-pttt-them.png)
 
 ### Làm từng bước
 
@@ -96,7 +96,7 @@ ca thì không xoá được.** Muốn ngừng dùng thì tắt *Hiện tại PO
 
 *Thiết lập cửa hàng → Máy in*
 
-![Thêm máy in](./images/04-may-in-them.png)
+![Thêm máy in](/images/04-may-in-them.png)
 
 ### Làm từng bước
 
@@ -153,7 +153,7 @@ mất. Khi máy im lặng dù đã khai đúng, kiểm tra điều này trước
 Màn hình bếp là màn hình đặt ở khu pha chế, tự hiện món cần làm ngay khi thu
 ngân lên đơn — **không cần bấm tải lại**.
 
-![Thêm màn hình bếp](./images/04-man-hinh-bep-them.png)
+![Thêm màn hình bếp](/images/04-man-hinh-bep-them.png)
 
 ### Làm từng bước
 
@@ -175,7 +175,7 @@ ngân lên đơn — **không cần bấm tải lại**.
 
 Mỗi món hiện: tên món (kèm ghi chú pha chế trong ngoặc, VD *Trà đào (VỪA + ÍT
 ĐÁ)*), số lượng, ghi chú của khách, và **Ghi chú công thức ⚡** đã khai ở
-[mục 3.2](./chuong-03-quan-ly-san-pham.md#32-thêm-sản-phẩm-mới).
+[mục 3.2](/chuong-03-quan-ly-san-pham#32-thêm-sản-phẩm-mới).
 
 Bạn pha chế làm xong thì bấm vào món để đánh dấu hoàn thành — món biến khỏi màn.
 
@@ -192,4 +192,4 @@ phải làm ở màn bán hàng — đây là ranh giới an toàn cố ý.
 
 ---
 
-[← Chương 3](./chuong-03-quan-ly-san-pham.md) · [Về mục lục](./README.md) · [Chương 5 — Quy trình bán hàng tại quầy →](./chuong-05-ban-hang-tai-quay.md)
+[← Chương 3](/chuong-03-quan-ly-san-pham) · [Về mục lục](/) · [Chương 5 — Quy trình bán hàng tại quầy →](/chuong-05-ban-hang-tai-quay)

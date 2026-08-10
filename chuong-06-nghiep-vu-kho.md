@@ -5,7 +5,7 @@ description: "Sáu loại phiếu đụng tới kho và tiền: chi phí, nhập
 
 # Chương 6 — Chi tiết các nghiệp vụ kho
 
-[← Chương 5](./chuong-05-ban-hang-tai-quay.md) · [Về mục lục](./README.md) · [Chương 7 →](./chuong-07-ca-lam-va-cham-cong.md)
+[← Chương 5](/chuong-05-ban-hang-tai-quay) · [Về mục lục](/) · [Chương 7 →](/chuong-07-ca-lam-va-cham-cong)
 
 Mọi phiếu trong chương này đều theo **cùng một luật**:
 
@@ -27,7 +27,7 @@ Vào các phiếu này bằng hai đường: từ menu bên trái, hoặc nhanh 
 Dùng cho mọi khoản chi **không phải mua hàng hoá**: tiền điện, tiền nước, tiền
 ship, thuê mặt bằng, mua chổi lau nhà.
 
-![Thêm chi phí](./images/06-chi-phi.png)
+![Thêm chi phí](/images/06-chi-phi.png)
 
 ### Làm từng bước
 
@@ -69,7 +69,7 @@ báo cáo lãi lỗ ở chương 8 đọc mới có nghĩa.
 
 *Vận hành → Mua hàng* · hoặc *Vận hành → Nhập hàng* trên màn bán hàng
 
-![Tạo đơn mua hàng](./images/06-nhap-hang.png)
+![Tạo đơn mua hàng](/images/06-nhap-hang.png)
 
 ### Làm từng bước
 
@@ -91,7 +91,7 @@ Mỗi lần nhận hàng, hệ thống lấy đơn giá trên phiếu để cậ
 sản phẩm. Đây là nguồn giá vốn cho công thức và cho báo cáo lãi lỗ.
 
 Sản phẩm có bật *Sản xuất* thì **bỏ qua** — giá vốn của nó do công thức tính
-(xem [mục 3.5](./chuong-03-quan-ly-san-pham.md#35-cấu-hình-công-thức-pha-chế-và-biến-thể)).
+(xem [mục 3.5](/chuong-03-quan-ly-san-pham#35-cấu-hình-công-thức-pha-chế-và-biến-thể)).
 
 ### Lưu ý nghiệp vụ
 
@@ -115,7 +115,7 @@ phiếu chi ở mục 6.1.
 
 Dùng khi lấy hàng từ kho tổng ra kho quầy, hoặc điều hàng giữa hai chi nhánh.
 
-![Tạo phiếu chuyển kho](./images/06-chuyen-kho.png)
+![Tạo phiếu chuyển kho](/images/06-chuyen-kho.png)
 
 ### Làm từng bước
 
@@ -145,7 +145,7 @@ khi kệ đã trống — tới lúc kiểm kho mới lòi ra chênh lệch lớ
 
 Dùng khi quán tự làm ra thứ gì đó: ủ cà phê cốt, nấu syrup, làm sốt.
 
-![Tạo phiếu chế biến](./images/06-che-bien.png)
+![Tạo phiếu chế biến](/images/06-che-bien.png)
 
 ### Làm từng bước
 
@@ -173,7 +173,7 @@ kho hai lần khi hai người cùng bấm.
 thành phẩm. Đây là phiếu nhẹ nhất trong chương này.
 
 💡 Chưa có công thức cho món đó thì phiếu không tự nạp nguyên liệu được. Tạo
-công thức trước ở [mục 3.5](./chuong-03-quan-ly-san-pham.md#35-cấu-hình-công-thức-pha-chế-và-biến-thể).
+công thức trước ở [mục 3.5](/chuong-03-quan-ly-san-pham#35-cấu-hình-công-thức-pha-chế-và-biến-thể).
 
 ---
 
@@ -183,7 +183,7 @@ công thức trước ở [mục 3.5](./chuong-03-quan-ly-san-pham.md#35-cấu-h
 
 Dùng khi hàng hỏng, hết hạn, rơi vỡ, pha hỏng phải bỏ.
 
-![Tạo phiếu huỷ hàng](./images/06-huy-hang.png)
+![Tạo phiếu huỷ hàng](/images/06-huy-hang.png)
 
 ### Làm từng bước
 
@@ -220,7 +220,7 @@ nói "thiếu vì sao".
 
 Đếm hàng thật rồi chỉnh số trên hệ thống cho khớp.
 
-![Tạo phiếu kiểm kê](./images/06-kiem-kho.png)
+![Tạo phiếu kiểm kê](/images/06-kiem-kho.png)
 
 ### Làm từng bước
 
@@ -256,4 +256,4 @@ thiếu phiếu huỷ hoặc thiếu phiếu chuyển kho ở khâu trước.
 
 ---
 
-[← Chương 5](./chuong-05-ban-hang-tai-quay.md) · [Về mục lục](./README.md) · [Chương 7 — Quản lý ca làm và chấm công →](./chuong-07-ca-lam-va-cham-cong.md)
+[← Chương 5](/chuong-05-ban-hang-tai-quay) · [Về mục lục](/) · [Chương 7 — Quản lý ca làm và chấm công →](/chuong-07-ca-lam-va-cham-cong)

@@ -5,7 +5,7 @@ description: "Đọc hiểu báo cáo bán hàng, báo cáo lãi lỗ P&L, báo 
 
 # Chương 8 — Báo cáo kinh doanh
 
-[← Chương 7](./chuong-07-ca-lam-va-cham-cong.md) · [Về mục lục](./README.md)
+[← Chương 7](/chuong-07-ca-lam-va-cham-cong) · [Về mục lục](/)
 
 Chương này dành cho **quản lý và chủ quán**. Nhân viên đứng quầy không cần đọc.
 
@@ -22,7 +22,7 @@ Nguyên tắc chung trước khi đọc bất kỳ báo cáo nào:
 
 *Báo cáo → Báo cáo bán hàng*
 
-![Báo cáo bán hàng](./images/08-bao-cao-ban-hang.png)
+![Báo cáo bán hàng](/images/08-bao-cao-ban-hang.png)
 
 ### Bốn con số trên cùng
 
@@ -82,7 +82,7 @@ cần xem lại chất lượng phục vụ hoặc quy trình lên đơn — ki�
 
 *Báo cáo → Báo cáo P&L*
 
-![Báo cáo lãi lỗ](./images/08-bao-cao-pnl.png)
+![Báo cáo lãi lỗ](/images/08-bao-cao-pnl.png)
 
 Chọn khoảng **từ tháng – đến tháng** ở đầu trang.
 
@@ -116,7 +116,7 @@ theo quý** hoặc đối chiếu thêm với giá trị tồn kho.
 
 ⚠️ **Chỉ khoản chi có phiếu mới vào báo cáo.** Trả tiền điện bằng tiền túi mà
 không lập phiếu chi thì lợi nhuận trên báo cáo cao hơn thực tế. Đây là lý do mục
-[5.6](./chuong-05-ban-hang-tai-quay.md#56-vận-hành-ca-hoàn-hảo--mô-hình-3s) nhấn
+[5.6](/chuong-05-ban-hang-tai-quay#56-vận-hành-ca-hoàn-hảo--mô-hình-3s) nhấn
 mạnh việc lập phiếu chi ngay.
 
 ⚠️ Báo cáo này **chưa trừ lương nhân viên** nếu quán không lập phiếu chi cho
@@ -135,7 +135,7 @@ quy mô thay đổi.
 
 *Quản lý kho → Tồn kho*
 
-![Quản lý tồn kho](./images/08-ton-kho.png)
+![Quản lý tồn kho](/images/08-ton-kho.png)
 
 Bảng liệt kê từng mặt hàng theo từng kho, kèm **định mức tối thiểu** và **định
 mức tối đa**.
@@ -156,7 +156,7 @@ tối thiểu 3 kg.
 
 *Báo cáo → Kiểm soát vận hành*
 
-![Kiểm soát vận hành](./images/08-kiem-soat-van-hanh.png)
+![Kiểm soát vận hành](/images/08-kiem-soat-van-hanh.png)
 
 Đây là màn **nhắc việc** — hệ thống tự tìm ra những chỗ đang lệch:
 
@@ -181,7 +181,7 @@ thống cố ý cho phép bán khi tồn đã về 0 (để không chặn thu ng
 - Công thức khai sai định mức nên trừ nhiều hơn thực tế.
 
 Cách xử lý: tìm phiếu còn thiếu và lập bù, hoặc chỉnh lại bằng **kiểm kê**
-([mục 6.6](./chuong-06-nghiep-vu-kho.md#66-kiểm-kê-tồn-kho)).
+([mục 6.6](/chuong-06-nghiep-vu-kho#66-kiểm-kê-tồn-kho)).
 
 ### C — Cây sản phẩm và rà soát
 
@@ -208,4 +208,4 @@ ngày, mà là bộ lọc bắt lỗi khai báo tích tụ dần.
 
 ---
 
-[← Chương 7](./chuong-07-ca-lam-va-cham-cong.md) · [Về mục lục](./README.md)
+[← Chương 7](/chuong-07-ca-lam-va-cham-cong) · [Về mục lục](/)

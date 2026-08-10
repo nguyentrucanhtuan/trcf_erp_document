@@ -5,7 +5,7 @@ description: "Một ca làm việc trọn vẹn: mở ca, bán hàng, làm check
 
 # Chương 5 — Quy trình bán hàng tại quầy
 
-[← Chương 4](./chuong-04-thiet-lap-pos.md) · [Về mục lục](./README.md) · [Chương 6 →](./chuong-06-nghiep-vu-kho.md)
+[← Chương 4](/chuong-04-thiet-lap-pos) · [Về mục lục](/) · [Chương 6 →](/chuong-06-nghiep-vu-kho)
 
 Chương này là **việc hằng ngày của nhân viên đứng quầy**. Đọc theo đúng thứ tự
 một ca diễn ra.
@@ -19,7 +19,7 @@ một ca diễn ra.
 Vào *Thiết lập cửa hàng → POS*, bấm **Mở ca** ở quầy mình đứng. Hoặc vào
 *Báo cáo → Báo cáo ca* rồi bấm **Mở ca**.
 
-![Mở ca bán hàng](./images/05-mo-ca.png)
+![Mở ca bán hàng](/images/05-mo-ca.png)
 
 1. Chọn **Quầy bán hàng**.
 2. Ô **Thu ngân** đã điền sẵn tên bạn — **không đổi được**, hệ thống lấy theo tài
@@ -43,7 +43,7 @@ cùng quầy sẽ bị báo lỗi — đó là chặn có chủ đích, không p
 
 Sau khi mở ca, hệ thống vào màn bán hàng.
 
-![Màn bán hàng — chọn bàn](./images/05-man-ban-hang.png)
+![Màn bán hàng — chọn bàn](/images/05-man-ban-hang.png)
 
 Thanh trên cùng có bốn mục:
 
@@ -56,7 +56,7 @@ Thanh trên cùng có bốn mục:
 
 ### Bước 3 — Lên đơn
 
-![Màn bán hàng — chọn món](./images/05-man-ban-hang-menu.png)
+![Màn bán hàng — chọn món](/images/05-man-ban-hang-menu.png)
 
 1. Bấm **MENU**, chọn nhóm món ở hàng nút phía trên (Tất cả / Cà phê / …) hoặc gõ
    vào ô **Tìm món**.
@@ -107,7 +107,7 @@ trả lại cả điểm và lượt dùng voucher.
 Checklist là danh sách việc lặp lại mỗi ca: vệ sinh máy pha, lau tủ lạnh, kiểm
 tra hạn sử dụng, đổ rác.
 
-![Màn công việc](./images/05-checklist-cong-viec.png)
+![Màn công việc](/images/05-checklist-cong-viec.png)
 
 ### Làm từng bước (nhân viên)
 
@@ -118,7 +118,7 @@ tra hạn sử dụng, đổ rác.
 ### Làm từng bước (quản lý)
 
 1. Khai mẫu việc lặp ở *Quản lý nhân sự → Mẫu công việc*
-   (xem [mục 7.5](./chuong-07-ca-lam-va-cham-cong.md#75-quản-lý-công-việc-trong-ngày)).
+   (xem [mục 7.5](/chuong-07-ca-lam-va-cham-cong#75-quản-lý-công-việc-trong-ngày)).
 2. Ở màn Công việc, bấm **Tạo từ mẫu & ca duyệt** — hệ thống sinh việc cho từng
    ngày, **chia luân phiên** cho những nhân viên đã được duyệt ca ngày hôm đó.
 3. Cuối ngày mở lại màn này để xem việc nào chưa xong và ai chưa làm.
@@ -127,7 +127,7 @@ tra hạn sử dụng, đổ rác.
 
 ⚠️ Nút sinh việc hàng loạt **chỉ chia cho nhân viên đã được duyệt ca** ngày đó.
 Chưa duyệt ca cho ai thì hệ thống báo lỗi thay vì sinh việc treo không người
-làm. Duyệt ca trước — xem [mục 7.3](./chuong-07-ca-lam-va-cham-cong.md#73-đăng-ký-và-duyệt-ca-cho-nhân-viên).
+làm. Duyệt ca trước — xem [mục 7.3](/chuong-07-ca-lam-va-cham-cong#73-đăng-ký-và-duyệt-ca-cho-nhân-viên).
 
 💡 Bấm sinh lần hai cho cùng khoảng ngày sẽ **bỏ qua việc đã có**, không tạo
 trùng. Cứ bấm lại yên tâm.
@@ -139,7 +139,7 @@ trùng. Cứ bấm lại yên tâm.
 Trong ca, ngoài bán hàng còn phát sinh việc đụng tới kho. Tất cả gom vào một chỗ:
 bấm **VẬN HÀNH** trên màn bán hàng.
 
-![Màn vận hành](./images/05-van-hanh-hub.png)
+![Màn vận hành](/images/05-van-hanh-hub.png)
 
 | Ô | Khi nào dùng | Kho bị ảnh hưởng ra sao |
 |---|---|---|
@@ -160,7 +160,7 @@ bấm **VẬN HÀNH** trên màn bán hàng.
 3. Phiếu đã xác nhận **không sửa, không xoá được**. Sai thì lập phiếu ngược lại
    (nhập nhầm → lập phiếu trả hàng; xuất nhầm → lập phiếu nhập bù).
 
-Chi tiết từng loại phiếu ở [chương 6](./chuong-06-nghiep-vu-kho.md).
+Chi tiết từng loại phiếu ở [chương 6](/chuong-06-nghiep-vu-kho).
 
 ---
 
@@ -168,13 +168,13 @@ Chi tiết từng loại phiếu ở [chương 6](./chuong-06-nghiep-vu-kho.md).
 
 Cuối ca, vào *Báo cáo → Báo cáo ca*, bấm **Đóng ca** ở dòng ca đang mở.
 
-![Danh sách ca bán hàng](./images/05-ca-ban-hang-danh-sach.png)
+![Danh sách ca bán hàng](/images/05-ca-ban-hang-danh-sach.png)
 
 Màn này cũng là nơi quản lý xem lại lịch sử ca: bốn ô trên cùng là tổng doanh thu
 ca, số ca, số ca đang mở và **tổng chênh lệch tiền mặt** — con số cuối cùng là
 thứ nên liếc mỗi tuần.
 
-![Đối soát khi đóng ca](./images/05-dong-ca-doi-soat.png)
+![Đối soát khi đóng ca](/images/05-dong-ca-doi-soat.png)
 
 ### Làm từng bước
 
@@ -235,7 +235,7 @@ Bấm **Lưu cấu hình**.
 
 *Vận hành → Hoá đơn VAT → **Tạo hoá đơn***
 
-![Tạo hoá đơn GTGT](./images/05-hoa-don-vat.png)
+![Tạo hoá đơn GTGT](/images/05-hoa-don-vat.png)
 
 1. Chọn **Đơn hàng** cần xuất hoá đơn.
 2. Chọn **Loại người mua**:
@@ -306,4 +306,4 @@ Ghi ngay tốn 30 giây. Truy ngược một chênh lệch tốn cả buổi.
 
 ---
 
-[← Chương 4](./chuong-04-thiet-lap-pos.md) · [Về mục lục](./README.md) · [Chương 6 — Chi tiết các nghiệp vụ kho →](./chuong-06-nghiep-vu-kho.md)
+[← Chương 4](/chuong-04-thiet-lap-pos) · [Về mục lục](/) · [Chương 6 — Chi tiết các nghiệp vụ kho →](/chuong-06-nghiep-vu-kho)

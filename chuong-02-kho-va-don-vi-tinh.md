@@ -5,7 +5,7 @@ description: "Khai báo kho và đơn vị tính — hai thứ phải có trư�
 
 # Chương 2 — Thiết lập kho hàng, sản phẩm
 
-[← Chương 1](./chuong-01-cau-hinh-he-thong.md) · [Về mục lục](./README.md) · [Chương 3 →](./chuong-03-quan-ly-san-pham.md)
+[← Chương 1](/chuong-01-cau-hinh-he-thong) · [Về mục lục](/) · [Chương 3 →](/chuong-03-quan-ly-san-pham)
 
 Hai màn trong chương này là **nền móng**: chưa có kho và đơn vị tính thì không
 tạo được sản phẩm, không nhập được hàng, không bán được. Làm đúng thứ tự: kho
@@ -20,7 +20,7 @@ trước, đơn vị tính sau, rồi mới sang chương 3.
 Kho là nơi hệ thống ghi nhận hàng đang nằm ở đâu. Mỗi lần nhập, bán, chuyển,
 huỷ, chế biến — hệ thống đều cộng/trừ vào một kho cụ thể.
 
-![Danh sách kho](./images/02-kho-danh-sach.png)
+![Danh sách kho](/images/02-kho-danh-sach.png)
 
 ### Làm từng bước
 
@@ -35,7 +35,7 @@ huỷ, chế biến — hệ thống đều cộng/trừ vào một kho cụ th�
 
 3. Bấm **Lưu**.
 
-![Thêm kho mới](./images/02-kho-them-moi.png)
+![Thêm kho mới](/images/02-kho-them-moi.png)
 
 ### Nên chia bao nhiêu kho
 
@@ -69,7 +69,7 @@ lịch sử sẽ sai. Kho không dùng nữa thì **lưu trữ**, đừng xoá.
 
 Đơn vị tính trả lời câu hỏi: **hàng này đếm bằng gì**. Ly, kg, gram, chai, thùng.
 
-![Danh sách đơn vị tính](./images/02-uom-danh-sach.png)
+![Danh sách đơn vị tính](/images/02-uom-danh-sach.png)
 
 ### Khái niệm cần nắm trước khi điền
 
@@ -97,7 +97,7 @@ là một con số thống nhất.
 
 3. Bấm **Lưu**.
 
-![Thêm đơn vị đo lường](./images/02-uom-them-moi.png)
+![Thêm đơn vị đo lường](/images/02-uom-them-moi.png)
 
 ### Ví dụ khai một bộ đơn vị cho quán
 
@@ -130,4 +130,4 @@ hệ số 0 sẽ làm phép quy đổi mất sạch số lượng.
 
 ---
 
-[← Chương 1](./chuong-01-cau-hinh-he-thong.md) · [Về mục lục](./README.md) · [Chương 3 — Quản lý sản phẩm →](./chuong-03-quan-ly-san-pham.md)
+[← Chương 1](/chuong-01-cau-hinh-he-thong) · [Về mục lục](/) · [Chương 3 — Quản lý sản phẩm →](/chuong-03-quan-ly-san-pham)

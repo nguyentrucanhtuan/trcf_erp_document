@@ -5,7 +5,7 @@ description: "Danh mục, sản phẩm, phân loại nguyên liệu/bán thành 
 
 # Chương 3 — Quản lý sản phẩm
 
-[← Chương 2](./chuong-02-kho-va-don-vi-tinh.md) · [Về mục lục](./README.md) · [Chương 4 →](./chuong-04-thiet-lap-pos.md)
+[← Chương 2](/chuong-02-kho-va-don-vi-tinh) · [Về mục lục](/) · [Chương 4 →](/chuong-04-thiet-lap-pos)
 
 Đây là chương dài nhất và cũng là chương quyết định chất lượng số liệu về sau.
 Khai sản phẩm sai thì tồn kho sai, giá vốn sai, báo cáo lãi lỗ sai theo.
@@ -35,7 +35,7 @@ vặt. Thu ngân bấm nhóm rồi mới chọn món.
 
 3. Bấm **Lưu**.
 
-![Thêm danh mục sản phẩm](./images/03-danh-muc-them.png)
+![Thêm danh mục sản phẩm](/images/03-danh-muc-them.png)
 
 ### Sắp xếp thứ tự hiển thị
 
@@ -60,7 +60,7 @@ trên màn bán hàng.
 Form sản phẩm chia hai cột trên cùng một màn — không còn tab, không phải bấm qua
 lại. Cột trái là thứ nhập nhiều, cột phải là thứ liếc mắt kiểm tra.
 
-![Form thêm sản phẩm](./images/03-san-pham-them.png)
+![Form thêm sản phẩm](/images/03-san-pham-them.png)
 
 ### Làm từng bước
 
@@ -148,7 +148,7 @@ thực tế việc ủ đã xảy ra từ sáng.
 Có bán thành phẩm thì tách được hai bước:
 
 1. **Sáng**: lập phiếu chế biến — trừ cà phê hạt, cộng "cà phê cốt" vào kho.
-   (Xem [mục 6.4](./chuong-06-nghiep-vu-kho.md#64-chế-biến-bán-thành-phẩm))
+   (Xem [mục 6.4](/chuong-06-nghiep-vu-kho#64-chế-biến-bán-thành-phẩm))
 2. **Cả ngày**: mỗi ly bán ra trừ "cà phê cốt" theo công thức.
 
 Nhờ vậy cuối ngày biết được bình cốt còn bao nhiêu, và hao hụt nằm ở khâu ủ hay
@@ -165,7 +165,7 @@ trừ thẳng nguyên liệu. Có thể bổ sung sau mà không phải làm l�
 
 *Quản lý sản phẩm → Thuộc tính*
 
-![Danh sách thuộc tính](./images/03-thuoc-tinh-danh-sach.png)
+![Danh sách thuộc tính](/images/03-thuoc-tinh-danh-sach.png)
 
 ### Hai loại thuộc tính — phân biệt trước khi tạo
 
@@ -191,7 +191,7 @@ tạo biến thể (ÍT ĐÁ, VỪA) — chỉ là ghi chú cho bạn pha chế.
    Kéo biểu tượng ⠿ để đổi thứ tự — thứ tự này là thứ tự hiện trên POS.
 5. Bấm **Lưu**.
 
-![Thêm thuộc tính](./images/03-thuoc-tinh-them.png)
+![Thêm thuộc tính](/images/03-thuoc-tinh-them.png)
 
 ### Lưu ý nghiệp vụ
 
@@ -214,7 +214,7 @@ thức riêng**, không phải bằng ghi chú pha chế. Ghi chú pha chế ch�
 
 *Quản lý sản phẩm → Biến thể → **Sinh biến thể***
 
-![Sinh biến thể](./images/03-sinh-bien-the.png)
+![Sinh biến thể](/images/03-sinh-bien-the.png)
 
 1. Chọn **Sản phẩm** gốc (VD Trà đào).
 2. Chọn các **giá trị thuộc tính tạo biến thể** (VD Size: VỪA, LỚN).
@@ -224,7 +224,7 @@ thức riêng**, không phải bằng ghi chú pha chế. Ghi chú pha chế ch�
 
 Chọn 2 thuộc tính (Size 3 giá trị × Đế 2 loại) sẽ sinh 6 biến thể.
 
-![Danh sách biến thể](./images/03-bien-the-danh-sach.png)
+![Danh sách biến thể](/images/03-bien-the-danh-sach.png)
 
 Danh sách biến thể hiện **giá bán đã cộng phụ thu** — đây là giá thu ngân thấy
 trên POS, không phải giá gốc của sản phẩm.
@@ -233,7 +233,7 @@ trên POS, không phải giá gốc của sản phẩm.
 
 *Quản lý sản phẩm → Công thức → **Thêm công thức***
 
-![Tạo công thức](./images/03-cong-thuc-them.png)
+![Tạo công thức](/images/03-cong-thuc-them.png)
 
 | Trường | Điền gì |
 |---|---|
@@ -281,4 +281,4 @@ kho quản lý theo *kg* là hợp lệ, hệ thống tự quy đổi.
 
 ---
 
-[← Chương 2](./chuong-02-kho-va-don-vi-tinh.md) · [Về mục lục](./README.md) · [Chương 4 — Thiết lập POS →](./chuong-04-thiet-lap-pos.md)
+[← Chương 2](/chuong-02-kho-va-don-vi-tinh) · [Về mục lục](/) · [Chương 4 — Thiết lập POS →](/chuong-04-thiet-lap-pos)
