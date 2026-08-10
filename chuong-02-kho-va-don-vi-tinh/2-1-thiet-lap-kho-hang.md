@@ -25,6 +25,13 @@ title: "2.1 Thiết lập kho hàng"
 | Tên kho | Tên người đọc hiểu. VD "Kho tổng", "Kho quầy pha chế" | ✅ |
 | Địa chỉ | Địa chỉ thực tế | — |
 
+## Nên chia mấy kho
+
+| Cách chia | Dùng khi | Được gì |
+|---|---|---|
+| **2 kho** — Kho tổng + Kho quầy | Có chỗ chứa riêng | Biết còn bao nhiêu trong kho tổng để tiếp cho quầy |
+| **1 kho** | Quán nhỏ, một chỗ chứa | Đơn giản. Chọn kho đó cho tất cả các ô ở *Cấu hình hệ thống* |
+
 ## Kiểm tra đã đúng
 
 - [ ] Kho hiện trong danh sách, trạng thái **Hoạt động**
@@ -37,5 +44,3 @@ title: "2.1 Thiết lập kho hàng"
 ⚠️ Kho đang là kho mặc định trong *Cấu hình hệ thống* cũng không xoá được — phải đổi cấu hình sang kho khác trước.
 
 💡 Kho vừa tạo chưa nhập gì thì xoá bình thường.
-
-💡 Quán một chỗ chứa duy nhất thì khai **một kho**, rồi chọn kho đó cho tất cả các ô ở *Cấu hình hệ thống*.

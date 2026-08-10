@@ -22,13 +22,15 @@ title: "7.2 Tạo ca làm việc"
 | Màu sắc | Màu hiện trên lịch tuần | — |
 | Ghi chú | Ghi chú nội bộ | — |
 
+## Ca qua đêm
+
+Ca 22:00 → 06:00 hợp lệ — giờ kết thúc được phép sớm hơn giờ bắt đầu. Phân tích trễ/sớm vẫn tính đúng.
+
 ## Kiểm tra đã đúng
 
 - [ ] Ca hiện trên lịch tuần ở màn Đăng ký ca
 - [ ] Ca qua đêm (nếu có) hiển thị đúng khung giờ
 
 ## Lưu ý
-
-💡 Ca qua đêm (22:00 → 06:00) hợp lệ; phân tích trễ/sớm vẫn tính đúng.
 
 💡 Đặt tên ca theo cách nhân viên gọi hằng ngày ("Ca sáng", "Ca chiều") thay vì "Ca 1", "Ca 2" — lịch tuần dễ đọc hơn nhiều.

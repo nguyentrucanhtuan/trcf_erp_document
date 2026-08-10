@@ -23,6 +23,17 @@ title: "4.4 Cấu hình màn hình bếp và hiển thị công thức"
 | Danh mục hiển thị | Nhóm món màn này phụ trách. Để trống = nhận mọi món | — |
 | Hoạt động | Tắt = ngừng dùng màn này | — |
 
+## Món hiện gì trên màn bếp
+
+| Thông tin | Từ đâu ra |
+|---|---|
+| Tên món + ghi chú trong ngoặc — *Trà đào (VỪA + ÍT ĐÁ)* | Thuộc tính (3.4) |
+| Số lượng | Đơn hàng |
+| Ghi chú của khách | Thu ngân nhập lúc bán |
+| **Ghi chú công thức ⚡** | Trường khai ở [mục 3.2](/chuong-03-quan-ly-san-pham/3-2-them-san-pham-moi) |
+
+Pha chế xong → bấm vào món → món biến khỏi màn.
+
 ## Kiểm tra đã đúng
 
 - [ ] Lên thử một đơn ở POS → món tự hiện trên màn bếp, không cần tải lại
@@ -31,7 +42,7 @@ title: "4.4 Cấu hình màn hình bếp và hiển thị công thức"
 
 ## Lưu ý
 
-💡 **Ghi chú công thức ⚡** (khai ở [mục 3.2](/chuong-03-quan-ly-san-pham/3-2-them-san-pham-moi)) là chỗ đặt công thức rút gọn cho người mới — VD "30ml espresso + 150ml sữa + đá đầy ly".
+💡 **Ghi chú công thức** là chỗ đặt công thức rút gọn cho người mới — VD "30ml espresso + 150ml sữa + đá đầy ly". Nhân viên mới không cần nhớ, không cần hỏi.
 
 💡 Đơn bị huỷ hoặc đã hoàn **tự biến khỏi màn bếp** — pha chế không làm nhầm món của đơn đã huỷ.
 

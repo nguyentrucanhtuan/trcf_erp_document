@@ -22,6 +22,10 @@ title: "6.3 Chuyển kho nội bộ"
 | Kho nhập đến | Kho nhận hàng. **Phải khác kho xuất** | ✅ |
 | Sản phẩm / Số lượng / Đơn vị | Từng dòng hàng chuyển | ✅ |
 
+## Xác nhận làm gì
+
+Ghi **hai bút toán kho cùng lúc**: trừ kho nguồn + cộng kho đích. Không có chuyện hàng biến mất giữa đường.
+
 ## Kiểm tra đã đúng
 
 - [ ] Tồn kho nguồn giảm đúng số

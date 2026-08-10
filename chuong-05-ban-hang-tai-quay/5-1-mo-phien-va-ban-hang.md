@@ -24,6 +24,8 @@ title: "5.1 Hướng dẫn mở phiên và bán hàng"
 
 ⚠️ Một quầy chỉ có **một ca đang mở**. Người thứ hai bấm Mở ca cùng quầy sẽ bị báo lỗi — chặn có chủ đích.
 
+💡 **Vì sao không chọn được thu ngân khác:** ca là chứng từ đối soát két, người mở ca chịu trách nhiệm phần tiền trong ca. Mở ca đứng tên người khác được thì lúc thiếu tiền không truy về ai.
+
 ## Bước 2 — Bốn mục trên màn bán hàng
 
 ![Màn bán hàng — chọn bàn](/images/05-man-ban-hang.png)

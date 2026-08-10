@@ -8,6 +8,15 @@ title: "2.2 Thiết lập đơn vị tính (UOM)"
 
 ![Danh sách đơn vị tính](/images/02-uom-danh-sach.png)
 
+## Hiểu trước khi điền
+
+| Khái niệm | Nghĩa | Khai thế nào |
+|---|---|---|
+| **Đơn vị gốc** | Đơn vị nhỏ nhất dùng lưu tồn. VD sữa lấy *ml* | Hệ số = 1, bỏ trống ô quy đổi |
+| **Đơn vị quy đổi** | Đơn vị to hơn. VD *Lít* = 1000 ml | Hệ số = 1000, chọn quy đổi về *ml* |
+
+💡 Nhờ vậy nhân viên nhập theo *thùng*, pha chế trừ theo *ml*, tồn kho vẫn là một con số.
+
 ## Các bước
 
 1. Bấm **Thêm đơn vị**.
