@@ -19,18 +19,18 @@ title: "2.1 Thiết lập kho hàng"
 
 ## Giải thích các trường
 
-| Trường | Điền gì | Bắt buộc |
-|---|---|---|
-| Mã kho | Chuỗi ngắn không dấu, viết hoa. VD `KHO-TONG`, `KHO-QUAY` | ✅ |
-| Tên kho | Tên người đọc hiểu. VD "Kho tổng", "Kho quầy pha chế" | ✅ |
-| Địa chỉ | Địa chỉ thực tế | — |
+| Trường  | Điền gì                                                   | Bắt buộc |
+| ------- | --------------------------------------------------------- | -------- |
+| Mã kho  | Chuỗi ngắn không dấu, viết hoa. VD `KHO-TONG`, `KHO-QUAY` | ✅        |
+| Tên kho | Tên người đọc hiểu. VD "KHO TỔNG", "KHO QUẦY"             | ✅        |
+| Địa chỉ | Địa chỉ thực tế                                           | —        |
 
 ## Nên chia mấy kho
 
-| Cách chia | Dùng khi | Được gì |
-|---|---|---|
-| **2 kho** — Kho tổng + Kho quầy | Có chỗ chứa riêng | Biết còn bao nhiêu trong kho tổng để tiếp cho quầy |
-| **1 kho** | Quán nhỏ, một chỗ chứa | Đơn giản. Chọn kho đó cho tất cả các ô ở *Cấu hình hệ thống* |
+| Cách chia                       | Dùng khi               | Được gì                                                      |
+| ------------------------------- | ---------------------- | ------------------------------------------------------------ |
+| **2 kho** — Kho tổng + Kho quầy | Có chỗ chứa riêng      | Biết còn bao nhiêu trong kho tổng để tiếp cho quầy           |
+| **1 kho**                       | Quán nhỏ, một chỗ chứa | Đơn giản. Chọn kho đó cho tất cả các ô ở *Cấu hình hệ thống* |
 
 ## Kiểm tra đã đúng
 
