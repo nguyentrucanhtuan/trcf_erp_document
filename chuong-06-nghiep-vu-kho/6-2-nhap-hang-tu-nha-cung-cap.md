@@ -1,10 +1,9 @@
 ---
 title: "6.2 Nhập hàng từ nhà cung cấp"
-description: "Lập đơn mua → xác nhận → nhận hàng. Nhận hàng mới cộng kho và cập nhật giá vốn."
 ---
 
-**Đường dẫn:** *Vận hành → Mua hàng* hoặc *Vận hành → Nhập hàng* trên màn bán hàng
-**Ba trạng thái:** Nháp → Đã xác nhận → Đã nhập kho
+- **Đường dẫn:** *Vận hành → Mua hàng* hoặc *Vận hành → Nhập hàng* trên màn bán hàng.
+- **Ba trạng thái:** Nháp → Đã xác nhận → Đã nhập kho.
 
 ![Tạo đơn mua hàng](/images/06-nhap-hang.png)
 

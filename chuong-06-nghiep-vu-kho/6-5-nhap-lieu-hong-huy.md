@@ -1,11 +1,10 @@
 ---
 title: "6.5 Nhập liệu hỏng huỷ"
-description: "Ghi hàng hỏng, hết hạn, rơi vỡ — mỗi phiếu một mặt hàng."
 ---
 
-**Đường dẫn:** *Vận hành → Huỷ hàng*
-**Dùng khi:** Hàng hỏng, hết hạn, rơi vỡ, pha hỏng phải bỏ
-**Lưu ý:** Mỗi phiếu **một mặt hàng**. Huỷ ba thứ thì lập ba phiếu.
+- **Đường dẫn:** *Vận hành → Huỷ hàng*.
+- **Dùng khi:** Hàng hỏng, hết hạn, rơi vỡ, pha hỏng phải bỏ.
+- **Lưu ý:** Mỗi phiếu **một mặt hàng**. Huỷ ba thứ thì lập ba phiếu.
 
 ![Tạo phiếu huỷ hàng](/images/06-huy-hang.png)
 

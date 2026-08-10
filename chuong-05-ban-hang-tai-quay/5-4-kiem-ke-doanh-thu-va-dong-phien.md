@@ -1,10 +1,9 @@
 ---
 title: "5.4 Kiểm kê doanh thu và đóng phiên"
-description: "Đối soát từng phương thức, đếm két, xử lý chênh lệch rồi đóng ca."
 ---
 
-**Đường dẫn:** *Báo cáo → Báo cáo ca → Đóng ca* (ở dòng ca đang mở)
-**Khi nào:** Cuối mỗi ca, dành khoảng 15 phút
+- **Đường dẫn:** *Báo cáo → Báo cáo ca → Đóng ca* (ở dòng ca đang mở)
+- **Khi nào:** Cuối mỗi ca, dành khoảng 15 phút.
 
 ![Danh sách ca bán hàng](/images/05-ca-ban-hang-danh-sach.png)
 

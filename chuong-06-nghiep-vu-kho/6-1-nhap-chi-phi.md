@@ -1,10 +1,9 @@
 ---
 title: "6.1 Nhập chi phí"
-description: "Lập phiếu chi cho khoản chi không phải mua hàng — tiền điện, ship, thuê mặt bằng."
 ---
 
-**Đường dẫn:** *Chi phí → Chi phí* hoặc *Vận hành → Chi phí*
-**Dùng cho:** Mọi khoản chi **không phải mua hàng hoá** — tiền điện, nước, ship, thuê mặt bằng, mua chổi lau nhà
+- **Đường dẫn:** *Chi phí → Chi phí* hoặc *Vận hành → Chi phí*.
+- **Dùng cho:** Mọi khoản chi **không phải mua hàng hoá** — tiền điện, nước, ship, thuê mặt bằng, mua chổi lau nhà.
 
 > **Luật chung cho mọi phiếu chương 6:** Nháp thì chưa đụng gì, xoá thoải mái. Bấm xác nhận là ghi vào kho/sổ quỹ **ngay và không quay lui được**. Sai thì lập phiếu ngược lại, không sửa phiếu cũ.
 

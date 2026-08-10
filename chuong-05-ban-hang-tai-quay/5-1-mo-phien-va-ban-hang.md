@@ -1,10 +1,9 @@
 ---
 title: "5.1 Hướng dẫn mở phiên và bán hàng"
-description: "Mở ca, lên đơn, thanh toán — việc hằng ngày của nhân viên đứng quầy."
 ---
 
-**Đường dẫn:** *Thiết lập cửa hàng → POS → Mở ca* (hoặc *Báo cáo → Báo cáo ca → Mở ca*)
-**Ai làm:** Nhân viên đứng quầy, bằng **tài khoản của chính mình**
+- **Đường dẫn:** *Thiết lập cửa hàng → POS → Mở ca* (hoặc *Báo cáo → Báo cáo ca → Mở ca*)
+- **Ai làm:** Nhân viên đứng quầy, bằng **tài khoản của chính mình**.
 
 ## Bước 1 — Mở ca
 
@@ -24,8 +23,6 @@ description: "Mở ca, lên đơn, thanh toán — việc hằng ngày của nh�
 ⚠️ **Đếm tiền đầu ca cho đúng.** Đây là mốc để cuối ca tính "đáng lẽ két phải có bao nhiêu". Nhập đại thì cuối ca chênh lệch mà không biết lỗi ở đâu.
 
 ⚠️ Một quầy chỉ có **một ca đang mở**. Người thứ hai bấm Mở ca cùng quầy sẽ bị báo lỗi — chặn có chủ đích.
-
-💡 **Vì sao không chọn được thu ngân khác:** ca bán hàng là chứng từ đối soát két, người mở ca chịu trách nhiệm phần tiền trong ca. Ai cũng mở ca đứng tên người khác được thì lúc thiếu tiền không truy về ai.
 
 ## Bước 2 — Bốn mục trên màn bán hàng
 

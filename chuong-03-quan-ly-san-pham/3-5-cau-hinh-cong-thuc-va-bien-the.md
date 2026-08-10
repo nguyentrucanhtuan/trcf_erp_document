@@ -1,11 +1,10 @@
 ---
 title: "3.5 Cấu hình công thức pha chế và biến thể"
-description: "Sinh biến thể theo tổ hợp thuộc tính, khai công thức BOM và tính giá vốn."
 ---
 
-**Đường dẫn:** *Quản lý sản phẩm → Biến thể* và *→ Công thức*
-**Cần có trước:** sản phẩm bật *Sản xuất* (3.2), thuộc tính bật *Tạo biến thể* (3.4)
-**Thứ tự:** sinh biến thể → tạo công thức → tính giá vốn
+- **Đường dẫn:** *Quản lý sản phẩm → Biến thể* và *→ Công thức*.
+- **Cần có trước:** sản phẩm bật *Sản xuất* (3.2), thuộc tính bật *Tạo biến thể* (3.4)
+- **Thứ tự:** sinh biến thể → tạo công thức → tính giá vốn.
 
 ## Bước A — Sinh biến thể
 

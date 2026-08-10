@@ -1,11 +1,10 @@
 ---
 title: "3.1 Tạo danh mục sản phẩm POS"
-description: "Tạo nhóm món trên màn bán hàng — 4 trường, kéo thả đổi thứ tự."
 ---
 
-**Đường dẫn:** *Quản lý sản phẩm → Danh mục*
-**Là gì:** Các nút nhóm món trên màn bán hàng (Cà phê, Trà, Bánh). Thu ngân bấm nhóm rồi mới chọn món.
-**Thứ tự làm cả chương 3:** danh mục → sản phẩm → thuộc tính → biến thể → công thức
+- **Đường dẫn:** *Quản lý sản phẩm → Danh mục*.
+- **Là gì:** Các nút nhóm món trên màn bán hàng (Cà phê, Trà, Bánh). Thu ngân bấm nhóm rồi mới chọn món.
+- **Thứ tự làm cả chương 3:** danh mục → sản phẩm → thuộc tính → biến thể → công thức.
 
 ## Các bước
 

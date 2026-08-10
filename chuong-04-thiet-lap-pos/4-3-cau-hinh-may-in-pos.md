@@ -1,9 +1,8 @@
 ---
 title: "4.3 Cấu hình máy in POS"
-description: "Khai máy in bill, tem và phiếu bếp — định tuyến phiếu bếp theo danh mục món."
 ---
 
-**Đường dẫn:** *Thiết lập cửa hàng → Máy in*
+- **Đường dẫn:** *Thiết lập cửa hàng → Máy in*.
 
 ![Thêm máy in](/images/04-may-in-them.png)
 

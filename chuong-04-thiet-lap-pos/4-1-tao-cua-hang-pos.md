@@ -1,11 +1,10 @@
 ---
 title: "4.1 Tạo cửa hàng POS"
-description: "Tạo quầy bán hàng và gắn phương thức thanh toán — 2 trường."
 ---
 
-**Đường dẫn:** *Thiết lập cửa hàng → POS*
-**Quầy POS là gì:** Một điểm bán — một máy tính/máy tính bảng có người đứng thu tiền
-**Khai mấy quầy:** Một quầy → khai một. Có quầy trong nhà + quầy mang đi → khai hai.
+- **Đường dẫn:** *Thiết lập cửa hàng → POS*.
+- **Quầy POS là gì:** Một điểm bán — một máy tính/máy tính bảng có người đứng thu tiền.
+- **Khai mấy quầy:** Một quầy → khai một. Có quầy trong nhà + quầy mang đi → khai hai.
 
 ![Danh sách quầy bán hàng](/images/04-pos-danh-sach.png)
 

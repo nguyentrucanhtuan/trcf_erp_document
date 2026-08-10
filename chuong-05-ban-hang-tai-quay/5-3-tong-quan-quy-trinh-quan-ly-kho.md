@@ -1,10 +1,9 @@
 ---
 title: "5.3 Tổng quan quy trình quản lý kho"
-description: "Bảng tra nhanh: việc nào dùng phiếu nào, kho bị ảnh hưởng ra sao."
 ---
 
-**Đường dẫn:** Bấm **VẬN HÀNH** trên màn bán hàng
-**Dùng để:** Tra nhanh xem tình huống đang gặp thì lập phiếu gì
+- **Đường dẫn:** Bấm **VẬN HÀNH** trên màn bán hàng.
+- **Dùng để:** Tra nhanh xem tình huống đang gặp thì lập phiếu gì.
 
 ![Màn vận hành](/images/05-van-hanh-hub.png)
 

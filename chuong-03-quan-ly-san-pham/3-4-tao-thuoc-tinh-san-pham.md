@@ -1,10 +1,9 @@
 ---
 title: "3.4 Tạo thuộc tính sản phẩm (Size S/M/L)"
-description: "Hai loại thuộc tính: sinh biến thể (khác giá) và ghi chú pha chế (chỉ là chữ)."
 ---
 
-**Đường dẫn:** *Quản lý sản phẩm → Thuộc tính*
-**Quyết định quan trọng nhất:** bật hay tắt công tắc *Tạo biến thể*
+- **Đường dẫn:** *Quản lý sản phẩm → Thuộc tính*.
+- **Quyết định quan trọng nhất:** bật hay tắt công tắc *Tạo biến thể*.
 
 ![Danh sách thuộc tính](/images/03-thuoc-tinh-danh-sach.png)
 

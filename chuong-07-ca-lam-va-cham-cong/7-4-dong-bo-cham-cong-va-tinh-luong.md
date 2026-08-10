@@ -1,10 +1,9 @@
 ---
 title: "7.4 Cấu hình, đồng bộ chấm công và tính lương"
-description: "Khai máy chấm công, kéo dữ liệu (ghi đè), xử lý lệch giờ máy và đọc bảng công."
 ---
 
-**Đường dẫn:** Khai máy ở *Quản lý nhân sự → Máy chấm công* · Đồng bộ và xem ở *→ Chấm công*
-**Cần có trước:** Nhân viên có **ID Chấm công** ([7.1](/chuong-07-ca-lam-va-cham-cong/7-1-tao-nhan-vien-moi)) và ca **đã duyệt** ([7.3](/chuong-07-ca-lam-va-cham-cong/7-3-dang-ky-va-duyet-ca))
+- **Đường dẫn:** Khai máy ở *Quản lý nhân sự → Máy chấm công* · Đồng bộ và xem ở *→ Chấm công*.
+- **Cần có trước:** Nhân viên có **ID Chấm công** ([7.1](/chuong-07-ca-lam-va-cham-cong/7-1-tao-nhan-vien-moi)) và ca **đã duyệt** ([7.3](/chuong-07-ca-lam-va-cham-cong/7-3-dang-ky-va-duyet-ca))
 
 ## Bước A — Khai máy chấm công
 
@@ -58,7 +57,7 @@ Mỗi lần kiểm tra kết nối hoặc đồng bộ, hệ thống đối chi�
 1. Lọc theo nhân viên và khoảng ngày ở hàng trên.
 2. Máy hỏng hoặc nhân viên quên quẹt → bấm **Thêm chấm công** để bù tay.
 
-**Các cột:** nhân viên · ngày · ca · giờ vào · giờ ra · thời gian làm · lương/giờ · thành tiền
+**Các cột:** nhân viên · ngày · ca · giờ vào · giờ ra · thời gian làm · lương/giờ · thành tiền.
 
 **Ba dấu hiệu nhìn ra ngay:**
 

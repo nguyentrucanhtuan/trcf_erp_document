@@ -1,10 +1,9 @@
 ---
 title: "8.1 Đọc hiểu báo cáo bán hàng"
-description: "Bốn chỉ số bán hàng, cách đọc giá trị trung bình mỗi đơn, và điểm khác với báo cáo P&L."
 ---
 
-**Đường dẫn:** *Báo cáo → Báo cáo bán hàng*
-**Dành cho:** Quản lý và chủ quán
+- **Đường dẫn:** *Báo cáo → Báo cáo bán hàng*.
+- **Dành cho:** Quản lý và chủ quán.
 
 > **Nguyên tắc chung cho mọi báo cáo:** chỉ tính đơn **ĐÃ THANH TOÁN**. Đơn treo trên bàn, đơn đã lưu chưa thu tiền — không nằm trong báo cáo. Thấy doanh thu thấp hơn cảm nhận thì kiểm đơn chưa thu tiền trước khi nghi ngờ số liệu.
 
@@ -19,14 +18,12 @@ description: "Bốn chỉ số bán hàng, cách đọc giá trị trung bình m
 | **Giá trị TB/đơn** | Doanh thu ÷ số đơn | **Con số đáng theo dõi nhất** |
 | Số món bán | Tổng số ly/món bán ra | Chia cho số đơn ra "mỗi khách gọi mấy món" |
 
-## Vì sao Giá trị TB/đơn quan trọng hơn tổng doanh thu
+## Đọc Giá trị TB/đơn
 
-| Doanh thu tăng vì | Dấu hiệu | Việc cần làm |
+| Dấu hiệu | Nghĩa | Việc cần làm |
 |---|---|---|
-| **Đông khách hơn** | Số đơn tăng, TB/đơn không đổi | Tăng năng lực phục vụ, chuẩn bị đủ hàng |
-| **Mỗi khách mua nhiều hơn** | Số đơn không đổi, TB/đơn tăng | Kết quả của bán thêm, combo, topping |
-
-Doanh thu giảm cũng vậy — giảm vì ít khách hay vì khách mua ít đi là hai vấn đề cần hai cách xử lý khác nhau. Chỉ nhìn tổng doanh thu thì không phân biệt được.
+| Số đơn tăng, TB/đơn không đổi | Đông khách hơn | Tăng năng lực phục vụ, chuẩn bị đủ hàng |
+| Số đơn không đổi, TB/đơn tăng | Mỗi khách mua nhiều hơn | Kết quả của bán thêm, combo, topping |
 
 ## Biểu đồ và bảng bên dưới
 

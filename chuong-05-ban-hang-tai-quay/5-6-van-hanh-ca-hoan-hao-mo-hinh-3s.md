@@ -1,9 +1,8 @@
 ---
 title: "5.6 Vận hành ca hoàn hảo — mô hình 3S"
-description: "Checklist đầu ca, trong ca, cuối ca: Sạch – Sẵn sàng – Sổ khớp."
 ---
 
-**Dùng để:** In ra dán ở quầy. Làm đủ ba nhóm thì ca sau không phải dọn hậu quả của ca trước.
+- **Dùng để:** In ra dán ở quầy. Làm đủ ba nhóm thì ca sau không phải dọn hậu quả của ca trước.
 
 ## S1 — Sạch (đầu ca, 10 phút)
 

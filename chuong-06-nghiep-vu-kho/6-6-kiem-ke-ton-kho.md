@@ -1,9 +1,8 @@
 ---
 title: "6.6 Kiểm kê tồn kho"
-description: "Đếm hàng thật rồi chỉnh tồn hệ thống cho khớp — xác nhận là ghi đè."
 ---
 
-**Đường dẫn:** *Quản lý kho → Kiểm kê* hoặc *Vận hành → Kiểm tồn*
+- **Đường dẫn:** *Quản lý kho → Kiểm kê* hoặc *Vận hành → Kiểm tồn*.
 
 ![Tạo phiếu kiểm kê](/images/06-kiem-kho.png)
 

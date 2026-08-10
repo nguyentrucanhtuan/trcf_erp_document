@@ -1,10 +1,9 @@
 ---
 title: "3.2 Thêm sản phẩm mới"
-description: "Khai sản phẩm: thông tin chính, giá, và 4 công tắc quyết định hành vi hệ thống."
 ---
 
-**Đường dẫn:** *Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm*
-**Cần có trước:** đơn vị tính (2.2), danh mục (3.1)
+- **Đường dẫn:** *Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm*.
+- **Cần có trước:** đơn vị tính (2.2), danh mục (3.1)
 
 ![Form thêm sản phẩm](/images/03-san-pham-them.png)
 

@@ -1,10 +1,9 @@
 ---
 title: "8.2 Đọc hiểu báo cáo lãi lỗ (P&L)"
-description: "Bốn ô tổng nối với nhau thế nào và ba cạm bẫy khi diễn giải."
 ---
 
-**Đường dẫn:** *Báo cáo → Báo cáo P&L*
-**Chọn kỳ:** từ tháng – đến tháng ở đầu trang
+- **Đường dẫn:** *Báo cáo → Báo cáo P&L*.
+- **Chọn kỳ:** từ tháng – đến tháng ở đầu trang.
 
 ![Báo cáo lãi lỗ](/images/08-bao-cao-pnl.png)
 

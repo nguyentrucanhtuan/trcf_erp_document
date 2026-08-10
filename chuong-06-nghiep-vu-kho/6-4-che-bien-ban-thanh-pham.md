@@ -1,11 +1,10 @@
 ---
 title: "6.4 Chế biến bán thành phẩm"
-description: "Ủ cà phê cốt, nấu syrup — trừ nguyên liệu, cộng bán thành phẩm."
 ---
 
-**Đường dẫn:** *Vận hành → Chế biến*
-**Dùng khi:** Quán tự làm ra thứ gì đó — ủ cà phê cốt, nấu syrup, làm sốt
-**Cần có trước:** Công thức (BOM) của thành phẩm ([mục 3.5](/chuong-03-quan-ly-san-pham/3-5-cau-hinh-cong-thuc-va-bien-the))
+- **Đường dẫn:** *Vận hành → Chế biến*.
+- **Dùng khi:** Quán tự làm ra thứ gì đó — ủ cà phê cốt, nấu syrup, làm sốt.
+- **Cần có trước:** Công thức (BOM) của thành phẩm ([mục 3.5](/chuong-03-quan-ly-san-pham/3-5-cau-hinh-cong-thuc-va-bien-the))
 
 ![Tạo phiếu chế biến](/images/06-che-bien.png)
 

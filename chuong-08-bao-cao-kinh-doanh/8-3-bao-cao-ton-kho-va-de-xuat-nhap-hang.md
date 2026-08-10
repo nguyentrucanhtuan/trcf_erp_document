@@ -1,6 +1,5 @@
 ---
 title: "8.3 Báo cáo tồn kho và đề xuất nhập hàng"
-description: "Khai định mức, đọc màn nhắc việc, xử lý tồn âm và rà lỗi khai báo sản phẩm."
 ---
 
 **Ba màn trong mục này:**

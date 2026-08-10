@@ -1,22 +1,12 @@
 ---
 title: "2.2 Thiết lập đơn vị tính (UOM)"
-description: "Khai đơn vị gốc và đơn vị quy đổi — 4 trường, hệ số bị khoá sau khi dùng."
 ---
 
-**Đường dẫn:** *Quản lý sản phẩm → Đơn vị tính*
-**Khi nào:** Ngay sau khi tạo kho, **trước** khi tạo sản phẩm
-**Trả lời câu hỏi:** Hàng này đếm bằng gì — ly, kg, gram, chai, thùng
+- **Đường dẫn:** *Quản lý sản phẩm → Đơn vị tính*.
+- **Khi nào:** Ngay sau khi tạo kho, **trước** khi tạo sản phẩm.
+- **Trả lời câu hỏi:** Hàng này đếm bằng gì — ly, kg, gram, chai, thùng.
 
 ![Danh sách đơn vị tính](/images/02-uom-danh-sach.png)
-
-## Hiểu trước khi điền
-
-| Khái niệm | Nghĩa |
-|---|---|
-| **Đơn vị gốc** | Đơn vị nhỏ nhất dùng để lưu tồn. VD sữa lấy **ml** làm gốc. Hệ số = 1, bỏ trống ô quy đổi. |
-| **Đơn vị quy đổi** | Đơn vị to hơn, khai kèm hệ số so với gốc. VD *Lít* = 1000 ml. |
-
-Nhờ vậy nhân viên nhập theo *thùng*, pha chế trừ theo *ml*, tồn kho vẫn là một con số thống nhất.
 
 ## Các bước
 
@@ -46,7 +36,7 @@ Nhờ vậy nhân viên nhập theo *thùng*, pha chế trừ theo *ml*, tồn k
 | `ML` | Mililít | 1 | *(gốc)* | Nguyên liệu lỏng |
 | `L` | Lít | 1000 | Mililít | Nhập hàng lỏng |
 
-Nhập 5 kg cà phê → hệ thống ghi tồn **5000 g**; công thức trừ 18 g mỗi ly vẫn đúng.
+💡 Nhập 5 kg cà phê → hệ thống ghi tồn **5000 g**; công thức trừ 18 g mỗi ly vẫn đúng.
 
 ## Kiểm tra đã đúng
 

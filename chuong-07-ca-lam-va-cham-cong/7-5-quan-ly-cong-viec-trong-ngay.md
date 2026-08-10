@@ -1,10 +1,9 @@
 ---
 title: "7.5 Quản lý công việc trong ngày"
-description: "Khai mẫu việc lặp, sinh việc luân phiên cho nhân viên đã duyệt ca, theo dõi hoàn thành."
 ---
 
-**Đường dẫn:** Khai mẫu ở *Quản lý nhân sự → Mẫu công việc* · Sinh và theo dõi ở *→ Công việc*
-**Cần có trước:** Nhân viên **đã được duyệt ca** ([7.3](/chuong-07-ca-lam-va-cham-cong/7-3-dang-ky-va-duyet-ca))
+- **Đường dẫn:** Khai mẫu ở *Quản lý nhân sự → Mẫu công việc* · Sinh và theo dõi ở *→ Công việc*.
+- **Cần có trước:** Nhân viên **đã được duyệt ca** ([7.3](/chuong-07-ca-lam-va-cham-cong/7-3-dang-ky-va-duyet-ca))
 
 ## Bước A — Khai mẫu việc lặp
 

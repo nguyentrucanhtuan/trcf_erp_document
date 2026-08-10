@@ -1,10 +1,9 @@
 ---
 title: "5.2 Thực hiện checklist trong ca làm việc"
-description: "Nhận việc, đánh dấu hoàn thành; quản lý sinh việc luân phiên từ mẫu."
 ---
 
-**Đường dẫn:** *Quản lý nhân sự → Công việc*
-**Là gì:** Danh sách việc lặp mỗi ca — vệ sinh máy pha, lau tủ lạnh, kiểm hạn sử dụng, đổ rác
+- **Đường dẫn:** *Quản lý nhân sự → Công việc*.
+- **Là gì:** Danh sách việc lặp mỗi ca — vệ sinh máy pha, lau tủ lạnh, kiểm hạn sử dụng, đổ rác.
 
 ![Màn công việc](/images/05-checklist-cong-viec.png)
 

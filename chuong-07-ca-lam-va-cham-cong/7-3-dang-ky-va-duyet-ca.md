@@ -1,11 +1,10 @@
 ---
 title: "7.3 Đăng ký và duyệt ca cho nhân viên"
-description: "Đăng ký ca rồi duyệt — trạng thái Đã duyệt là đầu vào của sinh việc và phân tích trễ/sớm."
 ---
 
-**Đường dẫn:** *Quản lý nhân sự → Đăng ký ca*
-**Hai cách xem:** *Lịch theo tuần* (nhìn tổng thể ai làm ca nào) · *Danh sách* (thao tác duyệt nhanh)
-**Ba trạng thái:** Chờ duyệt → Đã duyệt / Từ chối
+- **Đường dẫn:** *Quản lý nhân sự → Đăng ký ca*.
+- **Hai cách xem:** *Lịch theo tuần* (nhìn tổng thể ai làm ca nào) · *Danh sách* (thao tác duyệt nhanh)
+- **Ba trạng thái:** Chờ duyệt → Đã duyệt / Từ chối.
 
 ![Đăng ký ca làm việc](/images/07-dang-ky-ca.png)
 

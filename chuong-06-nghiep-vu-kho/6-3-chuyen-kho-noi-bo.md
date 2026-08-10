@@ -1,10 +1,9 @@
 ---
 title: "6.3 Chuyển kho nội bộ"
-description: "Chuyển hàng từ kho tổng ra kho quầy — hai kho phải khác nhau."
 ---
 
-**Đường dẫn:** *Vận hành → Chuyển kho*
-**Dùng khi:** Lấy hàng từ kho tổng ra kho quầy, hoặc điều hàng giữa hai chi nhánh
+- **Đường dẫn:** *Vận hành → Chuyển kho*.
+- **Dùng khi:** Lấy hàng từ kho tổng ra kho quầy, hoặc điều hàng giữa hai chi nhánh.
 
 ![Tạo phiếu chuyển kho](/images/06-chuyen-kho.png)
 
@@ -22,10 +21,6 @@ description: "Chuyển hàng từ kho tổng ra kho quầy — hai kho phải kh
 | Kho xuất đi | Kho lấy hàng ra | ✅ |
 | Kho nhập đến | Kho nhận hàng. **Phải khác kho xuất** | ✅ |
 | Sản phẩm / Số lượng / Đơn vị | Từng dòng hàng chuyển | ✅ |
-
-## Xác nhận làm gì
-
-Ghi **hai bút toán kho cùng lúc**: trừ kho nguồn + cộng kho đích. Không có chuyện hàng "biến mất giữa đường".
 
 ## Kiểm tra đã đúng
 

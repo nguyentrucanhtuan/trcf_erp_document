@@ -1,11 +1,10 @@
 ---
 title: "7.1 Tạo nhân viên mới"
-description: "Khai hồ sơ, gắn tài khoản đăng nhập và mã máy chấm công — hai ô quyết định về sau."
 ---
 
-**Đường dẫn:** *Quản lý nhân sự → Nhân viên → Thêm nhân viên*
-**Cần có trước:** Phòng ban (*Quản lý nhân sự → Phòng ban*)
-**Thứ tự cả chương 7:** nhân viên → ca làm việc → đăng ký & duyệt ca → chấm công → công việc
+- **Đường dẫn:** *Quản lý nhân sự → Nhân viên → Thêm nhân viên*.
+- **Cần có trước:** Phòng ban (*Quản lý nhân sự → Phòng ban*)
+- **Thứ tự cả chương 7:** nhân viên → ca làm việc → đăng ký & duyệt ca → chấm công → công việc.
 
 ![Thêm nhân viên](/images/07-nhan-vien-them.png)
 

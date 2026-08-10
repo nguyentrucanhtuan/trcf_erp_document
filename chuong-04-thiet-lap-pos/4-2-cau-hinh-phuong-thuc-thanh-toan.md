@@ -1,10 +1,9 @@
 ---
 title: "4.2 Cấu hình phương thức thanh toán"
-description: "Khai tiền mặt, chuyển khoản, ví điện tử — và chọn phương thức tiền mặt cho sổ quỹ."
 ---
 
-**Đường dẫn:** *Thiết lập cửa hàng → Phương thức thanh toán*
-**Việc bắt buộc kèm theo:** quay lại *Cấu hình hệ thống* chọn phương thức nào là **tiền mặt** (mục 1.1)
+- **Đường dẫn:** *Thiết lập cửa hàng → Phương thức thanh toán*.
+- **Việc bắt buộc kèm theo:** quay lại *Cấu hình hệ thống* chọn phương thức nào là **tiền mặt** (mục 1.1)
 
 ![Thêm phương thức thanh toán](/images/04-pttt-them.png)
 

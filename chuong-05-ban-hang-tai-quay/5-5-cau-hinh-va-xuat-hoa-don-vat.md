@@ -1,10 +1,9 @@
 ---
 title: "5.5 Cấu hình và xuất hoá đơn VAT"
-description: "Khai kết nối Minvoice một lần, sau đó tạo và phát hành hoá đơn GTGT cho từng đơn."
 ---
 
-**Áp dụng cho:** Quán có hợp đồng hoá đơn điện tử với **Minvoice**
-**Đường dẫn:** Cấu hình ở *Thiết lập cửa hàng → Cấu hình hệ thống* · Xuất hoá đơn ở *Vận hành → Hoá đơn VAT*
+- **Áp dụng cho:** Quán có hợp đồng hoá đơn điện tử với **Minvoice**.
+- **Đường dẫn:** Cấu hình ở *Thiết lập cửa hàng → Cấu hình hệ thống* · Xuất hoá đơn ở *Vận hành → Hoá đơn VAT*.
 
 ## Bước 1 — Khai cấu hình (làm một lần)
 
