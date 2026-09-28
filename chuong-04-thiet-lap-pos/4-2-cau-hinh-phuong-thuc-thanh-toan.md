@@ -18,25 +18,19 @@ title: "4.2 Cấu hình phương thức thanh toán"
 
 **Thông tin chung**
 
-| Trường | Điền gì | Bắt buộc |
-|---|---|---|
-| Tên phương thức | Chữ thu ngân nhìn thấy. VD "Tiền mặt", "Chuyển khoản VCB" | ✅ |
-| Mã phương thức | Viết hoa, không trùng. VD `CASH`, `BANK`, `MOMO` | ✅ |
-| Loại thanh toán | *Thông thường* / *MoMo* / *VietQR* | ✅ |
-| Hiện tại POS | Bật = thu ngân chọn được khi thanh toán | ✅ |
+| Trường          | Điền gì                                                   | Bắt buộc |
+| --------------- | --------------------------------------------------------- | -------- |
+| Tên phương thức | Chữ thu ngân nhìn thấy. VD "Tiền mặt", "Chuyển khoản VCB" | ✅        |
+| Mã phương thức  | Viết hoa, không trùng. VD `CASH`, `BANK`, `MOMO`          | ✅        |
+| Loại thanh toán | *Thông thường* / *MoMo* / *VietQR*                        | ✅        |
+| Hiện tại POS    | Bật = thu ngân chọn được khi thanh toán                   | ✅        |
 
 **Khai kết nối (chỉ khi chọn MoMo / VietQR)**
 
-| Loại | Cần khai |
-|---|---|
-| MoMo | Partner Code, Access Key, Secret Key |
+| Loại   | Cần khai                                      |
+| ------ | --------------------------------------------- |
+| MoMo   | Partner Code, Access Key, Secret Key          |
 | VietQR | Mã ngân hàng, số tài khoản, tên chủ tài khoản |
-
-## Kiểm tra đã đúng
-
-- [ ] Phương thức hiện trong danh sách, *Hiện tại POS* đang bật
-- [ ] Đã gắn phương thức vào quầy POS (mục 4.1)
-- [ ] Đã chọn **Phương thức tiền mặt** ở *Cấu hình hệ thống*
 
 ## Lưu ý
 

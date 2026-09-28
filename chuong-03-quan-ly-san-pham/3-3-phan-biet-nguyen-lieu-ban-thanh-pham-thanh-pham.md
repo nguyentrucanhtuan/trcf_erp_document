@@ -7,11 +7,11 @@ title: "3.3 Phân biệt Nguyên liệu – Bán thành phẩm – Thành phẩm
 
 ## Bảng đối chiếu
 
-| Loại | Là gì | Ví dụ | Bật công tắc |
-|---|---|---|---|
-| **Nguyên liệu** | Mua về, không bán trực tiếp, dùng làm ra thứ khác | Cà phê hạt, sữa đặc, đường, ly nhựa | Có thể mua · Theo dõi tồn kho |
-| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu | Sản xuất · Theo dõi tồn kho |
-| **Thành phẩm** | Món bán cho khách | Cà phê sữa đá, trà đào | Có thể bán · Sản xuất |
+| Loại               | Là gì                                                     | Ví dụ                                 | Bật công tắc                  |
+| ------------------ | --------------------------------------------------------- | ------------------------------------- | ----------------------------- |
+| **Nguyên liệu**    | Mua để sử dụng, không bán trực tiếp, dùng làm ra thứ khác | Cà phê hạt, sữa đặc, đường, ly nhựa   | Có thể mua · Theo dõi tồn kho |
+| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác  | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu | Sản xuất · Theo dõi tồn kho   |
+| **Thành phẩm**     | Món bán cho khách                                         | Cà phê sữa đá, trà đào                | Có thể bán · Sản xuất         |
 
 ## Khi nào cần bán thành phẩm
 
@@ -24,4 +24,4 @@ Quán ủ sẵn một bình cà phê cốt buổi sáng, cả ngày múc ra pha 
 
 💡 Nhờ tách 2 bước mới biết bình cốt còn bao nhiêu và hao hụt nằm ở khâu ủ hay khâu bán.
 
-💡 Quán nhỏ chưa cần chi tiết vậy thì bỏ qua bán thành phẩm, cho món bán trừ thẳng nguyên liệu. Bổ sung sau được, không phải làm lại dữ liệu cũ.
+💡 Quán nhỏ chưa cần chi tiết vậy thì bỏ qua bán thành phẩm, cho món bán trừ thẳng nguyên liệu.

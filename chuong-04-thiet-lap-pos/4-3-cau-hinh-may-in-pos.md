@@ -17,43 +17,33 @@ title: "4.3 Cấu hình máy in POS"
 
 **Thiết bị**
 
-| Trường | Điền gì | Bắt buộc |
-|---|---|---|
-| Tên thiết bị | VD "Máy in bill quầy 1" | ✅ |
-| Loại kết nối | *Mạng LAN* (có IP) hoặc *USB* (cắm trực tiếp) | ✅ |
-| Loại máy in | Hoá đơn / Nhãn dán / Phiếu yêu cầu món (KOT) / Phiếu đóng ca | ✅ |
-| Địa chỉ IP, Cổng | Chỉ hiện khi chọn LAN. Cổng thường **9100** | ✅ nếu LAN |
-| Đang bật | Tắt = tạm ngừng in ra máy này | — |
+| Trường           | Điền gì                                                      | Bắt buộc  |
+| ---------------- | ------------------------------------------------------------ | --------- |
+| Tên thiết bị     | VD "Máy in bill quầy 1"                                      | ✅         |
+| Loại kết nối     | *Mạng LAN* (có IP) hoặc *USB* (cắm trực tiếp)                | ✅         |
+| Loại máy in      | Hoá đơn / Nhãn dán / Phiếu yêu cầu món (KOT) / Phiếu đóng ca | ✅         |
+| Địa chỉ IP, Cổng | Chỉ hiện khi chọn LAN. Cổng thường **9100**                  | ✅ nếu LAN |
+| Đang bật         | Tắt = tạm ngừng in ra máy này                                | —         |
 
 **Thiết lập riêng theo loại máy**
 
-| Loại máy | Khai thêm |
-|---|---|
-| Hoá đơn | *Chân trang hoá đơn* — câu in ở cuối bill |
-| Nhãn dán | *Bề rộng / Chiều cao tem* (mm) và *Nguồn in* (loại đơn nào thì in tem) |
+| Loại máy        | Khai thêm                                                                              |
+| --------------- | -------------------------------------------------------------------------------------- |
+| Hoá đơn         | *Chân trang hoá đơn* — câu in ở cuối bill                                              |
+| Nhãn dán        | *Bề rộng / Chiều cao tem* (mm) và *Nguồn in* (loại đơn nào thì in tem)                 |
 | Phiếu bếp (KOT) | *Danh mục sản phẩm* — máy **chỉ in món thuộc danh mục đã chọn**. Để trống = in mọi món |
-| Phiếu đóng ca | Không cần khai thêm |
+| Phiếu đóng ca   | Không cần khai thêm                                                                    |
 
 ## Bố trí máy in mẫu
 
-| Vị trí | Loại máy | Danh mục chọn |
-|---|---|---|
-| Quầy thu ngân | Hoá đơn | — |
-| Khu pha chế | KOT | Cà phê, Trà |
-| Khu bếp nóng | KOT | Đồ ăn |
-
-Nhờ chọn danh mục, mỗi khu chỉ nhận phiếu của phần việc mình làm.
-
-## Kiểm tra đã đúng
-
-- [ ] In thử một đơn → bill ra ở quầy, phiếu món ra đúng khu
-- [ ] Tiếng Việt trên bill có dấu đầy đủ
-- [ ] Tem (nếu dùng) không bị nhả giấy thừa
+| Vị trí        | Loại máy | Danh mục chọn |
+| ------------- | -------- | ------------- |
+| Quầy thu ngân | Hoá đơn  | —             |
+| Khu pha chế   | KOT      | Cà phê, Trà   |
+| Khu bếp nóng  | KOT      | Đồ ăn         |
 
 ## Lưu ý
 
 ⚠️ **Chiều cao tem phải đo con tem, không đo cuộn.** Khai sai thì máy nhả giấy đi tìm khe cắt và ra tem trắng.
 
 ⚠️ Máy in nhiệt phổ thông (POS-80) **không có bảng mã tiếng Việt** — hệ thống in tiếng Việt bằng cách vẽ ảnh. Bill mất dấu thì kiểm tra lại loại máy đã khai.
-
-💡 Máy in USB trên máy Linux có thể bị dịch vụ in của hệ điều hành (CUPS) chiếm mất. Máy im lặng dù khai đúng thì kiểm tra điều này trước.

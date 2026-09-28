@@ -3,8 +3,6 @@ title: "2.2 Thiết lập đơn vị tính (UOM)"
 ---
 
 - **Đường dẫn:** *Quản lý sản phẩm → Đơn vị tính*.
-- **Khi nào:** Ngay sau khi tạo kho, **trước** khi tạo sản phẩm.
-- **Trả lời câu hỏi:** Hàng này đếm bằng gì — ly, kg, gram, chai, thùng.
 
 ![Danh sách đơn vị tính](/images/02-uom-danh-sach.png)
 
@@ -15,7 +13,7 @@ title: "2.2 Thiết lập đơn vị tính (UOM)"
 | **Đơn vị gốc**     | Đơn vị nhỏ nhất dùng lưu tồn. VD sữa lấy *gram* | Hệ số = 1, bỏ trống ô quy đổi        |
 | **Đơn vị quy đổi** | Đơn vị to hơn. VD *KG* = 1000 gram              | Hệ số = 1000, chọn quy đổi về *gram* |
 
-💡 Nhờ vậy nhân viên nhập theo *thùng*, pha chế trừ theo *gram*, tồn kho vẫn là một con số.
+💡 Nhờ vậy nhân viên nhập mua hàng theo *Chai - 1KG*, khi pha chế thì trừ theo *gram*.
 
 ## Các bước
 
@@ -46,14 +44,10 @@ title: "2.2 Thiết lập đơn vị tính (UOM)"
 
 💡 Nhập 5 kg cà phê → hệ thống ghi tồn **5000 g**; công thức trừ 18 g mỗi ly vẫn đúng.
 
-## Kiểm tra đã đúng
-
-- [ ] Mỗi loại nguyên liệu có **một đơn vị gốc** (hệ số 1, không quy đổi)
-- [ ] Đơn vị lớn đã trỏ về đúng đơn vị gốc, hệ số đúng
 
 ## Lưu ý
 
-⚠️ **Hệ số bị khoá sau khi đơn vị đã được dùng.** Đã có sản phẩm hoặc công thức gắn vào thì hệ thống chặn sửa. Lý do: sửa hệ số làm **toàn bộ tồn kho và giá vốn quá khứ diễn giải sai** — 5000 g đã nhập bỗng thành 5 kg. Cần đơn vị khác thì tạo mới và lưu trữ cái cũ.
+⚠️ **Hệ số bị khoá sau khi đơn vị đã được dùng.** Đã có sản phẩm hoặc công thức gắn vào thì hệ thống chặn sửa. Lý do: sửa hệ số làm **toàn bộ tồn kho và giá vốn quá khứ diễn giải sai** — Cần đơn vị khác thì tạo mới và lưu trữ cái cũ.
 
 ⚠️ Hệ số phải **lớn hơn 0**. Hệ số 0 sẽ làm phép quy đổi mất sạch số lượng.
 

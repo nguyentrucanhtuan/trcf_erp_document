@@ -16,11 +16,11 @@ title: "3.5 Cấu hình công thức pha chế và biến thể"
 4. Điền **Phụ thu** nếu có.
 5. Bấm sinh.
 
-| Trường | Điền gì |
-|---|---|
-| Sản phẩm | Món gốc cần tách size |
+| Trường             | Điền gì                                                |
+| ------------------ | ------------------------------------------------------ |
+| Sản phẩm           | Món gốc cần tách size                                  |
 | Giá trị thuộc tính | Chọn nhiều — hệ thống sinh **mỗi tổ hợp một biến thể** |
-| Phụ thu | Giá biến thể = giá sản phẩm gốc **+ phụ thu** |
+| Phụ thu            | Giá biến thể = giá sản phẩm gốc **+ phụ thu**          |
 
 💡 Chọn 2 thuộc tính (Size 3 giá trị × Đế 2 loại) sẽ sinh **6 biến thể**. Bấm sinh lại lần nữa **không tạo trùng** — hệ thống bỏ qua tổ hợp đã có.
 
@@ -37,21 +37,21 @@ title: "3.5 Cấu hình công thức pha chế và biến thể"
 3. Bấm **Thêm nguyên liệu**, chọn hàng + định lượng + đơn vị.
 4. Bấm **Lưu**.
 
-| Trường | Điền gì | Bắt buộc |
-|---|---|---|
-| Sản phẩm (thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất*** | ✅ |
-| Biến thể | Bỏ trống = công thức chung mọi size · Chọn size = công thức riêng size đó | — |
-| Loại công thức | *Cần sản xuất* hoặc *Kit* — xem bảng dưới | ✅ |
-| Sản lượng (yield) | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly → điền 20 | ✅ |
-| Hoạt động | Tắt = công thức tạm ngừng dùng | — |
-| Nguyên liệu | Hàng + định lượng + đơn vị | ✅ |
+| Trường                | Điền gì                                                                   | Bắt buộc |
+| --------------------- | ------------------------------------------------------------------------- | -------- |
+| Sản phẩm (thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***      | ✅        |
+| Biến thể              | Bỏ trống = công thức chung mọi size · Chọn size = công thức riêng size đó | —        |
+| Loại công thức        | *Cần sản xuất* hoặc *Kit* — xem bảng dưới                                 | ✅        |
+| Sản lượng (yield)     | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly → điền 20      | ✅        |
+| Hoạt động             | Tắt = công thức tạm ngừng dùng                                            | —        |
+| Nguyên liệu           | Hàng + định lượng + đơn vị                                                | ✅        |
 
 **Hai loại công thức:**
 
-| Loại | Trừ kho khi nào | Dùng cho |
-|---|---|---|
+| Loại         | Trừ kho khi nào                                                                          | Dùng cho                                         |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------ |
 | Cần sản xuất | Khi lập **phiếu chế biến** ([6.4](/chuong-06-nghiep-vu-kho/6-4-che-bien-ban-thanh-pham)) | Bán thành phẩm ủ trước: cà phê cốt, trà ủ, syrup |
-| Kit | Ngay **lúc bán**, tự trừ thành phần | Combo, món ráp tại chỗ không qua chế biến |
+| Kit          | Ngay **lúc bán**, tự trừ thành phần                                                      | Combo, món ráp tại chỗ không qua chế biến        |
 
 ## Bước C — Tính giá vốn
 
@@ -61,12 +61,6 @@ title: "3.5 Cấu hình công thức pha chế và biến thể"
 Công thức tính: `giá vốn = tổng (giá vốn nguyên liệu × định lượng đã quy đổi) ÷ sản lượng`
 
 Sản phẩm có nhiều công thức đang hoạt động → lấy **công thức rẻ nhất**.
-
-## Kiểm tra đã đúng
-
-- [ ] Biến thể hiện đúng số tổ hợp mong đợi, giá đã cộng phụ thu
-- [ ] Công thức có đủ nguyên liệu, sản lượng khớp thực tế một mẻ
-- [ ] Bấm *Tính giá vốn* → giá vốn sản phẩm **khác 0** và không có cảnh báo
 
 ## Lưu ý
 

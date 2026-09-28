@@ -14,11 +14,11 @@ title: "5.1 Hướng dẫn mở phiên và bán hàng"
 3. Đếm tiền mặt thật trong két → nhập vào **Tiền mặt đầu ca**.
 4. Bấm **BẮT ĐẦU CA**.
 
-| Trường | Điền gì |
-|---|---|
-| Quầy bán hàng | Quầy bạn đứng |
-| Thu ngân | Tự điền theo tài khoản đăng nhập, không sửa |
-| Tiền mặt đầu ca | Số tiền **đếm thật** trong két lúc này |
+| Trường          | Điền gì                                     |
+| --------------- | ------------------------------------------- |
+| Quầy bán hàng   | Quầy bạn đứng                               |
+| Thu ngân        | Tự điền theo tài khoản đăng nhập, không sửa |
+| Tiền mặt đầu ca | Số tiền **đếm thật** trong két lúc này      |
 
 ⚠️ **Đếm tiền đầu ca cho đúng.** Đây là mốc để cuối ca tính "đáng lẽ két phải có bao nhiêu". Nhập đại thì cuối ca chênh lệch mà không biết lỗi ở đâu.
 
@@ -30,11 +30,11 @@ title: "5.1 Hướng dẫn mở phiên và bán hàng"
 
 ![Màn bán hàng — chọn bàn](/images/05-man-ban-hang.png)
 
-| Mục | Dùng để |
-|---|---|
-| **BÀN** | Sơ đồ bàn — bấm bàn để gắn đơn vào bàn đó |
-| **MENU** | Danh sách món để bấm chọn |
-| **ĐƠN HÀNG** | Các đơn đã lưu, đang chờ xử lý |
+| Mục          | Dùng để                                                                                                        |
+| ------------ | -------------------------------------------------------------------------------------------------------------- |
+| **BÀN**      | Sơ đồ bàn — bấm bàn để gắn đơn vào bàn đó                                                                      |
+| **MENU**     | Danh sách món để bấm chọn                                                                                      |
+| **ĐƠN HÀNG** | Các đơn đã lưu, đang chờ xử lý                                                                                 |
 | **VẬN HÀNH** | Nghiệp vụ kho phát sinh trong ca → [mục 5.3](/chuong-05-ban-hang-tai-quay/5-3-tong-quan-quy-trinh-quan-ly-kho) |
 
 ## Bước 3 — Lên đơn
@@ -50,19 +50,19 @@ title: "5.1 Hướng dẫn mở phiên và bán hàng"
 
 **Phân biệt hai loại chip:**
 
-| Chip | Là gì | Đổi giá |
-|---|---|---|
-| 🟩 Xanh | Biến thể (size) | ✅ Có |
-| ⬜ Xám | Ghi chú pha chế (ít đá, ít đường) | ❌ Không — chỉ ghép vào tên món trên bill và màn bếp |
+| Chip   | Là gì                             | Đổi giá                                             |
+| ------ | --------------------------------- | --------------------------------------------------- |
+| 🟩 Xanh | Biến thể (size)                   | ✅ Có                                                |
+| ⬜ Xám  | Ghi chú pha chế (ít đá, ít đường) | ❌ Không — chỉ ghép vào tên món trên bill và màn bếp |
 
 💡 Ghi chú pha chế **mặc định không chọn gì**. Bấm lần nữa để bỏ chọn.
 
 ## Bước 4 — Thanh toán
 
-| Nút | Kết quả |
-|---|---|
-| **Lưu đơn** | Giữ đơn lại, chưa thu tiền (khách còn ngồi, gọi thêm sau) |
-| **THANH TOÁN** | Chọn phương thức → xác nhận thu tiền |
+| Nút            | Kết quả                                                   |
+| -------------- | --------------------------------------------------------- |
+| **Lưu đơn**    | Giữ đơn lại, chưa thu tiền (khách còn ngồi, gọi thêm sau) |
+| **THANH TOÁN** | Chọn phương thức → xác nhận thu tiền                      |
 
 **Ngay khi thanh toán, hệ thống làm đồng thời 4 việc trong cùng một lần:**
 
@@ -70,12 +70,6 @@ title: "5.1 Hướng dẫn mở phiên và bán hàng"
 2. Ghi tiền vào sổ quỹ theo phương thức đã chọn
 3. Cộng điểm cho khách (nếu có gắn khách)
 4. Đẩy món sang màn hình bếp
-
-## Kiểm tra đã đúng
-
-- [ ] Ca hiện trạng thái **Đang mở** với đúng tên bạn
-- [ ] Món lên đơn hiện ngay trên màn bếp
-- [ ] Đơn đã thanh toán hiện đúng phương thức
 
 ## Lưu ý
 

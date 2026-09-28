@@ -2,10 +2,6 @@
 title: "1.1 Làm quen giao diện và cấu hình thông tin ban đầu"
 ---
 
-- **Đường dẫn:** *Thiết lập cửa hàng → Cấu hình hệ thống*.
-- **Ai làm:** Chủ quán (chỉ tài khoản chủ quán mở được trang này).
-- **Khi nào:** Một lần khi cài đặt, làm trước mọi việc khác.
-
 ## Khai cấu hình nền — các bước
 
 ![Cấu hình hệ thống](/images/01-cau-hinh-he-thong.png)
@@ -40,9 +36,8 @@ title: "1.1 Làm quen giao diện và cấu hình thông tin ban đầu"
 
 ## Lưu ý
 
-⚠️ **Ô *Phương thức tiền mặt* là ô quan trọng nhất trang này.** Bỏ trống thì mở ca và đóng ca vẫn chạy bình thường **nhưng không sinh bút toán quỹ nào** — sổ quỹ đứng im mà không báo lỗi, cuối tháng đối chiếu mới phát hiện.
+⚠️ **Ô *Phương thức tiền mặt* là ô quan trọng nhất trang này.** Bỏ trống thì mở ca và đóng ca vẫn chạy bình thường **nhưng không sinh bút toán quỹ nào**
 
 ⚠️ Chưa khai ô kho nào thì nhân viên lập phiếu tương ứng sẽ nhận lỗi "chưa cấu hình kho" và **không lập được phiếu**.
 
 💡 Quán chỉ có một kho vẫn khai đủ 6 ô: chọn cùng một kho cho tất cả.
-

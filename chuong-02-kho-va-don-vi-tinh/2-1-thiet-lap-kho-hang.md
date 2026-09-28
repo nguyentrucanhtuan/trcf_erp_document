@@ -3,8 +3,6 @@ title: "2.1 Thiết lập kho hàng"
 ---
 
 - **Đường dẫn:** *Quản lý kho → Kho hàng*.
-- **Khi nào:** Một lần khi cài đặt, **trước** khi tạo sản phẩm.
-- **Vì sao:** Chưa có kho thì không nhập được hàng, không bán được.
 
 ![Danh sách kho](/images/02-kho-danh-sach.png)
 
@@ -39,7 +37,7 @@ title: "2.1 Thiết lập kho hàng"
 
 ## Lưu ý
 
-⚠️ **Kho đã phát sinh giao dịch thì không xoá được.** Bấm xoá sẽ nhận thông báo liệt kê chỗ đang dùng (tồn kho, phiếu nhập, phiếu chuyển, phiếu kiểm). Kho không dùng nữa thì **lưu trữ**, đừng xoá.
+⚠️ **Kho đã phát sinh giao dịch thì không xoá được.**. Kho không dùng nữa thì **lưu trữ**, đừng xoá.
 
 ⚠️ Kho đang là kho mặc định trong *Cấu hình hệ thống* cũng không xoá được — phải đổi cấu hình sang kho khác trước.
 
