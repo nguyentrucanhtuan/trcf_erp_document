@@ -38,4 +38,4 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 ## Thanh điều hướng bên trái
 
 - Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 8 chương và 32 bài, đánh dấu bài đang xem.
-- Khi thêm hoặc đổi tên bài: sửa `docs/index.html` trước, rồi chạy lại script sinh thanh bên để chép vào mọi trang. Không sửa tay từng trang.
+- Khi thêm hoặc đổi tên bài: sửa `docs/index.html` trước, rồi chạy `python3 tools/gen-sidebar.py` để chép vào mọi trang. Không sửa tay từng trang.
