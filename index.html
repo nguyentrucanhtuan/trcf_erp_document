@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cẩm nang TNTDRINK ERP</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  ul.toc { list-style: none; margin: 0; padding: 0; }
+  ul.toc li { border-bottom: 1px solid var(--line); }
+  ul.toc li:last-child { border: 0; }
+  ul.toc a, ul.toc li.todo > div { display: block; padding: 12px 4px; text-decoration: none; color: var(--text); }
+  ul.toc a:hover { background: var(--brand-soft); border-radius: 8px; }
+  ul.toc strong { display: block; }
+  ul.toc span { display: block; color: var(--muted); font-size: 14px; }
+  ul.toc li.todo { display: flex; align-items: center; justify-content: space-between; gap: 12px; opacity: .55; }
+  ul.toc li.todo em { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; white-space: nowrap; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cẩm nang sử dụng TNTDRINK ERP</h1>
+  <section><h2>Chương 1 — Cấu hình hệ thống</h2>
+  <ul class="toc">
+    <li><a href="1-1-cau-hinh-ban-dau.html"><strong>1.1 Làm quen giao diện và cấu hình thông tin ban đầu</strong><span>đăng nhập, nhận biết ba vùng màn hình và khai 8 nhóm cấu hình nền trước khi bán hàng</span></a></li>
+  </ul></section>
+  <section><h2>Chương 2 — Thiết lập kho hàng, sản phẩm</h2>
+  <ul class="toc">
+    <li><a href="2-1-thiet-lap-kho-hang.html"><strong>2.1 Thiết lập kho hàng</strong><span>tạo kho tổng và kho quầy — 3 trường, làm trước khi tạo sản phẩm</span></a></li>
+    <li><a href="2-2-thiet-lap-don-vi-tinh.html"><strong>2.2 Thiết lập đơn vị tính (UOM)</strong><span>khai đơn vị gốc và đơn vị quy đổi — 4 trường, hệ số bị khoá sau khi dùng</span></a></li>
+  </ul></section>
+  <section><h2>Chương 3 — Quản lý sản phẩm</h2>
+  <ul class="toc">
+    <li><a href="3-1-tao-danh-muc-san-pham-pos.html"><strong>3.1 Tạo danh mục sản phẩm POS</strong><span>tạo nhóm món trên màn bán hàng — 4 trường, kéo thả đổi thứ tự</span></a></li>
+    <li><a href="3-2-them-san-pham-moi.html"><strong>3.2 Thêm sản phẩm mới</strong><span>khai sản phẩm: thông tin chính, giá, và 4 công tắc quyết định hành vi hệ thống</span></a></li>
+    <li><a href="3-3-phan-biet-nguyen-lieu-ban-thanh-pham-thanh-pham.html"><strong>3.3 Phân biệt Nguyên liệu – Bán thành phẩm – Thành phẩm</strong><span>ba vai trò hàng hoá và bộ công tắc tương ứng cho từng vai</span></a></li>
+    <li><a href="3-4-tao-thuoc-tinh-san-pham.html"><strong>3.4 Tạo thuộc tính sản phẩm (Size S/M/L)</strong><span>hai loại thuộc tính: sinh biến thể (khác giá) và ghi chú pha chế (chỉ là chữ)</span></a></li>
+    <li><a href="3-5-cau-hinh-cong-thuc-va-bien-the.html"><strong>3.5 Cấu hình công thức pha chế và biến thể</strong><span>sinh biến thể theo tổ hợp thuộc tính, khai công thức BOM và tính giá vốn</span></a></li>
+  </ul></section>
+  <section><h2>Chương 4 — Thiết lập POS</h2>
+  <ul class="toc">
+    <li><a href="4-1-tao-cua-hang-pos.html"><strong>4.1 Tạo cửa hàng POS</strong><span>tạo quầy bán hàng và gắn phương thức thanh toán — 2 trường</span></a></li>
+    <li><a href="4-2-cau-hinh-phuong-thuc-thanh-toan.html"><strong>4.2 Cấu hình phương thức thanh toán</strong><span>khai tiền mặt, chuyển khoản, ví điện tử — và chọn phương thức tiền mặt cho sổ quỹ</span></a></li>
+    <li><a href="4-3-cau-hinh-may-in-pos.html"><strong>4.3 Cấu hình máy in POS</strong><span>khai máy in bill, tem và phiếu bếp — định tuyến phiếu bếp theo danh mục món</span></a></li>
+    <li><a href="4-4-cau-hinh-man-hinh-bep.html"><strong>4.4 Cấu hình màn hình bếp và hiển thị công thức</strong><span>tạo màn hình bếp lọc theo danh mục, hiện công thức rút gọn cho barista</span></a></li>
+  </ul></section>
+  <section><h2>Chương 5 — Quy trình bán hàng tại quầy</h2>
+  <ul class="toc">
+    <li><a href="5-1-mo-phien-va-ban-hang.html"><strong>5.1 Hướng dẫn mở phiên và bán hàng</strong><span>mở ca, lên đơn, thanh toán — việc hằng ngày của nhân viên đứng quầy</span></a></li>
+    <li><a href="5-2-checklist-trong-ca-lam-viec.html"><strong>5.2 Thực hiện checklist trong ca làm việc</strong><span>nhận việc, đánh dấu hoàn thành; quản lý sinh việc luân phiên từ mẫu</span></a></li>
+    <li><a href="5-3-tong-quan-quy-trinh-quan-ly-kho.html"><strong>5.3 Tổng quan quy trình quản lý kho</strong><span>bảng tra nhanh: việc nào dùng phiếu nào, kho bị ảnh hưởng ra sao</span></a></li>
+    <li><a href="5-4-kiem-ke-doanh-thu-va-dong-phien.html"><strong>5.4 Kiểm kê doanh thu và đóng phiên</strong><span>đối soát từng phương thức, đếm két, xử lý chênh lệch rồi đóng ca</span></a></li>
+    <li><a href="5-5-cau-hinh-va-xuat-hoa-don-vat.html"><strong>5.5 Cấu hình và xuất hoá đơn VAT</strong><span>khai kết nối Minvoice một lần, sau đó tạo và phát hành hoá đơn GTGT cho từng đơn</span></a></li>
+    <li><a href="5-6-van-hanh-ca-hoan-hao-mo-hinh-3s.html"><strong>5.6 Vận hành ca hoàn hảo — mô hình 3S</strong><span>checklist đầu ca, trong ca, cuối ca: Sạch – Sẵn sàng – Sổ khớp</span></a></li>
+  </ul></section>
+  <section><h2>Chương 6 — Chi tiết các nghiệp vụ kho</h2>
+  <ul class="toc">
+    <li><a href="6-1-nhap-chi-phi.html"><strong>6.1 Nhập chi phí</strong><span>lập phiếu chi cho khoản chi không phải mua hàng — tiền điện, ship, thuê mặt bằng</span></a></li>
+    <li><a href="6-2-nhap-hang-tu-nha-cung-cap.html"><strong>6.2 Nhập hàng từ nhà cung cấp</strong><span>lập đơn mua → xác nhận → nhận hàng. Nhận hàng mới cộng kho và cập nhật giá vốn</span></a></li>
+    <li><a href="6-3-chuyen-kho-noi-bo.html"><strong>6.3 Chuyển kho nội bộ</strong><span>chuyển hàng từ kho tổng ra kho quầy — hai kho phải khác nhau</span></a></li>
+    <li><a href="6-4-che-bien-ban-thanh-pham.html"><strong>6.4 Chế biến bán thành phẩm</strong><span>ủ cà phê cốt, nấu syrup — trừ nguyên liệu, cộng bán thành phẩm</span></a></li>
+    <li><a href="6-5-nhap-lieu-hong-huy.html"><strong>6.5 Nhập liệu hỏng huỷ</strong><span>ghi hàng hỏng, hết hạn, rơi vỡ — mỗi phiếu một mặt hàng</span></a></li>
+    <li><a href="6-6-kiem-ke-ton-kho.html"><strong>6.6 Kiểm kê tồn kho</strong><span>đếm hàng thật rồi chỉnh tồn hệ thống cho khớp — xác nhận là ghi đè</span></a></li>
+  </ul></section>
+  <section><h2>Chương 7 — Quản lý ca làm và chấm công</h2>
+  <ul class="toc">
+    <li><a href="7-1-tao-nhan-vien-moi.html"><strong>7.1 Tạo nhân viên mới</strong><span>khai hồ sơ, gắn tài khoản đăng nhập và mã máy chấm công — hai ô quyết định về sau</span></a></li>
+    <li><a href="7-2-tao-ca-lam-viec.html"><strong>7.2 Tạo ca làm việc</strong><span>khai các ca trong ngày — 5 trường, ca qua đêm hợp lệ</span></a></li>
+    <li><a href="7-3-dang-ky-va-duyet-ca.html"><strong>7.3 Đăng ký và duyệt ca cho nhân viên</strong><span>đăng ký ca rồi duyệt — trạng thái Đã duyệt là đầu vào của sinh việc và phân tích trễ/sớm</span></a></li>
+    <li><a href="7-4-dong-bo-cham-cong-va-tinh-luong.html"><strong>7.4 Cấu hình, đồng bộ chấm công và tính lương</strong><span>khai máy chấm công, kéo dữ liệu (ghi đè), xử lý lệch giờ máy và đọc bảng công</span></a></li>
+    <li><a href="7-5-quan-ly-cong-viec-trong-ngay.html"><strong>7.5 Quản lý công việc trong ngày</strong><span>khai mẫu việc lặp, sinh việc luân phiên cho nhân viên đã duyệt ca, theo dõi hoàn thành</span></a></li>
+  </ul></section>
+  <section><h2>Chương 8 — Báo cáo kinh doanh</h2>
+  <ul class="toc">
+    <li><a href="8-1-doc-hieu-bao-cao-ban-hang.html"><strong>8.1 Đọc hiểu báo cáo bán hàng</strong><span>bốn chỉ số bán hàng, cách đọc giá trị trung bình mỗi đơn, và điểm khác với báo cáo P&amp;L</span></a></li>
+    <li><a href="8-2-doc-hieu-bao-cao-lai-lo.html"><strong>8.2 Đọc hiểu báo cáo lãi lỗ (P&amp;L)</strong><span>bốn ô tổng nối với nhau thế nào và ba cạm bẫy khi diễn giải</span></a></li>
+    <li><a href="8-3-bao-cao-ton-kho-va-de-xuat-nhap-hang.html"><strong>8.3 Báo cáo tồn kho và đề xuất nhập hàng</strong><span>khai định mức, đọc màn nhắc việc, xử lý tồn âm và rà lỗi khai báo sản phẩm</span></a></li>
+  </ul></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.1 Thiết lập kho hàng</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 2 · Thiết lập kho hàng, sản phẩm</div>
+  <h1>2.1 Thiết lập kho hàng</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Quản lý kho → Kho hàng</span> &nbsp;(địa chỉ <code>/warehouses</code>).</p>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> quán tách 2 kho.
+      <ul><li>Kho tổng — mã <code>KHO-TONG</code>: chứa hàng nhập và nguyên liệu.</li><li>Kho quầy — mã <code>KHO-QUAY</code>: kho tại quầy, trừ hàng khi bán.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở trang Kho hàng</h3>
+      <ul><li>Bấm <strong>Quản lý kho</strong> ở menu trái.</li><li>Chọn <strong>Kho hàng</strong>.</li><li>Xem danh sách kho hiện có.</li></ul>
+      <img class="shot" src="images/02-kho-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Kho hàng"></div>
+    <div class="step"><h3><span>Bước 2</span>Thêm kho mới</h3>
+      <ul><li>Bấm <strong>Thêm kho</strong> (góc phải trên).</li><li><strong>Mã kho</strong>: nhập "KHO-QUAY".</li><li><strong>Tên kho</strong>: nhập "Kho quầy".</li><li><strong>Địa chỉ</strong>: nhập "Kho tại quầy — trừ hàng khi bán."</li><li>Bấm nút <strong>Thêm kho</strong> trong hộp thoại.</li><li>Lặp lại với mã "KHO-TONG", tên "Kho tổng."</li></ul>
+      <img class="shot" src="images/02-kho-buoc-2-form.png" alt="Bước 2: Thêm kho mới"></div>
+    <div class="step"><h3><span>Bước 3</span>Sửa hoặc lưu trữ kho</h3>
+      <ul><li>Bấm nút <strong>…</strong> ở cuối dòng kho.</li><li>Chọn <strong>Sửa</strong> để đổi thông tin.</li><li>Chọn <strong>Lưu trữ</strong> khi không dùng nữa.</li><li>Không chọn <strong>Xoá</strong> với kho đã có giao dịch.</li></ul>
+      <img class="shot" src="images/02-kho-buoc-3-menu.png" alt="Bước 3: Sửa hoặc lưu trữ kho"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead>
+      <tbody>
+        <tr><td>Mã kho</td><td>Ngắn, không dấu, viết hoa. VD <code>KHO-TONG</code>, <code>KHO-QUAY</code></td><td>✅</td></tr>
+        <tr><td>Tên kho</td><td>Tên dễ hiểu. VD “Kho tổng”, “Kho quầy”</td><td>✅</td></tr>
+        <tr><td>Địa chỉ</td><td>Vị trí hoặc mô tả kho</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 style="margin-top:22px">Nên chia mấy kho</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Cách chia</th><th>Dùng khi</th><th>Được gì</th></tr></thead>
+      <tbody>
+        <tr><td><strong>2 kho</strong> — Kho tổng + Kho quầy</td><td>Có chỗ chứa riêng</td><td>Biết kho tổng còn bao nhiêu để tiếp cho quầy</td></tr>
+        <tr><td><strong>1 kho</strong></td><td>Quán nhỏ, một chỗ chứa</td><td>Đơn giản. Chọn kho đó cho mọi ô ở <em>Cấu hình hệ thống</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Kho đã có giao dịch thì không xoá được.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Kho không dùng nữa: chọn <strong>Lưu trữ</strong>.</li><li>Đừng xoá.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div>Tạo kho xong, quay lại <a href="1-1-cau-hinh-ban-dau.html">mục 1.1</a> chọn kho cho các ô kho mặc định.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Kho hiện trong danh sách, trạng thái <strong>Đang hoạt động</strong></span></label></li>
+      <li><label><input type="checkbox"><span>Đã chọn kho cho các ô kho mặc định ở <em>Cấu hình hệ thống</em></span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

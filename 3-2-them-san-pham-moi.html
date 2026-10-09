@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3.2 Thêm sản phẩm mới</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 3 · Quản lý sản phẩm</div>
+  <h1>3.2 Thêm sản phẩm mới</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm</span> &nbsp;(địa chỉ <code>/products</code>).</p>
+    <ul style="margin:10px 0 0;padding-left:22px"><li>Cần có trước: đơn vị tính (<a href="2-2-thiet-lap-don-vi-tinh.html">mục 2.2</a>).</li><li>Nên có trước: danh mục (<a href="3-1-tao-danh-muc-san-pham-pos.html">mục 3.1</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> thêm món "Cà phê sữa đá".
+      <ul><li>Mã SP: "CFSD01". Đơn vị: "Ly". Loại: "Thành phẩm".</li><li>Giá bán: "29000".</li><li>Bán cho khách, pha chế từ nguyên liệu: bật <strong>Có thể bán</strong> và <strong>Sản xuất</strong>.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở trang Sản phẩm</h3>
+      <ul><li>Bấm <strong>Quản lý sản phẩm</strong> ở menu trái.</li><li>Chọn <strong>Sản phẩm</strong>.</li><li>Bấm <strong>Thêm sản phẩm</strong> (góc phải trên).</li></ul>
+      <img class="shot" src="images/03-san-pham-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Sản phẩm"></div>
+    <div class="step"><h3><span>Bước 2</span>Khai thông tin chính và giá</h3>
+      <ul><li><strong>Tên sản phẩm</strong>: nhập "Cà phê sữa đá".</li><li><strong>Mã SP (SKU)</strong>: nhập "CFSD01".</li><li><strong>Đơn vị tính chính</strong>: chọn "Ly".</li><li><strong>Loại sản phẩm</strong>: chọn "Thành phẩm".</li><li><strong>Danh mục</strong>: chọn danh mục đã tạo ở mục 3.1 (nếu có).</li><li><strong>Giá bán</strong>: nhập "29000".</li></ul>
+      <img class="shot" src="images/03-san-pham-buoc-2-form.png" alt="Bước 2: Khai thông tin chính và giá"></div>
+    <div class="step"><h3><span>Bước 3</span>Gạt các công tắc</h3>
+      <ul><li>Cuộn xuống khung <strong>Thiết lập</strong> (cột phải).</li><li>Giữ <strong>Có thể bán</strong>: bật.</li><li>Gạt <strong>Sản xuất (có công thức)</strong>: bật.</li><li>Để tắt: <strong>Theo dõi tồn kho</strong>, <strong>Bán online</strong>, <strong>Có thể mua</strong>.</li><li>Ô <strong>Giá vốn</strong> xám lại: bình thường.</li><li><strong>Ghi chú công thức ⚡</strong> (tuỳ chọn): nhập "Pha phin 25g cà phê, thêm 30ml sữa đặc, đá viên."</li></ul>
+      <img class="shot" src="images/03-san-pham-buoc-3-cong-tac.png" alt="Bước 3: Gạt các công tắc"></div>
+    <div class="step"><h3><span>Bước 4</span>Lưu và kiểm tra</h3>
+      <ul><li>Bấm <strong>Lưu sản phẩm</strong> (nút luôn ở đáy khung).</li><li>Sản phẩm xuất hiện trong danh sách.</li><li>Kiểm tra mã, tên, loại, đơn vị, giá bán.</li></ul>
+      <img class="shot" src="images/03-san-pham-buoc-4-ket-qua.png" alt="Bước 4: Lưu và kiểm tra"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <h3 style="margin:0 0 8px;font-size:16px">Cột trái — Thông tin chính</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead>
+      <tbody>
+        <tr><td>Tên sản phẩm</td><td>Tên hiện trên bill và màn bếp</td><td>✅</td></tr>
+        <tr><td>Mã SP (SKU)</td><td>Mã ngắn để tra cứu. VD <code>CFSD01</code></td><td>—</td></tr>
+        <tr><td>Đơn vị tính chính</td><td>Đơn vị tính tồn. Đồ uống: "Ly". Nguyên liệu: "Gram"</td><td>✅</td></tr>
+        <tr><td>Loại sản phẩm</td><td>Thành phẩm / Bán thành phẩm / Nguyên liệu → <a href="3-3-phan-biet-nguyen-lieu-ban-thanh-pham-thanh-pham.html">mục 3.3</a></td><td>—</td></tr>
+        <tr><td>Đơn vị tính phụ</td><td>Đơn vị khác dùng cho hàng này (nhập theo Kg, trừ theo Gram)</td><td>—</td></tr>
+        <tr><td>Danh mục</td><td>Một hoặc nhiều nhóm ở mục 3.1</td><td>—</td></tr>
+        <tr><td>Nhóm Addon</td><td>Nhóm topping, mức đường hỏi khi bán món này</td><td>—</td></tr>
+        <tr><td>Ghi chú pha chế</td><td>Ô chọn (VD Đá: ít/nhiều). Thu ngân bấm khi bán, chữ ghép vào tên món. Không thêm tiền</td><td>—</td></tr>
+        <tr><td>Ghi chú công thức ⚡</td><td>Văn bản tự do hiện trên màn bếp khi làm món</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin:22px 0 8px;font-size:16px">Cột phải</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Trường</th><th>Điền gì</th></tr></thead>
+      <tbody>
+        <tr><td>Ảnh sản phẩm</td><td>JPEG, PNG, WebP, tối đa 10MB. Hệ thống tự nén</td></tr>
+        <tr><td>Giá bán</td><td>Giá trên POS</td></tr>
+        <tr><td>Giá vốn</td><td>Giá nhập. <strong>Bị khoá</strong> nếu bật công tắc <em>Sản xuất</em></td></tr>
+        <tr><td>VAT bán ra / VAT mua vào</td><td>Thuế suất (%) áp cho món</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin:22px 0 8px;font-size:16px">Các công tắc — quyết định hành vi hệ thống</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Công tắc</th><th>Bật khi</th><th>Hệ quả</th></tr></thead>
+      <tbody>
+        <tr><td>Theo dõi tồn kho</td><td>Hàng cần đếm tồn: nguyên liệu, bánh đóng gói</td><td>Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, bán, huỷ</td></tr>
+        <tr><td>Có thể bán</td><td>Món bán cho khách</td><td>Hiện trên màn bán hàng</td></tr>
+        <tr><td>Bán online</td><td>Bán qua Zalo Mini App (cần bật <em>Có thể bán</em>)</td><td>Hiện trên Zalo Mini App</td></tr>
+        <tr><td>Có thể mua</td><td>Hàng mua từ nhà cung cấp</td><td>Chọn được trong phiếu nhập hàng</td></tr>
+        <tr><td>Sản xuất (có công thức)</td><td>Món pha chế từ nguyên liệu</td><td>Dùng được công thức; <strong>giá vốn bị khoá</strong>, do công thức tính</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin:22px 0 8px;font-size:16px">Ba mẫu thường gặp</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Loại hàng</th><th>Tồn kho</th><th>Bán</th><th>Mua</th><th>Sản xuất</th></tr></thead>
+      <tbody>
+        <tr><td>Cà phê sữa (món pha chế)</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
+        <tr><td>Cà phê hạt (nguyên liệu)</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Bánh mua sẵn bán lại</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Bật <em>Sản xuất</em> thì ô Giá vốn xám lại.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Không phải lỗi.</li><li>Giá vốn do công thức tính (<a href="3-5-cau-hinh-cong-thuc-va-bien-the.html">mục 3.5</a>).</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Tên và SKU không được trùng.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Kể cả khác hoa thường.</li><li>Kể cả với sản phẩm đã lưu trữ.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Sản phẩm đã phát sinh thì không xoá được.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đã bán, đã nhập, tồn khác 0.</li><li>Đang là nguyên liệu trong công thức, hoặc đang là topping.</li><li>Ngừng bán: chọn <strong>Lưu trữ</strong>.</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Sản phẩm mới tạo, chưa bán, chưa nhập thì xoá thoải mái.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Sản phẩm hiện trong danh sách với đúng mã, tên, loại, đơn vị, giá bán</span></label></li>
+      <li><label><input type="checkbox"><span>Công tắc khớp loại hàng (xem bảng "Ba mẫu thường gặp")</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

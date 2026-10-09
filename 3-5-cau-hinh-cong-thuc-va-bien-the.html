@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3.5 Cấu hình công thức pha chế và biến thể</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 3 · Quản lý sản phẩm</div>
+  <h1>3.5 Cấu hình công thức pha chế và biến thể</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Quản lý sản phẩm → Biến thể</span> &nbsp;(địa chỉ <code>/product-variants</code>).</p><p style="margin:8px 0 0">và <span class="path">Quản lý sản phẩm → Công thức</span> &nbsp;(địa chỉ <code>/boms</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Cần có trước: sản phẩm bật <strong>Sản xuất</strong> (<a href="3-2-them-san-pham-moi.html">mục 3.2</a>).</li><li>Cần có trước: thuộc tính bật <strong>Tạo biến thể</strong> (<a href="3-4-tao-thuoc-tinh-san-pham.html">mục 3.4</a>).</li><li>Thứ tự: sinh biến thể → tạo công thức → tính giá vốn.</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> món "Trà đào" giá 40.000, có size VỪA và LỚN (phụ thu 5.000).<ul><li>Công thức: "Trà đen" 15 g (300đ/g) + "Đường cát" 10 g (20đ/g).</li><li>Sản lượng 1 ly → giá vốn = 15×300 + 10×20 = <strong>4.700₫</strong>.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Sinh biến thể</h3>
+      <ul><li>Vào <strong>Quản lý sản phẩm → Biến thể</strong>.</li><li>Bấm <strong>Sinh biến thể</strong>.</li><li><strong>Sản phẩm</strong>: chọn "Trà đào".</li><li><strong>Size</strong>: chọn "VỪA" và "LỚN".</li><li><strong>Phụ thu (đ)</strong>: nhập "5000".</li><li>Bấm nút <strong>Sinh biến thể</strong> trong hộp thoại.</li></ul>
+      <img class="shot" src="images/03-bien-the-buoc-1-sinh.png" alt="Bước 1: Sinh biến thể"></div>
+    <div class="step"><h3><span>Bước 2</span>Kiểm tra danh sách biến thể</h3>
+      <ul><li>Có 2 dòng: "Trà đào (VỪA)", "Trà đào (LỚN)".</li><li>Cột <strong>Giá bán</strong> hiện "45.000₫" (40.000 + phụ thu 5.000).</li><li>Đây là giá thu ngân thấy trên POS.</li></ul>
+      <img class="shot" src="images/03-bien-the-buoc-2-danh-sach.png" alt="Bước 2: Kiểm tra danh sách biến thể"></div>
+    <div class="step"><h3><span>Bước 3</span>Tạo công thức</h3>
+      <ul><li>Vào <strong>Quản lý sản phẩm → Công thức</strong>.</li><li>Bấm <strong>Thêm công thức</strong>.</li><li><strong>Sản phẩm (thành phẩm)</strong>: chọn "Trà đào".</li><li><strong>Loại công thức</strong>: giữ "Cần sản xuất".</li><li><strong>Sản lượng (yield)</strong>: giữ "1", đơn vị "Ly".</li><li>Bấm <strong>Thêm nguyên liệu</strong> hai lần.</li><li>Dòng 1: chọn "Trà đen", SL "15", ĐVT "Gram (G)".</li><li>Dòng 2: chọn "Đường cát", SL "10", ĐVT "Gram (G)".</li><li>Bấm nút <strong>Tạo công thức</strong>.</li></ul>
+      <img class="shot" src="images/03-cong-thuc-buoc-1-tao.png" alt="Bước 3: Tạo công thức"></div>
+    <div class="step"><h3><span>Bước 4</span>Mở menu dòng công thức</h3>
+      <ul><li>Công thức mới có <strong>Giá vốn</strong> "Chưa tính".</li><li>Bấm nút <strong>…</strong> ở cuối dòng.</li><li>Menu có: <strong>Tính giá vốn</strong>, <strong>Sửa</strong>, <strong>Xoá</strong>.</li></ul>
+      <img class="shot" src="images/03-cong-thuc-buoc-2-danh-sach.png" alt="Bước 4: Mở menu dòng công thức"></div>
+    <div class="step"><h3><span>Bước 5</span>Tính giá vốn</h3>
+      <ul><li>Chọn <strong>Tính giá vốn</strong>.</li><li>Thấy thông báo <em>“Đã tính giá vốn công thức”</em>.</li><li>Cột <strong>Giá vốn</strong> hiện "4.700₫".</li><li>Tính cả loạt: bấm <strong>Tính lại giá vốn</strong> ở đầu trang.</li></ul>
+      <img class="shot" src="images/03-cong-thuc-buoc-3-gia-von.png" alt="Bước 5: Tính giá vốn"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <h3 style="margin:0px 0 8px;font-size:16px">Sinh biến thể</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Sản phẩm</td><td>Món gốc cần tách size</td></tr><tr><td>Giá trị thuộc tính</td><td>Chọn nhiều. Hệ thống sinh <strong>mỗi tổ hợp một biến thể</strong></td></tr><tr><td>Phụ thu</td><td>Giá biến thể = giá sản phẩm gốc <strong>+ phụ thu</strong></td></tr><tr><td>SKU</td><td>Chỉ dùng khi sinh đúng 1 biến thể</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Công thức (BOM)</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Sản phẩm (thành phẩm)</td><td>Món cần công thức. Danh sách <strong>chỉ hiện sản phẩm đã bật <em>Sản xuất</em></strong></td><td>✅</td></tr><tr><td>Biến thể</td><td>Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó</td><td>—</td></tr><tr><td>Loại công thức</td><td><em>Cần sản xuất</em> hoặc <em>Kit</em> (xem bảng dưới)</td><td>✅</td></tr><tr><td>Sản lượng (yield)</td><td>Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20</td><td>✅</td></tr><tr><td>Hoạt động</td><td>Tắt: công thức tạm ngừng dùng</td><td>—</td></tr><tr><td>Nguyên liệu</td><td>Hàng + định lượng (SL) + đơn vị (ĐVT)</td><td>✅</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Hai loại công thức</h3><div class="table-wrap"><table><thead><tr><th>Loại</th><th>Trừ kho khi nào</th><th>Dùng cho</th></tr></thead><tbody><tr><td>Cần sản xuất</td><td>Khi lập <strong>phiếu chế biến</strong> (<a href="6-4-che-bien-ban-thanh-pham.html">6.4</a>)</td><td>Bán thành phẩm ủ trước: cà phê cốt, trà ủ, syrup</td></tr><tr><td>Kit</td><td>Ngay <strong>lúc bán</strong>, tự trừ thành phần</td><td>Combo, món ráp tại chỗ không qua chế biến</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Cách tính giá vốn</h3><p style="margin:0 0 8px"><code>giá vốn = tổng (giá vốn nguyên liệu × định lượng đã quy đổi) ÷ sản lượng</code></p><ul><li>Sản phẩm có nhiều công thức đang hoạt động: lấy <strong>công thức rẻ nhất</strong>.</li></ul>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Nguyên liệu có giá vốn = 0 làm giá vốn món sai.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Sau khi tính, hệ thống cảnh báo tên nguyên liệu chưa có giá.</li><li>Giá vốn nguyên liệu tự cập nhật mỗi lần nhập hàng.</li><li>Nguyên liệu chưa nhập lần nào thì vẫn là 0.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Công thức nhiều tầng phải bấm tính hai lần.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Ví dụ "Trà đào" dùng "trà ủ", "trà ủ" có công thức riêng.</li><li>Lần 1: tính giá "trà ủ".</li><li>Lần 2: đưa giá đó vào "Trà đào".</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Danh sách biến thể hiện giá đã cộng phụ thu.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đây là giá thu ngân thấy trên POS, không phải giá gốc.</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Sửa, tắt hoặc xoá công thức thì giá vốn tự tính lại ngay. Xoá hết công thức đang hoạt động thì giá vốn giữ giá cuối cùng, không tụt về 0.</div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Đơn vị trong công thức được phép khác đơn vị tồn kho. Khai 18 gram trong khi kho quản lý theo kg vẫn đúng, hệ thống tự quy đổi.</div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Chọn 2 thuộc tính (Size 3 giá trị × Đế 2 loại) sinh <strong>6 biến thể</strong>. Sinh lại lần nữa không tạo trùng, hệ thống bỏ qua tổ hợp đã có.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Biến thể hiện đủ trong danh sách, giá bán đã cộng phụ thu</span></label></li>
+      <li><label><input type="checkbox"><span>Công thức có đủ nguyên liệu, đúng định lượng và đơn vị</span></label></li>
+      <li><label><input type="checkbox"><span>Cột <strong>Giá vốn</strong> của công thức không còn "Chưa tính"</span></label></li>
+      <li><label><input type="checkbox"><span>Không có cảnh báo nguyên liệu thiếu giá vốn</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

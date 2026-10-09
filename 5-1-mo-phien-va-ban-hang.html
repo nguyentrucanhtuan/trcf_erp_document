@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5.1 Hướng dẫn mở phiên và bán hàng</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 5 · Quy trình bán hàng tại quầy</div>
+  <h1>5.1 Hướng dẫn mở phiên và bán hàng</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Thiết lập cửa hàng → POS → nút <strong>Đã đóng</strong> trên dòng quầy</span> &nbsp;(địa chỉ <code>/pos-app?pos=1</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Ai làm: nhân viên đứng quầy, bằng <strong>tài khoản của chính mình</strong>.</li><li>Cần có trước: quầy POS (<a href="4-1-tao-cua-hang-pos.html">mục 4.1</a>), sản phẩm có thể bán (<a href="3-2-them-san-pham-moi.html">mục 3.2</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> thu ngân "Quản lý" mở ca ở "Quầy chính", két có "500.000" tiền mặt, bán 1 ly.<ul><li>Ca được đặt mã dạng "QUẦYCHÍNH/00001".</li><li>Món bán: "Cà phê sỉ", giá "208.000₫".</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở ca</h3>
+      <ul><li>Vào <strong>Thiết lập cửa hàng → POS</strong>, bấm nút <strong>Đã đóng</strong> của quầy.</li><li>Hộp <strong>MỞ CA BÁN HÀNG</strong> hiện ra.</li><li><strong>Quầy bán hàng</strong>: giữ "Quầy chính".</li><li><strong>Thu ngân</strong>: đã điền sẵn tên bạn, không đổi được.</li><li>Đếm tiền mặt thật trong két.</li><li><strong>Tiền mặt đầu ca</strong>: nhập "500000".</li><li>Bấm <strong>BẮT ĐẦU CA</strong>.</li></ul>
+      <img class="shot" src="images/05-mo-ca-buoc-1-mo-ca.png" alt="Bước 1: Mở ca"></div>
+    <div class="step"><h3><span>Bước 2</span>Làm quen màn bán hàng</h3>
+      <ul><li>Thanh trên cùng có mã ca "QUẦYCHÍNH/00001" và nút <strong>Đóng ca</strong>.</li><li>Có 3 mục: <strong>MENU</strong>, <strong>ĐƠN HÀNG</strong>, <strong>VẬN HÀNH</strong>.</li><li>Bên phải: giỏ hàng, hai tab <strong>Đơn hàng</strong> / <strong>Chọn bàn</strong>.</li><li>Bên trái: các món để bấm chọn.</li></ul>
+      <img class="shot" src="images/05-mo-ca-buoc-2-man-ban-hang.png" alt="Bước 2: Làm quen màn bán hàng"></div>
+    <div class="step"><h3><span>Bước 3</span>Lên đơn</h3>
+      <ul><li>Bấm <strong>MENU</strong>, chọn nhóm món hoặc gõ vào ô <strong>Tìm món</strong>.</li><li>Bấm món "Cà phê sỉ" để thêm vào giỏ.</li><li>Chỉnh số lượng bằng nút <strong>−</strong> / <strong>+</strong>.</li><li>Yêu cầu riêng của khách: bấm <strong>Ghi chú</strong>.</li><li>Có mã khuyến mãi: bấm <strong>Mã giảm giá</strong>.</li><li>Khách quen: gõ số điện thoại vào ô <strong>Tìm khách hàng</strong> để tích điểm.</li></ul>
+      <img class="shot" src="images/05-mo-ca-buoc-3-len-don.png" alt="Bước 3: Lên đơn"></div>
+    <div class="step"><h3><span>Bước 4</span>Thanh toán</h3>
+      <ul><li>Bấm <strong>THANH TOÁN</strong>.</li><li><strong>Hình thức thanh toán</strong>: chọn "TIỀN MẶT", "CHUYỂN KHOẢN" hoặc "THẺ NGÂN HÀNG".</li><li>Kiểm tra số tiền ở <strong>Phiếu thanh toán</strong>.</li><li>Nhận tiền xong: bấm <strong>Xác nhận thanh toán</strong>.</li><li>Chưa thu tiền (khách còn ngồi): bấm <strong>Lưu đơn</strong> ở màn bán hàng.</li></ul>
+      <img class="shot" src="images/05-mo-ca-buoc-4-thanh-toan.png" alt="Bước 4: Thanh toán"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <h3 style="margin:0px 0 8px;font-size:16px">Mở ca</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Quầy bán hàng</td><td>Quầy bạn đứng</td></tr><tr><td>Thu ngân</td><td>Tự điền theo tài khoản đăng nhập, không sửa</td></tr><tr><td>Tiền mặt đầu ca</td><td>Số tiền <strong>đếm thật</strong> trong két lúc này</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Bốn mục trên màn bán hàng</h3><div class="table-wrap"><table><thead><tr><th>Mục</th><th>Dùng để</th></tr></thead><tbody><tr><td><strong>BÀN</strong> (tab <em>Chọn bàn</em>)</td><td>Sơ đồ bàn: bấm bàn để gắn đơn vào bàn đó</td></tr><tr><td><strong>MENU</strong></td><td>Danh sách món để bấm chọn</td></tr><tr><td><strong>ĐƠN HÀNG</strong></td><td>Các đơn đã lưu, đang chờ xử lý</td></tr><tr><td><strong>VẬN HÀNH</strong></td><td>Nghiệp vụ kho phát sinh trong ca → <a href="5-3-tong-quan-quy-trinh-quan-ly-kho.html">mục 5.3</a></td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Hai loại chip khi chọn món</h3><div class="table-wrap"><table><thead><tr><th>Chip</th><th>Là gì</th><th>Đổi giá</th></tr></thead><tbody><tr><td>🟩 Xanh</td><td>Biến thể (size)</td><td>✅ Có</td></tr><tr><td>⬜ Xám</td><td>Ghi chú pha chế (ít đá, ít đường)</td><td>❌ Không, chỉ ghép vào tên món trên bill và màn bếp</td></tr></tbody></table></div><p style="margin:10px 0 0">Ghi chú pha chế <strong>mặc định không chọn gì</strong>. Bấm lần nữa để bỏ chọn.</p><h3 style="margin:22px 0 8px;font-size:16px">Hai nút thanh toán</h3><div class="table-wrap"><table><thead><tr><th>Nút</th><th>Kết quả</th></tr></thead><tbody><tr><td><strong>Lưu đơn</strong></td><td>Giữ đơn lại, chưa thu tiền (khách còn ngồi, gọi thêm sau)</td></tr><tr><td><strong>THANH TOÁN</strong></td><td>Chọn phương thức, xác nhận thu tiền</td></tr></tbody></table></div><p style="margin:14px 0 8px"><strong>Ngay khi thanh toán, hệ thống làm đồng thời 4 việc trong cùng một lần:</strong></p><ul><li>Trừ nguyên liệu trong kho theo công thức.</li><li>Ghi tiền vào sổ quỹ theo phương thức đã chọn.</li><li>Cộng điểm cho khách (nếu có gắn khách).</li><li>Đẩy món sang màn hình bếp.</li></ul>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Đếm tiền đầu ca cho đúng.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đây là mốc để cuối ca tính "đáng lẽ két phải có bao nhiêu".</li><li>Nhập đại thì cuối ca chênh lệch mà không biết lỗi ở đâu.</li></ul></div></div>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Đơn đã thanh toán không sửa được món, mã giảm giá hay điểm.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Tiền đã ghi vào sổ quỹ mà sổ quỹ không sửa được.</li><li>Thêm một ly sau khi thu tiền sẽ làm số trong sổ khác số thực thu.</li><li>Khách gọi thêm: <strong>lên đơn mới</strong>.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Một quầy chỉ có một ca đang mở.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Người thứ hai bấm Mở ca cùng quầy sẽ bị báo lỗi.</li><li>Chặn có chủ đích.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Không đổi được phương thức thanh toán sau khi đã thu tiền.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đối soát cuối ca dựa vào phương thức đã ghi.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Khách trả lại hàng: dùng <em>Hoàn đơn</em>, đừng sửa đơn cũ.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Hoàn đơn trả hàng vào kho, trả tiền trên sổ quỹ.</li><li>Hoàn hết thì trả lại cả điểm lẫn lượt dùng voucher.</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div><strong>Vì sao không chọn được thu ngân khác:</strong> ca là chứng từ đối soát két, người mở ca chịu trách nhiệm phần tiền trong ca. Mở ca đứng tên người khác thì lúc thiếu tiền không truy về ai.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Mã ca hiện trên thanh trên cùng (VD "QUẦYCHÍNH/00001")</span></label></li>
+      <li><label><input type="checkbox"><span>Tiền mặt đầu ca đã đếm thật</span></label></li>
+      <li><label><input type="checkbox"><span>Món đã thêm đúng số lượng, tổng cộng đúng</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

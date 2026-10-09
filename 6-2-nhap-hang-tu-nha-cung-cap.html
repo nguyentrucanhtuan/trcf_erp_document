@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.2 Nhập hàng từ nhà cung cấp</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 6 · Chi tiết các nghiệp vụ kho</div>
+  <h1>6.2 Nhập hàng từ nhà cung cấp</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Vận hành → Mua hàng</span> &nbsp;(địa chỉ <code>/purchases</code>).</p><p style="margin:8px 0 0">hoặc <span class="path">Vận hành → Nhập hàng</span> trên màn bán hàng.</p><ul style="margin:10px 0 0;padding-left:22px"><li>Ba trạng thái: <strong>Nháp → Đã xác nhận → Đã nhập kho</strong>.</li><li>Cần có trước: nhà cung cấp, sản phẩm bật <strong>Có thể mua</strong> (<a href="3-2-them-san-pham-moi.html">mục 3.2</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> nhà cung cấp "Công ty Cà phê An Nhiên" giao 5 kg "Cà phê hạt", đơn giá 280.000₫/kg.<ul><li>Kho nhập: "Kho tổng". Phương thức thanh toán: "Tiền mặt".</li><li>Dòng hàng: "Cà phê hạt", SL "5", đơn vị "Kilogam", giá nhập "280000".</li><li>Tổng cộng: 5 × 280.000 = <strong>1.400.000₫</strong>.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở trang Mua hàng</h3>
+      <ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Mua hàng</strong>.</li><li>Bấm <strong>Tạo đơn mua hàng</strong>.</li></ul>
+      <img class="shot" src="images/06-nhap-hang-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Mua hàng"></div>
+    <div class="step"><h3><span>Bước 2</span>Khai đầu phiếu và dòng hàng</h3>
+      <ul><li><strong>Nhà cung cấp</strong>: chọn "Công ty Cà phê An Nhiên".</li><li><strong>Kho nhập hàng</strong>: chọn "Kho tổng".</li><li><strong>Ngày đặt hàng</strong>: giữ ngày hôm nay.</li><li><strong>Phương thức thanh toán</strong>: chọn "Tiền mặt".</li><li>Bấm <strong>Thêm dòng</strong>.</li><li><strong>SẢN PHẨM</strong>: chọn "Cà phê hạt".</li><li><strong>SL</strong>: nhập "5". <strong>ĐƠN VỊ</strong>: chọn "Kilogam".</li><li><strong>GIÁ NHẬP</strong>: nhập "280000". <strong>VAT%</strong>: nhập thuế suất trên hoá đơn NCC (nếu có).</li><li>Kiểm tra <strong>TỔNG CỘNG</strong> tự tính, rồi bấm <strong>Lưu đơn nháp</strong>.</li></ul>
+      <img class="shot" src="images/06-nhap-hang-buoc-2-form.png" alt="Bước 2: Khai đầu phiếu và dòng hàng"></div>
+    <div class="step"><h3><span>Bước 3</span>Xác nhận rồi nhận hàng</h3>
+      <ul><li>Đơn mới có mã dạng "PO261009-001", trạng thái <strong>Nháp</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu đơn nháp: <strong>Xác nhận</strong>, <strong>Sửa</strong>, <strong>Huỷ đơn</strong>, <strong>Xoá</strong>.</li><li>Kiểm tra lại, chọn <strong>Xác nhận</strong>.</li><li>Khi hàng về tới quán, chọn <strong>Nhận hàng</strong> trên cùng menu.</li></ul>
+      <img class="shot" src="images/06-nhap-hang-buoc-3-nhap-menu.png" alt="Bước 3: Xác nhận rồi nhận hàng"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <h3 style="margin:0px 0 8px;font-size:16px">Đầu phiếu</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Nhà cung cấp</td><td>Bên giao hàng</td><td>✅</td></tr><tr><td>Kho nhập hàng</td><td>Kho nhận hàng về</td><td>✅</td></tr><tr><td>Ngày đặt hàng</td><td>Ngày đặt</td><td>✅</td></tr><tr><td>Phương thức thanh toán</td><td>Tiền mặt / chuyển khoản</td><td>✅</td></tr><tr><td>Quầy phát sinh</td><td>Chọn quầy nếu trả bằng tiền két quầy. Để <em>— Ngoài ca —</em> nếu không</td><td>—</td></tr><tr><td>Ghi chú</td><td>Ghi thêm (không bắt buộc)</td><td>—</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Từng dòng hàng</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Sản phẩm</td><td>Hàng mua (chỉ hiện hàng đã bật <em>Có thể mua</em>)</td></tr><tr><td>SL, Đơn vị</td><td>Nhập theo đơn vị lớn được: mua 5 <em>Kilogam</em>, hệ thống quy ra 5000 g. Đơn vị lớn phải khai ở <em>Đơn vị tính phụ</em> của sản phẩm</td></tr><tr><td>Giá nhập, VAT%</td><td>Giá và thuế suất trên hoá đơn NCC</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Nhận hàng làm gì</h3><p style="margin:0 0 8px">Bấm <strong>Nhận hàng</strong>, hệ thống đồng thời:</p><ul><li><strong>Cộng hàng vào kho</strong>.</li><li><strong>Ghi tiền vào sổ quỹ</strong> (nếu đơn đã đánh dấu thanh toán).</li><li><strong>Cập nhật giá vốn</strong> sản phẩm theo đơn giá trên phiếu.</li></ul><p style="margin:10px 0 0">Sản phẩm bật <em>Sản xuất</em> thì <strong>bỏ qua bước cập nhật giá vốn</strong>: giá vốn của nó do công thức tính (<a href="3-5-cau-hinh-cong-thuc-va-bien-the.html">mục 3.5</a>).</p>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Nhận hàng chỉ bấm được một lần.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Bấm lần hai bị chặn.</li><li>Nếu không, kho sẽ cộng gấp đôi.</li></ul></div></div>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Đơn đã nhập kho thì không sửa dòng hàng, không xoá.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Nhập nhầm số lượng: lập <strong>phiếu trả hàng NCC</strong> cho phần dư.</li><li>Vận hành → Trả hàng NCC.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Đơn đã thanh toán rồi gỡ rồi bật lại cũng bị chặn.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Cùng lý do với phiếu chi (<a href="6-1-nhap-chi-phi.html">mục 6.1</a>).</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Đơn ở trạng thái <strong>Nháp</strong> chưa đụng gì tới kho, xoá thoải mái.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Đơn ở trạng thái <strong>Đã nhập kho</strong></span></label></li>
+      <li><label><input type="checkbox"><span>Tồn kho đã tăng đúng số lượng</span></label></li>
+      <li><label><input type="checkbox"><span>Giá vốn nguyên liệu đã cập nhật (nếu là hàng thường)</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5.5 Cấu hình và xuất hoá đơn VAT</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 5 · Quy trình bán hàng tại quầy</div>
+  <h1>5.5 Cấu hình và xuất hoá đơn VAT</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Thiết lập cửa hàng → Cấu hình hệ thống → nhóm <strong>Hoá đơn điện tử</strong></span> &nbsp;(địa chỉ <code>/system-settings</code>).</p><p style="margin:8px 0 0">Xuất hoá đơn ở: <span class="path">Vận hành → Hoá đơn VAT</span> &nbsp;(địa chỉ <code>/invoices</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Áp dụng cho: quán có hợp đồng hoá đơn điện tử với <strong>Minvoice</strong>.</li><li>Cần có trước: đơn hàng đã bán (<a href="5-1-mo-phien-va-ban-hang.html">mục 5.1</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> khách là công ty, cần xuất hoá đơn VAT cho một đơn đã bán.<ul><li>Cấu hình Minvoice: làm <strong>một lần</strong>.</li><li>Loại người mua: "Doanh nghiệp". Điền tên công ty, mã số thuế, email, địa chỉ.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Khai cấu hình Minvoice (làm một lần)</h3>
+      <ul><li>Vào <strong>Thiết lập cửa hàng → Cấu hình hệ thống</strong>.</li><li>Cuộn tới nhóm <strong>Hoá đơn điện tử</strong>.</li><li><strong>Nhà cung cấp</strong>: chọn "Minvoice".</li><li><strong>Tên đăng nhập Minvoice</strong>, <strong>Mật khẩu Minvoice</strong>: nhập tài khoản nhà cung cấp cấp.</li><li><strong>Mã số thuế (MST)</strong>: nhập MST của quán.</li><li>Bấm <strong>Lấy Token</strong> để có <strong>API token</strong>.</li><li>Bấm <strong>Lấy ký hiệu</strong> để có <strong>Ký hiệu hoá đơn</strong> (VD "1C25TAA").</li><li>Cuộn xuống cuối trang, bấm <strong>Lưu cấu hình</strong>.</li></ul>
+      <img class="shot" src="images/05-hoa-don-buoc-1-cau-hinh.png" alt="Bước 1: Khai cấu hình Minvoice (làm một lần)"></div>
+    <div class="step"><h3><span>Bước 2</span>Mở trang Hoá đơn VAT</h3>
+      <ul><li>Bấm <strong>Vận hành</strong> ở menu trái.</li><li>Chọn <strong>Hoá đơn VAT</strong>.</li><li>Bốn ô thống kê: số hoá đơn, hoá đơn nháp, đã chuyển NCC, đã phát hành.</li></ul>
+      <img class="shot" src="images/05-hoa-don-buoc-2-danh-sach.png" alt="Bước 2: Mở trang Hoá đơn VAT"></div>
+    <div class="step"><h3><span>Bước 3</span>Tạo hoá đơn từ đơn hàng</h3>
+      <ul><li>Bấm <strong>Tạo hoá đơn</strong>.</li><li><strong>Đơn hàng</strong>: chọn đơn cần xuất.</li><li><strong>Loại người mua</strong>: mặc định "Bán cho người tiêu dùng".</li><li>Ghi chú: nhập nếu cần (tuỳ chọn).</li><li>Bấm nút <strong>Tạo hoá đơn</strong>: hoá đơn ở trạng thái <strong>Nháp</strong>.</li></ul>
+      <img class="shot" src="images/05-hoa-don-buoc-3-form.png" alt="Bước 3: Tạo hoá đơn từ đơn hàng"></div>
+    <div class="step"><h3><span>Bước 4</span>Khai người mua doanh nghiệp</h3>
+      <ul><li><strong>Loại người mua</strong>: chọn "Doanh nghiệp".</li><li>Điền <strong>Tên người mua</strong>, <strong>Mã số thuế</strong>, <strong>Email</strong>, <strong>Địa chỉ</strong>.</li><li><strong>Kiểm tra lại MST và tên công ty</strong>.</li><li>Bấm <strong>Tạo hoá đơn</strong>, rồi <strong>Phát hành</strong> ở dòng hoá đơn.</li></ul>
+      <img class="shot" src="images/05-hoa-don-buoc-4-doanh-nghiep.png" alt="Bước 4: Khai người mua doanh nghiệp"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <h3 style="margin:0px 0 8px;font-size:16px">Cấu hình Minvoice</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Lấy ở đâu</th></tr></thead><tbody><tr><td>Nhà cung cấp</td><td>Chọn nhà gửi hoá đơn. Đổi nhà không đổi hoá đơn đã phát hành</td></tr><tr><td>Tên đăng nhập, Mật khẩu Minvoice</td><td>Nhà cung cấp hoá đơn điện tử cấp. Chỉ dùng để đi lấy API token</td></tr><tr><td>Mã số thuế (MST)</td><td>MST của quán, chỉ số (có thể kèm nhánh -NNN). Gõ sai là gửi token đi nơi khác</td></tr><tr><td>API token</td><td>Bấm <strong>Lấy Token</strong>. Để trống khi lưu: giữ token cũ</td></tr><tr><td>Ký hiệu hoá đơn</td><td>Do cơ quan thuế cấp, VD <code>1C25TAA</code>. Bấm <strong>Lấy ký hiệu</strong> (cần có token trước)</td></tr><tr><td>Tên cửa hàng trên hoá đơn</td><td>Tên đơn vị bán in trên hoá đơn. Để trống: dùng tên đã đăng ký</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Loại người mua</h3><div class="table-wrap"><table><thead><tr><th>Loại</th><th>Điền thêm</th></tr></thead><tbody><tr><td>Bán cho người tiêu dùng</td><td>—</td></tr><tr><td>Cá nhân</td><td>Tên, email, địa chỉ</td></tr><tr><td>Doanh nghiệp</td><td>Tên, email, địa chỉ + <strong>Mã số thuế</strong></td></tr></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Hoá đơn đã phát hành thì không sửa, không xoá, không huỷ được.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Nó đã lên cơ quan thuế.</li><li>Kiểm kỹ MST và tên công ty <strong>trước khi</strong> bấm Phát hành.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Xuất hoá đơn không đụng tới tiền.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Tiền đã ghi vào sổ quỹ từ lúc khách thanh toán.</li><li>Hoá đơn GTGT chỉ là chứng từ thuế.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Chưa khai đủ cấu hình mà bấm Phát hành thì hệ thống báo lỗi.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Thông báo "Thiếu cấu hình Minvoice".</li><li>Hoá đơn giữ ở trạng thái <strong>Nháp</strong>, không phát hành nửa vời.</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Mỗi đơn chỉ có <strong>một</strong> hoá đơn. Bấm tạo lần hai cho cùng đơn sẽ mở lại bản nháp đang có.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Hoá đơn chuyển từ <strong>Nháp</strong> sang <strong>Đã phát hành</strong></span></label></li>
+      <li><label><input type="checkbox"><span>Có <strong>mã cơ quan thuế</strong> hiện trên dòng hoá đơn</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

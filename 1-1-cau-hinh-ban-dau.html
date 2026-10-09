@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.1 Cấu hình thông tin ban đầu</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 1 · Cấu hình hệ thống</div>
+  <h1>1.1 Làm quen giao diện và cấu hình thông tin ban đầu</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Thiết lập cửa hàng → Cấu hình hệ thống</span> &nbsp;(địa chỉ <code>/system-settings</code>).</p>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> quán có 2 kho, thu bằng tiền mặt.
+      <ul><li>Kho tổng (KHO-TONG): chứa nguyên liệu.</li><li>Kho quầy (KHO-QUAY): để bán hàng.</li><li>Phương thức thanh toán: Tiền mặt (CASH).</li><li>Cần tạo trước kho, phương thức thanh toán, loại đơn hàng.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở trang Cấu hình hệ thống</h3>
+      <ul><li>Bấm <strong>Thiết lập cửa hàng</strong>.</li><li>Chọn <strong>Cấu hình hệ thống</strong>.</li></ul>
+      <img class="shot" src="images/01-buoc-1-menu.png" alt="Bước 1: Mở trang Cấu hình hệ thống"></div>
+    <div class="step"><h3><span>Bước 2</span>Khai nhóm Cấu hình chung</h3>
+      <ul><li><strong>Tiền tệ</strong>: chọn "VND".</li><li><strong>Múi giờ</strong>: chọn "Asia/Ho_Chi_Minh".</li><li><strong>Ngôn ngữ</strong>: chọn "Tiếng Việt".</li><li><strong>Domain công khai</strong>: để trống.</li></ul>
+      <img class="shot" src="images/01-buoc-2-chung.png" alt="Bước 2: Khai nhóm Cấu hình chung"></div>
+    <div class="step"><h3><span>Bước 3</span>Khai nhóm Nhập hàng và Chuyển kho</h3>
+      <ul><li><strong>Kho nhập mặc định</strong>: chọn "Kho tổng".</li><li><strong>Kho nguồn</strong>: chọn "Kho tổng".</li><li><strong>Kho đích</strong>: chọn "Kho quầy".</li><li>Ô tích <em>Cho phép nhân viên chọn kho</em>: bỏ trống.</li></ul>
+      <img class="shot" src="images/01-buoc-3-nhap-chuyen.png" alt="Bước 3: Khai nhóm Nhập hàng và Chuyển kho"></div>
+    <div class="step"><h3><span>Bước 4</span>Khai nhóm Chế biến</h3>
+      <ul><li><strong>Kho trừ nguyên liệu</strong>: chọn "Kho tổng".</li><li><strong>Kho nhập thành phẩm</strong>: chọn "Kho quầy".</li></ul>
+      <img class="shot" src="images/01-buoc-4-che-bien.png" alt="Bước 4: Khai nhóm Chế biến"></div>
+    <div class="step"><h3><span>Bước 5</span>Khai nhóm Bán hàng — quan trọng nhất</h3>
+      <ul><li><strong>Kho bán hàng</strong>: chọn "Kho quầy".</li><li><strong>Loại đơn hàng mặc định</strong>: chọn "Tại chỗ".</li><li><strong>Phương thức tiền mặt</strong>: chọn "Tiền mặt (CASH)" — <strong>bắt buộc</strong>.</li></ul>
+      <img class="shot" src="images/01-buoc-5-ban-hang.png" alt="Bước 5: Khai nhóm Bán hàng — quan trọng nhất"></div>
+    <div class="step"><h3><span>Bước 6</span>Khai nhóm Huỷ hàng và Tài chính / Thuế</h3>
+      <ul><li><strong>Kho huỷ hàng</strong>: chọn "Kho quầy".</li><li><strong>Giá bán đã bao gồm VAT</strong>: bật nếu giá đã gồm thuế.</li><li>Nhóm <strong>Nhân sự</strong>: giữ mặc định.</li></ul>
+      <img class="shot" src="images/01-buoc-6-huy-thue.png" alt="Bước 6: Khai nhóm Huỷ hàng và Tài chính / Thuế"></div>
+    <div class="step"><h3><span>Bước 7</span>Bấm Lưu cấu hình</h3>
+      <ul><li>Cuộn xuống cuối trang.</li><li>Bấm <strong>Lưu cấu hình</strong>.</li><li>Thấy thông báo <em>“Đã lưu cấu hình”</em> là xong.</li></ul>
+      <img class="shot" src="images/01-buoc-7-luu.png" alt="Bước 7: Bấm Lưu cấu hình"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nhóm</th><th>Trường</th><th>Điền gì</th></tr></thead>
+      <tbody>
+        <tr><td class="grp" rowspan="4">Cấu hình chung</td><td>Tên quán</td><td>Tên in đầu hoá đơn</td></tr>
+        <tr><td>Logo quán</td><td>Logo in đầu hoá đơn (nên dùng logo nét đậm)</td></tr>
+        <tr><td>Tiền tệ / Múi giờ / Ngôn ngữ</td><td>VND · Asia/Ho_Chi_Minh · Tiếng Việt</td></tr>
+        <tr><td>Domain công khai</td><td>Để trống nếu chưa dùng thanh toán online</td></tr>
+
+        <tr><td class="grp" rowspan="2">Nhập hàng</td><td>Kho nhập mặc định</td><td>Kho tự điền khi tạo đơn mua</td></tr>
+        <tr><td>Cho phép nhân viên chọn kho nhập</td><td>Bật: nhân viên được đổi kho. Tắt: dùng kho mặc định</td></tr>
+
+        <tr><td class="grp" rowspan="2">Chuyển kho</td><td>Kho nguồn / Kho đích mặc định</td><td>Kho mặc định của phiếu chuyển</td></tr>
+        <tr><td>Cho phép nhân viên chọn kho chuyển</td><td>Bật: nhân viên được chọn kho</td></tr>
+
+        <tr><td class="grp" rowspan="2">Chế biến</td><td>Kho trừ nguyên liệu / Kho nhập thành phẩm</td><td>Kho lấy nguyên liệu và kho nhận thành phẩm</td></tr>
+        <tr><td>Cho phép nhân viên chọn kho chế biến</td><td>Bật: nhân viên được chọn kho</td></tr>
+
+        <tr><td class="grp" rowspan="3">Bán hàng</td><td>Kho bán hàng</td><td>Kho bị trừ khi bán tại POS</td></tr>
+        <tr><td>Loại đơn hàng mặc định</td><td>Loại đơn chọn sẵn ở POS</td></tr>
+        <tr class="must"><td><strong>Phương thức tiền mặt</strong></td><td><span class="badge">Bắt buộc</span> Phương thức tính là tiền mặt trong két</td></tr>
+
+        <tr><td class="grp" rowspan="2">Huỷ hàng</td><td>Kho huỷ hàng mặc định</td><td>Kho ghi nhận hàng hỏng</td></tr>
+        <tr><td>Cho phép nhân viên chọn kho huỷ</td><td>Bật: nhân viên được chọn kho</td></tr>
+
+        <tr><td class="grp">Tài chính / Thuế</td><td>Giá bán đã bao gồm VAT</td><td>Bật nếu giá niêm yết đã gồm thuế</td></tr>
+
+        <tr><td class="grp" rowspan="2">Nhân sự</td><td>Số ngày nhân viên tự đăng ký ca</td><td>1–90, mặc định 14</td></tr>
+        <tr><td>Dung sai chấm công (phút)</td><td>0–120, mặc định 5. Lệch trong khoảng này vẫn tính Đúng giờ</td></tr>
+
+        <tr><td class="grp">Hoá đơn điện tử</td><td>Minvoice (MST, token, ký hiệu…)</td><td>Chỉ điền khi xuất hoá đơn GTGT → <a href="5-5-cau-hinh-va-xuat-hoa-don-vat.html">mục 5.5</a></td></tr>
+
+        <tr><td class="grp">Đặt hàng Zalo</td><td>Mini App ID, quầy nhận đơn, phí ship…</td><td>Chỉ điền khi bán qua Zalo. Có nút <strong>Lưu cấu hình Zalo</strong> riêng</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Phải chọn ô <em>Phương thức tiền mặt</em>.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Bỏ trống: mở ca, đóng ca vẫn chạy.</li><li>Nhưng <strong>không sinh bút toán quỹ</strong>.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Phải chọn đủ các ô kho.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Thiếu ô nào, nhân viên báo lỗi “chưa cấu hình kho”.</li><li>Không lập được phiếu tương ứng.</li></ul></div></div>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div>Nhóm <strong>Đặt hàng Zalo</strong>: bấm nút <strong>Lưu cấu hình Zalo</strong> riêng.</div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Quán chỉ có 1 kho: chọn cùng kho đó cho tất cả các ô.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Đã chọn đủ các ô kho (nhập, chuyển nguồn/đích, chế biến ×2, bán, huỷ)</span></label></li>
+      <li><label><input type="checkbox"><span>Ô <strong>Phương thức tiền mặt</strong> đã chọn</span></label></li>
+      <li><label><input type="checkbox"><span>Bấm <strong>Lưu cấu hình</strong> và thấy “Đã lưu cấu hình”</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

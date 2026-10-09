@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5.2 Thực hiện checklist trong ca làm việc</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb">Chương 5 · Quy trình bán hàng tại quầy</div>
+  <h1>5.2 Thực hiện checklist trong ca làm việc</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Quản lý nhân sự → Công việc</span> &nbsp;(địa chỉ <code>/task-assignments</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Là gì: danh sách việc lặp mỗi ca (vệ sinh máy pha, lau tủ lạnh, kiểm hạn sử dụng, đổ rác).</li><li>Cần có trước: mẫu công việc (<a href="7-5-quan-ly-cong-viec-trong-ngay.html">mục 7.5</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> việc "Vệ sinh máy pha" giao cho nhân viên "Quản lý" ngày 09/10/2026.<ul><li>Nhân viên: đầu ca xem việc của mình, làm xong thì đổi sang <strong>Hoàn thành</strong>.</li><li>Quản lý: sinh việc hàng loạt từ mẫu, cuối ngày kiểm tra việc nào chưa xong.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở màn Công việc</h3>
+      <ul><li>Bấm <strong>Quản lý nhân sự</strong> ở menu trái.</li><li>Chọn <strong>Công việc</strong>.</li><li>Danh sách trống nếu chưa có việc nào.</li></ul>
+      <img class="shot" src="images/05-cong-viec-buoc-1-danh-sach.png" alt="Bước 1: Mở màn Công việc"></div>
+    <div class="step"><h3><span>Bước 2</span>Quản lý: thêm một công việc</h3>
+      <ul><li>Bấm <strong>Thêm công việc</strong>.</li><li><strong>Mẫu công việc</strong>: chọn "Vệ sinh máy pha".</li><li><strong>Nhân viên phụ trách</strong>: chọn "Quản lý (Vận hành)".</li><li><strong>Ngày thực hiện</strong>: giữ ngày hôm nay.</li><li><strong>Trạng thái</strong>: giữ "Chờ thực hiện".</li><li>Bấm nút <strong>Lưu công việc</strong>.</li></ul>
+      <img class="shot" src="images/05-cong-viec-buoc-2-form.png" alt="Bước 2: Quản lý: thêm một công việc"></div>
+    <div class="step"><h3><span>Bước 3</span>Nhân viên: đổi trạng thái sang Hoàn thành</h3>
+      <ul><li>Đầu ca mở <strong>Quản lý nhân sự → Công việc</strong>, tìm việc của mình.</li><li>Bấm nút <strong>…</strong> cuối dòng, chọn <strong>Sửa</strong>.</li><li><strong>Trạng thái</strong>: chọn "Hoàn thành" (có 3 mức: Chờ thực hiện, Đang thực hiện, Hoàn thành).</li><li>Bấm nút <strong>Lưu thay đổi</strong>.</li></ul>
+      <img class="shot" src="images/05-cong-viec-buoc-3-menu.png" alt="Bước 3: Nhân viên: đổi trạng thái sang Hoàn thành"></div>
+    <div class="step"><h3><span>Bước 4</span>Kiểm tra kết quả</h3>
+      <ul><li>Dòng công việc hiện trạng thái <strong>Hoàn thành</strong>.</li><li>Hệ thống tự ghi <strong>thời điểm hoàn thành</strong>, không cần nhập tay.</li></ul>
+      <img class="shot" src="images/05-cong-viec-buoc-4-hoan-thanh.png" alt="Bước 4: Kiểm tra kết quả"></div>
+    <div class="step"><h3><span>Bước 5</span>Quản lý: sinh việc hàng loạt từ mẫu</h3>
+      <ul><li>Bấm <strong>Tạo từ mẫu & ca duyệt</strong>.</li><li><strong>Ngày bắt đầu</strong>, <strong>Ngày kết thúc</strong>: chọn khoảng ngày cần sinh việc.</li><li>Bấm nút <strong>Tạo công việc</strong>.</li><li>Hệ thống sinh việc từng ngày từ các mẫu đang kích hoạt, chia luân phiên cho nhân viên.</li><li>Cuối ngày mở lại màn này xem việc nào chưa xong, ai chưa làm.</li></ul>
+      <img class="shot" src="images/05-cong-viec-buoc-5-tao-tu-mau.png" alt="Bước 5: Quản lý: sinh việc hàng loạt từ mẫu"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Mẫu công việc</td><td>Việc cần làm (khai ở <a href="7-5-quan-ly-cong-viec-trong-ngay.html">mục 7.5</a>)</td></tr><tr><td>Nhân viên phụ trách</td><td>Người chịu trách nhiệm việc này</td></tr><tr><td>Ngày thực hiện</td><td>Ngày cần làm xong</td></tr><tr><td>Trạng thái</td><td>Chờ thực hiện / Đang thực hiện / Hoàn thành</td></tr><tr><td>Ghi chú</td><td>Ghi chú thêm (không bắt buộc)</td></tr></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Nút sinh việc hàng loạt chỉ chia cho nhân viên đủ điều kiện.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Chưa duyệt ca cho ai (<a href="7-3-dang-ky-va-duyet-ca.html">mục 7.3</a>) thì hệ thống báo lỗi.</li><li>Không sinh việc treo không người làm.</li></ul></div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Bấm sinh lần hai cho cùng khoảng ngày sẽ <strong>bỏ qua việc đã có</strong>, không tạo trùng. Cứ bấm lại yên tâm.</div></div>
+    <div class="note tip"><div class="ic">💡</div>
+      <div>Hệ thống tự ghi thời điểm hoàn thành khi đổi trạng thái sang <strong>Hoàn thành</strong>.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Mỗi nhân viên trong ca đều có việc được giao</span></label></li>
+      <li><label><input type="checkbox"><span>Cuối ca không còn việc ở trạng thái chờ</span></label></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
