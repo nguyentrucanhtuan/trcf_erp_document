@@ -67,9 +67,45 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  /* sidebar */
+  nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
+             border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
+  nav.side .home { display: block; font-weight: 700; font-size: 15px; text-decoration: none; color: var(--text); padding: 6px 8px 12px; }
+  nav.side details { margin-bottom: 2px; }
+  nav.side summary { cursor: pointer; font-weight: 600; padding: 7px 8px; border-radius: 8px; list-style-position: inside; }
+  nav.side summary:hover { background: var(--brand-soft); }
+  nav.side ul { list-style: none; margin: 2px 0 6px; padding: 0; }
+  nav.side li a { display: block; padding: 6px 8px 6px 22px; border-radius: 8px; text-decoration: none; color: var(--text); }
+  nav.side li a:hover { background: var(--brand-soft); }
+  nav.side li a.cur { background: var(--brand-soft); color: var(--brand); font-weight: 700; }
+  body { padding-left: 290px; }
+  nav.side .toggle { display: none; }
+  @media (max-width: 900px) {
+    body { padding-left: 0; }
+    nav.side { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 10px 12px; max-height: none; overflow: visible; }
+    nav.side .toggle { display: block; }
+    nav.side .menu { display: none; max-height: 60vh; overflow-y: auto; margin-top: 8px; }
+    nav.side.open .menu { display: block; }
+    nav.side .home { display: inline-block; padding: 6px 0; }
+    nav.side .toggle { float: right; background: var(--brand); color: #fff; border: 0; border-radius: 8px; padding: 6px 14px; font-size: 14px; }
+  }
 </style>
 </head>
 <body>
+<nav class="side">
+<button class="toggle" type="button">☰ Mục lục</button>
+<a class="home" href="index.html">📘 Cẩm nang TNTDRINK ERP</a>
+<div class="menu">
+<details><summary>Chương 1 — Cấu hình hệ thống</summary><ul><li><a href="1-1-cau-hinh-ban-dau.html">1.1 Làm quen giao diện và cấu hình thông tin ban đầu</a></li></ul></details>
+<details><summary>Chương 2 — Thiết lập kho hàng, sản phẩm</summary><ul><li><a href="2-1-thiet-lap-kho-hang.html">2.1 Thiết lập kho hàng</a></li><li><a href="2-2-thiet-lap-don-vi-tinh.html">2.2 Thiết lập đơn vị tính (UOM)</a></li></ul></details>
+<details><summary>Chương 3 — Quản lý sản phẩm</summary><ul><li><a href="3-1-tao-danh-muc-san-pham-pos.html">3.1 Tạo danh mục sản phẩm POS</a></li><li><a href="3-2-them-san-pham-moi.html">3.2 Thêm sản phẩm mới</a></li><li><a href="3-3-phan-biet-nguyen-lieu-ban-thanh-pham-thanh-pham.html">3.3 Phân biệt Nguyên liệu – Bán thành phẩm – Thành phẩm</a></li><li><a href="3-4-tao-thuoc-tinh-san-pham.html">3.4 Tạo thuộc tính sản phẩm (Size S/M/L)</a></li><li><a href="3-5-cau-hinh-cong-thuc-va-bien-the.html">3.5 Cấu hình công thức pha chế và biến thể</a></li></ul></details>
+<details><summary>Chương 4 — Thiết lập POS</summary><ul><li><a href="4-1-tao-cua-hang-pos.html">4.1 Tạo cửa hàng POS</a></li><li><a href="4-2-cau-hinh-phuong-thuc-thanh-toan.html">4.2 Cấu hình phương thức thanh toán</a></li><li><a href="4-3-cau-hinh-may-in-pos.html">4.3 Cấu hình máy in POS</a></li><li><a href="4-4-cau-hinh-man-hinh-bep.html">4.4 Cấu hình màn hình bếp và hiển thị công thức</a></li></ul></details>
+<details open><summary>Chương 5 — Quy trình bán hàng tại quầy</summary><ul><li><a href="5-1-mo-phien-va-ban-hang.html" class="cur">5.1 Hướng dẫn mở phiên và bán hàng</a></li><li><a href="5-2-checklist-trong-ca-lam-viec.html">5.2 Thực hiện checklist trong ca làm việc</a></li><li><a href="5-3-tong-quan-quy-trinh-quan-ly-kho.html">5.3 Tổng quan quy trình quản lý kho</a></li><li><a href="5-4-kiem-ke-doanh-thu-va-dong-phien.html">5.4 Kiểm kê doanh thu và đóng phiên</a></li><li><a href="5-5-cau-hinh-va-xuat-hoa-don-vat.html">5.5 Cấu hình và xuất hoá đơn VAT</a></li><li><a href="5-6-van-hanh-ca-hoan-hao-mo-hinh-3s.html">5.6 Vận hành ca hoàn hảo — mô hình 3S</a></li></ul></details>
+<details><summary>Chương 6 — Chi tiết các nghiệp vụ kho</summary><ul><li><a href="6-1-nhap-chi-phi.html">6.1 Nhập chi phí</a></li><li><a href="6-2-nhap-hang-tu-nha-cung-cap.html">6.2 Nhập hàng từ nhà cung cấp</a></li><li><a href="6-3-chuyen-kho-noi-bo.html">6.3 Chuyển kho nội bộ</a></li><li><a href="6-4-che-bien-ban-thanh-pham.html">6.4 Chế biến bán thành phẩm</a></li><li><a href="6-5-nhap-lieu-hong-huy.html">6.5 Nhập liệu hỏng huỷ</a></li><li><a href="6-6-kiem-ke-ton-kho.html">6.6 Kiểm kê tồn kho</a></li></ul></details>
+<details><summary>Chương 7 — Quản lý ca làm và chấm công</summary><ul><li><a href="7-1-tao-nhan-vien-moi.html">7.1 Tạo nhân viên mới</a></li><li><a href="7-2-tao-ca-lam-viec.html">7.2 Tạo ca làm việc</a></li><li><a href="7-3-dang-ky-va-duyet-ca.html">7.3 Đăng ký và duyệt ca cho nhân viên</a></li><li><a href="7-4-dong-bo-cham-cong-va-tinh-luong.html">7.4 Cấu hình, đồng bộ chấm công và tính lương</a></li><li><a href="7-5-quan-ly-cong-viec-trong-ngay.html">7.5 Quản lý công việc trong ngày</a></li></ul></details>
+<details><summary>Chương 8 — Báo cáo kinh doanh</summary><ul><li><a href="8-1-doc-hieu-bao-cao-ban-hang.html">8.1 Đọc hiểu báo cáo bán hàng</a></li><li><a href="8-2-doc-hieu-bao-cao-lai-lo.html">8.2 Đọc hiểu báo cáo lãi lỗ (P&amp;L)</a></li><li><a href="8-3-bao-cao-ton-kho-va-de-xuat-nhap-hang.html">8.3 Báo cáo tồn kho và đề xuất nhập hàng</a></li></ul></details>
+</div>
+</nav>
 <main>
   <div class="crumb">Chương 5 · Quy trình bán hàng tại quầy</div>
   <h1>5.1 Hướng dẫn mở phiên và bán hàng</h1>
@@ -123,5 +159,10 @@
     </ul>
   </section>
 </main>
+<script>
+(function(){var n=document.querySelector('nav.side');if(!n)return;
+var b=n.querySelector('.toggle');b.addEventListener('click',function(){n.classList.toggle('open')});
+var c=n.querySelector('a.cur');if(c&&n.scrollTo){var t=c.offsetTop-n.clientHeight/3;if(getComputedStyle(n).position==='fixed')n.scrollTop=t;}})();
+</script>
 </body>
 </html>

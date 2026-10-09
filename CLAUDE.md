@@ -34,3 +34,8 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 - Khung hình 1440×900. Chụp đúng phần màn hình của bước đó.
 - **Không làm đổi dữ liệu thật** khi chụp: mở form rồi đóng, không bấm lưu. Nếu buộc phải lưu để chụp thông báo, trả lại giá trị cũ ngay và báo cho người dùng.
 - Số liệu và nhãn trong bài phải khớp giao diện hiện tại, đối chiếu với trang thật chứ không chép từ bài cũ.
+
+## Thanh điều hướng bên trái
+
+- Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 8 chương và 32 bài, đánh dấu bài đang xem.
+- Khi thêm hoặc đổi tên bài: sửa `docs/index.html` trước, rồi chạy lại script sinh thanh bên để chép vào mọi trang. Không sửa tay từng trang.
