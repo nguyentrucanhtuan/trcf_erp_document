@@ -2,7 +2,7 @@ import re,glob,html as H
 import os; os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','docs'))
 idx=open('index.html',encoding='utf-8').read()
 chs=[]
-for m in re.finditer(r'<h2>(Chương[^<]*)</h2>(.*?)</ul>',idx,re.S):
+for m in re.finditer(r'<h2>((?:Chương|Mở đầu)[^<]*)</h2>(.*?)</ul>',idx,re.S):
     items=re.findall(r'<a href="([^"]+)"><strong>([^<]*)</strong>',m.group(2))
     chs.append((m.group(1),items))
 CSS='''  /* sidebar */
