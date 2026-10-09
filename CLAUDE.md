@@ -4,11 +4,11 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 
 ## Định dạng và vị trí
 
-- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **thẳng ở thư mục gốc**, không chia thư mục con theo chương. Tên file dạng số-chương-tên-bài (VD `2-1-thiet-lap-kho-hang.html`).
+- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con theo chương. Tên file dạng số-chương-tên-bài (VD `2-1-thiet-lap-kho-hang.html`).
 - **Mục lục `index.html`**: liệt kê các chương và tiêu đề bài. Bài nào chưa viết hiện mờ kèm nhãn "Chưa viết". **Viết xong bài nào thì sửa dòng bài đó trong `index.html`** thành liên kết bấm được (đổi `<li class="todo">…</li>` theo mẫu `<li><a href="<tên-file>.html">…</a></li>`).
 - Link giữa các bài chỉ ghi tên file (VD `href="1-1-cau-hinh-ban-dau.html"`).
 - Lấy phần `<head>` + CSS của bài 1.1 làm khuôn (có chế độ sáng/tối, đọc được trên điện thoại).
-- Ảnh đặt trong `images/`, gọi bằng đường dẫn `images/...`.
+- Ảnh đặt trong `docs/images/`, gọi bằng đường dẫn `images/...`.
 - Viết **tiếng Việt**. Giữ tiếng Anh cho tên kỹ thuật (mã, endpoint, tên trường trên giao diện).
 
 ## Cấu trúc bài (4 phần, theo README)
