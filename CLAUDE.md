@@ -1,11 +1,11 @@
 # CLAUDE.md — Cẩm nang hướng dẫn TRCF ERP
 
-Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: [1.1](1-1-cau-hinh-ban-dau.html) và [2.1](2-1-thiet-lap-kho-hang.html). Làm bài mới thì mở bài mẫu ra làm khuôn.
+Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: [1.1](docs/1-1-thiet-lap-don-vi-tinh.html) và [6.1](docs/6-1-tao-mau-kiem-kho.html). Làm bài mới thì mở bài mẫu ra làm khuôn.
 
 ## Định dạng và vị trí
 
-- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con theo chương. Tên file dạng số-chương-tên-bài (VD `2-1-thiet-lap-kho-hang.html`).
-- **Mục lục `index.html`**: liệt kê các chương và tiêu đề bài. Bài nào chưa viết hiện mờ kèm nhãn "Chưa viết". **Viết xong bài nào thì sửa dòng bài đó trong `index.html`** thành liên kết bấm được (đổi `<li class="todo">…</li>` theo mẫu `<li><a href="<tên-file>.html">…</a></li>`).
+- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con. Cẩm nang gồm 12 bước, mỗi bước có các bài con đánh số `N.k` (VD 6.1, 6.2). Tên file dạng `N-k-tên-bài.html` (VD `6-1-tao-mau-kiem-kho.html`). Sơ đồ thứ tự các bước nằm ở `docs/0-bat-dau.html`.
+- **Mục lục `index.html`**: liệt kê các bước và bài con. Bài chưa viết thì chưa đưa vào. **Thêm bài mới thì thêm một dòng `<li><a href="<tên-file>.html"><strong>N.k Tên bài</strong><span>mô tả ngắn</span></a></li>` vào đúng bước trong `index.html`**, thêm nút con tương ứng ở `0-bat-dau.html`, rồi chạy `tools/gen-sidebar.py`.
 - Link giữa các bài chỉ ghi tên file (VD `href="1-1-cau-hinh-ban-dau.html"`).
 - Lấy phần `<head>` + CSS của bài 1.1 làm khuôn (có chế độ sáng/tối, đọc được trên điện thoại).
 - Ảnh đặt trong `docs/images/`, gọi bằng đường dẫn `images/...`.
@@ -37,5 +37,5 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 
 ## Thanh điều hướng bên trái
 
-- Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 8 chương và 32 bài, đánh dấu bài đang xem.
+- Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 12 bước và các bài con, đánh dấu bài đang xem.
 - Khi thêm hoặc đổi tên bài: sửa `docs/index.html` trước, rồi chạy `python3 tools/gen-sidebar.py` để chép vào mọi trang. Không sửa tay từng trang.

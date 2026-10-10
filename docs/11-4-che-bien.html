@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11.4 Chế biến</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #e3e7ec;
+    --brand: #2f6fed; --brand-soft: #e8f0fe;
+    --warn: #b45309; --warn-bg: #fff4e0; --warn-line: #f5c26b;
+    --tip: #0f766e; --tip-bg: #e6f6f3; --tip-line: #8fd3c7;
+    --must: #b42318; --must-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b2129; --text: #e6e9ee; --muted: #9aa5b3; --line: #2b3440;
+      --brand: #6ea0ff; --brand-soft: #1d2b47;
+      --warn: #f5b457; --warn-bg: #3a2c14; --warn-line: #6b4f1d;
+      --tip: #5fd1c0; --tip-bg: #12302c; --tip-line: #1f5a52;
+      --must: #ff8a80; --must-bg: #3d1d1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  .crumb { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 22px 24px; margin-bottom: 20px; }
+  img.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 18px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 6px 0 6px 46px; min-height: 36px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 4px; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .path { background: var(--brand-soft); color: var(--brand); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--brand-soft); color: var(--brand); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td.grp { font-weight: 700; background: color-mix(in srgb, var(--brand-soft) 45%, transparent); white-space: nowrap; }
+  tr.must td { background: var(--must-bg); }
+  .badge { display: inline-block; background: var(--must); color: #fff; font-size: 12px; font-weight: 700;
+           padding: 1px 8px; border-radius: 999px; margin-right: 4px; }
+  a { color: var(--brand); }
+  ul.check { list-style: none; padding: 0; margin: 0; }
+  ul.check li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  ul.check li:last-child { border: 0; }
+  ul.check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  ul.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--brand); flex: none; }
+  ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .note { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid; display: flex; gap: 12px; }
+  .note:last-child { margin-bottom: 0; }
+  .note .ic { font-size: 20px; line-height: 1.4; }
+  .note.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .note.tip { background: var(--tip-bg); border-color: var(--tip-line); }
+  .note.danger { background: var(--must-bg); border-color: var(--must); }
+  .example { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 10px; padding: 14px 18px; margin: 0 0 6px; }
+  .example ul { margin: 6px 0 0; padding-left: 20px; }
+  .step { padding: 18px 0; border-top: 1px solid var(--line); }
+  .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .step h3 { margin: 0 0 8px; font-size: 17px; display: flex; gap: 10px; align-items: center; }
+  .step h3 span { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 14px; white-space: nowrap; }
+  .step ul { margin: 0 0 10px; padding-left: 22px; }
+  .step p { margin: 0 0 10px; }
+  .step img.shot { margin: 6px 0 0; }
+  @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  /* sidebar */
+  nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
+             border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
+  nav.side .home { display: block; font-weight: 700; font-size: 15px; text-decoration: none; color: var(--text); padding: 6px 8px 12px; }
+  nav.side details { margin-bottom: 2px; }
+  nav.side summary { cursor: pointer; font-weight: 600; padding: 7px 8px; border-radius: 8px; list-style-position: inside; }
+  nav.side summary:hover { background: var(--brand-soft); }
+  nav.side ul { list-style: none; margin: 2px 0 6px; padding: 0; }
+  nav.side li a { display: block; padding: 6px 8px 6px 22px; border-radius: 8px; text-decoration: none; color: var(--text); }
+  nav.side li a:hover { background: var(--brand-soft); }
+  nav.side li a.cur { background: var(--brand-soft); color: var(--brand); font-weight: 700; }
+  body { padding-left: 290px; }
+  nav.side .toggle { display: none; }
+  @media (max-width: 900px) {
+    body { padding-left: 0; }
+    nav.side { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 10px 12px; max-height: none; overflow: visible; }
+    nav.side .toggle { display: block; }
+    nav.side .menu { display: none; max-height: 60vh; overflow-y: auto; margin-top: 8px; }
+    nav.side.open .menu { display: block; }
+    nav.side .home { display: inline-block; padding: 6px 0; }
+    nav.side .toggle { float: right; background: var(--brand); color: #fff; border: 0; border-radius: 8px; padding: 6px 14px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<nav class="side">
+<button class="toggle" type="button">☰ Mục lục</button>
+<a class="home" href="index.html">📘 Cẩm nang TNTDRINK ERP</a>
+<div class="menu">
+<details><summary>Mở đầu</summary><ul><li><a href="0-bat-dau.html">Bắt đầu: làm gì, theo thứ tự nào</a></li></ul></details>
+<details><summary>Bước 1 — Nhập đơn vị tính</summary><ul><li><a href="1-1-thiet-lap-don-vi-tinh.html">1.1 Thiết lập đơn vị tính</a></li></ul></details>
+<details><summary>Bước 2 — Nhập sản phẩm</summary><ul><li><a href="2-1-danh-muc-san-pham.html">2.1 Danh mục sản phẩm</a></li><li><a href="2-2-thanh-pham.html">2.2 Thành phẩm</a></li><li><a href="2-3-ban-thanh-pham.html">2.3 Bán thành phẩm</a></li><li><a href="2-4-nguyen-lieu.html">2.4 Nguyên liệu</a></li></ul></details>
+<details><summary>Bước 3 — Nhập công thức</summary><ul><li><a href="3-1-cong-thuc-ban-thanh-pham.html">3.1 Công thức bán thành phẩm</a></li><li><a href="3-2-cong-thuc-thanh-pham.html">3.2 Công thức thành phẩm</a></li></ul></details>
+<details><summary>Bước 4 — Cài đặt máy in</summary><ul><li><a href="4-1-may-in-bill.html">4.1 Cài đặt máy in bill</a></li><li><a href="4-2-may-in-nhan.html">4.2 Cài đặt máy in nhãn</a></li></ul></details>
+<details><summary>Bước 5 — Cài đặt màn hình bếp</summary><ul><li><a href="5-1-man-hinh-bep.html">5.1 Cài đặt màn hình bếp</a></li></ul></details>
+<details><summary>Bước 6 — Kiểm soát tồn kho</summary><ul><li><a href="6-1-tao-mau-kiem-kho.html">6.1 Tạo mẫu kiểm kho</a></li><li><a href="6-2-dinh-muc-ton-kho.html">6.2 Định mức tối thiểu - tối đa của sản phẩm</a></li></ul></details>
+<details><summary>Bước 7 — Mẫu công việc</summary><ul><li><a href="7-1-mau-cong-viec.html">7.1 Mẫu công việc</a></li></ul></details>
+<details><summary>Bước 8 — Cài đặt máy chấm công</summary><ul><li><a href="8-1-tao-nhan-vien.html">8.1 Tạo nhân viên</a></li><li><a href="8-2-cai-dat-may-cham-cong.html">8.2 Cài đặt máy chấm công</a></li></ul></details>
+<details><summary>Bước 9 — Đăng ký ca, xếp lịch, chấm công</summary><ul><li><a href="9-1-tao-ca-lam-viec.html">9.1 Tạo ca làm việc</a></li><li><a href="9-2-dang-ky-va-duyet-ca.html">9.2 Đăng ký và duyệt ca</a></li><li><a href="9-3-dong-bo-cham-cong.html">9.3 Đồng bộ chấm công</a></li></ul></details>
+<details><summary>Bước 10 — Chi phí</summary><ul><li><a href="10-1-danh-muc-chi-phi.html">10.1 Danh mục chi phí</a></li><li><a href="10-2-tao-chi-phi.html">10.2 Tạo chi phí</a></li></ul></details>
+<details open><summary>Bước 11 — Quy trình vận hành kho</summary><ul><li><a href="11-1-tong-quan-quy-trinh-kho.html">11.1 Tổng quan quy trình kho</a></li><li><a href="11-2-nhap-hang.html">11.2 Nhập hàng</a></li><li><a href="11-3-chuyen-kho.html">11.3 Chuyển kho</a></li><li><a href="11-4-che-bien.html" class="cur">11.4 Chế biến</a></li><li><a href="11-5-huy-hang.html">11.5 Huỷ hàng</a></li><li><a href="11-6-kiem-kho.html">11.6 Kiểm kho</a></li><li><a href="11-7-de-xuat-nhap-hang.html">11.7 Đề xuất nhập hàng</a></li></ul></details>
+<details><summary>Bước 12 — Hướng dẫn đọc hiểu file P&amp;L và báo cáo</summary><ul><li><a href="12-1-bao-cao-ban-hang.html">12.1 Báo cáo bán hàng</a></li><li><a href="12-2-bao-cao-lai-lo.html">12.2 Báo cáo lãi lỗ (P&amp;L)</a></li></ul></details>
+</div>
+</nav>
+<main>
+  <div class="crumb">Bước 11 · Quy trình vận hành kho</div>
+  <h1>11.4 Chế biến</h1>
+
+  <section>
+    <h2>1. Đường dẫn vào chức năng</h2>
+    <p style="margin:0">Menu trái: <span class="path">Vận hành → Chế biến</span> &nbsp;(địa chỉ <code>/manufacturing</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Dùng khi: quán tự làm ra thứ gì đó (ủ cà phê cốt, nấu syrup, làm sốt).</li><li>Cần có trước: công thức (BOM) của thành phẩm (<a href="3-2-cong-thuc-thanh-pham.html">mục 3.2</a>).</li></ul>
+  </section>
+
+  <section>
+    <h2>2. Ví dụ nền và các bước thực hiện</h2>
+    <div class="example"><strong>Ví dụ:</strong> ủ "Cà phê cốt ủ", công thức dùng "Cà phê hạt".<ul><li>Công thức: 100 g "Cà phê hạt" làm ra 1000 g "Cà phê cốt ủ".</li><li>Kho trừ nguyên liệu: "Kho tổng". Kho nhập thành phẩm: "Kho quầy".</li><li>Hôm nay ủ 2000 g → cần dùng <strong>200 g</strong> cà phê hạt.</li></ul></div>
+    <div class="step"><h3><span>Bước 1</span>Mở trang Chế biến</h3>
+      <ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Chế biến</strong>.</li><li>Bấm <strong>Tạo phiếu chế biến</strong>.</li></ul>
+      <img class="shot" src="images/06-che-bien-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Chế biến"></div>
+    <div class="step"><h3><span>Bước 2</span>Khai phiếu chế biến</h3>
+      <ul><li><strong>Sản phẩm thành phẩm</strong>: chọn "Cà phê cốt ủ". Hệ thống <strong>tự nạp nguyên liệu từ công thức</strong>.</li><li><strong>Kho trừ nguyên liệu</strong>: chọn "Kho tổng". <strong>Kho nhập thành phẩm</strong>: chọn "Kho quầy".</li><li><strong>Số lượng thành phẩm</strong>: nhập "2000".</li><li>Mục <strong>Nguyên liệu tiêu thụ (từ BOM)</strong>: <strong>kiểm tra và tự sửa</strong> số lượng cho khớp (ở ví dụ: "Cà phê hạt" = "200").</li><li>Bấm <strong>Lưu phiếu (nháp)</strong>.</li></ul>
+      <img class="shot" src="images/06-che-bien-buoc-2-form.png" alt="Bước 2: Khai phiếu chế biến"></div>
+    <div class="step"><h3><span>Bước 3</span>Xác nhận chế biến</h3>
+      <ul><li>Phiếu hiện trong danh sách, mã dạng "MO261009-001", trạng thái <strong>Nháp</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu có: <strong>Xác nhận chế biến</strong>, <strong>Huỷ bỏ</strong>, <strong>Xoá</strong>.</li><li>Kiểm tra lại, chọn <strong>Xác nhận chế biến</strong>.</li></ul>
+      <img class="shot" src="images/06-che-bien-buoc-3-nhap-menu.png" alt="Bước 3: Xác nhận chế biến"></div>
+  </section>
+
+  <section>
+    <h2>3. Giải thích các trường</h2>
+    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Sản phẩm thành phẩm</td><td>Thứ làm ra. Phải có công thức</td><td>✅</td></tr><tr><td>Kho trừ nguyên liệu</td><td>Kho lấy nguyên liệu</td><td>✅</td></tr><tr><td>Kho nhập thành phẩm</td><td>Kho nhận thành phẩm</td><td>✅</td></tr><tr><td>Số lượng thành phẩm</td><td>Số làm được thật</td><td>✅</td></tr><tr><td>Nguyên liệu tiêu thụ</td><td>Tự nạp từ công thức, <strong>sửa được</strong></td><td>✅</td></tr><tr><td>Ghi chú</td><td>Ghi thêm (không bắt buộc)</td><td>—</td></tr></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>4. Lưu ý quan trọng</h2>
+    <div class="note danger"><div class="ic">⚠️</div>
+      <div><strong>Số lượng trên phiếu là nguồn sự thật, không phải công thức.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Công thức chỉ điền sẵn cho nhanh.</li><li>Đổi <em>Số lượng thành phẩm</em> thì danh sách nguyên liệu <strong>không tự đổi theo</strong>: sửa tay.</li><li>Hôm nay dùng nhiều hơn định mức thì cứ sửa số trên phiếu.</li><li>Hệ thống trừ đúng số bạn khai.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div>
+      <div><strong>Đã xác nhận thì không xác nhận lại được.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Hệ thống khoá để tránh trừ kho hai lần khi hai người cùng bấm.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div>
+      <div>Chế biến <strong>không đụng tới tiền</strong>: chỉ chuyển giá trị từ nguyên liệu sang bán thành phẩm. Phiếu nhẹ nhất chương này.</div></div>
+<div class="note tip"><div class="ic">💡</div>
+      <div>Chưa có công thức thì phiếu không tự nạp nguyên liệu được. Tạo công thức trước.</div></div>
+    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
+    <ul class="check">
+      <li><label><input type="checkbox"><span>Tồn nguyên liệu giảm đúng số đã khai</span></label></li>
+      <li><label><input type="checkbox"><span>Tồn bán thành phẩm tăng đúng số làm được</span></label></li>
+    </ul>
+  </section>
+</main>
+<script>
+(function(){var n=document.querySelector('nav.side');if(!n)return;
+var b=n.querySelector('.toggle');b.addEventListener('click',function(){n.classList.toggle('open')});
+var c=n.querySelector('a.cur');if(c&&n.scrollTo){var t=c.offsetTop-n.clientHeight/3;if(getComputedStyle(n).position==='fixed')n.scrollTop=t;}})();
+</script>
+</body>
+</html>
