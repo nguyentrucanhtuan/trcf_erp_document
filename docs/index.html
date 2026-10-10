@@ -66,16 +66,19 @@
   .step ul { margin: 0 0 10px; padding-left: 22px; }
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
-  ul.toc { list-style: none; margin: 0; padding: 0; }
-  ul.toc li { border-bottom: 1px solid var(--line); }
-  ul.toc li:last-child { border: 0; }
-  ul.toc a, ul.toc li.todo > div { display: block; padding: 12px 4px; text-decoration: none; color: var(--text); }
-  ul.toc a:hover { background: var(--brand-soft); border-radius: 8px; }
-  ul.toc strong { display: block; }
-  ul.toc span { display: block; color: var(--muted); font-size: 14px; }
-  ul.toc li.todo { display: flex; align-items: center; justify-content: space-between; gap: 12px; opacity: .55; }
-  ul.toc li.todo em { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; white-space: nowrap; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -105,7 +108,6 @@
 <button class="toggle" type="button">☰ Mục lục</button>
 <a class="home" href="index.html">📘 Cẩm nang TNTDRINK ERP</a>
 <div class="menu">
-<details><summary>Mở đầu</summary><ul><li><a href="0-bat-dau.html">Bắt đầu: làm gì, theo thứ tự nào</a></li></ul></details>
 <details><summary>Bước 1 — Nhập đơn vị tính</summary><ul><li><a href="1-1-thiet-lap-don-vi-tinh.html">1.1 Thiết lập đơn vị tính</a></li></ul></details>
 <details><summary>Bước 2 — Nhập sản phẩm</summary><ul><li><a href="2-1-danh-muc-san-pham.html">2.1 Danh mục sản phẩm</a></li><li><a href="2-2-thanh-pham.html">2.2 Thành phẩm</a></li><li><a href="2-3-ban-thanh-pham.html">2.3 Bán thành phẩm</a></li><li><a href="2-4-nguyen-lieu.html">2.4 Nguyên liệu</a></li></ul></details>
 <details><summary>Bước 3 — Nhập công thức</summary><ul><li><a href="3-1-cong-thuc-ban-thanh-pham.html">3.1 Công thức bán thành phẩm</a></li><li><a href="3-2-cong-thuc-thanh-pham.html">3.2 Công thức thành phẩm</a></li></ul></details>
@@ -121,76 +123,51 @@
 </div>
 </nav>
 <main>
-  <h1>Cẩm nang sử dụng TNTDRINK ERP</h1>
-  <section><h2>Mở đầu</h2>
-  <ul class="toc">
-    <li><a href="0-bat-dau.html"><strong>Bắt đầu: làm gì, theo thứ tự nào</strong><span>sơ đồ các bước thiết lập từ đơn vị tính đến đọc báo cáo</span></a></li>
-  </ul></section>
-  <section><h2>Bước 1 — Nhập đơn vị tính</h2>
-  <ul class="toc">
-    <li><a href="1-1-thiet-lap-don-vi-tinh.html"><strong>1.1 Thiết lập đơn vị tính</strong><span>khai đơn vị gốc và đơn vị quy đổi — hệ số bị khoá sau khi dùng</span></a></li>
-  </ul></section>
-  <section><h2>Bước 2 — Nhập sản phẩm</h2>
-  <ul class="toc">
-    <li><a href="2-1-danh-muc-san-pham.html"><strong>2.1 Danh mục sản phẩm</strong><span>tạo nhóm món trên màn bán hàng — 4 trường, kéo thả đổi thứ tự</span></a></li>
-    <li><a href="2-2-thanh-pham.html"><strong>2.2 Thành phẩm</strong><span>khai món bán cho khách: thông tin chính, giá, các công tắc</span></a></li>
-    <li><a href="2-3-ban-thanh-pham.html"><strong>2.3 Bán thành phẩm</strong><span>hàng quán tự làm sẵn, là đầu vào của món khác</span></a></li>
-    <li><a href="2-4-nguyen-lieu.html"><strong>2.4 Nguyên liệu</strong><span>hàng mua về để làm ra thứ khác, theo dõi tồn kho</span></a></li>
-  </ul></section>
-  <section><h2>Bước 3 — Nhập công thức</h2>
-  <ul class="toc">
-    <li><a href="3-1-cong-thuc-ban-thanh-pham.html"><strong>3.1 Công thức bán thành phẩm</strong><span>nguyên liệu, sản lượng một mẻ và giá vốn</span></a></li>
-    <li><a href="3-2-cong-thuc-thanh-pham.html"><strong>3.2 Công thức thành phẩm</strong><span>định lượng pha chế một món và cách tính giá vốn</span></a></li>
-  </ul></section>
-  <section><h2>Bước 4 — Cài đặt máy in</h2>
-  <ul class="toc">
-    <li><a href="4-1-may-in-bill.html"><strong>4.1 Cài đặt máy in bill</strong><span>khai máy in hoá đơn qua mạng LAN, chân trang bill</span></a></li>
-    <li><a href="4-2-may-in-nhan.html"><strong>4.2 Cài đặt máy in nhãn</strong><span>khai máy in tem, bề rộng và chiều cao tem</span></a></li>
-  </ul></section>
-  <section><h2>Bước 5 — Cài đặt màn hình bếp</h2>
-  <ul class="toc">
-    <li><a href="5-1-man-hinh-bep.html"><strong>5.1 Cài đặt màn hình bếp</strong><span>tạo màn hình bếp lọc theo danh mục, hiện công thức rút gọn</span></a></li>
-  </ul></section>
-  <section><h2>Bước 6 — Kiểm soát tồn kho</h2>
-  <ul class="toc">
-    <li><a href="6-1-tao-mau-kiem-kho.html"><strong>6.1 Tạo mẫu kiểm kho</strong><span>danh sách hàng cần đếm theo khu vực, dùng lại nhiều lần</span></a></li>
-    <li><a href="6-2-dinh-muc-ton-kho.html"><strong>6.2 Định mức tối thiểu - tối đa của sản phẩm</strong><span>khai ngưỡng để hệ thống báo hàng dưới định mức</span></a></li>
-  </ul></section>
-  <section><h2>Bước 7 — Mẫu công việc</h2>
-  <ul class="toc">
-    <li><a href="7-1-mau-cong-viec.html"><strong>7.1 Mẫu công việc</strong><span>khai việc lặp, chu kỳ và cách giao việc</span></a></li>
-  </ul></section>
-  <section><h2>Bước 8 — Cài đặt máy chấm công</h2>
-  <ul class="toc">
-    <li><a href="8-1-tao-nhan-vien.html"><strong>8.1 Tạo nhân viên</strong><span>khai hồ sơ, gắn tài khoản đăng nhập và mã chấm công</span></a></li>
-    <li><a href="8-2-cai-dat-may-cham-cong.html"><strong>8.2 Cài đặt máy chấm công</strong><span>khai máy, kiểm tra kết nối, cảnh báo lệch giờ</span></a></li>
-  </ul></section>
-  <section><h2>Bước 9 — Đăng ký ca, xếp lịch, chấm công</h2>
-  <ul class="toc">
-    <li><a href="9-1-tao-ca-lam-viec.html"><strong>9.1 Tạo ca làm việc</strong><span>khai các ca trong ngày — 5 trường, ca qua đêm hợp lệ</span></a></li>
-    <li><a href="9-2-dang-ky-va-duyet-ca.html"><strong>9.2 Đăng ký và duyệt ca</strong><span>đăng ký ca rồi duyệt — đầu vào của sinh việc và chấm công</span></a></li>
-    <li><a href="9-3-dong-bo-cham-cong.html"><strong>9.3 Đồng bộ chấm công</strong><span>kéo dữ liệu từ máy (ghi đè), đọc bảng công, bù tay</span></a></li>
-  </ul></section>
-  <section><h2>Bước 10 — Chi phí</h2>
-  <ul class="toc">
-    <li><a href="10-1-danh-muc-chi-phi.html"><strong>10.1 Danh mục chi phí</strong><span>khai nhóm chi phí để báo cáo lãi lỗ gom đúng chỗ</span></a></li>
-    <li><a href="10-2-tao-chi-phi.html"><strong>10.2 Tạo chi phí</strong><span>lập phiếu chi cho khoản không phải mua hàng</span></a></li>
-  </ul></section>
-  <section><h2>Bước 11 — Quy trình vận hành kho</h2>
-  <ul class="toc">
-    <li><a href="11-1-tong-quan-quy-trinh-kho.html"><strong>11.1 Tổng quan quy trình kho</strong><span>bảng tra nhanh: việc nào dùng phiếu nào</span></a></li>
-    <li><a href="11-2-nhap-hang.html"><strong>11.2 Nhập hàng</strong><span>lập đơn mua → xác nhận → nhận hàng</span></a></li>
-    <li><a href="11-3-chuyen-kho.html"><strong>11.3 Chuyển kho</strong><span>chuyển hàng từ kho tổng ra kho quầy</span></a></li>
-    <li><a href="11-4-che-bien.html"><strong>11.4 Chế biến</strong><span>trừ nguyên liệu, cộng bán thành phẩm</span></a></li>
-    <li><a href="11-5-huy-hang.html"><strong>11.5 Huỷ hàng</strong><span>ghi hàng hỏng, hết hạn, rơi vỡ</span></a></li>
-    <li><a href="11-6-kiem-kho.html"><strong>11.6 Kiểm kho</strong><span>tạo phiếu kiểm kho dựa trên mẫu, đếm và chỉnh tồn</span></a></li>
-    <li><a href="11-7-de-xuat-nhap-hang.html"><strong>11.7 Đề xuất nhập hàng</strong><span>màn nhắc việc, hàng dưới định mức, rà soát khai báo</span></a></li>
-  </ul></section>
-  <section><h2>Bước 12 — Hướng dẫn đọc hiểu file P&amp;L và báo cáo</h2>
-  <ul class="toc">
-    <li><a href="12-1-bao-cao-ban-hang.html"><strong>12.1 Báo cáo bán hàng</strong><span>bốn chỉ số bán hàng và cách đọc</span></a></li>
-    <li><a href="12-2-bao-cao-lai-lo.html"><strong>12.2 Báo cáo lãi lỗ (P&amp;L)</strong><span>bốn ô tổng nối với nhau thế nào và ba cạm bẫy</span></a></li>
-  </ul></section>
+  <div class="crumb">Mở đầu</div>
+  <h1>Bắt đầu: làm gì, theo thứ tự nào</h1>
+  <section>
+    <h2>Lộ trình thiết lập</h2>
+    <ul>
+      <li>Làm lần lượt từ trên xuống dưới.</li>
+      <li>Bấm vào ô xanh để mở bài hướng dẫn chi tiết.</li>
+      <li>Không bỏ bước: bước sau cần dữ liệu của bước trước.</li>
+    </ul>
+  </section>
+  <div class="phase">Dữ liệu nền</div>
+  <ol class="flow" style="margin-bottom:34px">
+    <li><span class="no">1</span><h3>Nhập đơn vị tính</h3><p>Điền file mẫu nhập liệu, rồi nhập vào hệ thống.</p><div class="sub"><a href="1-1-thiet-lap-don-vi-tinh.html">1.1 Thiết lập đơn vị tính</a></div></li>
+    <li><span class="no">2</span><h3>Nhập sản phẩm</h3><p>Tạo danh mục trước, rồi nhập sản phẩm theo từng loại.</p><div class="sub"><a href="2-1-danh-muc-san-pham.html">2.1 Danh mục sản phẩm</a><a href="2-2-thanh-pham.html">2.2 Thành phẩm</a><a href="2-3-ban-thanh-pham.html">2.3 Bán thành phẩm</a><a href="2-4-nguyen-lieu.html">2.4 Nguyên liệu</a></div></li>
+    <li><span class="no">3</span><h3>Nhập công thức</h3><p>Khai công thức cho bán thành phẩm và thành phẩm.</p><div class="sub"><a href="3-1-cong-thuc-ban-thanh-pham.html">3.1 Công thức bán thành phẩm</a><a href="3-2-cong-thuc-thanh-pham.html">3.2 Công thức thành phẩm</a></div></li>
+  </ol>
+  <div style="text-align:center;font-size:22px;color:var(--brand);font-weight:700;margin:-26px 0 8px">↓</div>
+  <div class="phase">Thiết bị tại quầy</div>
+  <ol class="flow" style="margin-bottom:34px">
+    <li><span class="no">4</span><h3>Cài đặt máy in</h3><p>Khai máy in bill và máy in nhãn.</p><div class="sub"><a href="4-1-may-in-bill.html">4.1 Cài đặt máy in bill</a><a href="4-2-may-in-nhan.html">4.2 Cài đặt máy in nhãn</a></div></li>
+    <li><span class="no">5</span><h3>Cài đặt màn hình bếp</h3><p>Tạo màn hình bếp và chọn danh mục món hiện trên màn.</p><div class="sub"><a href="5-1-man-hinh-bep.html">5.1 Cài đặt màn hình bếp</a></div></li>
+  </ol>
+  <div style="text-align:center;font-size:22px;color:var(--brand);font-weight:700;margin:-26px 0 8px">↓</div>
+  <div class="phase">Kho</div>
+  <ol class="flow" style="margin-bottom:34px">
+    <li><span class="no">6</span><h3>Kiểm soát tồn kho</h3><p>Dựng mẫu kiểm kho, khai định mức tối thiểu - tối đa của sản phẩm.</p><div class="sub"><a href="6-1-tao-mau-kiem-kho.html">6.1 Tạo mẫu kiểm kho</a><a href="6-2-dinh-muc-ton-kho.html">6.2 Định mức tối thiểu - tối đa của sản phẩm</a></div></li>
+  </ol>
+  <div style="text-align:center;font-size:22px;color:var(--brand);font-weight:700;margin:-26px 0 8px">↓</div>
+  <div class="phase">Nhân sự và công việc</div>
+  <ol class="flow" style="margin-bottom:34px">
+    <li><span class="no">7</span><h3>Mẫu công việc</h3><p>Khai các việc lặp lại hằng ngày.</p><div class="sub"><a href="7-1-mau-cong-viec.html">7.1 Mẫu công việc</a></div></li>
+    <li><span class="no">8</span><h3>Cài đặt máy chấm công</h3><p>Tạo nhân viên, rồi khai máy chấm công.</p><div class="sub"><a href="8-1-tao-nhan-vien.html">8.1 Tạo nhân viên</a><a href="8-2-cai-dat-may-cham-cong.html">8.2 Cài đặt máy chấm công</a></div></li>
+    <li><span class="no">9</span><h3>Đăng ký ca, xếp lịch, chấm công</h3><p>Tạo ca, đăng ký ca, duyệt ca rồi chấm công.</p><div class="sub"><a href="9-1-tao-ca-lam-viec.html">9.1 Tạo ca làm việc</a><a href="9-2-dang-ky-va-duyet-ca.html">9.2 Đăng ký và duyệt ca</a><a href="9-3-dong-bo-cham-cong.html">9.3 Đồng bộ chấm công</a></div></li>
+  </ol>
+  <div style="text-align:center;font-size:22px;color:var(--brand);font-weight:700;margin:-26px 0 8px">↓</div>
+  <div class="phase">Chi phí</div>
+  <ol class="flow" style="margin-bottom:34px">
+    <li><span class="no">10</span><h3>Chi phí</h3><p>Khai danh mục chi phí rồi lập phiếu chi.</p><div class="sub"><a href="10-1-danh-muc-chi-phi.html">10.1 Danh mục chi phí</a><a href="10-2-tao-chi-phi.html">10.2 Tạo chi phí</a></div></li>
+  </ol>
+  <div style="text-align:center;font-size:22px;color:var(--brand);font-weight:700;margin:-26px 0 8px">↓</div>
+  <div class="phase">Vận hành và báo cáo</div>
+  <ol class="flow">
+    <li><span class="no">11</span><h3>Quy trình vận hành kho</h3><p>Các việc hằng ngày làm với kho: nhập, chuyển, chế biến, huỷ, kiểm kho.</p><div class="sub"><a href="11-1-tong-quan-quy-trinh-kho.html">11.1 Tổng quan quy trình kho</a><a href="11-2-nhap-hang.html">11.2 Nhập hàng</a><a href="11-3-chuyen-kho.html">11.3 Chuyển kho</a><a href="11-4-che-bien.html">11.4 Chế biến</a><a href="11-5-huy-hang.html">11.5 Huỷ hàng</a><a href="11-6-kiem-kho.html">11.6 Kiểm kho</a><a href="11-7-de-xuat-nhap-hang.html">11.7 Đề xuất nhập hàng</a></div></li>
+    <li><span class="no">12</span><h3>Hướng dẫn đọc hiểu file P&amp;L và báo cáo</h3><p>Đọc báo cáo bán hàng và lãi lỗ.</p><div class="sub"><a href="12-1-bao-cao-ban-hang.html">12.1 Báo cáo bán hàng</a><a href="12-2-bao-cao-lai-lo.html">12.2 Báo cáo lãi lỗ (P&amp;L)</a></div></li>
+  </ol>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

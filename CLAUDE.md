@@ -4,8 +4,8 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 
 ## Định dạng và vị trí
 
-- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con. Cẩm nang gồm 12 bước, mỗi bước có các bài con đánh số `N.k` (VD 6.1, 6.2). Tên file dạng `N-k-tên-bài.html` (VD `6-1-tao-mau-kiem-kho.html`). Sơ đồ thứ tự các bước nằm ở `docs/0-bat-dau.html`.
-- **Mục lục `index.html`**: liệt kê các bước và bài con. Bài chưa viết thì chưa đưa vào. **Thêm bài mới thì thêm một dòng `<li><a href="<tên-file>.html"><strong>N.k Tên bài</strong><span>mô tả ngắn</span></a></li>` vào đúng bước trong `index.html`**, thêm nút con tương ứng ở `0-bat-dau.html`, rồi chạy `tools/gen-sidebar.py`.
+- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con. Cẩm nang gồm 12 bước, mỗi bước có các bài con đánh số `N.k` (VD 6.1, 6.2). Tên file dạng `N-k-tên-bài.html` (VD `6-1-tao-mau-kiem-kho.html`). Trang chủ `docs/index.html` là sơ đồ thứ tự 12 bước.
+- **Mục lục `index.html`**: là trang chủ, vẽ sơ đồ 12 bước, mỗi bước có các nút con dẫn tới bài. Bài chưa viết thì chưa đưa vào. **Thêm bài mới thì thêm nút `<a href="<tên-file>.html">N.k Tên bài</a>` vào đúng bước trong `index.html`**, rồi chạy `tools/gen-sidebar.py`.
 - Link giữa các bài chỉ ghi tên file (VD `href="1-1-cau-hinh-ban-dau.html"`).
 - Lấy phần `<head>` + CSS của bài 1.1 làm khuôn (có chế độ sáng/tối, đọc được trên điện thoại).
 - Ảnh đặt trong `docs/images/`, gọi bằng đường dẫn `images/...`.
@@ -38,4 +38,4 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 ## Thanh điều hướng bên trái
 
 - Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 12 bước và các bài con, đánh dấu bài đang xem.
-- Khi thêm hoặc đổi tên bài: sửa `docs/index.html` trước, rồi chạy `python3 tools/gen-sidebar.py` để chép vào mọi trang. Không sửa tay từng trang.
+- Khi thêm hoặc đổi tên bài: sửa nút con trong `docs/index.html` trước, rồi chạy `python3 tools/gen-sidebar.py` để chép vào mọi trang. Không sửa tay từng trang.

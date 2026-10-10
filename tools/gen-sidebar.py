@@ -2,9 +2,9 @@ import re,glob,html as H
 import os; os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','docs'))
 idx=open('index.html',encoding='utf-8').read()
 chs=[]
-for m in re.finditer(r'<h2>((?:Chương|Bước|Mở đầu)[^<]*)</h2>(.*?)</ul>',idx,re.S):
-    items=re.findall(r'<a href="([^"]+)"><strong>([^<]*)</strong>',m.group(2))
-    chs.append((m.group(1),items))
+for m in re.finditer(r'<li><span class="no">(\d+)</span><h3>(.*?)</h3>.*?<div class="sub">(.*?)</div></li>',idx,re.S):
+    items=re.findall(r'<a href="([^"]+)">([^<]*)</a>',m.group(3))
+    chs.append((f'Bước {m.group(1)} — {m.group(2)}',items))
 CSS='''  /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
