@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>11.6 Kiểm kho</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,51 +139,47 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 11 · Quy trình vận hành kho</div>
-  <h1>11.6 Kiểm kho</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Vận hành → Kiểm kê</span> &nbsp;(địa chỉ <code>/stock-checks</code>).</p><p style="margin:8px 0 0">Dựng mẫu kiểm kho trước ở <a href="6-1-tao-mau-kiem-kho.html">bài 6.1 Tạo mẫu kiểm kho</a> (không bắt buộc).</p>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> kiểm "Kho tổng", đếm 2 mặt hàng.<ul><li>"Cà phê hạt": hệ thống 0 g, đếm thật "4800" g.</li><li>"Sữa đặc": hệ thống 0 g, đếm thật "1500" g.</li><li>Tổng chênh lệch: +6300.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Kiểm kê</h3>
-      <ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Kiểm kê</strong>.</li><li>Bấm <strong>Tạo phiếu kiểm kê</strong> (mã phiếu tự sinh).</li></ul>
-      <img class="shot" src="images/06-kiem-ke-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Kiểm kê"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai phiếu và đếm hàng</h3>
-      <ul><li><strong>Kho hàng kiểm kê</strong>: chọn "KHO-TONG/Kho tổng".</li><li>Nạp danh sách hàng cần đếm (xem 2 cách bên dưới).</li><li>Ở đây: bấm ô <strong>Thêm sản phẩm...</strong>, chọn "Cà phê hạt", rồi "Sữa đặc".</li><li>Đi đếm thật, nhập vào cột <strong>Thực đếm</strong>: "4800" và "1500".</li><li>Cột <strong>Chênh lệch</strong> tự tính.</li><li>Chưa đếm xong: bấm <strong>Tạo phiếu (nháp)</strong>, quay lại làm tiếp sau.</li></ul>
-      <img class="shot" src="images/06-kiem-ke-buoc-2-form.png" alt="Bước 2: Khai phiếu và đếm hàng"></div>
-    <div class="step"><h3><span>Bước 3</span>Hoàn thành phiếu</h3>
-      <ul><li>Phiếu nháp hiện trong danh sách: số mặt hàng, <strong>Tổng chênh lệch</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu có: <strong>Xem / Sửa</strong>, <strong>Hoàn thành</strong>, <strong>Huỷ phiếu</strong>, <strong>Xoá</strong>.</li><li>Đếm xong hết: <strong>rà lại dòng chênh lệch lớn</strong>, rồi chọn <strong>Hoàn thành</strong> (hoặc bấm <strong>Xác nhận</strong> ngay trong form).</li></ul>
-      <img class="shot" src="images/06-kiem-ke-buoc-3-nhap-menu.png" alt="Bước 3: Hoàn thành phiếu"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <h3 style="margin:0px 0 8px;font-size:16px">Hai cách nạp danh sách</h3><div class="table-wrap"><table><thead><tr><th>Cách</th><th>Khi nào dùng</th></tr></thead><tbody><tr><td><strong>Nạp từ mẫu kiểm kho</strong></td><td>Có mẫu dựng sẵn (<em>Quản lý kho → Mẫu kiểm kho</em>). Nhanh, không sót mặt hàng. Nạp mẫu <strong>thay</strong> danh sách hiện tại</td></tr><tr><td><strong>Thêm sản phẩm</strong> từng món</td><td>Kiểm lẻ vài mặt hàng</td></tr></tbody></table></div>
-    <h3 style="margin:22px 0 8px;font-size:16px">Các cột</h3><div class="table-wrap"><table><thead><tr><th>Cột</th><th>Nghĩa</th></tr></thead><tbody><tr><td>Hệ thống</td><td>Tồn hiện tại theo hệ thống</td></tr><tr><td>Thực đếm</td><td>Số bạn đếm được</td></tr><tr><td>Chênh lệch</td><td>Tự tính = Thực đếm − Hệ thống</td></tr></tbody></table></div>
-    <h3 style="margin:22px 0 8px;font-size:16px">Lịch kiểm kê gợi ý</h3><div class="table-wrap"><table><thead><tr><th>Loại hàng</th><th>Tần suất</th></tr></thead><tbody><tr><td>Hàng dễ hỏng</td><td>Hằng ngày, cuối ca</td></tr><tr><td>Hàng khô</td><td>Hằng tuần</td></tr><tr><td>Toàn bộ</td><td>Cuối tháng</td></tr></tbody></table></div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Xác nhận là ghi đè tồn kho.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đếm sai một con số thì tồn kho sai theo.</li><li>Phải kiểm lại lần nữa mới sửa được.</li></ul></div></div>
-<div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Phiếu đã hoàn thành không sửa, không xoá.</strong></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div><strong>Dựng mẫu kiểm kho theo khu vực</strong>: "Quầy pha chế", "Kho khô", "Tủ đông".<ul style="margin:6px 0 0;padding-left:20px"><li>Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Chênh lệch lặp lại ở cùng một mặt hàng thường không do đếm sai.<ul style="margin:6px 0 0;padding-left:20px"><li>Mà do <strong>thiếu phiếu huỷ</strong> (<a href="11-5-huy-hang.html">mục 11.5</a>) hoặc <strong>thiếu phiếu chuyển kho</strong> (<a href="11-3-chuyen-kho.html">mục 11.3</a>) ở khâu trước.</li></ul></div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Đã rà lại mọi dòng chênh lệch lớn trước khi xác nhận</span></label></li>
-      <li><label><input type="checkbox"><span>Sau xác nhận, tồn kho bằng đúng số đã đếm</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 11 · Quy trình vận hành kho</div>
+<h1>11.6 Kiểm kho</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Vận hành → Kiểm kê</span> (địa chỉ <code>/stock-checks</code>).</p>
+<p>Dựng mẫu kiểm kho trước ở <a href="6-1-tao-mau-kiem-kho.html">bài 6.1 Tạo mẫu kiểm kho</a> (không bắt buộc).</p>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> kiểm "Kho tổng", đếm 2 mặt hàng.</p><ul><li>"Cà phê hạt": hệ thống 0 g, đếm thật "4800" g.</li><li>"Sữa đặc": hệ thống 0 g, đếm thật "1500" g.</li><li>Tổng chênh lệch: +6300.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Kiểm kê</h3>
+<ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Kiểm kê</strong>.</li><li>Bấm <strong>Tạo phiếu kiểm kê</strong> (mã phiếu tự sinh).</li></ul>
+<img class="shot" src="images/06-kiem-ke-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Kiểm kê">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai phiếu và đếm hàng</h3>
+<ul><li><strong>Kho hàng kiểm kê</strong>: chọn "KHO-TONG/Kho tổng".</li><li>Nạp danh sách hàng cần đếm (xem 2 cách bên dưới).</li><li>Ở đây: bấm ô <strong>Thêm sản phẩm...</strong>, chọn "Cà phê hạt", rồi "Sữa đặc".</li><li>Đi đếm thật, nhập vào cột <strong>Thực đếm</strong>: "4800" và "1500".</li><li>Cột <strong>Chênh lệch</strong> tự tính.</li><li>Chưa đếm xong: bấm <strong>Tạo phiếu (nháp)</strong>, quay lại làm tiếp sau.</li></ul>
+<img class="shot" src="images/06-kiem-ke-buoc-2-form.png" alt="Bước 2: Khai phiếu và đếm hàng">
+</div>
+<div class="step"><h3><span>Bước 3</span>Hoàn thành phiếu</h3>
+<ul><li>Phiếu nháp hiện trong danh sách: số mặt hàng, <strong>Tổng chênh lệch</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu có: <strong>Xem / Sửa</strong>, <strong>Hoàn thành</strong>, <strong>Huỷ phiếu</strong>, <strong>Xoá</strong>.</li><li>Đếm xong hết: <strong>rà lại dòng chênh lệch lớn</strong>, rồi chọn <strong>Hoàn thành</strong> (hoặc bấm <strong>Xác nhận</strong> ngay trong form).</li></ul>
+<img class="shot" src="images/06-kiem-ke-buoc-3-nhap-menu.png" alt="Bước 3: Hoàn thành phiếu">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<h3>Hai cách nạp danh sách</h3>
+<div class="table-wrap"><table><thead><tr><th>Cách</th><th>Khi nào dùng</th></tr></thead><tbody><tr><td><strong>Nạp từ mẫu kiểm kho</strong></td><td>Có mẫu dựng sẵn (<em>Quản lý kho → Mẫu kiểm kho</em>). Nhanh, không sót mặt hàng. Nạp mẫu <strong>thay</strong> danh sách hiện tại</td></tr><tr><td><strong>Thêm sản phẩm</strong> từng món</td><td>Kiểm lẻ vài mặt hàng</td></tr></tbody></table></div>
+<h3>Các cột</h3>
+<div class="table-wrap"><table><thead><tr><th>Cột</th><th>Nghĩa</th></tr></thead><tbody><tr><td>Hệ thống</td><td>Tồn hiện tại theo hệ thống</td></tr><tr><td>Thực đếm</td><td>Số bạn đếm được</td></tr><tr><td>Chênh lệch</td><td>Tự tính = Thực đếm − Hệ thống</td></tr></tbody></table></div>
+<h3>Lịch kiểm kê gợi ý</h3>
+<div class="table-wrap"><table><thead><tr><th>Loại hàng</th><th>Tần suất</th></tr></thead><tbody><tr><td>Hàng dễ hỏng</td><td>Hằng ngày, cuối ca</td></tr><tr><td>Hàng khô</td><td>Hằng tuần</td></tr><tr><td>Toàn bộ</td><td>Cuối tháng</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Xác nhận là ghi đè tồn kho.</strong></p><ul><li>Đếm sai một con số thì tồn kho sai theo.</li><li>Phải kiểm lại lần nữa mới sửa được.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Phiếu đã hoàn thành không sửa, không xoá.</strong></p></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p><strong>Dựng mẫu kiểm kho theo khu vực</strong>: "Quầy pha chế", "Kho khô", "Tủ đông".</p><ul><li>Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Chênh lệch lặp lại ở cùng một mặt hàng thường không do đếm sai.</p><ul><li>Mà do <strong>thiếu phiếu huỷ</strong> (<a href="11-5-huy-hang.html">mục 11.5</a>) hoặc <strong>thiếu phiếu chuyển kho</strong> (<a href="11-3-chuyen-kho.html">mục 11.3</a>) ở khâu trước.</li></ul></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Đã rà lại mọi dòng chênh lệch lớn trước khi xác nhận</span></label></li><li><label><input type="checkbox"><span>Sau xác nhận, tồn kho bằng đúng số đã đếm</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

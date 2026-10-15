@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>12.2 Báo cáo lãi lỗ (P&amp;L)</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,52 +139,45 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 12 · Đọc hiểu file P&amp;L và báo cáo</div>
-  <h1>12.2 Báo cáo lãi lỗ (P&amp;L)</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Báo cáo → Báo cáo P&L</span> &nbsp;(địa chỉ <code>/pnl-report</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Chọn kỳ: <strong>Từ tháng</strong> – <strong>Đến tháng</strong> ở đầu trang.</li><li>Dành cho: quản lý và chủ quán.</li></ul>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> chủ quán xem kết quả kinh doanh từ tháng 5/2026 đến tháng 10/2026.<ul><li>Đọc 4 ô tổng ở đầu trang.</li><li>Đọc bảng <strong>Kết quả kinh doanh</strong> và biểu đồ bên dưới.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Chọn kỳ và đọc 4 ô tổng</h3>
-      <ul><li>Vào <strong>Báo cáo → Báo cáo P&L</strong>.</li><li>Chọn <strong>Từ tháng</strong>, <strong>Đến tháng</strong>.</li><li>Đọc 4 ô: <strong>Doanh thu bán</strong>, <strong>Lãi gộp</strong>, <strong>Chi phí vận hành</strong>, <strong>Lợi nhuận trước thuế</strong>.</li><li>Đọc bảng <strong>Kết quả kinh doanh</strong>: giá trị và <strong>% doanh thu</strong> từng khoản mục.</li><li>Nhóm dưới đường kẻ (Đơn chưa thanh toán, VAT, Giá trị tồn kho, COGS) là chỉ số tham khảo, không tính vào lãi lỗ.</li></ul>
-      <img class="shot" src="images/08-pnl-buoc-1-tong-quan.png" alt="Bước 1: Chọn kỳ và đọc 4 ô tổng"></div>
-    <div class="step"><h3><span>Bước 2</span>Đọc biểu đồ</h3>
-      <ul><li>Cuộn xuống: <strong>Cơ cấu chi phí vận hành</strong> theo nhóm, xem khoản nào ăn nhiều nhất.</li><li><strong>Xu hướng theo tháng</strong>: doanh thu, chi phí, lợi nhuận từng tháng.</li></ul>
-      <img class="shot" src="images/08-pnl-buoc-2-bieu-do.png" alt="Bước 2: Đọc biểu đồ"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <h3 style="margin:0px 0 8px;font-size:16px">Bốn ô tổng nối với nhau</h3><div class="example" style="font-family:ui-monospace,monospace;font-size:14px;white-space:pre-wrap">Doanh thu bán            (đơn đã thanh toán − hàng hoàn)
+<div class="crumb">Bước 12 · Đọc hiểu file P&amp;L và báo cáo</div>
+<h1>12.2 Báo cáo lãi lỗ (P&amp;L)</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Báo cáo → Báo cáo P&amp;L</span> (địa chỉ <code>/pnl-report</code>).</p>
+<ul><li>Chọn kỳ: <strong>Từ tháng</strong> – <strong>Đến tháng</strong> ở đầu trang.</li><li>Dành cho: quản lý và chủ quán.</li></ul>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> chủ quán xem kết quả kinh doanh từ tháng 5/2026 đến tháng 10/2026.</p><ul><li>Đọc 4 ô tổng ở đầu trang.</li><li>Đọc bảng <strong>Kết quả kinh doanh</strong> và biểu đồ bên dưới.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Chọn kỳ và đọc 4 ô tổng</h3>
+<ul><li>Vào <strong>Báo cáo → Báo cáo P&amp;L</strong>.</li><li>Chọn <strong>Từ tháng</strong>, <strong>Đến tháng</strong>.</li><li>Đọc 4 ô: <strong>Doanh thu bán</strong>, <strong>Lãi gộp</strong>, <strong>Chi phí vận hành</strong>, <strong>Lợi nhuận trước thuế</strong>.</li><li>Đọc bảng <strong>Kết quả kinh doanh</strong>: giá trị và <strong>% doanh thu</strong> từng khoản mục.</li><li>Nhóm dưới đường kẻ (Đơn chưa thanh toán, VAT, Giá trị tồn kho, COGS) là chỉ số tham khảo, không tính vào lãi lỗ.</li></ul>
+<img class="shot" src="images/08-pnl-buoc-1-tong-quan.png" alt="Bước 1: Chọn kỳ và đọc 4 ô tổng">
+</div>
+<div class="step"><h3><span>Bước 2</span>Đọc biểu đồ</h3>
+<ul><li>Cuộn xuống: <strong>Cơ cấu chi phí vận hành</strong> theo nhóm, xem khoản nào ăn nhiều nhất.</li><li><strong>Xu hướng theo tháng</strong>: doanh thu, chi phí, lợi nhuận từng tháng.</li></ul>
+<img class="shot" src="images/08-pnl-buoc-2-bieu-do.png" alt="Bước 2: Đọc biểu đồ">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<h3>Bốn ô tổng nối với nhau</h3>
+<pre class="example">Doanh thu bán            (đơn đã thanh toán − hàng hoàn)
   −  Chi phí nhập hàng (ròng)   (tiền mua hàng − tiền trả lại NCC)
   =  Lãi gộp
   −  Chi phí vận hành           (tổng phiếu chi theo nhóm)
-  =  Lợi nhuận trước thuế</div>
-    <h3 style="margin:22px 0 8px;font-size:16px">Từng ô lấy số từ đâu</h3><div class="table-wrap"><table><thead><tr><th>Ô</th><th>Nguồn</th></tr></thead><tbody><tr><td>Doanh thu bán</td><td>Đơn bán đã thanh toán, <strong>trừ hàng hoàn</strong></td></tr><tr><td>Chi phí nhập hàng (ròng)</td><td>Đơn mua đã thanh toán, trừ tiền trả lại nhà cung cấp</td></tr><tr><td>Lãi gộp</td><td>Doanh thu − chi phí nhập hàng</td></tr><tr><td>Chi phí vận hành</td><td>Phiếu chi <strong>đã hoàn tất và đã thanh toán</strong>, gom theo danh mục (<a href="10-2-tao-chi-phi.html">mục 10.2</a>)</td></tr><tr><td>Lợi nhuận trước thuế</td><td>Lãi gộp − chi phí vận hành</td></tr></tbody></table></div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>"Chi phí nhập hàng" là tiền đã chi mua hàng trong kỳ, không phải giá vốn của hàng đã bán.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Tháng nhập nhiều để trữ: lãi gộp thấp giả tạo.</li><li>Tháng sau bán hàng tồn đó: lãi gộp cao giả tạo.</li><li>Muốn đánh giá đúng: <strong>xem theo quý</strong> hoặc đối chiếu thêm với giá trị tồn kho.</li></ul></div></div>
-<div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Chỉ khoản chi có phiếu mới vào báo cáo.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Trả tiền điện bằng tiền túi mà không lập phiếu chi: lợi nhuận trên báo cáo cao hơn thực tế.</li></ul></div></div>
-<div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Chưa trừ lương nhân viên</strong> nếu quán không lập phiếu chi cho lương.<ul style="margin:6px 0 0;padding-left:20px"><li>Muốn P&L đủ: tạo danh mục chi phí "Lương".</li><li>Lập phiếu chi hằng tháng.</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Nhìn <strong>% doanh thu</strong> ở cột bên phải bảng thay vì con số tuyệt đối.<ul style="margin:6px 0 0;padding-left:20px"><li>Tỷ lệ chi phí nhập hàng trên doanh thu là chỉ số ổn định để so giữa các tháng.</li><li>Kể cả khi quy mô thay đổi.</li></ul></div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Đã chọn đúng kỳ</span></label></li>
-      <li><label><input type="checkbox"><span>Đã hiểu mỗi ô lấy số từ đâu</span></label></li>
-      <li><label><input type="checkbox"><span>Đã lập đủ phiếu chi (kể cả lương) trước khi tin vào lợi nhuận</span></label></li>
-    </ul>
-  </section>
+  =  Lợi nhuận trước thuế</pre>
+<h3>Từng ô lấy số từ đâu</h3>
+<div class="table-wrap"><table><thead><tr><th>Ô</th><th>Nguồn</th></tr></thead><tbody><tr><td>Doanh thu bán</td><td>Đơn bán đã thanh toán, <strong>trừ hàng hoàn</strong></td></tr><tr><td>Chi phí nhập hàng (ròng)</td><td>Đơn mua đã thanh toán, trừ tiền trả lại nhà cung cấp</td></tr><tr><td>Lãi gộp</td><td>Doanh thu − chi phí nhập hàng</td></tr><tr><td>Chi phí vận hành</td><td>Phiếu chi <strong>đã hoàn tất và đã thanh toán</strong>, gom theo danh mục (<a href="10-2-tao-chi-phi.html">mục 10.2</a>)</td></tr><tr><td>Lợi nhuận trước thuế</td><td>Lãi gộp − chi phí vận hành</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>"Chi phí nhập hàng" là tiền đã chi mua hàng trong kỳ, không phải giá vốn của hàng đã bán.</strong></p><ul><li>Tháng nhập nhiều để trữ: lãi gộp thấp giả tạo.</li><li>Tháng sau bán hàng tồn đó: lãi gộp cao giả tạo.</li><li>Muốn đánh giá đúng: <strong>xem theo quý</strong> hoặc đối chiếu thêm với giá trị tồn kho.</li></ul></div></div>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Chỉ khoản chi có phiếu mới vào báo cáo.</strong></p><ul><li>Trả tiền điện bằng tiền túi mà không lập phiếu chi: lợi nhuận trên báo cáo cao hơn thực tế.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Chưa trừ lương nhân viên</strong> nếu quán không lập phiếu chi cho lương.</p><ul><li>Muốn P&amp;L đủ: tạo danh mục chi phí "Lương".</li><li>Lập phiếu chi hằng tháng.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Nhìn <strong>% doanh thu</strong> ở cột bên phải bảng thay vì con số tuyệt đối.</p><ul><li>Tỷ lệ chi phí nhập hàng trên doanh thu là chỉ số ổn định để so giữa các tháng.</li><li>Kể cả khi quy mô thay đổi.</li></ul></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Đã chọn đúng kỳ</span></label></li><li><label><input type="checkbox"><span>Đã hiểu mỗi ô lấy số từ đâu</span></label></li><li><label><input type="checkbox"><span>Đã lập đủ phiếu chi (kể cả lương) trước khi tin vào lợi nhuận</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

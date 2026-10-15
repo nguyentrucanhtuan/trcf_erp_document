@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>2.1 Danh mục sản phẩm</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,60 +139,43 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 2 · Nhập sản phẩm</div>
-  <h1>2.1 Danh mục sản phẩm</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Quản lý sản phẩm → Danh mục</span> &nbsp;(địa chỉ <code>/product-categories</code>).</p>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> quán tạo 2 danh mục.
-      <ul><li>"Cà phê": nhóm món bán, hiện trên màn bán hàng.</li><li>"Nguyên liệu": cà phê hạt, sữa, đường — chỉ dùng nội bộ, ẩn khỏi màn bán hàng.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Danh mục</h3>
-      <ul><li>Bấm <strong>Quản lý sản phẩm</strong> ở menu trái.</li><li>Chọn <strong>Danh mục</strong>.</li><li>Danh sách trống nếu chưa có danh mục nào.</li></ul>
-      <img class="shot" src="images/03-danh-muc-buoc-1-trang.png" alt="Bước 1: Mở trang Danh mục"></div>
-    <div class="step"><h3><span>Bước 2</span>Thêm danh mục hiện trên POS</h3>
-      <ul><li>Bấm <strong>Thêm danh mục</strong>.</li><li><strong>Tên danh mục</strong>: nhập "Cà phê".</li><li><strong>Màu sắc đại diện</strong>: nhập "#6F4E37" hoặc bấm ô màu để chọn.</li><li><strong>Mô tả</strong>: nhập "Các món cà phê pha máy và pha phin."</li><li><strong>Hiển thị ngoài POS</strong>: để <strong>bật</strong>.</li><li>Bấm nút <strong>Thêm danh mục</strong> trong hộp thoại.</li></ul>
-      <img class="shot" src="images/03-danh-muc-buoc-2-form.png" alt="Bước 2: Thêm danh mục hiện trên POS"></div>
-    <div class="step"><h3><span>Bước 3</span>Thêm danh mục chỉ dùng nội bộ</h3>
-      <ul><li>Bấm <strong>Thêm danh mục</strong>.</li><li><strong>Tên danh mục</strong>: nhập "Nguyên liệu".</li><li><strong>Màu sắc đại diện</strong>: nhập "#8A8A8A".</li><li><strong>Mô tả</strong>: nhập "Cà phê hạt, sữa, đường — chỉ dùng nội bộ."</li><li><strong>Hiển thị ngoài POS</strong>: gạt sang <strong>tắt</strong>.</li><li>Bấm nút <strong>Thêm danh mục</strong> trong hộp thoại.</li></ul>
-      <img class="shot" src="images/03-danh-muc-buoc-3-tat-hien-thi.png" alt="Bước 3: Thêm danh mục chỉ dùng nội bộ"></div>
-    <div class="step"><h3><span>Bước 4</span>Kiểm tra và xếp thứ tự</h3>
-      <ul><li>Thấy thông báo <em>“Đã thêm danh mục sản phẩm”</em>.</li><li>Danh mục tắt hiển thị có nhãn <strong>Ẩn POS</strong>.</li><li>Kéo biểu tượng <strong>⠿</strong> bên trái để đổi thứ tự.</li><li>Xếp nhóm bán chạy lên đầu.</li></ul>
-      <img class="shot" src="images/03-danh-muc-buoc-4-danh-sach.png" alt="Bước 4: Kiểm tra và xếp thứ tự"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap">
-    <table>
-      <thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead>
-      <tbody>
-        <tr><td>Tên danh mục</td><td>VD "Cà phê", "Trà trái cây"</td><td>✅</td></tr>
-        <tr><td>Màu sắc đại diện</td><td>Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh</td><td>—</td></tr>
-        <tr><td>Mô tả</td><td>Ghi chú nội bộ</td><td>—</td></tr>
-        <tr><td>Hiển thị ngoài POS</td><td><strong>Bật</strong>: hiện trên màn bán hàng. <strong>Tắt</strong>: chỉ dùng nội bộ</td><td>—</td></tr>
-      </tbody>
-    </table>
-    </div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Danh mục đang gắn sản phẩm thì không xoá được.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Muốn ẩn khỏi POS: tắt <strong>Hiển thị ngoài POS</strong>.</li><li>Đừng xoá.</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div><strong>Gom nguyên liệu vào một danh mục riêng và tắt hiển thị.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Quản lý vẫn lọc được.</li><li>Thu ngân không thấy nguyên liệu trên màn bán hàng.</li></ul></div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Danh mục hiện trong danh sách, trạng thái <strong>Hoạt động</strong></span></label></li>
-      <li><label><input type="checkbox"><span>Danh mục nguyên liệu có nhãn <strong>Ẩn POS</strong></span></label></li>
-      <li><label><input type="checkbox"><span>Nhóm bán chạy đã kéo lên đầu danh sách</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 2 · Nhập sản phẩm</div>
+<h1>2.1 Danh mục sản phẩm</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Quản lý sản phẩm → Danh mục</span> (địa chỉ <code>/product-categories</code>).</p>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> quán tạo 2 danh mục.</p><ul><li>"Cà phê": nhóm món bán, hiện trên màn bán hàng.</li><li>"Nguyên liệu": cà phê hạt, sữa, đường — chỉ dùng nội bộ, ẩn khỏi màn bán hàng.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Danh mục</h3>
+<ul><li>Bấm <strong>Quản lý sản phẩm</strong> ở menu trái.</li><li>Chọn <strong>Danh mục</strong>.</li><li>Danh sách trống nếu chưa có danh mục nào.</li></ul>
+<img class="shot" src="images/03-danh-muc-buoc-1-trang.png" alt="Bước 1: Mở trang Danh mục">
+</div>
+<div class="step"><h3><span>Bước 2</span>Thêm danh mục hiện trên POS</h3>
+<ul><li>Bấm <strong>Thêm danh mục</strong>.</li><li><strong>Tên danh mục</strong>: nhập "Cà phê".</li><li><strong>Màu sắc đại diện</strong>: nhập "#6F4E37" hoặc bấm ô màu để chọn.</li><li><strong>Mô tả</strong>: nhập "Các món cà phê pha máy và pha phin."</li><li><strong>Hiển thị ngoài POS</strong>: để <strong>bật</strong>.</li><li>Bấm nút <strong>Thêm danh mục</strong> trong hộp thoại.</li></ul>
+<img class="shot" src="images/03-danh-muc-buoc-2-form.png" alt="Bước 2: Thêm danh mục hiện trên POS">
+</div>
+<div class="step"><h3><span>Bước 3</span>Thêm danh mục chỉ dùng nội bộ</h3>
+<ul><li>Bấm <strong>Thêm danh mục</strong>.</li><li><strong>Tên danh mục</strong>: nhập "Nguyên liệu".</li><li><strong>Màu sắc đại diện</strong>: nhập "#8A8A8A".</li><li><strong>Mô tả</strong>: nhập "Cà phê hạt, sữa, đường — chỉ dùng nội bộ."</li><li><strong>Hiển thị ngoài POS</strong>: gạt sang <strong>tắt</strong>.</li><li>Bấm nút <strong>Thêm danh mục</strong> trong hộp thoại.</li></ul>
+<img class="shot" src="images/03-danh-muc-buoc-3-tat-hien-thi.png" alt="Bước 3: Thêm danh mục chỉ dùng nội bộ">
+</div>
+<div class="step"><h3><span>Bước 4</span>Kiểm tra và xếp thứ tự</h3>
+<ul><li>Thấy thông báo <em>“Đã thêm danh mục sản phẩm”</em>.</li><li>Danh mục tắt hiển thị có nhãn <strong>Ẩn POS</strong>.</li><li>Kéo biểu tượng <strong>⠿</strong> bên trái để đổi thứ tự.</li><li>Xếp nhóm bán chạy lên đầu.</li></ul>
+<img class="shot" src="images/03-danh-muc-buoc-4-danh-sach.png" alt="Bước 4: Kiểm tra và xếp thứ tự">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên danh mục</td><td>VD "Cà phê", "Trà trái cây"</td><td>✅</td></tr><tr><td>Màu sắc đại diện</td><td>Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh</td><td>—</td></tr><tr><td>Mô tả</td><td>Ghi chú nội bộ</td><td>—</td></tr><tr><td>Hiển thị ngoài POS</td><td><strong>Bật</strong>: hiện trên màn bán hàng. <strong>Tắt</strong>: chỉ dùng nội bộ</td><td>—</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Danh mục đang gắn sản phẩm thì không xoá được.</strong></p><ul><li>Muốn ẩn khỏi POS: tắt <strong>Hiển thị ngoài POS</strong>.</li><li>Đừng xoá.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p><strong>Gom nguyên liệu vào một danh mục riêng và tắt hiển thị.</strong></p><ul><li>Quản lý vẫn lọc được.</li><li>Thu ngân không thấy nguyên liệu trên màn bán hàng.</li></ul></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Danh mục hiện trong danh sách, trạng thái <strong>Hoạt động</strong></span></label></li><li><label><input type="checkbox"><span>Danh mục nguyên liệu có nhãn <strong>Ẩn POS</strong></span></label></li><li><label><input type="checkbox"><span>Nhóm bán chạy đã kéo lên đầu danh sách</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

@@ -1,15 +1,17 @@
 # CLAUDE.md — Cẩm nang hướng dẫn TRCF ERP
 
-Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: [1.1](docs/1-1-thiet-lap-don-vi-tinh.html) và [6.1](docs/6-1-tao-mau-kiem-kho.html). Làm bài mới thì mở bài mẫu ra làm khuôn.
+Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: [1.1](docs/1-1-thiet-lap-don-vi-tinh.md) và [6.1](docs/6-1-tao-mau-kiem-kho.md). Làm bài mới thì mở bài mẫu ra làm khuôn.
 
 ## Định dạng và vị trí
 
-- Viết bài bằng **HTML** để dễ nhìn. Mọi bài HTML đặt **trong thư mục `docs/`**, không chia thư mục con. Cẩm nang gồm 12 bước, mỗi bước có các bài con đánh số `N.k` (VD 6.1, 6.2). Tên file dạng `N-k-tên-bài.html` (VD `6-1-tao-mau-kiem-kho.html`). Trang chủ `docs/index.html` là sơ đồ thứ tự 12 bước.
-- **Mục lục `index.html`**: là trang chủ, vẽ sơ đồ 12 bước, mỗi bước có các nút con dẫn tới bài. Bài chưa viết thì chưa đưa vào. **Thêm bài mới thì thêm nút `<a href="<tên-file>.html">N.k Tên bài</a>` vào đúng bước trong `index.html`**, rồi chạy `tools/gen-sidebar.py`.
-- Link giữa các bài chỉ ghi tên file (VD `href="1-1-cau-hinh-ban-dau.html"`).
-- Lấy phần `<head>` + CSS của bài 1.1 làm khuôn (có chế độ sáng/tối, đọc được trên điện thoại).
+- **Viết bài bằng Markdown (`.md`)** — bản gốc để người dùng tự sửa. Tệp `.html` cùng tên là bản **sinh tự động** bởi `python3 tools/build.py` để đăng GitHub Pages (thư mục `docs/`). **Không sửa tay `.html`**; sửa `.md` rồi chạy build, commit cả hai.
+- Cú pháp Markdown của cẩm nang (khung bước, khung lưu ý `> [!CAUTION]`/`[!WARNING]`/`[!TIP]`, khung ví dụ `>`, nhãn menu `==…==`, ô tích `- [ ]`): xem bảng trong [README.md](README.md), mục "Cách sửa bài". Giao diện (CSS sáng/tối, mobile) nằm ở `tools/style.css`.
+- Mọi bài đặt **trong thư mục `docs/`**, không chia thư mục con. Cẩm nang gồm 12 bước, mỗi bước có các bài con đánh số `N.k` (VD 6.1, 6.2). Tên file dạng `N-k-tên-bài.md` (VD `6-1-tao-mau-kiem-kho.md`). Trang chủ `docs/index.md` là sơ đồ thứ tự 12 bước.
+- **Mục lục `index.md`**: mỗi bước có danh sách link tới bài con. Bài chưa viết thì chưa đưa vào. **Thêm bài mới thì thêm dòng `- [N.k Tên bài](<tên-file>.md)` vào đúng bước trong `index.md`**, rồi chạy build.
+- Link giữa các bài ghi tên file `.md` (VD `[mục 1.1](1-1-thiet-lap-don-vi-tinh.md)`) — build tự đổi sang `.html`.
 - Ảnh đặt trong `docs/images/`, gọi bằng đường dẫn `images/...`.
 - Viết **tiếng Việt**. Giữ tiếng Anh cho tên kỹ thuật (mã, endpoint, tên trường trên giao diện).
+- Build phải chạy sạch (không dòng ⚠ nào: ảnh thiếu, link hỏng, bài chưa vào mục lục).
 
 ## Cấu trúc bài (4 phần, theo README)
 
@@ -37,5 +39,5 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 
 ## Thanh điều hướng bên trái
 
-- Mọi trang (kể cả `index.html`) có thanh mục lục bên trái (`<nav class="side">`), liệt kê 12 bước và các bài con, đánh dấu bài đang xem.
-- Khi thêm hoặc đổi tên bài: sửa nút con trong `docs/index.html` trước, rồi chạy `python3 tools/gen-sidebar.py` để chép vào mọi trang. Không sửa tay từng trang.
+- Mọi trang (kể cả trang chủ) có thanh mục lục bên trái, liệt kê 12 bước và các bài con, đánh dấu bài đang xem.
+- Thanh này `tools/build.py` tự sinh từ `docs/index.md`. Thêm hoặc đổi tên bài: sửa `index.md` rồi chạy build. Không sửa tay từng trang.

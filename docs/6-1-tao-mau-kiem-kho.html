@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>6.1 Tạo mẫu kiểm kho</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,47 +139,41 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 6 · Kiểm soát tồn kho</div>
-  <h1>6.1 Tạo mẫu kiểm kho</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Quản lý kho → Mẫu kiểm kho</span> &nbsp;(địa chỉ <code>/stock-templates</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Cần có trước: kho hàng và sản phẩm đã bật <strong>Theo dõi tồn kho</strong> (<a href="2-4-nguyen-lieu.html">bài 2.4</a>).</li><li>Mẫu dùng để tạo phiếu kiểm kho nhanh ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> mẫu đếm hàng khô cuối tuần cho "Kho tổng".<ul><li>Tên: "Kho khô". Kho: "Kho tổng". Ghi chú: "Đếm cuối tuần".</li><li>Danh sách: "Cà phê hạt", "Sữa đặc".</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Mẫu kiểm kho</h3>
-      <ul><li>Bấm <strong>Quản lý kho</strong> ở menu trái.</li><li>Chọn <strong>Mẫu kiểm kho</strong>.</li><li>Bấm nút <strong>Tạo phiếu kiểm kho</strong> (góc phải trên).</li><li>Nút này tạo <strong>mẫu</strong>. Phiếu đếm hàng tạo ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul>
-      <img class="shot" src="images/06-mau-kiem-kho-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Mẫu kiểm kho"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai mẫu và thêm sản phẩm</h3>
-      <ul><li><strong>Tên phiếu kiểm</strong>: nhập "Kho khô".</li><li><strong>Vị trí kho</strong>: chọn "KHO-TONG/Kho tổng".</li><li><strong>Mã mẫu</strong>: hệ thống tự sinh, không sửa.</li><li><strong>Ghi chú</strong>: nhập "Đếm cuối tuần".</li><li>Bấm ô <strong>Thêm sản phẩm...</strong>, chọn "Cà phê hạt".</li><li>Bấm ô đó lần nữa, chọn "Sữa đặc".</li><li>Kéo biểu tượng ⠿ để đổi thứ tự dòng.</li><li>Cột <strong>Đơn vị tính</strong>: chọn đơn vị đếm.</li></ul>
-      <img class="shot" src="images/06-mau-kiem-kho-buoc-2-form.png" alt="Bước 2: Khai mẫu và thêm sản phẩm"></div>
-    <div class="step"><h3><span>Bước 3</span>Lưu và kiểm tra</h3>
-      <ul><li>Bấm nút <strong>Tạo phiếu kiểm kho</strong> ở đáy trang.</li><li>Mẫu hiện trong danh sách: mã mẫu, tên, kho, số lượng sản phẩm.</li><li>Mẫu "Kho khô": "2 sản phẩm".</li></ul>
-      <img class="shot" src="images/06-mau-kiem-kho-buoc-3-ket-qua.png" alt="Bước 3: Lưu và kiểm tra"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên phiếu kiểm</td><td>Tên mẫu, đặt theo khu vực. VD "Kho khô", "Quầy pha chế"</td><td>✅</td></tr><tr><td>Vị trí kho</td><td>Kho sẽ đếm bằng mẫu này</td><td>✅</td></tr><tr><td>Mã mẫu</td><td>Tự sinh, chỉ đọc</td><td>—</td></tr><tr><td>Ghi chú</td><td>Ghi thêm, VD lịch đếm</td><td>—</td></tr><tr><td>Danh sách sản phẩm</td><td>Hàng cần đếm. Thêm từng món, kéo ⠿ để xếp thứ tự</td><td>✅</td></tr><tr><td>Đơn vị tính (mỗi dòng)</td><td>Đơn vị đếm của dòng đó</td><td>—</td></tr></tbody></table></div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Nút "Tạo phiếu kiểm kho" ở màn này tạo mẫu, chưa phải phiếu đếm.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Mẫu chỉ là danh sách hàng cần đếm.</li><li>Phiếu đếm hàng thật tạo ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul></div></div>
-    <div class="note tip"><div class="ic">💡</div>
-      <div><strong>Dựng mẫu theo khu vực</strong>: "Quầy pha chế", "Kho khô", "Tủ đông".<ul style="margin:6px 0 0;padding-left:20px"><li>Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.</li></ul></div></div>
-    <div class="note tip"><div class="ic">💡</div>
-      <div>Xếp hàng theo thứ tự đặt trên kệ để người đếm đi một vòng là xong.</div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Mẫu hiện trong danh sách với đúng kho</span></label></li>
-      <li><label><input type="checkbox"><span>Số sản phẩm của mẫu đúng như đã chọn</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 6 · Kiểm soát tồn kho</div>
+<h1>6.1 Tạo mẫu kiểm kho</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Quản lý kho → Mẫu kiểm kho</span> (địa chỉ <code>/stock-templates</code>).</p>
+<ul><li>Cần có trước: kho hàng và sản phẩm đã bật <strong>Theo dõi tồn kho</strong> (<a href="2-4-nguyen-lieu.html">bài 2.4</a>).</li><li>Mẫu dùng để tạo phiếu kiểm kho nhanh ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> mẫu đếm hàng khô cuối tuần cho "Kho tổng".</p><ul><li>Tên: "Kho khô". Kho: "Kho tổng". Ghi chú: "Đếm cuối tuần".</li><li>Danh sách: "Cà phê hạt", "Sữa đặc".</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Mẫu kiểm kho</h3>
+<ul><li>Bấm <strong>Quản lý kho</strong> ở menu trái.</li><li>Chọn <strong>Mẫu kiểm kho</strong>.</li><li>Bấm nút <strong>Tạo phiếu kiểm kho</strong> (góc phải trên).</li><li>Nút này tạo <strong>mẫu</strong>. Phiếu đếm hàng tạo ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul>
+<img class="shot" src="images/06-mau-kiem-kho-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Mẫu kiểm kho">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai mẫu và thêm sản phẩm</h3>
+<ul><li><strong>Tên phiếu kiểm</strong>: nhập "Kho khô".</li><li><strong>Vị trí kho</strong>: chọn "KHO-TONG/Kho tổng".</li><li><strong>Mã mẫu</strong>: hệ thống tự sinh, không sửa.</li><li><strong>Ghi chú</strong>: nhập "Đếm cuối tuần".</li><li>Bấm ô <strong>Thêm sản phẩm...</strong>, chọn "Cà phê hạt".</li><li>Bấm ô đó lần nữa, chọn "Sữa đặc".</li><li>Kéo biểu tượng ⠿ để đổi thứ tự dòng.</li><li>Cột <strong>Đơn vị tính</strong>: chọn đơn vị đếm.</li></ul>
+<img class="shot" src="images/06-mau-kiem-kho-buoc-2-form.png" alt="Bước 2: Khai mẫu và thêm sản phẩm">
+</div>
+<div class="step"><h3><span>Bước 3</span>Lưu và kiểm tra</h3>
+<ul><li>Bấm nút <strong>Tạo phiếu kiểm kho</strong> ở đáy trang.</li><li>Mẫu hiện trong danh sách: mã mẫu, tên, kho, số lượng sản phẩm.</li><li>Mẫu "Kho khô": "2 sản phẩm".</li></ul>
+<img class="shot" src="images/06-mau-kiem-kho-buoc-3-ket-qua.png" alt="Bước 3: Lưu và kiểm tra">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên phiếu kiểm</td><td>Tên mẫu, đặt theo khu vực. VD "Kho khô", "Quầy pha chế"</td><td>✅</td></tr><tr><td>Vị trí kho</td><td>Kho sẽ đếm bằng mẫu này</td><td>✅</td></tr><tr><td>Mã mẫu</td><td>Tự sinh, chỉ đọc</td><td>—</td></tr><tr><td>Ghi chú</td><td>Ghi thêm, VD lịch đếm</td><td>—</td></tr><tr><td>Danh sách sản phẩm</td><td>Hàng cần đếm. Thêm từng món, kéo ⠿ để xếp thứ tự</td><td>✅</td></tr><tr><td>Đơn vị tính (mỗi dòng)</td><td>Đơn vị đếm của dòng đó</td><td>—</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Nút "Tạo phiếu kiểm kho" ở màn này tạo mẫu, chưa phải phiếu đếm.</strong></p><ul><li>Mẫu chỉ là danh sách hàng cần đếm.</li><li>Phiếu đếm hàng thật tạo ở <a href="11-6-kiem-kho.html">bài 11.6</a>.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p><strong>Dựng mẫu theo khu vực</strong>: "Quầy pha chế", "Kho khô", "Tủ đông".</p><ul><li>Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Xếp hàng theo thứ tự đặt trên kệ để người đếm đi một vòng là xong.</p></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Mẫu hiện trong danh sách với đúng kho</span></label></li><li><label><input type="checkbox"><span>Số sản phẩm của mẫu đúng như đã chọn</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

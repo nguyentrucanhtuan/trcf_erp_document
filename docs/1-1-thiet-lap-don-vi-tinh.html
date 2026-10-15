@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>1.1 Thiết lập đơn vị tính (UOM)</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,88 +139,50 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 1 · Nhập đơn vị tính</div>
-  <h1>1.1 Thiết lập đơn vị tính (UOM)</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Quản lý sản phẩm → Đơn vị tính</span> &nbsp;(địa chỉ <code>/uoms</code>).</p>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> quán nhập cà phê theo kg, pha chế trừ theo gram.
-      <ul><li>Đơn vị gốc: "G" (Gram), hệ số 1.</li><li>Đơn vị lớn hơn: "KG" (Kilogam) = 1000 Gram.</li><li>Nhập 5 kg → hệ thống ghi tồn 5000 g.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Đơn vị tính</h3>
-      <ul><li>Bấm <strong>Quản lý sản phẩm</strong> ở menu trái.</li><li>Chọn <strong>Đơn vị tính</strong>.</li><li>Xem danh sách đơn vị hiện có.</li></ul>
-      <img class="shot" src="images/02-uom-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Đơn vị tính"></div>
-    <div class="step"><h3><span>Bước 2</span>Thêm đơn vị gốc trước</h3>
-      <ul><li>Bấm <strong>Thêm đơn vị</strong>.</li><li><strong>Mã đơn vị</strong>: nhập "G".</li><li><strong>Tên đơn vị</strong>: nhập "Gram".</li><li><strong>Hệ số quy đổi</strong>: giữ "1".</li><li><strong>Đơn vị quy đổi</strong>: giữ "Đơn vị gốc".</li><li>Bấm nút <strong>Thêm đơn vị</strong> trong hộp thoại.</li></ul>
-      <img class="shot" src="images/02-uom-buoc-2-don-vi-goc.png" alt="Bước 2: Thêm đơn vị gốc trước"></div>
-    <div class="step"><h3><span>Bước 3</span>Thêm đơn vị lớn hơn</h3>
-      <ul><li>Bấm <strong>Thêm đơn vị</strong>.</li><li><strong>Mã đơn vị</strong>: nhập "KG".</li><li><strong>Tên đơn vị</strong>: nhập "Kilogam".</li><li><strong>Hệ số quy đổi</strong>: nhập "1000".</li><li><strong>Đơn vị quy đổi</strong>: chọn "Gram (G)".</li><li>Bấm nút <strong>Thêm đơn vị</strong> trong hộp thoại.</li></ul>
-      <img class="shot" src="images/02-uom-buoc-3-don-vi-quy-doi.png" alt="Bước 3: Thêm đơn vị lớn hơn"></div>
-    <div class="step"><h3><span>Bước 4</span>Kiểm tra kết quả</h3>
-      <ul><li>Thấy thông báo <em>“Đã thêm đơn vị đo lường”</em>.</li><li>Dòng "KG": hệ số 1000, quy đổi về "Gram (G)".</li><li>Dòng "G": hiện <em>Đơn vị gốc</em>.</li></ul>
-      <img class="shot" src="images/02-uom-buoc-4-ket-qua.png" alt="Bước 4: Kiểm tra kết quả"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap">
-    <table>
-      <thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead>
-      <tbody>
-        <tr><td>Mã đơn vị</td><td>Ngắn, viết hoa. VD <code>LY</code>, <code>KG</code>, <code>G</code></td><td>✅</td></tr>
-        <tr><td>Tên đơn vị</td><td>VD "Ly", "Kilogam", "Gram"</td><td>✅</td></tr>
-        <tr><td>Hệ số quy đổi</td><td>Bằng bao nhiêu đơn vị gốc. Đơn vị gốc điền <strong>1</strong></td><td>✅</td></tr>
-        <tr><td>Đơn vị quy đổi</td><td>Đơn vị gốc: để "Đơn vị gốc". Đơn vị lớn hơn: chọn đơn vị gốc</td><td>—</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h2 style="margin-top:22px">Hiểu trước khi điền</h2>
-    <div class="table-wrap">
-    <table>
-      <thead><tr><th>Khái niệm</th><th>Nghĩa</th><th>Khai thế nào</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Đơn vị gốc</strong></td><td>Đơn vị nhỏ nhất dùng lưu tồn. VD sữa lấy Gram</td><td>Hệ số 1, để "Đơn vị gốc"</td></tr>
-        <tr><td><strong>Đơn vị quy đổi</strong></td><td>Đơn vị to hơn. VD KG = 1000 Gram</td><td>Hệ số 1000, chọn quy đổi về Gram</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h2 style="margin-top:22px">Bộ đơn vị mẫu cho quán</h2>
-    <div class="table-wrap">
-    <table>
-      <thead><tr><th>Mã</th><th>Tên</th><th>Hệ số</th><th>Quy đổi về</th><th>Dùng cho</th></tr></thead>
-      <tbody>
-        <tr><td><code>LY</code></td><td>Ly</td><td>1</td><td><em>(gốc)</em></td><td>Đồ uống bán ra</td></tr>
-        <tr><td><code>G</code></td><td>Gram</td><td>1</td><td><em>(gốc)</em></td><td>Nguyên liệu khô</td></tr>
-        <tr><td><code>KG</code></td><td>Kilogam</td><td>1000</td><td>Gram</td><td>Nhập hàng khô</td></tr>
-      </tbody>
-    </table>
-    </div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Hệ số bị khoá khi đơn vị đã được dùng.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Đã gắn sản phẩm hoặc công thức: không sửa được.</li><li>Sửa hệ số làm tồn kho và giá vốn cũ bị sai.</li><li>Cần đơn vị khác: tạo mới, lưu trữ cái cũ.</li></ul></div></div>
-<div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Hệ số phải lớn hơn 0.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Hệ số 0 làm mất sạch số lượng khi quy đổi.</li></ul></div></div>
-<div class="note warn"><div class="ic">⚠️</div>
-      <div>Xoá đơn vị là xoá vĩnh viễn. Không dùng nữa thì chọn <strong>Lưu trữ</strong>.</div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Mã đơn vị không phân biệt hoa thường: đã có "KG" thì không tạo thêm "kg".</div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Chỉ khai đơn vị quán thật sự dùng, danh sách dài dễ chọn nhầm.</div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Đã có đơn vị gốc (hệ số 1, hiện <em>Đơn vị gốc</em>)</span></label></li>
-      <li><label><input type="checkbox"><span>Đơn vị lớn hơn quy đổi về đúng đơn vị gốc, đúng hệ số</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 1 · Nhập đơn vị tính</div>
+<h1>1.1 Thiết lập đơn vị tính (UOM)</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Quản lý sản phẩm → Đơn vị tính</span> (địa chỉ <code>/uoms</code>).</p>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> quán nhập cà phê theo kg, pha chế trừ theo gram.</p><ul><li>Đơn vị gốc: "G" (Gram), hệ số 1.</li><li>Đơn vị lớn hơn: "KG" (Kilogam) = 1000 Gram.</li><li>Nhập 5 KG → hệ thống ghi tồn 5000 G.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Đơn vị tính</h3>
+<ul><li>Bấm <strong>Quản lý sản phẩm</strong> ở menu trái.</li><li>Chọn <strong>Đơn vị tính</strong>.</li><li>Xem danh sách đơn vị hiện có.</li></ul>
+<img class="shot" src="images/02-uom-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Đơn vị tính">
+</div>
+<div class="step"><h3><span>Bước 2</span>Thêm đơn vị gốc trước</h3>
+<ul><li>Bấm <strong>Thêm đơn vị</strong>.</li><li><strong>Mã đơn vị</strong>: nhập "G".</li><li><strong>Tên đơn vị</strong>: nhập "Gram".</li><li><strong>Hệ số quy đổi</strong>: giữ "1".</li><li><strong>Đơn vị quy đổi</strong>: giữ "Đơn vị gốc".</li><li>Bấm nút <strong>Thêm đơn vị</strong> trong hộp thoại.</li></ul>
+<img class="shot" src="images/02-uom-buoc-2-don-vi-goc.png" alt="Bước 2: Thêm đơn vị gốc trước">
+</div>
+<div class="step"><h3><span>Bước 3</span>Thêm đơn vị lớn hơn</h3>
+<ul><li>Bấm <strong>Thêm đơn vị</strong>.</li><li><strong>Mã đơn vị</strong>: nhập "KG".</li><li><strong>Tên đơn vị</strong>: nhập "Kilogam".</li><li><strong>Hệ số quy đổi</strong>: nhập "1000".</li><li><strong>Đơn vị quy đổi</strong>: chọn "Gram (G)".</li><li>Bấm nút <strong>Thêm đơn vị</strong> trong hộp thoại.</li></ul>
+<img class="shot" src="images/02-uom-buoc-3-don-vi-quy-doi.png" alt="Bước 3: Thêm đơn vị lớn hơn">
+</div>
+<div class="step"><h3><span>Bước 4</span>Kiểm tra kết quả</h3>
+<ul><li>Thấy thông báo <em>“Đã thêm đơn vị đo lường”</em>.</li><li>Dòng "KG": hệ số 1000, quy đổi về "Gram (G)".</li><li>Dòng "G": hiện <em>Đơn vị gốc</em>.</li></ul>
+<img class="shot" src="images/02-uom-buoc-4-ket-qua.png" alt="Bước 4: Kiểm tra kết quả">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Mã đơn vị</td><td>Ngắn, viết hoa. VD <code>LY</code>, <code>KG</code>, <code>G</code>, <code>TUI-1000</code>, <code>CHAI-900</code>, <code>HOP-500</code></td><td>✅</td></tr><tr><td>Tên đơn vị</td><td>VD "LY", "KILOGAM", "GRAM", "TÚI 1000G", "CHAI 900G", "HỘP 500G"</td><td>✅</td></tr><tr><td>Hệ số quy đổi</td><td>Bằng bao nhiêu đơn vị gốc. Đơn vị gốc điền <strong>1</strong></td><td>✅</td></tr><tr><td>Đơn vị quy đổi</td><td>Đơn vị nhỏ nhất: Chọn "Đơn vị gốc". Đơn vị lớn hơn: Chọn đơn vị nhỏ nhất vừa tạo</td><td>—</td></tr></tbody></table></div>
+<h2>Hiểu trước khi điền</h2>
+<div class="table-wrap"><table><thead><tr><th>Khái niệm</th><th>Nghĩa</th><th>Khai thế nào</th></tr></thead><tbody><tr><td><strong>Đơn vị gốc</strong></td><td>Đơn vị nhỏ nhất dùng lưu tồn. VD sữa lấy Gram</td><td>Hệ số 1, để "Đơn vị gốc"</td></tr><tr><td><strong>Đơn vị quy đổi</strong></td><td>Đơn vị to hơn. VD KG = 1000 Gram</td><td>Hệ số 1000, chọn quy đổi về Gram</td></tr></tbody></table></div>
+<h2>Bộ đơn vị mẫu cho quán</h2>
+<div class="table-wrap"><table><thead><tr><th>Mã</th><th>Tên</th><th>Hệ số</th><th>Quy đổi về</th></tr></thead><tbody><tr><td><code>LY</code></td><td>Ly</td><td>1</td><td><em>(gốc)</em></td></tr><tr><td><code>G</code></td><td>Gram</td><td>1</td><td><em>(gốc)</em></td></tr><tr><td><code>KG</code></td><td>Kilogam</td><td>1000</td><td>Gram</td></tr><tr><td><code>TUI-1000</code></td><td>TÚI 1000G</td><td>1000</td><td>Gram</td></tr><tr><td><code>CHAI-900</code></td><td>CHAI 900G</td><td>900</td><td>Gram</td></tr><tr><td><code>HOP-500</code></td><td>HỘP 500G</td><td>500</td><td>Gram</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Hệ số bị khoá khi đơn vị đã được dùng.</strong></p><ul><li>Đã gắn sản phẩm hoặc công thức: không sửa được.</li><li>Sửa hệ số làm tồn kho và giá vốn cũ bị sai.</li><li>Cần đơn vị khác: tạo mới, lưu trữ cái cũ.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Hệ số phải lớn hơn 0.</strong></p><ul><li>Hệ số 0 làm mất sạch số lượng khi quy đổi.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p>Xoá đơn vị là xoá vĩnh viễn. Không dùng nữa thì chọn <strong>Lưu trữ</strong>.</p></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Mã đơn vị không phân biệt hoa thường: đã có "KG" thì không tạo thêm "kg".</p></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Chỉ khai đơn vị quán thật sự dùng, danh sách dài dễ chọn nhầm.</p></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Đã có đơn vị gốc (hệ số 1, hiện <em>Đơn vị gốc</em>)</span></label></li><li><label><input type="checkbox"><span>Đơn vị lớn hơn quy đổi về đúng đơn vị gốc, đúng hệ số</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

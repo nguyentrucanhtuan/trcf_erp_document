@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>6.2 Định mức tối thiểu - tối đa của sản phẩm</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,45 +139,42 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 6 · Kiểm soát tồn kho</div>
-  <h1>6.2 Định mức tối thiểu - tối đa của sản phẩm</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Quản lý kho → Tồn kho</span> &nbsp;(địa chỉ <code>/stock</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Cần có trước: sản phẩm bật <strong>Theo dõi tồn kho</strong> (<a href="2-4-nguyen-lieu.html">bài 2.4</a>).</li><li>Mỗi sản phẩm theo dõi tồn kho có một dòng ở mỗi kho, tồn ban đầu là 0.</li></ul>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> khai định mức cho "Cà phê hạt" ở "Kho tổng".<ul><li>Tồn tối thiểu: "3000" g. Tồn tối đa: "10000" g.</li><li>Hàng giao trong 2 ngày, mỗi ngày dùng 1,5 kg: tối thiểu là 1,5 × 2 × 1,5 ≈ 4,5 kg.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Tồn kho</h3>
-      <ul><li>Bấm <strong>Quản lý kho</strong> ở menu trái.</li><li>Chọn <strong>Tồn kho</strong>.</li><li>Đọc 2 ô: <strong>Tiền tồn kho</strong>, <strong>Dòng dưới định mức</strong>.</li><li>Mỗi dòng là một sản phẩm ở một kho: tồn, giá vốn, định mức tối thiểu, định mức tối đa, trạng thái.</li><li>Tìm dòng "Cà phê hạt — Kho tổng".</li></ul>
-      <img class="shot" src="images/06-dinh-muc-buoc-1-ton-kho.png" alt="Bước 1: Mở trang Tồn kho"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai định mức</h3>
-      <ul><li>Bấm biểu tượng bút chì ở cuối dòng.</li><li>Hộp thoại <strong>Chỉnh sửa ngưỡng tồn kho</strong> mở ra.</li><li><strong>Tồn tối thiểu</strong>: nhập "3000".</li><li><strong>Tồn tối đa</strong>: nhập "10000".</li><li>Bấm <strong>Lưu</strong>.</li></ul>
-      <img class="shot" src="images/06-dinh-muc-buoc-2-form.png" alt="Bước 2: Khai định mức"></div>
-    <div class="step"><h3><span>Bước 3</span>Kiểm tra kết quả</h3>
-      <ul><li>Thấy thông báo <em>“Đã cập nhật ngưỡng tồn kho”</em>.</li><li>Dòng "Cà phê hạt — Kho tổng" hiện "3.000" và "10.000".</li><li>Tồn đang 0, thấp hơn định mức: trạng thái <strong>Dưới định mức</strong> (nhãn đỏ).</li><li>Ô <strong>Dòng dưới định mức</strong> tăng lên "1".</li></ul>
-      <img class="shot" src="images/06-dinh-muc-buoc-3-ket-qua.png" alt="Bước 3: Kiểm tra kết quả"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Tồn tối thiểu</td><td>Xuống dưới mức này là phải đặt hàng. Bằng 0: không cảnh báo</td></tr><tr><td>Tồn tối đa</td><td>Mức đầy kho. Hệ thống dùng để gợi ý đặt bao nhiêu. Bằng 0: không giới hạn</td></tr></tbody></table></div><p style="margin:12px 0 0">Công thức đặt tồn tối thiểu: <code>lượng dùng trung bình mỗi ngày × số ngày nhà cung cấp giao hàng × 1,5</code>. Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu <strong>3 kg</strong>.</p>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-<div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Khai định mức trước thì cảnh báo nhập hàng mới có tác dụng.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Chưa khai thì không có gì để so.</li></ul></div></div>    <div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Định mức khai theo từng kho.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Cùng một sản phẩm ở "Kho tổng" và "Kho quầy" có hai dòng, khai riêng từng dòng.</li><li>Đơn vị là đơn vị gốc của sản phẩm (VD "Gram").</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Mặt hàng dưới định mức được đánh dấu <strong>"Dưới định mức"</strong> và đếm vào ô <em>Sản phẩm dưới định mức</em> ở màn Tổng quan.</div></div>    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Đã khai tồn tối thiểu / tối đa cho hàng quan trọng</span></label></li>
-      <li><label><input type="checkbox"><span>Dòng đã khai hiện đúng số ở cột định mức</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 6 · Kiểm soát tồn kho</div>
+<h1>6.2 Định mức tối thiểu - tối đa của sản phẩm</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Quản lý kho → Tồn kho</span> (địa chỉ <code>/stock</code>).</p>
+<ul><li>Cần có trước: sản phẩm bật <strong>Theo dõi tồn kho</strong> (<a href="2-4-nguyen-lieu.html">bài 2.4</a>).</li><li>Mỗi sản phẩm theo dõi tồn kho có một dòng ở mỗi kho, tồn ban đầu là 0.</li></ul>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> khai định mức cho "Cà phê hạt" ở "Kho tổng".</p><ul><li>Tồn tối thiểu: "3000" g. Tồn tối đa: "10000" g.</li><li>Hàng giao trong 2 ngày, mỗi ngày dùng 1,5 kg: tối thiểu là 1,5 × 2 × 1,5 ≈ 4,5 kg.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Tồn kho</h3>
+<ul><li>Bấm <strong>Quản lý kho</strong> ở menu trái.</li><li>Chọn <strong>Tồn kho</strong>.</li><li>Đọc 2 ô: <strong>Tiền tồn kho</strong>, <strong>Dòng dưới định mức</strong>.</li><li>Mỗi dòng là một sản phẩm ở một kho: tồn, giá vốn, định mức tối thiểu, định mức tối đa, trạng thái.</li><li>Tìm dòng "Cà phê hạt — Kho tổng".</li></ul>
+<img class="shot" src="images/06-dinh-muc-buoc-1-ton-kho.png" alt="Bước 1: Mở trang Tồn kho">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai định mức</h3>
+<ul><li>Bấm biểu tượng bút chì ở cuối dòng.</li><li>Hộp thoại <strong>Chỉnh sửa ngưỡng tồn kho</strong> mở ra.</li><li><strong>Tồn tối thiểu</strong>: nhập "3000".</li><li><strong>Tồn tối đa</strong>: nhập "10000".</li><li>Bấm <strong>Lưu</strong>.</li></ul>
+<img class="shot" src="images/06-dinh-muc-buoc-2-form.png" alt="Bước 2: Khai định mức">
+</div>
+<div class="step"><h3><span>Bước 3</span>Kiểm tra kết quả</h3>
+<ul><li>Thấy thông báo <em>“Đã cập nhật ngưỡng tồn kho”</em>.</li><li>Dòng "Cà phê hạt — Kho tổng" hiện "3.000" và "10.000".</li><li>Tồn đang 0, thấp hơn định mức: trạng thái <strong>Dưới định mức</strong> (nhãn đỏ).</li><li>Ô <strong>Dòng dưới định mức</strong> tăng lên "1".</li></ul>
+<img class="shot" src="images/06-dinh-muc-buoc-3-ket-qua.png" alt="Bước 3: Kiểm tra kết quả">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Tồn tối thiểu</td><td>Xuống dưới mức này là phải đặt hàng. Bằng 0: không cảnh báo</td></tr><tr><td>Tồn tối đa</td><td>Mức đầy kho. Hệ thống dùng để gợi ý đặt bao nhiêu. Bằng 0: không giới hạn</td></tr></tbody></table></div>
+<p>Công thức đặt tồn tối thiểu: <code>lượng dùng trung bình mỗi ngày × số ngày nhà cung cấp giao hàng × 1,5</code>. Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu <strong>3 kg</strong>.</p>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Khai định mức trước thì cảnh báo nhập hàng mới có tác dụng.</strong></p><ul><li>Chưa khai thì không có gì để so.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Định mức khai theo từng kho.</strong></p><ul><li>Cùng một sản phẩm ở "Kho tổng" và "Kho quầy" có hai dòng, khai riêng từng dòng.</li><li>Đơn vị là đơn vị gốc của sản phẩm (VD "Gram").</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Mặt hàng dưới định mức được đánh dấu <strong>"Dưới định mức"</strong> và đếm vào ô <em>Sản phẩm dưới định mức</em> ở màn Tổng quan.</p></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Đã khai tồn tối thiểu / tối đa cho hàng quan trọng</span></label></li><li><label><input type="checkbox"><span>Dòng đã khai hiện đúng số ở cột định mức</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>5.1 Cài đặt màn hình bếp</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,52 +139,48 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 5 · Cài đặt màn hình bếp</div>
-  <h1>5.1 Cài đặt màn hình bếp</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Thiết lập cửa hàng → Màn hình bếp</span> &nbsp;(địa chỉ <code>/kitchen-screens</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Cần có trước: quầy POS (khai ở <strong>Thiết lập cửa hàng → POS</strong>), danh mục sản phẩm (<a href="2-1-danh-muc-san-pham.html">mục 2.1</a>).</li></ul>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> khu pha chế có 1 màn hình bếp.<ul><li>Tên: "Bếp pha chế".</li><li>Quầy POS áp dụng: "Quầy chính".</li><li>Danh mục hiển thị: "Cà phê", "Trà".</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Màn hình bếp</h3>
-      <ul><li>Bấm <strong>Thiết lập cửa hàng</strong> ở menu trái.</li><li>Chọn <strong>Màn hình bếp</strong>.</li><li>Bấm <strong>Thêm màn hình</strong>.</li></ul>
-      <img class="shot" src="images/04-man-hinh-bep-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Màn hình bếp"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai màn hình bếp</h3>
-      <ul><li><strong>Tên màn hình</strong>: nhập "Bếp pha chế".</li><li><strong>Quầy POS áp dụng</strong>: chọn "Quầy chính".</li><li><strong>Danh mục hiển thị</strong>: chọn "Cà phê", "Trà".</li><li><strong>Hoạt động</strong>: để bật.</li><li>Bấm nút <strong>Thêm màn hình</strong> trong hộp thoại.</li></ul>
-      <img class="shot" src="images/04-man-hinh-bep-buoc-2-form.png" alt="Bước 2: Khai màn hình bếp"></div>
-    <div class="step"><h3><span>Bước 3</span>Kiểm tra kết quả</h3>
-      <ul><li>Màn hình hiện trong danh sách, trạng thái <strong>Hoạt động</strong>.</li><li>Cột <strong>Mở màn hình</strong> có 2 nút: <strong>Màn hình bếp</strong>, <strong>Màn hình tổng hợp</strong>.</li></ul>
-      <img class="shot" src="images/04-man-hinh-bep-buoc-3-ket-qua.png" alt="Bước 3: Kiểm tra kết quả"></div>
-    <div class="step"><h3><span>Bước 4</span>Mở màn hình bếp trên thiết bị</h3>
-      <ul><li>Bấm <strong>Màn hình bếp</strong> trên dòng vừa tạo.</li><li>Màn hình mở ở tab mới (địa chỉ dạng <code>/kitchen/…</code>).</li><li>Mở trên thiết bị ở khu pha chế, <strong>để nguyên cả ngày</strong>.</li><li>Khi có đơn, món tự hiện lên, không cần tải lại trang.</li></ul>
-      <img class="shot" src="images/04-man-hinh-bep-buoc-4-man-bep.png" alt="Bước 4: Mở màn hình bếp trên thiết bị"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên màn hình</td><td>VD "Bếp pha chế", "Bếp nóng"</td><td>✅</td></tr><tr><td>Quầy POS áp dụng</td><td>Màn này <strong>chỉ nhận đơn của quầy đó</strong></td><td>✅</td></tr><tr><td>Danh mục hiển thị</td><td>Nhóm món màn này phụ trách. Để trống: nhận mọi món</td><td>—</td></tr><tr><td>Hoạt động</td><td>Tắt: ngừng dùng màn này</td><td>—</td></tr></tbody></table></div>
-    <h3 style="margin:22px 0 8px;font-size:16px">Món hiện gì trên màn bếp</h3><div class="table-wrap"><table><thead><tr><th>Thông tin</th><th>Từ đâu ra</th></tr></thead><tbody><tr><td>Tên món + ghi chú trong ngoặc. VD <em>Trà đào (VỪA + ÍT ĐÁ)</em></td><td>Thuộc tính</td></tr><tr><td>Số lượng</td><td>Đơn hàng</td></tr><tr><td>Ghi chú của khách</td><td>Thu ngân nhập lúc bán</td></tr><tr><td><strong>Ghi chú công thức ⚡</strong></td><td>Trường khai ở <a href="2-2-thanh-pham.html">mục 2.2</a></td></tr></tbody></table></div><p style="margin:14px 0 0">Pha chế xong: bấm vào món, món biến khỏi màn.</p>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note tip"><div class="ic">💡</div>
-      <div><strong>Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>VD "30ml espresso + 150ml sữa + đá đầy ly".</li><li>Nhân viên mới không cần nhớ, không cần hỏi.</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Đơn bị huỷ hoặc đã hoàn tự biến khỏi màn bếp. Pha chế không làm nhầm món của đơn đã huỷ.</div></div>
-<div class="note warn"><div class="ic">⚠️</div>
-      <div>Mỗi màn hình bếp chỉ nhận đơn của <strong>một quầy</strong>. Quán nhiều quầy thì tạo mỗi quầy một màn hình.</div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Màn hình hiện trong danh sách, trạng thái <strong>Hoạt động</strong></span></label></li>
-      <li><label><input type="checkbox"><span>Đã chọn đúng quầy và danh mục</span></label></li>
-      <li><label><input type="checkbox"><span>Mở được màn hình bếp trên thiết bị khu pha chế</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 5 · Cài đặt màn hình bếp</div>
+<h1>5.1 Cài đặt màn hình bếp</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Thiết lập cửa hàng → Màn hình bếp</span> (địa chỉ <code>/kitchen-screens</code>).</p>
+<ul><li>Cần có trước: quầy POS (khai ở <strong>Thiết lập cửa hàng → POS</strong>), danh mục sản phẩm (<a href="2-1-danh-muc-san-pham.html">mục 2.1</a>).</li></ul>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> khu pha chế có 1 màn hình bếp.</p><ul><li>Tên: "Bếp pha chế".</li><li>Quầy POS áp dụng: "Quầy chính".</li><li>Danh mục hiển thị: "Cà phê", "Trà".</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Màn hình bếp</h3>
+<ul><li>Bấm <strong>Thiết lập cửa hàng</strong> ở menu trái.</li><li>Chọn <strong>Màn hình bếp</strong>.</li><li>Bấm <strong>Thêm màn hình</strong>.</li></ul>
+<img class="shot" src="images/04-man-hinh-bep-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Màn hình bếp">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai màn hình bếp</h3>
+<ul><li><strong>Tên màn hình</strong>: nhập "Bếp pha chế".</li><li><strong>Quầy POS áp dụng</strong>: chọn "Quầy chính".</li><li><strong>Danh mục hiển thị</strong>: chọn "Cà phê", "Trà".</li><li><strong>Hoạt động</strong>: để bật.</li><li>Bấm nút <strong>Thêm màn hình</strong> trong hộp thoại.</li></ul>
+<img class="shot" src="images/04-man-hinh-bep-buoc-2-form.png" alt="Bước 2: Khai màn hình bếp">
+</div>
+<div class="step"><h3><span>Bước 3</span>Kiểm tra kết quả</h3>
+<ul><li>Màn hình hiện trong danh sách, trạng thái <strong>Hoạt động</strong>.</li><li>Cột <strong>Mở màn hình</strong> có 2 nút: <strong>Màn hình bếp</strong>, <strong>Màn hình tổng hợp</strong>.</li></ul>
+<img class="shot" src="images/04-man-hinh-bep-buoc-3-ket-qua.png" alt="Bước 3: Kiểm tra kết quả">
+</div>
+<div class="step"><h3><span>Bước 4</span>Mở màn hình bếp trên thiết bị</h3>
+<ul><li>Bấm <strong>Màn hình bếp</strong> trên dòng vừa tạo.</li><li>Màn hình mở ở tab mới (địa chỉ dạng <code>/kitchen/…</code>).</li><li>Mở trên thiết bị ở khu pha chế, <strong>để nguyên cả ngày</strong>.</li><li>Khi có đơn, món tự hiện lên, không cần tải lại trang.</li></ul>
+<img class="shot" src="images/04-man-hinh-bep-buoc-4-man-bep.png" alt="Bước 4: Mở màn hình bếp trên thiết bị">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên màn hình</td><td>VD "Bếp pha chế", "Bếp nóng"</td><td>✅</td></tr><tr><td>Quầy POS áp dụng</td><td>Màn này <strong>chỉ nhận đơn của quầy đó</strong></td><td>✅</td></tr><tr><td>Danh mục hiển thị</td><td>Nhóm món màn này phụ trách. Để trống: nhận mọi món</td><td>—</td></tr><tr><td>Hoạt động</td><td>Tắt: ngừng dùng màn này</td><td>—</td></tr></tbody></table></div>
+<h3>Món hiện gì trên màn bếp</h3>
+<div class="table-wrap"><table><thead><tr><th>Thông tin</th><th>Từ đâu ra</th></tr></thead><tbody><tr><td>Tên món + ghi chú trong ngoặc. VD <em>Trà đào (VỪA + ÍT ĐÁ)</em></td><td>Thuộc tính</td></tr><tr><td>Số lượng</td><td>Đơn hàng</td></tr><tr><td>Ghi chú của khách</td><td>Thu ngân nhập lúc bán</td></tr><tr><td><strong>Ghi chú công thức ⚡</strong></td><td>Trường khai ở <a href="2-2-thanh-pham.html">mục 2.2</a></td></tr></tbody></table></div>
+<p>Pha chế xong: bấm vào món, món biến khỏi màn.</p>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note tip"><div class="ic">💡</div><div><p><strong>Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.</strong></p><ul><li>VD "30ml espresso + 150ml sữa + đá đầy ly".</li><li>Nhân viên mới không cần nhớ, không cần hỏi.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Đơn bị huỷ hoặc đã hoàn tự biến khỏi màn bếp. Pha chế không làm nhầm món của đơn đã huỷ.</p></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p>Mỗi màn hình bếp chỉ nhận đơn của <strong>một quầy</strong>. Quán nhiều quầy thì tạo mỗi quầy một màn hình.</p></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Màn hình hiện trong danh sách, trạng thái <strong>Hoạt động</strong></span></label></li><li><label><input type="checkbox"><span>Đã chọn đúng quầy và danh mục</span></label></li><li><label><input type="checkbox"><span>Mở được màn hình bếp trên thiết bị khu pha chế</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

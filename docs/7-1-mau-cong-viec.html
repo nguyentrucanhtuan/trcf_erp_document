@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>7.1 Mẫu công việc</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,42 +139,42 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 7 · Mẫu công việc</div>
-  <h1>7.1 Mẫu công việc</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Quản lý nhân sự → Mẫu công việc</span> &nbsp;(địa chỉ <code>/task-templates</code>).</p>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> việc lặp mỗi ngày "Vệ sinh máy pha cà phê" từ 07:00 đến 08:00, giao luân phiên cho người có ca.<ul><li>Mẫu: chu kỳ "Hàng ngày", cách giao "Luân phiên trong ca".</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Mẫu công việc</h3>
-      <ul><li>Bấm <strong>Quản lý nhân sự</strong> ở menu trái, chọn <strong>Mẫu công việc</strong>.</li><li>Bấm <strong>Thêm mẫu công việc</strong>.</li></ul>
-      <img class="shot" src="images/07-cong-viec-buoc-1-mau.png" alt="Bước 1: Mở trang Mẫu công việc"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai mẫu việc lặp</h3>
-      <ul><li><strong>Tên công việc</strong>: nhập "Vệ sinh máy pha cà phê".</li><li><strong>Kích hoạt</strong>: để bật.</li><li><strong>Mô tả</strong>: nhập "Lau máy espresso, xả vòi hơi, đổ khay nước thải".</li><li><strong>Chu kỳ</strong>: chọn "Hàng ngày".</li><li><strong>Giờ bắt đầu</strong>: "07:00". <strong>Giờ kết thúc</strong>: "08:00".</li><li><strong>Cách giao</strong>: chọn "Luân phiên trong ca".</li><li>Bấm nút <strong>Thêm mẫu công việc</strong>.</li></ul>
-      <img class="shot" src="images/07-cong-viec-buoc-2-form-mau.png" alt="Bước 2: Khai mẫu việc lặp"></div>
-    <div class="step"><h3><span>Bước 3</span>Kiểm tra mẫu</h3>
-      <ul><li>Mẫu hiện trong danh sách: chu kỳ, cách giao, khung giờ, trạng thái <strong>Đang bật</strong>.</li></ul>
-      <img class="shot" src="images/07-cong-viec-buoc-3-mau-ket-qua.png" alt="Bước 3: Kiểm tra mẫu"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <h3 style="margin:0px 0 8px;font-size:16px">Mẫu công việc</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên công việc</td><td>VD "Vệ sinh máy pha cà phê"</td><td>✅</td></tr><tr><td>Kích hoạt</td><td>Tắt: tạm ngừng, không sinh việc nữa</td><td>✅</td></tr><tr><td>Mô tả</td><td>Hướng dẫn chi tiết cho người làm</td><td>—</td></tr><tr><td>Chu kỳ</td><td><em>Hàng ngày</em> / <em>Thứ trong tuần</em> / <em>Hàng tháng</em></td><td>✅</td></tr><tr><td>Thứ <strong>hoặc</strong> Ngày trong tháng</td><td>Chỉ hiện khi chọn chu kỳ tương ứng</td><td>✅ theo chu kỳ</td></tr><tr><td>Giờ bắt đầu, Giờ kết thúc</td><td>Khung giờ nên làm việc này</td><td>✅</td></tr><tr><td>Cách giao</td><td>Xem bảng dưới</td><td>✅</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Ba cách giao</h3><div class="table-wrap"><table><thead><tr><th>Cách giao</th><th>Ai nhận việc</th></tr></thead><tbody><tr><td>Luân phiên trong ca</td><td>Chia lần lượt cho những người có ca</td></tr><tr><td>Giao theo phòng ban</td><td>Chỉ chia cho người thuộc phòng ban đã chọn</td></tr><tr><td>Giao cố định cá nhân</td><td>Luôn giao cho một người đã chọn</td></tr></tbody></table></div><p style="margin:10px 0 0">Mọi cách giao đều ưu tiên người có ca phủ đúng khung giờ. Không ai khớp giờ thì việc vẫn được giao và ghi lại lý do.</p>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Bỏ <em>Kích hoạt</em> ở mẫu là cách tạm ngừng một việc mà không mất lịch sử.<ul style="margin:6px 0 0;padding-left:20px"><li>Xoá mẫu thì các việc đã sinh vẫn còn.</li></ul></div></div>    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Mẫu hiện trong danh sách, trạng thái <strong>Đang bật</strong></span></label></li>
-      <li><label><input type="checkbox"><span>Chu kỳ, khung giờ và cách giao đúng như đã khai</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 7 · Mẫu công việc</div>
+<h1>7.1 Mẫu công việc</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Quản lý nhân sự → Mẫu công việc</span> (địa chỉ <code>/task-templates</code>).</p>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> việc lặp mỗi ngày "Vệ sinh máy pha cà phê" từ 07:00 đến 08:00, giao luân phiên cho người có ca.</p><ul><li>Mẫu: chu kỳ "Hàng ngày", cách giao "Luân phiên trong ca".</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Mẫu công việc</h3>
+<ul><li>Bấm <strong>Quản lý nhân sự</strong> ở menu trái, chọn <strong>Mẫu công việc</strong>.</li><li>Bấm <strong>Thêm mẫu công việc</strong>.</li></ul>
+<img class="shot" src="images/07-cong-viec-buoc-1-mau.png" alt="Bước 1: Mở trang Mẫu công việc">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai mẫu việc lặp</h3>
+<ul><li><strong>Tên công việc</strong>: nhập "Vệ sinh máy pha cà phê".</li><li><strong>Kích hoạt</strong>: để bật.</li><li><strong>Mô tả</strong>: nhập "Lau máy espresso, xả vòi hơi, đổ khay nước thải".</li><li><strong>Chu kỳ</strong>: chọn "Hàng ngày".</li><li><strong>Giờ bắt đầu</strong>: "07:00". <strong>Giờ kết thúc</strong>: "08:00".</li><li><strong>Cách giao</strong>: chọn "Luân phiên trong ca".</li><li>Bấm nút <strong>Thêm mẫu công việc</strong>.</li></ul>
+<img class="shot" src="images/07-cong-viec-buoc-2-form-mau.png" alt="Bước 2: Khai mẫu việc lặp">
+</div>
+<div class="step"><h3><span>Bước 3</span>Kiểm tra mẫu</h3>
+<ul><li>Mẫu hiện trong danh sách: chu kỳ, cách giao, khung giờ, trạng thái <strong>Đang bật</strong>.</li></ul>
+<img class="shot" src="images/07-cong-viec-buoc-3-mau-ket-qua.png" alt="Bước 3: Kiểm tra mẫu">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<h3>Mẫu công việc</h3>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên công việc</td><td>VD "Vệ sinh máy pha cà phê"</td><td>✅</td></tr><tr><td>Kích hoạt</td><td>Tắt: tạm ngừng, không sinh việc nữa</td><td>✅</td></tr><tr><td>Mô tả</td><td>Hướng dẫn chi tiết cho người làm</td><td>—</td></tr><tr><td>Chu kỳ</td><td><em>Hàng ngày</em> / <em>Thứ trong tuần</em> / <em>Hàng tháng</em></td><td>✅</td></tr><tr><td>Thứ <strong>hoặc</strong> Ngày trong tháng</td><td>Chỉ hiện khi chọn chu kỳ tương ứng</td><td>✅ theo chu kỳ</td></tr><tr><td>Giờ bắt đầu, Giờ kết thúc</td><td>Khung giờ nên làm việc này</td><td>✅</td></tr><tr><td>Cách giao</td><td>Xem bảng dưới</td><td>✅</td></tr></tbody></table></div>
+<h3>Ba cách giao</h3>
+<div class="table-wrap"><table><thead><tr><th>Cách giao</th><th>Ai nhận việc</th></tr></thead><tbody><tr><td>Luân phiên trong ca</td><td>Chia lần lượt cho những người có ca</td></tr><tr><td>Giao theo phòng ban</td><td>Chỉ chia cho người thuộc phòng ban đã chọn</td></tr><tr><td>Giao cố định cá nhân</td><td>Luôn giao cho một người đã chọn</td></tr></tbody></table></div>
+<p>Mọi cách giao đều ưu tiên người có ca phủ đúng khung giờ. Không ai khớp giờ thì việc vẫn được giao và ghi lại lý do.</p>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note tip"><div class="ic">💡</div><div><p>Bỏ <em>Kích hoạt</em> ở mẫu là cách tạm ngừng một việc mà không mất lịch sử.</p><ul><li>Xoá mẫu thì các việc đã sinh vẫn còn.</li></ul></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Mẫu hiện trong danh sách, trạng thái <strong>Đang bật</strong></span></label></li><li><label><input type="checkbox"><span>Chu kỳ, khung giờ và cách giao đúng như đã khai</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

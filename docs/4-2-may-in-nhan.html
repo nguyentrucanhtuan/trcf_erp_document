@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>4.2 Cài đặt máy in nhãn</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,41 +139,38 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 4 · Cài đặt máy in</div>
-  <h1>4.2 Cài đặt máy in nhãn</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Thiết lập cửa hàng → Máy in</span> &nbsp;(địa chỉ <code>/printers</code>).</p>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> quán có máy in tem dán lên ly.<ul><li>"Máy tem quầy 1": loại Nhãn dán, mạng LAN, IP "192.168.1.51", cổng "9100".</li><li>Con tem rộng và cao theo số đo thật của tem.</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Máy in</h3>
-      <ul><li>Bấm <strong>Thiết lập cửa hàng</strong> ở menu trái.</li><li>Chọn <strong>Máy in</strong>.</li><li>Bấm <strong>Thêm máy in</strong>.</li></ul>
-      <img class="shot" src="images/04-may-in-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Máy in"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai máy in tem (Nhãn dán)</h3>
-      <ul><li><strong>Loại máy in</strong>: chọn "Nhãn dán (Label)".</li><li><strong>Bề rộng tem (mm)</strong>, <strong>Chiều cao tem (mm)</strong>: nhập số đo con tem.</li><li><strong>Nguồn in (Loại đơn hàng)</strong>: chọn loại đơn nào sẽ in tem.</li></ul>
-      <img class="shot" src="images/04-may-in-buoc-4-nhan-dan.png" alt="Bước 2: Khai máy in tem (Nhãn dán)"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <h3 style="margin:0px 0 8px;font-size:16px">Thiết bị</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên thiết bị</td><td>VD "Máy in bill quầy 1"</td><td>✅</td></tr><tr><td>Loại kết nối</td><td><em>Mạng LAN</em> (có IP) hoặc <em>USB</em> (cắm trực tiếp)</td><td>✅</td></tr><tr><td>Loại máy in</td><td>Hoá đơn / Nhãn dán / Phiếu yêu cầu món (KOT) / Phiếu đóng ca</td><td>✅</td></tr><tr><td>Địa chỉ IP, Cổng (Port)</td><td>Chỉ hiện khi chọn LAN. Cổng thường <strong>9100</strong></td><td>✅ nếu LAN</td></tr><tr><td>Đang bật (cho phép in)</td><td>Tắt: tạm ngừng in ra máy này</td><td>—</td></tr></tbody></table></div><h3 style="margin:22px 0 8px;font-size:16px">Thiết lập riêng cho máy in nhãn</h3><div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Bề rộng tem (mm)</td><td>Đo con tem, không đo cuộn</td></tr><tr><td>Chiều cao tem (mm)</td><td>Đo con tem, không đo cuộn</td></tr><tr><td>Nguồn in (Loại đơn hàng)</td><td>Loại đơn nào thì in tem</td></tr></tbody></table></div>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-<div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Chiều cao tem phải đo con tem, không đo cuộn.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Khai sai thì máy nhả giấy đi tìm khe cắt.</li><li>Kết quả là ra tem trắng.</li></ul></div></div><div class="note warn"><div class="ic">⚠️</div>
-      <div><strong>Máy in nhiệt phổ thông (POS-80) không có bảng mã tiếng Việt.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Hệ thống in tiếng Việt bằng cách vẽ ảnh.</li><li>Bill mất dấu: kiểm tra lại loại máy đã khai.</li></ul></div></div>    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Máy tem hiện trong danh sách, trạng thái đang bật</span></label></li>
-      <li><label><input type="checkbox"><span>Bề rộng và chiều cao tem khớp con tem thật</span></label></li>
-      <li><label><input type="checkbox"><span>Đã chọn đúng nguồn in (loại đơn hàng)</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 4 · Cài đặt máy in</div>
+<h1>4.2 Cài đặt máy in nhãn</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Thiết lập cửa hàng → Máy in</span> (địa chỉ <code>/printers</code>).</p>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> quán có máy in tem dán lên ly.</p><ul><li>"Máy tem quầy 1": loại Nhãn dán, mạng LAN, IP "192.168.1.51", cổng "9100".</li><li>Con tem rộng và cao theo số đo thật của tem.</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Máy in</h3>
+<ul><li>Bấm <strong>Thiết lập cửa hàng</strong> ở menu trái.</li><li>Chọn <strong>Máy in</strong>.</li><li>Bấm <strong>Thêm máy in</strong>.</li></ul>
+<img class="shot" src="images/04-may-in-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Máy in">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai máy in tem (Nhãn dán)</h3>
+<ul><li><strong>Loại máy in</strong>: chọn "Nhãn dán (Label)".</li><li><strong>Bề rộng tem (mm)</strong>, <strong>Chiều cao tem (mm)</strong>: nhập số đo con tem.</li><li><strong>Nguồn in (Loại đơn hàng)</strong>: chọn loại đơn nào sẽ in tem.</li></ul>
+<img class="shot" src="images/04-may-in-buoc-4-nhan-dan.png" alt="Bước 2: Khai máy in tem (Nhãn dán)">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<h3>Thiết bị</h3>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Tên thiết bị</td><td>VD "Máy in bill quầy 1"</td><td>✅</td></tr><tr><td>Loại kết nối</td><td><em>Mạng LAN</em> (có IP) hoặc <em>USB</em> (cắm trực tiếp)</td><td>✅</td></tr><tr><td>Loại máy in</td><td>Hoá đơn / Nhãn dán / Phiếu yêu cầu món (KOT) / Phiếu đóng ca</td><td>✅</td></tr><tr><td>Địa chỉ IP, Cổng (Port)</td><td>Chỉ hiện khi chọn LAN. Cổng thường <strong>9100</strong></td><td>✅ nếu LAN</td></tr><tr><td>Đang bật (cho phép in)</td><td>Tắt: tạm ngừng in ra máy này</td><td>—</td></tr></tbody></table></div>
+<h3>Thiết lập riêng cho máy in nhãn</h3>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th></tr></thead><tbody><tr><td>Bề rộng tem (mm)</td><td>Đo con tem, không đo cuộn</td></tr><tr><td>Chiều cao tem (mm)</td><td>Đo con tem, không đo cuộn</td></tr><tr><td>Nguồn in (Loại đơn hàng)</td><td>Loại đơn nào thì in tem</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Chiều cao tem phải đo con tem, không đo cuộn.</strong></p><ul><li>Khai sai thì máy nhả giấy đi tìm khe cắt.</li><li>Kết quả là ra tem trắng.</li></ul></div></div>
+<div class="note warn"><div class="ic">⚠️</div><div><p><strong>Máy in nhiệt phổ thông (POS-80) không có bảng mã tiếng Việt.</strong></p><ul><li>Hệ thống in tiếng Việt bằng cách vẽ ảnh.</li><li>Bill mất dấu: kiểm tra lại loại máy đã khai.</li></ul></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Máy tem hiện trong danh sách, trạng thái đang bật</span></label></li><li><label><input type="checkbox"><span>Bề rộng và chiều cao tem khớp con tem thật</span></label></li><li><label><input type="checkbox"><span>Đã chọn đúng nguồn in (loại đơn hàng)</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;

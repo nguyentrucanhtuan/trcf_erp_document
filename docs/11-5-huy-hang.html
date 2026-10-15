@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TỆP SINH TỰ ĐỘNG từ tệp .md cùng tên — đừng sửa ở đây, sửa .md rồi chạy: python3 tools/build.py -->
 <title>11.5 Huỷ hàng</title>
 <style>
   :root {
@@ -67,6 +68,33 @@
   .step p { margin: 0 0 10px; }
   .step img.shot { margin: 6px 0 0; }
   @media (max-width: 600px) { h1 { font-size: 22px; } section { padding: 16px; } }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow > li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 72px; margin: 0 0 34px; }
+  .flow > li::after { content: "↓"; position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); font-size: 22px; color: var(--brand); font-weight: 700; }
+  .flow > li:last-child { margin-bottom: 0; }
+  .flow > li:last-child::after { content: none; }
+  .flow .no { position: absolute; left: 18px; top: 16px; width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 4px; font-size: 18px; }
+  .flow p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .flow .sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+  .flow .sub a, .flow .sub span { display: inline-block; background: var(--brand-soft); color: var(--brand); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .flow .sub a:hover { outline: 2px solid var(--brand); }
+  .phase { margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+  /* thay cho style= viết tay trong HTML cũ */
+  section > p { margin: 0 0 10px; }
+  section > ul, section > ol { margin: 10px 0; padding-left: 22px; }
+  section > :last-child { margin-bottom: 0; }
+  section > h2 ~ h2 { margin-top: 22px; }
+  section > h3 { margin: 22px 0 8px; font-size: 16px; }
+  section > h2 + h3 { margin-top: 0; }
+  section > .table-wrap + p { margin-top: 12px; }
+  .note p, .example p { margin: 0; }
+  .note p + p, .example p + p { margin-top: 6px; }
+  .note ul, .example ul, .note ol, .example ol { margin: 6px 0 0; padding-left: 20px; }
+  pre.example { font-family: ui-monospace, monospace; font-size: 14px; white-space: pre-wrap; margin: 0 0 10px; }
+  .arrow { text-align: center; font-size: 22px; color: var(--brand); font-weight: 700; margin: -26px 0 8px; }
+  ol.flow { margin-bottom: 34px; }
+  ol.flow:last-of-type { margin-bottom: 0; }
   /* sidebar */
   nav.side { position: fixed; top: 0; left: 0; bottom: 0; width: 290px; overflow-y: auto; background: var(--card);
              border-right: 1px solid var(--line); padding: 16px 12px 32px; font-size: 14px; line-height: 1.4; z-index: 10; }
@@ -111,50 +139,44 @@
 </div>
 </nav>
 <main>
-  <div class="crumb">Bước 11 · Quy trình vận hành kho</div>
-  <h1>11.5 Huỷ hàng</h1>
-
-  <section>
-    <h2>1. Đường dẫn vào chức năng</h2>
-    <p style="margin:0">Menu trái: <span class="path">Vận hành → Huỷ hàng</span> &nbsp;(địa chỉ <code>/scraps</code>).</p><ul style="margin:10px 0 0;padding-left:22px"><li>Dùng khi: hàng hỏng, hết hạn, rơi vỡ, pha hỏng phải bỏ.</li><li>Mỗi phiếu <strong>một mặt hàng</strong>. Huỷ ba thứ thì lập ba phiếu.</li></ul>
-  </section>
-
-  <section>
-    <h2>2. Ví dụ nền và các bước thực hiện</h2>
-    <div class="example"><strong>Ví dụ:</strong> phát hiện 500 g "Sữa đặc" hết hạn trong tủ ở "Kho quầy".<ul><li>Sản phẩm: "Sữa đặc". Số lượng: "500" "Gram".</li><li>Lý do: "Hết hạn". Ghi chú: "Hết hạn 09/10, phát hiện khi kiểm tủ".</li></ul></div>
-    <div class="step"><h3><span>Bước 1</span>Mở trang Huỷ hàng</h3>
-      <ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Huỷ hàng</strong>.</li><li>Bấm <strong>Tạo phiếu huỷ hàng</strong>.</li></ul>
-      <img class="shot" src="images/06-huy-hang-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Huỷ hàng"></div>
-    <div class="step"><h3><span>Bước 2</span>Khai phiếu huỷ</h3>
-      <ul><li><strong>Mã phiếu</strong>: hệ thống tự sinh, không sửa.</li><li><strong>Kho huỷ hàng</strong>: chọn "Kho quầy".</li><li><strong>Sản phẩm huỷ</strong>: chọn "Sữa đặc".</li><li><strong>Số lượng huỷ</strong>: nhập "500". <strong>Đơn vị tính</strong>: chọn "Gram (G)".</li><li><strong>Lý do huỷ</strong>: chọn "Hết hạn" (có 4 lựa chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác).</li><li><strong>Ghi chú</strong>: nhập "Hết hạn 09/10, phát hiện khi kiểm tủ".</li><li>Bấm nút <strong>Tạo phiếu huỷ</strong>.</li></ul>
-      <img class="shot" src="images/06-huy-hang-buoc-2-form.png" alt="Bước 2: Khai phiếu huỷ"></div>
-    <div class="step"><h3><span>Bước 3</span>Xác nhận huỷ</h3>
-      <ul><li>Phiếu hiện trong danh sách, trạng thái <strong>Nháp</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu có: <strong>Sửa</strong>, <strong>Xác nhận huỷ</strong>, <strong>Huỷ bỏ phiếu</strong>, <strong>Xoá</strong>.</li><li>Kiểm tra lại, chọn <strong>Xác nhận huỷ</strong>.</li></ul>
-      <img class="shot" src="images/06-huy-hang-buoc-3-nhap-menu.png" alt="Bước 3: Xác nhận huỷ"></div>
-  </section>
-
-  <section>
-    <h2>3. Giải thích các trường</h2>
-    <div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Kho huỷ hàng</td><td>Kho trừ hàng ra</td><td>✅</td></tr><tr><td>Sản phẩm huỷ</td><td>Mặt hàng bị huỷ</td><td>✅</td></tr><tr><td>Số lượng huỷ</td><td>Số bị huỷ</td><td>✅</td></tr><tr><td>Đơn vị tính</td><td>Đơn vị của số lượng</td><td>✅</td></tr><tr><td>Lý do huỷ</td><td>Chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác</td><td>✅</td></tr><tr><td>Ghi chú</td><td><strong>Càng cụ thể càng tốt</strong>: "hết hạn 09/08", "làm rơi khi bưng"</td><td>—</td></tr></tbody></table></div>
-    <h3 style="margin:22px 0 8px;font-size:16px">Huỷ món pha sẵn</h3><ul><li>Huỷ món có công thức dạng <em>Kit</em> (VD ly trà đã pha hỏng): hệ thống <strong>trừ nguyên liệu theo công thức</strong>.</li><li>Không trừ "ly trà", vì trong kho không có mặt hàng "ly trà đã pha".</li></ul>
-  </section>
-
-  <section>
-    <h2>4. Lưu ý quan trọng</h2>
-    <div class="note danger"><div class="ic">⚠️</div>
-      <div><strong>Đã xác nhận thì không sửa, không xoá.</strong></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div><strong>Ghi lý do tử tế là phần có giá trị nhất của phiếu huỷ.</strong><ul style="margin:6px 0 0;padding-left:20px"><li>Cuối tháng nhìn lại sẽ thấy hao hụt nằm ở đâu.</li><li>Hết hạn: mua nhiều quá. Rơi vỡ: thao tác. Pha hỏng: đào tạo.</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Đừng gộp hao hụt vào phiếu kiểm kho.<ul style="margin:6px 0 0;padding-left:20px"><li>Kiểm kho chỉ nói "thiếu 2 kg".</li><li>Phiếu huỷ nói "thiếu <strong>vì sao</strong>".</li></ul></div></div>
-<div class="note tip"><div class="ic">💡</div>
-      <div>Phiếu <strong>Nháp</strong> chưa đụng gì tới kho, xoá thoải mái.</div></div>
-    <h2 style="margin-top:18px">Kiểm tra đã đúng</h2>
-    <ul class="check">
-      <li><label><input type="checkbox"><span>Tồn kho giảm đúng số huỷ</span></label></li>
-      <li><label><input type="checkbox"><span>Lý do ghi đủ rõ để tháng sau đọc vẫn hiểu</span></label></li>
-    </ul>
-  </section>
+<div class="crumb">Bước 11 · Quy trình vận hành kho</div>
+<h1>11.5 Huỷ hàng</h1>
+<section>
+<h2>1. Đường dẫn vào chức năng</h2>
+<p>Menu trái: <span class="path">Vận hành → Huỷ hàng</span> (địa chỉ <code>/scraps</code>).</p>
+<ul><li>Dùng khi: hàng hỏng, hết hạn, rơi vỡ, pha hỏng phải bỏ.</li><li>Mỗi phiếu <strong>một mặt hàng</strong>. Huỷ ba thứ thì lập ba phiếu.</li></ul>
+</section>
+<section>
+<h2>2. Ví dụ nền và các bước thực hiện</h2>
+<div class="example"><p><strong>Ví dụ:</strong> phát hiện 500 g "Sữa đặc" hết hạn trong tủ ở "Kho quầy".</p><ul><li>Sản phẩm: "Sữa đặc". Số lượng: "500" "Gram".</li><li>Lý do: "Hết hạn". Ghi chú: "Hết hạn 09/10, phát hiện khi kiểm tủ".</li></ul></div>
+<div class="step"><h3><span>Bước 1</span>Mở trang Huỷ hàng</h3>
+<ul><li>Bấm <strong>Vận hành</strong> ở menu trái, chọn <strong>Huỷ hàng</strong>.</li><li>Bấm <strong>Tạo phiếu huỷ hàng</strong>.</li></ul>
+<img class="shot" src="images/06-huy-hang-buoc-1-danh-sach.png" alt="Bước 1: Mở trang Huỷ hàng">
+</div>
+<div class="step"><h3><span>Bước 2</span>Khai phiếu huỷ</h3>
+<ul><li><strong>Mã phiếu</strong>: hệ thống tự sinh, không sửa.</li><li><strong>Kho huỷ hàng</strong>: chọn "Kho quầy".</li><li><strong>Sản phẩm huỷ</strong>: chọn "Sữa đặc".</li><li><strong>Số lượng huỷ</strong>: nhập "500". <strong>Đơn vị tính</strong>: chọn "Gram (G)".</li><li><strong>Lý do huỷ</strong>: chọn "Hết hạn" (có 4 lựa chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác).</li><li><strong>Ghi chú</strong>: nhập "Hết hạn 09/10, phát hiện khi kiểm tủ".</li><li>Bấm nút <strong>Tạo phiếu huỷ</strong>.</li></ul>
+<img class="shot" src="images/06-huy-hang-buoc-2-form.png" alt="Bước 2: Khai phiếu huỷ">
+</div>
+<div class="step"><h3><span>Bước 3</span>Xác nhận huỷ</h3>
+<ul><li>Phiếu hiện trong danh sách, trạng thái <strong>Nháp</strong>.</li><li>Bấm nút <strong>…</strong> cuối dòng.</li><li>Menu có: <strong>Sửa</strong>, <strong>Xác nhận huỷ</strong>, <strong>Huỷ bỏ phiếu</strong>, <strong>Xoá</strong>.</li><li>Kiểm tra lại, chọn <strong>Xác nhận huỷ</strong>.</li></ul>
+<img class="shot" src="images/06-huy-hang-buoc-3-nhap-menu.png" alt="Bước 3: Xác nhận huỷ">
+</div>
+</section>
+<section>
+<h2>3. Giải thích các trường</h2>
+<div class="table-wrap"><table><thead><tr><th>Trường</th><th>Điền gì</th><th>Bắt buộc</th></tr></thead><tbody><tr><td>Kho huỷ hàng</td><td>Kho trừ hàng ra</td><td>✅</td></tr><tr><td>Sản phẩm huỷ</td><td>Mặt hàng bị huỷ</td><td>✅</td></tr><tr><td>Số lượng huỷ</td><td>Số bị huỷ</td><td>✅</td></tr><tr><td>Đơn vị tính</td><td>Đơn vị của số lượng</td><td>✅</td></tr><tr><td>Lý do huỷ</td><td>Chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác</td><td>✅</td></tr><tr><td>Ghi chú</td><td><strong>Càng cụ thể càng tốt</strong>: "hết hạn 09/08", "làm rơi khi bưng"</td><td>—</td></tr></tbody></table></div>
+<h3>Huỷ món pha sẵn</h3>
+<ul><li>Huỷ món có công thức dạng <em>Kit</em> (VD ly trà đã pha hỏng): hệ thống <strong>trừ nguyên liệu theo công thức</strong>.</li><li>Không trừ "ly trà", vì trong kho không có mặt hàng "ly trà đã pha".</li></ul>
+</section>
+<section>
+<h2>4. Lưu ý quan trọng</h2>
+<div class="note danger"><div class="ic">⚠️</div><div><p><strong>Đã xác nhận thì không sửa, không xoá.</strong></p></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p><strong>Ghi lý do tử tế là phần có giá trị nhất của phiếu huỷ.</strong></p><ul><li>Cuối tháng nhìn lại sẽ thấy hao hụt nằm ở đâu.</li><li>Hết hạn: mua nhiều quá. Rơi vỡ: thao tác. Pha hỏng: đào tạo.</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Đừng gộp hao hụt vào phiếu kiểm kho.</p><ul><li>Kiểm kho chỉ nói "thiếu 2 kg".</li><li>Phiếu huỷ nói "thiếu <strong>vì sao</strong>".</li></ul></div></div>
+<div class="note tip"><div class="ic">💡</div><div><p>Phiếu <strong>Nháp</strong> chưa đụng gì tới kho, xoá thoải mái.</p></div></div>
+<h2>Kiểm tra đã đúng</h2>
+<ul class="check"><li><label><input type="checkbox"><span>Tồn kho giảm đúng số huỷ</span></label></li><li><label><input type="checkbox"><span>Lý do ghi đủ rõ để tháng sau đọc vẫn hiểu</span></label></li></ul>
+</section>
 </main>
 <script>
 (function(){var n=document.querySelector('nav.side');if(!n)return;
