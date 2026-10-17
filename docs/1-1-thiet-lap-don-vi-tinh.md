@@ -41,45 +41,39 @@ Menu trái: ==Quản lý sản phẩm → Đơn vị tính== (địa chỉ `/uom
 - **Mã đơn vị**: nhập "KG".
 - **Tên đơn vị**: nhập "Kilogam".
 - **Hệ số quy đổi**: nhập "1000".
-- **Đơn vị quy đổi**: chọn "Gram (G)".
+- **Đơn vị quy đổi**: chọn "GRAM (G)".
 - Bấm nút **Thêm đơn vị** trong hộp thoại.
 
 ![Bước 3: Thêm đơn vị lớn hơn](images/02-uom-buoc-3-don-vi-quy-doi.png)
 
-### Bước 4: Kiểm tra kết quả
-
-- Thấy thông báo *“Đã thêm đơn vị đo lường”*.
-- Dòng "KG": hệ số 1000, quy đổi về "Gram (G)".
-- Dòng "G": hiện *Đơn vị gốc*.
-
-![Bước 4: Kiểm tra kết quả](images/02-uom-buoc-4-ket-qua.png)
-
 ## 3. Giải thích các trường
 
-| Trường         | Điền gì                                                                          | Bắt buộc |
-| -------------- | -------------------------------------------------------------------------------- | -------- |
-| Mã đơn vị      | Ngắn, viết hoa. VD `LY`, `KG`, `G`, `TUI-1000`, `CHAI-900`, `HOP-500`            | ✅        |
-| Tên đơn vị     | VD "LY", "KILOGAM", "GRAM", "TÚI 1000G", "CHAI 900G", "HỘP 500G"                 | ✅        |
-| Hệ số quy đổi  | Bằng bao nhiêu đơn vị gốc. Đơn vị gốc điền **1**                                 | ✅        |
-| Đơn vị quy đổi | Đơn vị nhỏ nhất: Chọn "Đơn vị gốc". Đơn vị lớn hơn: Chọn đơn vị nhỏ nhất vừa tạo | —        |
+| Trường         | Điền gì                                                                                | Bắt buộc |
+| -------------- | -------------------------------------------------------------------------------------- | -------- |
+| Mã đơn vị      | Ngắn, viết hoa. Ví dụ: `LY`, `KG`, `G`, `TUI-1000`, `CHAI-900`, `HOP-500`              | ✅        |
+| Tên đơn vị     | Ví dụ: "LY", "KILOGAM", "GRAM", "TÚI 1000G", "CHAI 900G", "HỘP 500G"                   | ✅        |
+| Hệ số quy đổi  | Bằng bao nhiêu đơn vị gốc. Nếu là đơn vị gốc thì điền **1**                            | ✅        |
+| Đơn vị quy đổi | Nếu là KG thì đơn vị gốc là GRAM, Nếu là "Thùng (Chứa 30 Lon)" thì đơn vị gốc là "Lon" | —        |
 
 ## Hiểu trước khi điền
 
-| Khái niệm          | Nghĩa                                         | Khai thế nào                     |
-| ------------------ | --------------------------------------------- | -------------------------------- |
-| **Đơn vị gốc**     | Đơn vị nhỏ nhất dùng lưu tồn. VD sữa lấy Gram | Hệ số 1, để "Đơn vị gốc"         |
-| **Đơn vị quy đổi** | Đơn vị to hơn. VD KG = 1000 Gram              | Hệ số 1000, chọn quy đổi về Gram |
+| Khái niệm          | Nghĩa                                              | Khai thế nào                     |
+| ------------------ | -------------------------------------------------- | -------------------------------- |
+| **Đơn vị gốc**     | Đơn vị nhỏ nhất dùng lưu tồn. VD **GRAM**, **Cái** | Hệ số 1, để "Đơn vị gốc"         |
+| **Đơn vị quy đổi** | Đơn vị to hơn. VD **KG = 1000 GRAM**               | Hệ số 1000, chọn quy đổi về GRAM |
 
 ## Bộ đơn vị mẫu cho quán
 
-| Mã         | Tên       | Hệ số | Quy đổi về |
-| ---------- | --------- | ----- | ---------- |
-| `LY`       | Ly        | 1     | *(gốc)*    |
-| `G`        | Gram      | 1     | *(gốc)*    |
-| `KG`       | Kilogam   | 1000  | Gram       |
-| `TUI-1000` | TÚI 1000G | 1000  | Gram       |
-| `CHAI-900` | CHAI 900G | 900   | Gram       |
-| `HOP-500`  | HỘP 500G  | 500   | Gram       |
+| Mã             | Tên          | Hệ số | Quy đổi về |
+| -------------- | ------------ | ----- | ---------- |
+| `LY`           | Ly           | 1     | *(gốc)*    |
+| `G`            | Gram         | 1     | *(gốc)*    |
+| `KG`           | Kilogam      | 1000  | Gram       |
+| `TUI-1000`     | TÚI 1000G    | 1000  | Gram       |
+| `CHAI-900`     | CHAI 900G    | 900   | Gram       |
+| `HOP-500`      | HỘP 500G     | 500   | Gram       |
+| `CAI`          | CÁI          | 1     | *(gốc)*    |
+| `THUNG-30-CAI` | THÙNG 30 CÁI | 30    | CÁI        |
 
 ## 4. Lưu ý quan trọng
 
