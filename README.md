@@ -3,7 +3,7 @@
 Tài liệu hướng dẫn vận hành hệ thống quản trị quán cà phê TNTDRINK ERP, viết cho cả
 nhân viên đứng quầy (làm từng bước) lẫn quản lý (lưu ý nghiệp vụ).
 
-- Đọc online: <https://nguyentrucanhtuan.github.io/trcf_guide_document/>
+- Đọc online: <https://nguyentrucanhtuan.github.io/trcf_erp_document/>
 - Mục lục 12 bước: [`docs/index.md`](docs/index.md)
 - Ảnh minh hoạ: [`docs/images/`](docs/images/)
 
