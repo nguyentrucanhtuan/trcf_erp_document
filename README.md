@@ -4,22 +4,26 @@ Tài liệu hướng dẫn vận hành hệ thống quản trị quán cà phê 
 nhân viên đứng quầy (làm từng bước) lẫn quản lý (lưu ý nghiệp vụ).
 
 - Đọc online: <https://nguyentrucanhtuan.github.io/trcf_erp_document/>
-- Mục lục 12 bước: [`docs/index.md`](docs/index.md)
-- Ảnh minh hoạ: [`docs/images/`](docs/images/)
+- Mục lục 12 bước: [`noi-dung/index.md`](noi-dung/index.md)
+- Ảnh minh hoạ: [`noi-dung/images/`](noi-dung/images/)
 
 ## Sửa bài ở đâu
 
-**Bài viết là các tệp `.md` trong `docs/`.** Tệp `.html` cùng tên là bản **sinh tự động**
-để đăng web — đừng sửa tay, lần sinh sau sẽ ghi đè.
+**Bài viết là các tệp `.md` trong `noi-dung/`** — chỉ cần sửa và commit ở đây.
+Trang web do GitHub tự sinh mỗi lần push, không có tệp `.html` nào trong repo.
 
 1. Mở tệp `.md` trong VS Code (bấm `Cmd+Shift+V` để xem trước), sửa chữ.
-2. Chạy: `python3 tools/build.py` — sinh lại toàn bộ `.html` (không cần cài thêm gì).
-3. Commit cả `.md` lẫn `.html` rồi push. GitHub Pages đăng thư mục `docs/`.
+2. Commit rồi push. GitHub Actions (workflow "Đăng cẩm nang") chạy `tools/build.py`
+   và đăng lại web sau khoảng 1 phút.
 
-Lệnh build báo ⚠ nếu có ảnh thiếu, link hỏng, hoặc bài chưa đưa vào mục lục.
+Muốn xem trang web ngay trên máy: chạy `python3 tools/build.py` (không cần cài thêm gì),
+rồi mở `_site/index.html`. Thư mục `_site/` là bản sinh ra, git bỏ qua.
 
-**Thêm bài mới:** tạo `docs/N-k-ten-bai.md` (chép một bài có sẵn làm khuôn), thêm một dòng
-`- [N.k Tên bài](N-k-ten-bai.md)` vào đúng bước trong `docs/index.md`, rồi chạy build.
+Lệnh build báo ⚠ nếu có ảnh thiếu, link hỏng, hoặc bài chưa đưa vào mục lục. Trên GitHub,
+build có ⚠ thì **không đăng** — web giữ bản cũ, tab Actions báo đỏ kèm dòng ⚠ cần sửa.
+
+**Thêm bài mới:** tạo `noi-dung/N-k-ten-bai.md` (chép một bài có sẵn làm khuôn), thêm một dòng
+`- [N.k Tên bài](N-k-ten-bai.md)` vào đúng bước trong `noi-dung/index.md`.
 Thanh mục lục bên trái mọi trang tự lấy từ `index.md`.
 
 ## Cấu trúc nội dung hướng dẫn
@@ -73,5 +77,5 @@ Khung ví dụ và khung lưu ý viết bằng dấu `>`:
 `>` không có `[!...]` là khung **Ví dụ** (nền xanh nhạt). Các khung `[!CAUTION]`,
 `[!WARNING]`, `[!TIP]` cũng hiện có màu khi xem trên GitHub.
 
-Mục lục `docs/index.md` dùng thêm: `## Giai đoạn: Tên nhóm` (nhãn xám), `### Bước N — Tên bước`
+Mục lục `noi-dung/index.md` dùng thêm: `## Giai đoạn: Tên nhóm` (nhãn xám), `### Bước N — Tên bước`
 (ô có số), một dòng mô tả, rồi danh sách link tới các bài con.

@@ -1,7 +1,8 @@
-"""Sinh docs/*.html từ docs/*.md — Markdown là bản gốc, HTML là bản sinh ra.
+"""Sinh _site/*.html từ noi-dung/*.md — Markdown là bản gốc, HTML là bản sinh ra.
 
-Chạy:  python3 tools/build.py
+Chạy:  python3 tools/build.py      → mở _site/index.html để xem thử
 Không cần cài gì thêm (chỉ dùng thư viện chuẩn Python).
+_site/ không commit: GitHub Actions chạy lại lệnh này mỗi lần push rồi đăng web.
 
 Cú pháp Markdown dùng trong cẩm nang: xem README.md, mục "Cách sửa bài".
 """
@@ -9,13 +10,15 @@ import glob
 import html
 import os
 import re
+import shutil
 import sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-DOCS = os.path.join(ROOT, 'docs')
+SRC = os.path.join(ROOT, 'noi-dung')
+OUT = os.path.join(ROOT, '_site')
 CSS = open(os.path.join(ROOT, 'tools', 'style.css'), encoding='utf-8').read()
 SITE_NAME = 'Cẩm nang TNTDRINK ERP'
-SKIP = set()  # tệp .md trong docs/ không sinh thành trang (nếu có)
+SKIP = set()  # tệp .md trong noi-dung/ không sinh thành trang (nếu có)
 
 NOTE = {'CAUTION': ('danger', '⚠️'), 'WARNING': ('warn', '⚠️'), 'TIP': ('tip', '💡'),
         'IMPORTANT': ('danger', '⚠️'), 'NOTE': ('tip', '💡')}
@@ -51,8 +54,8 @@ def _href(h):
         if h.endswith('.md'):
             h = h[:-3] + '.html'
         target = h.split('#')[0]
-        if target and not os.path.exists(os.path.join(DOCS, target)) \
-                and not os.path.exists(os.path.join(DOCS, target[:-5] + '.md')):
+        if target and not os.path.exists(os.path.join(SRC, target)) \
+                and not os.path.exists(os.path.join(SRC, target[:-5] + '.md')):
             warnings.append(f'link hỏng: {h}')
     return html.escape(h)
 
@@ -164,7 +167,7 @@ def render_block(b):
         return f'<div class="table-wrap"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
     if k == 'img':
         alt, src = b[1], b[2]
-        if not os.path.exists(os.path.join(DOCS, src)):
+        if not os.path.exists(os.path.join(SRC, src)):
             warnings.append(f'thiếu ảnh: {src}')
         return f'<img class="shot" src="{html.escape(src)}" alt="{html.escape(alt)}">'
     if k == 'code':
@@ -304,12 +307,12 @@ def read(path):
 
 
 def main():
-    meta, bs = read(os.path.join(DOCS, 'index.md'))
+    meta, bs = read(os.path.join(SRC, 'index.md'))
     h1, body, phases = render_index(bs)
     pages = {'index.html': page(meta.get('title', SITE_NAME), meta.get('crumb', ''), h1, body, nav(phases, 'index.html'))}
     listed = {h for ph in phases for st in ph['steps'] for h, _ in st['links']}
 
-    for md in sorted(glob.glob(os.path.join(DOCS, '*.md'))):
+    for md in sorted(glob.glob(os.path.join(SRC, '*.md'))):
         name = os.path.basename(md)
         if name == 'index.md' or name in SKIP:
             continue
@@ -322,12 +325,14 @@ def main():
             warnings.append(f'{name}: chưa có trong mục lục index.md')
         pages[out] = page(meta.get('title', h1), meta.get('crumb', ''), h1, body, nav(phases, out))
 
+    shutil.rmtree(OUT, ignore_errors=True)
+    shutil.copytree(os.path.join(SRC, 'images'), os.path.join(OUT, 'images'))
     for out, text in pages.items():
-        open(os.path.join(DOCS, out), 'w', encoding='utf-8').write(text)
+        open(os.path.join(OUT, out), 'w', encoding='utf-8').write(text)
     for h in sorted(listed - set(pages)):
         warnings.append(f'index.md trỏ tới {h} nhưng không có tệp .md')
 
-    print(f'Đã sinh {len(pages)} trang HTML trong docs/')
+    print(f'Đã sinh {len(pages)} trang HTML trong _site/')
     for w in warnings:
         print('  ⚠', w)
     return 1 if warnings else 0
