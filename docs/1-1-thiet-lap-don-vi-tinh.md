@@ -48,18 +48,18 @@ Menu trái: ==Quản lý sản phẩm → Đơn vị tính== (địa chỉ `/uom
 
 ## 3. Giải thích các trường
 
-| Trường         | Điền gì                                                                                | Bắt buộc |
-| -------------- | -------------------------------------------------------------------------------------- | -------- |
-| Mã đơn vị      | Ngắn, viết hoa. Ví dụ: `LY`, `KG`, `G`, `TUI-1000`, `CHAI-900`, `HOP-500`              | ✅        |
-| Tên đơn vị     | Ví dụ: "LY", "KILOGAM", "GRAM", "TÚI 1000G", "CHAI 900G", "HỘP 500G"                   | ✅        |
-| Hệ số quy đổi  | Bằng bao nhiêu đơn vị gốc. Nếu là đơn vị gốc thì điền **1**                            | ✅        |
-| Đơn vị quy đổi | Nếu là KG thì đơn vị gốc là GRAM, Nếu là "Thùng (Chứa 30 Lon)" thì đơn vị gốc là "Lon" | —        |
+| Trường         | Điền gì                                                                                        | Bắt buộc |
+| -------------- | ---------------------------------------------------------------------------------------------- | -------- |
+| Mã đơn vị      | Ngắn, viết hoa. Ví dụ: `LY`, `KG`, `G`, `TUI-1000`, `CHAI-900`, `HOP-500`                      | ✅        |
+| Tên đơn vị     | Ví dụ: "LY", "KILOGAM", "GRAM", "TÚI 1000G", "CHAI 900G", "HỘP 500G"                           | ✅        |
+| Hệ số quy đổi  | Bằng bao nhiêu đơn vị gốc. Nếu là đơn vị gốc thì điền **1**                                    | ✅        |
+| Đơn vị quy đổi | Nếu là KG thì đơn vị quy đổi là GRAM, Nếu là "Thùng (Chứa 30 Lon)" thì đơn vị quy đổi là "Lon" | —        |
 
 ## Hiểu trước khi điền
 
 | Khái niệm          | Nghĩa                                              | Khai thế nào                     |
 | ------------------ | -------------------------------------------------- | -------------------------------- |
-| **Đơn vị gốc**     | Đơn vị nhỏ nhất dùng lưu tồn. VD **GRAM**, **Cái** | Hệ số 1, để "Đơn vị gốc"         |
+| **Đơn vị gốc**     | Đơn vị nhỏ nhất dùng lưu tồn. VD **GRAM**, **CÁI** | Hệ số 1, để "Đơn vị gốc"         |
 | **Đơn vị quy đổi** | Đơn vị to hơn. VD **KG = 1000 GRAM**               | Hệ số 1000, chọn quy đổi về GRAM |
 
 ## Bộ đơn vị mẫu cho quán

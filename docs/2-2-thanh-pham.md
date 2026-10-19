@@ -11,13 +11,23 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Cần có trước: đơn vị tính ([mục 1.1](1-1-thiet-lap-don-vi-tinh.md)).
 - Nên có trước: danh mục ([mục 2.1](2-1-danh-muc-san-pham.md)).
 
+### Ba loại sản phẩm thường gặp
+
+| Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
+| --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
+| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)) | ❌       | ✅          | ❌          | ✅                       |
+| CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
+| CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
+| BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
+
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Ví dụ:** thêm món "Cà phê sữa đá".
 >
-> - Mã SP: "CFSD01". Đơn vị: "Ly". Loại: "Thành phẩm".
+> - Mã SP: "CFSD". Đơn vị: "LY". Loại: "THÀNH PHẨM".
 > - Giá bán: "29000".
-> - Bán cho khách, pha chế từ nguyên liệu: bật **Có thể bán** và **Sản xuất**.
+> - Bán cho khách: bật **Có thể bán**
+> - Pha chế từ nguyên liệu: bật **Sản xuất**.
 
 ### Bước 1: Mở trang Sản phẩm
 
@@ -30,10 +40,10 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 ### Bước 2: Khai thông tin chính và giá
 
 - **Tên sản phẩm**: nhập "Cà phê sữa đá".
-- **Mã SP (SKU)**: nhập "CFSD01".
-- **Đơn vị tính chính**: chọn "Ly".
+- **Mã SP (SKU)**: nhập "CFSD".
+- **Đơn vị tính chính**: chọn "LY".
 - **Loại sản phẩm**: chọn "Thành phẩm".
-- **Danh mục**: chọn danh mục đã tạo ở mục 2.1 (nếu có).
+- **Danh mục**: chọn danh mục đã tạo ở mục 2.1.
 - **Giá bán**: nhập "29000".
 
 ![Bước 2: Khai thông tin chính và giá](images/03-san-pham-buoc-2-form.png)
@@ -49,56 +59,40 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ![Bước 3: Gạt các công tắc](images/03-san-pham-buoc-3-cong-tac.png)
 
-### Bước 4: Lưu và kiểm tra
-
-- Bấm **Lưu sản phẩm** (nút luôn ở đáy khung).
-- Sản phẩm xuất hiện trong danh sách.
-- Kiểm tra mã, tên, loại, đơn vị, giá bán.
-
-![Bước 4: Lưu và kiểm tra](images/03-san-pham-buoc-4-ket-qua.png)
-
 ## 3. Giải thích các trường
 
 ### Cột trái — Thông tin chính
 
-| Trường | Điền gì | Bắt buộc |
-| --- | --- | --- |
-| Tên sản phẩm | Tên hiện trên bill và màn bếp | ✅ |
-| Mã SP (SKU) | Mã ngắn để tra cứu. VD `CFSD01` | — |
-| Đơn vị tính chính | Đơn vị tính tồn. Đồ uống: "Ly". Nguyên liệu: "Gram" | ✅ |
-| Loại sản phẩm | Thành phẩm / Bán thành phẩm / Nguyên liệu → xem [2.3](2-3-ban-thanh-pham.md), [2.4](2-4-nguyen-lieu.md) | — |
-| Đơn vị tính phụ | Đơn vị khác dùng cho hàng này (nhập theo Kg, trừ theo Gram) | — |
-| Danh mục | Một hoặc nhiều nhóm ở mục 2.1 | — |
-| Nhóm Addon | Nhóm topping, mức đường hỏi khi bán món này | — |
-| Ghi chú pha chế | Ô chọn (VD Đá: ít/nhiều). Thu ngân bấm khi bán, chữ ghép vào tên món. Không thêm tiền | — |
-| Ghi chú công thức ⚡ | Văn bản tự do hiện trên màn bếp khi làm món | — |
+| Trường              | Điền gì                                                                                                 | Bắt buộc |
+| ------------------- | ------------------------------------------------------------------------------------------------------- | -------- |
+| Tên sản phẩm        | Tên hiện trên bill và màn bếp                                                                           | ✅        |
+| Mã SP (SKU)         | Mã ngắn để tra cứu. VD `CFSD`                                                                           | —        |
+| Đơn vị tính chính   | Đơn vị tính tồn. Đồ uống thì chọn: "LY". Nguyên liệu thì chọn: "GRAM"                                   | ✅        |
+| Loại sản phẩm       | Thành phẩm / Bán thành phẩm / Nguyên liệu → xem [2.3](2-3-ban-thanh-pham.md), [2.4](2-4-nguyen-lieu.md) | —        |
+| Đơn vị tính phụ     | Đơn vị khác dùng cho hàng này (nhập theo KG, trừ theo GRAM)                                             | —        |
+| Danh mục            | Một hoặc nhiều nhóm ở mục 2.1                                                                           | —        |
+| Nhóm Addon          | Nhóm topping, mức đường hỏi khi bán món này                                                             | —        |
+| Ghi chú pha chế     | Ô chọn (VD Đá: ít/nhiều). Thu ngân bấm khi bán, chữ ghép vào tên món. Không thêm tiền                   | —        |
+| Ghi chú công thức ⚡ | Văn bản tự do hiện trên màn bếp khi làm món                                                             | —        |
 
 ### Cột phải
 
-| Trường | Điền gì |
-| --- | --- |
-| Ảnh sản phẩm | JPEG, PNG, WebP, tối đa 10MB. Hệ thống tự nén |
-| Giá bán | Giá trên POS |
-| Giá vốn | Giá nhập. **Bị khoá** nếu bật công tắc *Sản xuất* |
-| VAT bán ra / VAT mua vào | Thuế suất (%) áp cho món |
+| Trường                   | Điền gì                                           |
+| ------------------------ | ------------------------------------------------- |
+| Ảnh sản phẩm             | JPEG, PNG, WebP, tối đa 10MB. Hệ thống tự nén     |
+| Giá bán                  | Giá trên POS                                      |
+| Giá vốn                  | Giá nhập. **Bị khoá** nếu bật công tắc *Sản xuất* |
+| VAT bán ra / VAT mua vào | Thuế suất (%) áp cho món                          |
 
 ### Các công tắc — quyết định hành vi hệ thống
 
-| Công tắc | Bật khi | Hệ quả |
-| --- | --- | --- |
-| Theo dõi tồn kho | Hàng cần đếm tồn: nguyên liệu, bánh đóng gói | Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, bán, huỷ |
-| Có thể bán | Món bán cho khách | Hiện trên màn bán hàng |
-| Bán online | Bán qua Zalo Mini App (cần bật *Có thể bán*) | Hiện trên Zalo Mini App |
-| Có thể mua | Hàng mua từ nhà cung cấp | Chọn được trong phiếu nhập hàng |
-| Sản xuất (có công thức) | Món pha chế từ nguyên liệu | Dùng được công thức; **giá vốn bị khoá**, do công thức tính |
-
-### Ba mẫu thường gặp
-
-| Loại hàng | Tồn kho | Bán | Mua | Sản xuất |
-| --- | --- | --- | --- | --- |
-| Cà phê sữa (món pha chế) | ❌ | ✅ | ❌ | ✅ |
-| Cà phê hạt (nguyên liệu) | ✅ | ❌ | ✅ | ❌ |
-| Bánh mua sẵn bán lại | ✅ | ✅ | ✅ | ❌ |
+| Công tắc                | Bật khi                                      | Hệ quả                                                      |
+| ----------------------- | -------------------------------------------- | ----------------------------------------------------------- |
+| Theo dõi tồn kho        | Hàng cần đếm tồn: nguyên liệu, bánh đóng gói | Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, bán, huỷ          |
+| Có thể bán              | Món bán cho khách                            | Hiện trên màn bán hàng                                      |
+| Bán online              | Bán qua Zalo Mini App (cần bật *Có thể bán*) | Hiện trên Zalo Mini App                                     |
+| Có thể mua              | Hàng mua từ nhà cung cấp                     | Chọn được trong phiếu nhập hàng                             |
+| Sản xuất (có công thức) | Món pha chế từ nguyên liệu                   | Dùng được công thức; **giá vốn bị khoá**, do công thức tính |
 
 ## 4. Lưu ý quan trọng
 

@@ -23,7 +23,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Vào **Quản lý sản phẩm → Công thức**.
 - Bấm **Thêm công thức**.
 - **Sản phẩm (thành phẩm)**: chọn "Trà đào".
-- **Loại công thức**: giữ "Cần sản xuất".
+- **Loại công thức**: giữ "KIT (Trừ thành phần khi bán)".
 - **Sản lượng (yield)**: giữ "1", đơn vị "Ly".
 - Bấm **Thêm nguyên liệu** hai lần.
 - Dòng 1: chọn "Trà đen", SL "15", ĐVT "Gram (G)".
@@ -53,21 +53,21 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ### Khai công thức
 
-| Trường | Điền gì | Bắt buộc |
-| --- | --- | --- |
-| Sản phẩm (thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất*** | ✅ |
-| Biến thể | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | — |
-| Loại công thức | *Cần sản xuất* hoặc *Kit* (xem bảng dưới) | ✅ |
-| Sản lượng (yield) | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20 | ✅ |
-| Hoạt động | Tắt: công thức tạm ngừng dùng | — |
-| Nguyên liệu | Hàng + định lượng (SL) + đơn vị (ĐVT) | ✅ |
+| Trường                | Điền gì                                                                | Bắt buộc |
+| --------------------- | ---------------------------------------------------------------------- | -------- |
+| Sản phẩm (thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
+| Biến thể              | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | —        |
+| Loại công thức        | *Cần sản xuất* hoặc *Kit* (xem bảng dưới)                              | ✅        |
+| Sản lượng (yield)     | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20    | ✅        |
+| Hoạt động             | Tắt: công thức tạm ngừng dùng                                          | —        |
+| Nguyên liệu           | Hàng + định lượng (SL) + đơn vị (ĐVT)                                  | ✅        |
 
 ### Hai loại công thức
 
-| Loại | Trừ kho khi nào | Dùng cho |
-| --- | --- | --- |
-| Cần sản xuất | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: cà phê cốt, trà ủ, syrup |
-| Kit | Ngay **lúc bán**, tự trừ thành phần | Combo, món ráp tại chỗ không qua chế biến |
+| Loại         | Trừ kho khi nào                                       | Dùng cho                                                           |
+| ------------ | ----------------------------------------------------- | ------------------------------------------------------------------ |
+| Cần sản xuất | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: cà phê cốt, trà ủ, milkfoam, trân châu nấu |
+| Kit          | Ngay **lúc bán**, tự trừ thành phần                   | Combo, món ráp tại chỗ không qua chế biến                          |
 
 ### Cách tính giá vốn
 
