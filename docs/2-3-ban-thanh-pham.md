@@ -12,8 +12,11 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Nên có trước: danh mục ([bài 2.1](2-1-danh-muc-san-pham.md)) và nguyên liệu ([bài 2.4](2-4-nguyen-lieu.md)).
 
 > **Cách đặt tên** BTP - TÊN BÁN THÀNH PHẨM
-> **Ví dụ** BTP - CỐT TRÀ LÀI, BTP - TRÂN CHÂU ĐEN NẤU, BTP - MILKFOAM MATCHA
 > 
+> - BTP - CỐT TRÀ LÀI
+> - BTP - TRÂN CHÂU ĐEN NẤU
+> - BTP - MILKFOAM MATCHA
+
 ### Ba loại sản phẩm thường gặp
 
 | Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |

@@ -13,11 +13,15 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Cách đặt tên**: NL - TÊN NGUYÊN LIỆU - KHỐI LƯỢNG BÊN TRONG - KHỐI LƯỢNG VỎ.
-> **Ví dụ**: NL - CÀ PHÊ HẠT - 1000 - 30. (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM), NL - SỮA ĐẶC - 1250 - 90
+> 
+> **Ví dụ** 
+> - NL - CÀ PHÊ HẠT - 1000 - 30. (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM)
+> - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối luợng vỏ hộp là 90 GRAM)
+> - NL - SỮA TƯƠI - 1000 - 70
 
-> **Ví dụ:** thêm nguyên liệu "NL - CÀ PHÊ HẠT".
+> **Ví dụ:** thêm nguyên liệu "NL - CÀ PHÊ HẠT - 1000 - 30".
 >
-> - Tên: "CÀ PHÊ HẠT". Đơn vị: "GRAM". Loại: "NGUYÊN LIỆU".
+> - Tên: "NL - CÀ PHÊ HẠT". Đơn vị: "GRAM". Loại: "NGUYÊN LIỆU".
 > - Mua về, dùng làm ra thứ khác, không bán trực tiếp.
 > - Bật **Theo dõi tồn kho** và **Có thể mua**.
 
@@ -30,9 +34,9 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ![Bước 1: Mở form và chọn Loại sản phẩm](images/03-loai-buoc-1-chon-loai.png)
 
-### Bước 2: Khai nguyên liệu "CÀ PHÊ HẠT"
+### Bước 2: Khai nguyên liệu "NL - CÀ PHÊ HẠT - 1000 - 30"
 
-- **Tên sản phẩm**: nhập "CÀ PHÊ HẠT".
+- **Tên sản phẩm**: nhập "NL - CÀ PHÊ HẠT - 1000 - 30".
 - **Đơn vị tính chính**: chọn "GRAM".
 - **Loại sản phẩm**: giữ "NGUYÊN LIỆU".
 - Bật **Theo dõi tồn kho**.
@@ -46,16 +50,16 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ### Khai nguyên liệu
 
-| Trường                | Điền gì                                                                 |
-| --------------------- | ----------------------------------------------------------------------- |
-| Tên sản phẩm          | VD "NL - CÀ PHÊ HẠT", "NL - SỮA ĐẶC", "NL - ĐƯỜNG CÁT"                  |
-| Đơn vị tính chính     | Đơn vị nhỏ nhất dùng trừ kho. VD "GRAM"                                 |
-| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo "KG", trừ theo "GRAM")         |
-| Loại sản phẩm         | "NGUYÊN LIỆU"                                                           |
-| Giá vốn               | Giá nhập. Tự cập nhật mỗi lần nhập hàng ([bài 11.2](11-2-nhap-hang.md)) |
-| Theo dõi tồn kho      | **Bật**. Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, chế biến, bán, huỷ   |
-| Có thể mua            | **Bật**. Chọn được trong phiếu nhập hàng                                |
-| Có thể bán / Sản xuất | **Tắt**                                                                 |
+| Trường                | Điền gì                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| Tên sản phẩm          | VD "NL - CÀ PHÊ HẠT - 1000 - 30", "NL - SỮA ĐẶC - 1250 - 90", "NL - ĐƯỜNG CÁT - 1000" |
+| Đơn vị tính chính     | Đơn vị nhỏ nhất dùng trừ kho. VD "GRAM"                                               |
+| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo "KG", trừ theo "GRAM")                       |
+| Loại sản phẩm         | "NGUYÊN LIỆU"                                                                         |
+| Giá vốn               | Giá nhập. Tự cập nhật mỗi lần nhập hàng ([bài 11.2](11-2-nhap-hang.md))               |
+| Theo dõi tồn kho      | **Bật**. Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, chế biến, bán, huỷ                 |
+| Có thể mua            | **Bật**. Chọn được trong phiếu nhập hàng                                              |
+| Có thể bán / Sản xuất | **Tắt**                                                                               |
 
 ### So sánh ba loại hàng
 
