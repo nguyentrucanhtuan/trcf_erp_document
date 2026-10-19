@@ -10,11 +10,20 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 - Cần có trước: đơn vị tính ([bài 1.1](1-1-thiet-lap-don-vi-tinh.md)).
 
+### Ba loại sản phẩm thường gặp
+
+| Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
+| --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
+| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)) | ❌       | ✅          | ❌          | ✅                       |
+| CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
+| CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
+| BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
+
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Cách đặt tên**: NL - TÊN NGUYÊN LIỆU - KHỐI LƯỢNG BÊN TRONG - KHỐI LƯỢNG VỎ.
 > 
-> **Ví dụ** 
+> **Ví dụ cách đặt tên:** 
 > - NL - CÀ PHÊ HẠT - 1000 - 30. (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM)
 > - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối luợng vỏ hộp là 90 GRAM)
 > - NL - SỮA TƯƠI - 1000 - 70

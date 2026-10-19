@@ -11,7 +11,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Cần có trước: đơn vị tính ([bài 1.1](1-1-thiet-lap-don-vi-tinh.md)).
 - Nên có trước: danh mục ([bài 2.1](2-1-danh-muc-san-pham.md)) và nguyên liệu ([bài 2.4](2-4-nguyen-lieu.md)).
 
-> **Cách đặt tên** BTP - TÊN BÁN THÀNH PHẨM
+> **Cách đặt tên:** BTP - TÊN BÁN THÀNH PHẨM
 > 
 > - BTP - CỐT TRÀ LÀI
 > - BTP - TRÂN CHÂU ĐEN NẤU

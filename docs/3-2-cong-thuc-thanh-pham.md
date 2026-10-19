@@ -11,12 +11,19 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Cần có trước: thành phẩm bật **Sản xuất** ([bài 2.2](2-2-thanh-pham.md)).
 - Cần có trước: nguyên liệu, bán thành phẩm đã có giá vốn ([bài 2.4](2-4-nguyen-lieu.md), [bài 3.1](3-1-cong-thuc-ban-thanh-pham.md)).
 
+### Hai loại công thức
+
+| Loại         | Trừ kho khi nào                                       | Dùng cho                                                               |
+| ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| CẦN SẢN XUẤT | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: TRÀ LÀI Ủ SẴN, MILKFOAM, TRÂN CHÂU NẤU SẴN     |
+| KIT          | Ngay **lúc bán**, tự trừ thành phần                   | COMBO, MÓN RÁP TẠI CHỖ: CÀ PHÊ ĐEN, CÀ PHÊ SỮA, BẠC XỈU, TRÀ SỮA OLONG |
+
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Ví dụ:** món "Trà đào" giá 40.000.
 >
-> - Công thức: "Trà đen" 15 g (300đ/g) + "Đường cát" 10 g (20đ/g).
-> - Sản lượng 1 ly → giá vốn = 15×300 + 10×20 = **4.700₫**.
+> - Công thức: "Trà đen" 15 g + "Đường cát" 10 g.
+> - Sản lượng 1 LY.
 
 ### Bước 1: Tạo công thức
 
@@ -58,9 +65,9 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 | Sản phẩm (thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
 | Biến thể              | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | —        |
 | Loại công thức        | *Cần sản xuất* hoặc *Kit* (xem bảng dưới)                              | ✅        |
-| Sản lượng (yield)     | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20    | ✅        |
+| Sản lượng             | Công thức làm ra bao nhiêu thành phẩm. Tạo ra được 1 ly: điền 1        | ✅        |
 | Hoạt động             | Tắt: công thức tạm ngừng dùng                                          | —        |
-| Nguyên liệu           | Hàng + định lượng (SL) + đơn vị (ĐVT)                                  | ✅        |
+| Nguyên liệu           | Hàng + số lượng (SL) + đơn vị tính (ĐVT)                               | ✅        |
 
 ### Hai loại công thức
 

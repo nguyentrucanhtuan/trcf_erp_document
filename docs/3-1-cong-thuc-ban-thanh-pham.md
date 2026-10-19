@@ -11,12 +11,19 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Cần có trước: bán thành phẩm bật **Sản xuất** ([bài 2.3](2-3-ban-thanh-pham.md)).
 - Cần có trước: nguyên liệu ([bài 2.4](2-4-nguyen-lieu.md)), nên đã nhập hàng để có giá vốn.
 
+### Hai loại công thức
+
+| Loại         | Trừ kho khi nào                                       | Dùng cho                                                               |
+| ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| CẦN SẢN XUẤT | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: TRÀ LÀI Ủ SẴN, MILKFOAM, TRÂN CHÂU NẤU SẴN     |
+| KIT          | Ngay **lúc bán**, tự trừ thành phần                   | COMBO, MÓN RÁP TẠI CHỖ: CÀ PHÊ ĐEN, CÀ PHÊ SỮA, BẠC XỈU, TRÀ SỮA OLONG |
+
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Ví dụ:** công thức cho "Cà phê cốt ủ", ủ một mẻ được 1000 g.
 >
-> - Nguyên liệu: "Cà phê hạt" 200 g (300đ/g) + "Đường cát" 50 g (20đ/g).
-> - Sản lượng 1000 g → giá vốn = (200×300 + 50×20) ÷ 1000 = **61₫/g**.
+> - Nguyên liệu: "Cà phê hạt" 200 g + "Đường cát" 50 g.
+> - Sản lượng 1000 g
 
 ### Bước 1: Tạo công thức
 
@@ -26,8 +33,8 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - **Loại công thức**: giữ "Cần sản xuất".
 - **Sản lượng (yield)**: nhập "1000", đơn vị "Gram".
 - Bấm **Thêm nguyên liệu** hai lần.
-- Dòng 1: chọn "Cà phê hạt", SL "200", ĐVT "Gram (G)".
-- Dòng 2: chọn "Đường cát", SL "50", ĐVT "Gram (G)".
+- Dòng 1: chọn "Cà phê hạt", Số lượng "200", Đơn vị tính "Gram (G)".
+- Dòng 2: chọn "Đường cát", Số lượng "50", Đơn vị tính "Gram (G)".
 - Bấm nút **Tạo công thức**.
 
 ![Bước 1: Tạo công thức](images/03-cong-thuc-btp-buoc-1-tao.png)
@@ -53,21 +60,14 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ### Khai công thức
 
-| Trường | Điền gì | Bắt buộc |
-| --- | --- | --- |
-| Sản phẩm (bán thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất*** | ✅ |
-| Biến thể | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | — |
-| Loại công thức | *Cần sản xuất* hoặc *Kit* (xem bảng dưới) | ✅ |
-| Sản lượng (yield) | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20 | ✅ |
-| Hoạt động | Tắt: công thức tạm ngừng dùng | — |
-| Nguyên liệu | Hàng + định lượng (SL) + đơn vị (ĐVT) | ✅ |
-
-### Hai loại công thức
-
-| Loại | Trừ kho khi nào | Dùng cho |
-| --- | --- | --- |
-| Cần sản xuất | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: cà phê cốt, trà ủ, syrup |
-| Kit | Ngay **lúc bán**, tự trừ thành phần | Combo, món ráp tại chỗ không qua chế biến |
+| Trường                    | Điền gì                                                                | Bắt buộc |
+| ------------------------- | ---------------------------------------------------------------------- | -------- |
+| Sản phẩm (bán thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
+| Biến thể                  | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | —        |
+| Loại công thức            | *Cần sản xuất* hoặc *Kit* (xem bảng dưới)                              | ✅        |
+| Sản lượng (yield)         | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20    | ✅        |
+| Hoạt động                 | Tắt: công thức tạm ngừng dùng                                          | —        |
+| Nguyên liệu               | Hàng + định lượng (SL) + đơn vị (ĐVT)                                  | ✅        |
 
 ### Cách tính giá vốn
 
