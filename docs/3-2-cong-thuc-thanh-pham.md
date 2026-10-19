@@ -39,22 +39,16 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ![Bước 1: Tạo công thức](images/03-cong-thuc-buoc-1-tao.png)
 
-### Bước 2: Mở menu dòng công thức
+### Bước 2: Tính giá vốn
 
 - Công thức mới có **Giá vốn** "Chưa tính".
 - Bấm nút **…** ở cuối dòng.
-- Menu có: **Tính giá vốn**, **Sửa**, **Xoá**.
-
-![Bước 2: Mở menu dòng công thức](images/03-cong-thuc-buoc-2-danh-sach.png)
-
-### Bước 3: Tính giá vốn
-
 - Chọn **Tính giá vốn**.
 - Thấy thông báo *“Đã tính giá vốn công thức”*.
 - Cột **Giá vốn** hiện "5.125₫".
 - Tính cả loạt: bấm **Tính lại giá vốn** ở đầu trang.
 
-![Bước 3: Tính giá vốn](images/03-cong-thuc-buoc-3-gia-von.png)
+![Bước 2: Mở menu dòng công thức](images/03-cong-thuc-buoc-2-danh-sach.png)
 
 ## 3. Giải thích các trường
 
