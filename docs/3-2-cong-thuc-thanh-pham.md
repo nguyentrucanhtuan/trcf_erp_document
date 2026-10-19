@@ -31,7 +31,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Bấm **Thêm công thức**.
 - **Sản phẩm (thành phẩm)**: chọn "Trà đào".
 - **Loại công thức**: giữ "KIT (Trừ thành phần khi bán)".
-- **Sản lượng (yield)**: giữ "1", đơn vị "Ly".
+- **Sản lượng**: giữ "1", đơn vị "LY".
 - Bấm **Thêm nguyên liệu** hai lần.
 - Dòng 1: chọn "Trà đen", SL "15", ĐVT "Gram (G)".
 - Dòng 2: chọn "Đường cát", SL "10", ĐVT "Gram (G)".
@@ -78,7 +78,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ### Cách tính giá vốn
 
-`giá vốn = tổng (giá vốn nguyên liệu × định lượng đã quy đổi) ÷ sản lượng`
+`giá vốn sản phẩm = tổng giá vốn nguyên liệu cộng lại`
 
 - Sản phẩm có nhiều công thức đang hoạt động: lấy **công thức rẻ nhất**.
 

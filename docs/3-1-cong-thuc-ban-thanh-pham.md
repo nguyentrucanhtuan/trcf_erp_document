@@ -31,7 +31,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Bấm **Thêm công thức**.
 - **Sản phẩm (bán thành phẩm)**: chọn "Cà phê cốt ủ".
 - **Loại công thức**: giữ "Cần sản xuất".
-- **Sản lượng (yield)**: nhập "1000", đơn vị "Gram".
+- **Sản lượng**: nhập "1000", đơn vị "Gram".
 - Bấm **Thêm nguyên liệu** hai lần.
 - Dòng 1: chọn "Cà phê hạt", Số lượng "200", Đơn vị tính "Gram (G)".
 - Dòng 2: chọn "Đường cát", Số lượng "50", Đơn vị tính "Gram (G)".
@@ -39,22 +39,16 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ![Bước 1: Tạo công thức](images/03-cong-thuc-btp-buoc-1-tao.png)
 
-### Bước 2: Mở menu dòng công thức
+### Bước 2: Tính giá vốn
 
 - Công thức mới có **Giá vốn** "Chưa tính".
 - Bấm nút **…** ở cuối dòng.
-- Menu có: **Tính giá vốn**, **Sửa**, **Xoá**.
-
-![Bước 2: Mở menu dòng công thức](images/03-cong-thuc-btp-buoc-2-menu.png)
-
-### Bước 3: Tính giá vốn
-
 - Chọn **Tính giá vốn**.
 - Thấy thông báo *“Đã tính giá vốn công thức”*.
 - Cột **Giá vốn** hiện "61₫".
 - Tính cả loạt: bấm **Tính lại giá vốn** ở đầu trang.
 
-![Bước 3: Tính giá vốn](images/03-cong-thuc-btp-buoc-3-gia-von.png)
+![Bước 2: Mở menu dòng công thức](images/03-cong-thuc-btp-buoc-2-menu.png)
 
 ## 3. Giải thích các trường
 
@@ -64,14 +58,14 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 | ------------------------- | ---------------------------------------------------------------------- | -------- |
 | Sản phẩm (bán thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
 | Biến thể                  | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | —        |
-| Loại công thức            | *Cần sản xuất* hoặc *Kit* (xem bảng dưới)                              | ✅        |
+| Loại công thức            | Bán thành phẩm thì chọn *Cần sản xuất*                                 | ✅        |
 | Sản lượng (yield)         | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20    | ✅        |
 | Hoạt động                 | Tắt: công thức tạm ngừng dùng                                          | —        |
-| Nguyên liệu               | Hàng + định lượng (SL) + đơn vị (ĐVT)                                  | ✅        |
+| Nguyên liệu               | Hàng + số lượng (SL) + đơn vị tính (ĐVT)                               | ✅        |
 
 ### Cách tính giá vốn
 
-`giá vốn = tổng (giá vốn nguyên liệu × định lượng đã quy đổi) ÷ sản lượng`
+`giá vốn = tổng giá vốn nguyên liệu`
 
 - Sản phẩm có nhiều công thức đang hoạt động: lấy **công thức rẻ nhất**.
 
