@@ -20,21 +20,22 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** công thức cho "Cà phê cốt ủ", ủ một mẻ được 1000 g.
+> **Ví dụ:** công thức cho "BTP - TRÀ LÀI", pha một mẻ được 800 gram.
 >
-> - Nguyên liệu: "Cà phê hạt" 200 g + "Đường cát" 50 g.
-> - Sản lượng 1000 g
+> - Nguyên liệu: "NL - ĐÁ VIÊN" 200 gram + "NL - TRÀ LÀI - 500" 35 gram + "NL - NƯỚC NÓNG" 800 gram.
+> - Sản lượng 800 gram.
 
 ### Bước 1: Tạo công thức
 
 - Vào **Quản lý sản phẩm → Công thức**.
 - Bấm **Thêm công thức**.
-- **Sản phẩm (bán thành phẩm)**: chọn "Cà phê cốt ủ".
+- **Sản phẩm (thành phẩm)**: chọn "BTP - TRÀ LÀI".
 - **Loại công thức**: giữ "Cần sản xuất".
-- **Sản lượng**: nhập "1000", đơn vị "Gram".
-- Bấm **Thêm nguyên liệu** hai lần.
-- Dòng 1: chọn "Cà phê hạt", Số lượng "200", Đơn vị tính "Gram (G)".
-- Dòng 2: chọn "Đường cát", Số lượng "50", Đơn vị tính "Gram (G)".
+- **Sản lượng**: Số lượng "800", Đơn vị "GRAM (GR)".
+- Bấm **Thêm nguyên liệu** ba lần.
+- Dòng 1: chọn "NL - ĐÁ VIÊN", SL "200", ĐVT "GRAM (GR)".
+- Dòng 2: chọn "NL - TRÀ LÀI - 500", SL "35", ĐVT "GRAM (GR)".
+- Dòng 3: chọn "NL - NƯỚC NÓNG", SL "800", ĐVT "GRAM (GR)".
 - Bấm nút **Tạo công thức**.
 
 ![Bước 1: Tạo công thức](images/03-cong-thuc-btp-buoc-1-tao.png)
@@ -45,7 +46,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 - Bấm nút **…** ở cuối dòng.
 - Chọn **Tính giá vốn**.
 - Thấy thông báo *“Đã tính giá vốn công thức”*.
-- Cột **Giá vốn** hiện "61₫".
+- Cột **Giá vốn** hiện "11₫".
 - Tính cả loạt: bấm **Tính lại giá vốn** ở đầu trang.
 
 ![Bước 2: Mở menu dòng công thức](images/03-cong-thuc-btp-buoc-2-menu.png)
@@ -56,10 +57,10 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 | Trường                    | Điền gì                                                                | Bắt buộc |
 | ------------------------- | ---------------------------------------------------------------------- | -------- |
-| Sản phẩm (bán thành phẩm) | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
+| Sản phẩm (thành phẩm)     | Món cần công thức. Danh sách **chỉ hiện sản phẩm đã bật *Sản xuất***   | ✅        |
 | Biến thể                  | Bỏ trống: công thức chung mọi size. Chọn size: công thức riêng size đó | —        |
 | Loại công thức            | Bán thành phẩm thì chọn *Cần sản xuất*                                 | ✅        |
-| Sản lượng (yield)         | Công thức làm ra bao nhiêu thành phẩm. Ủ một mẻ được 20 ly: điền 20    | ✅        |
+| Sản lượng (yield)         | Công thức làm ra bao nhiêu thành phẩm. Pha một mẻ được 800 gram: điền 800 | ✅        |
 | Hoạt động                 | Tắt: công thức tạm ngừng dùng                                          | —        |
 | Nguyên liệu               | Hàng + số lượng (SL) + đơn vị tính (ĐVT)                               | ✅        |
 
@@ -81,9 +82,9 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 > [!WARNING]
 > **Công thức nhiều tầng phải bấm tính hai lần.**
 >
-> - Ví dụ "Trà đào" dùng "cà phê cốt ủ", "cà phê cốt ủ" có công thức riêng.
-> - Lần 1: tính giá bán thành phẩm.
-> - Lần 2: đưa giá đó vào thành phẩm.
+> - Ví dụ món trà lài dùng "BTP - TRÀ LÀI", "BTP - TRÀ LÀI" có công thức riêng.
+> - Lần 1: tính giá "BTP - TRÀ LÀI".
+> - Lần 2: đưa giá đó vào món trà lài.
 
 > [!TIP]
 > Sửa, tắt hoặc xoá công thức thì giá vốn tự tính lại ngay. Xoá hết công thức đang hoạt động thì giá vốn giữ giá cuối cùng, không tụt về 0.

@@ -20,21 +20,21 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** món "Trà đào" giá 40.000.
+> **Ví dụ:** món "MAY ĐEN ĐÁ" giá 39.000 ([bài 2.2](2-2-thanh-pham.md)).
 >
-> - Công thức: "Trà đen" 15 g + "Đường cát" 10 g.
+> - Công thức: "NL - CÀ PHÊ VIỆT PHA PHIN" 20 gram + "NL - ĐƯỜNG NƯỚC - 25KG - 750" 5 gram.
 > - Sản lượng 1 LY.
 
 ### Bước 1: Tạo công thức
 
 - Vào **Quản lý sản phẩm → Công thức**.
 - Bấm **Thêm công thức**.
-- **Sản phẩm (thành phẩm)**: chọn "Trà đào".
-- **Loại công thức**: giữ "KIT (Trừ thành phần khi bán)".
-- **Sản lượng**: giữ "1", đơn vị "LY".
+- **Sản phẩm (thành phẩm)**: chọn "MAY ĐEN ĐÁ".
+- **Loại công thức**: chọn "Kit (trừ thành phần khi bán)".
+- **Sản lượng**: Số lượng giữ "1", Đơn vị chọn "LY (LY)".
 - Bấm **Thêm nguyên liệu** hai lần.
-- Dòng 1: chọn "Trà đen", SL "15", ĐVT "Gram (G)".
-- Dòng 2: chọn "Đường cát", SL "10", ĐVT "Gram (G)".
+- Dòng 1: chọn "NL - CÀ PHÊ VIỆT PHA PHIN", SL "20", ĐVT "GRAM (GR)".
+- Dòng 2: chọn "NL - ĐƯỜNG NƯỚC - 25KG - 750", SL "5", ĐVT "GRAM (GR)".
 - Bấm nút **Tạo công thức**.
 
 ![Bước 1: Tạo công thức](images/03-cong-thuc-buoc-1-tao.png)
@@ -51,7 +51,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 - Chọn **Tính giá vốn**.
 - Thấy thông báo *“Đã tính giá vốn công thức”*.
-- Cột **Giá vốn** hiện "4.700₫".
+- Cột **Giá vốn** hiện "5.125₫".
 - Tính cả loạt: bấm **Tính lại giá vốn** ở đầu trang.
 
 ![Bước 3: Tính giá vốn](images/03-cong-thuc-buoc-3-gia-von.png)
@@ -94,9 +94,9 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 > [!WARNING]
 > **Công thức nhiều tầng phải bấm tính hai lần.**
 >
-> - Ví dụ "Trà đào" dùng "trà ủ", "trà ủ" có công thức riêng.
-> - Lần 1: tính giá "trà ủ".
-> - Lần 2: đưa giá đó vào "Trà đào".
+> - Ví dụ món trà lài dùng "BTP - TRÀ LÀI", "BTP - TRÀ LÀI" có công thức riêng ([bài 3.1](3-1-cong-thuc-ban-thanh-pham.md)).
+> - Lần 1: tính giá "BTP - TRÀ LÀI".
+> - Lần 2: đưa giá đó vào món trà lài.
 
 > [!TIP]
 > Sửa, tắt hoặc xoá công thức thì giá vốn tự tính lại ngay. Xoá hết công thức đang hoạt động thì giá vốn giữ giá cuối cùng, không tụt về 0.
