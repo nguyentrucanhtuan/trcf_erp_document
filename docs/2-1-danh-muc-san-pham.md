@@ -52,16 +52,16 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 - Kéo biểu tượng **⠿** bên trái để đổi thứ tự.
 - Xếp nhóm bán chạy lên đầu.
 
-![Bước 4: Kiểm tra và xếp thứ tự](images/03-danh-muc-buoc-4-danh-sach.png)
+![Bước 4: Kiểm tra và xếp thứ tự](images/03-danh-muc-buoc-1-trang.png)
 
 ## 3. Giải thích các trường
 
-| Trường | Điền gì | Bắt buộc |
-| --- | --- | --- |
-| Tên danh mục | VD "Cà phê", "Trà trái cây" | ✅ |
-| Màu sắc đại diện | Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh | — |
-| Mô tả | Ghi chú nội bộ | — |
-| Hiển thị ngoài POS | **Bật**: hiện trên màn bán hàng. **Tắt**: chỉ dùng nội bộ | — |
+| Trường             | Điền gì                                                   | Bắt buộc |
+| ------------------ | --------------------------------------------------------- | -------- |
+| Tên danh mục       | VD "Cà phê", "Trà trái cây"                               | ✅        |
+| Màu sắc đại diện   | Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh  | —        |
+| Mô tả              | Ghi chú nội bộ                                            | —        |
+| Hiển thị ngoài POS | **Bật**: hiện trên màn bán hàng. **Tắt**: chỉ dùng nội bộ | —        |
 
 ## 4. Lưu ý quan trọng
 

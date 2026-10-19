@@ -22,10 +22,10 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** thêm món "Cà phê sữa đá".
+> **Ví dụ:** thêm món "MAY ĐEN ĐÁ".
 >
-> - Mã SP: "CFSD". Đơn vị: "LY". Loại: "THÀNH PHẨM".
-> - Giá bán: "29000".
+> - Mã SP: "MAYDENDA". Đơn vị: "LY". Loại: "THÀNH PHẨM".
+> - Giá bán: "39000".
 > - Bán cho khách: bật **Có thể bán**
 > - Pha chế từ nguyên liệu: bật **Sản xuất**.
 
@@ -39,12 +39,12 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ### Bước 2: Khai thông tin chính và giá
 
-- **Tên sản phẩm**: nhập "Cà phê sữa đá".
-- **Mã SP (SKU)**: nhập "CFSD".
+- **Tên sản phẩm**: nhập "MAY ĐEN ĐÁ".
+- **Mã SP (SKU)**: nhập "MAYDENDA".
 - **Đơn vị tính chính**: chọn "LY".
-- **Loại sản phẩm**: chọn "Thành phẩm".
+- **Loại sản phẩm**: chọn "THÀNH PHẨM".
 - **Danh mục**: chọn danh mục đã tạo ở mục 2.1.
-- **Giá bán**: nhập "29000".
+- **Giá bán**: nhập "39000".
 
 ![Bước 2: Khai thông tin chính và giá](images/03-san-pham-buoc-2-form.png)
 
@@ -53,7 +53,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Cuộn xuống khung **Thiết lập** (cột phải).
 - Giữ **Có thể bán**: bật.
 - Gạt **Sản xuất (có công thức)**: bật.
-- Để tắt: **Theo dõi tồn kho**, **Bán online**, **Có thể mua**.
+- Để tắt: **Theo dõi tồn kho**, **Có thể mua**.
 - Ô **Giá vốn** xám lại: bình thường.
 - **Ghi chú công thức ⚡** (tuỳ chọn): nhập "Pha phin 25g cà phê, thêm 30ml sữa đặc, đá viên."
 
@@ -66,7 +66,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 | Trường              | Điền gì                                                                                                 | Bắt buộc |
 | ------------------- | ------------------------------------------------------------------------------------------------------- | -------- |
 | Tên sản phẩm        | Tên hiện trên bill và màn bếp                                                                           | ✅        |
-| Mã SP (SKU)         | Mã ngắn để tra cứu. VD `CFSD`                                                                           | —        |
+| Mã SP (SKU)         | Mã ngắn để tra cứu. VD `MAYDENDA`                                                                       | —        |
 | Đơn vị tính chính   | Đơn vị tính tồn. Đồ uống thì chọn: "LY". Nguyên liệu thì chọn: "GRAM"                                   | ✅        |
 | Loại sản phẩm       | Thành phẩm / Bán thành phẩm / Nguyên liệu → xem [2.3](2-3-ban-thanh-pham.md), [2.4](2-4-nguyen-lieu.md) | —        |
 | Đơn vị tính phụ     | Đơn vị khác dùng cho hàng này (nhập theo KG, trừ theo GRAM)                                             | —        |

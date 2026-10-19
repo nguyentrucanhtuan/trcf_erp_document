@@ -41,7 +41,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Bấm ô **Loại sản phẩm**.
 - Chọn "NGUYÊN LIỆU".
 
-![Bước 1: Mở form và chọn Loại sản phẩm](images/03-loai-buoc-1-chon-loai.png)
+![Bước 1: Mở form và chọn Loại sản phẩm](images/03-san-pham-nguyen-lieu-1.png)
 
 ### Bước 2: Khai nguyên liệu "NL - CÀ PHÊ HẠT - 1000 - 30"
 
@@ -53,7 +53,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Để tắt **Có thể bán** và **Sản xuất**.
 - Bấm **Lưu sản phẩm**.
 
-![Bước 2: Khai nguyên liệu "Cà phê hạt"](images/03-loai-buoc-2-nguyen-lieu.png)
+![Bước 2: Khai nguyên liệu "Cà phê hạt"](images/03-san-pham-nguyen-lieu-2.png)
 
 ## 3. Giải thích các trường
 

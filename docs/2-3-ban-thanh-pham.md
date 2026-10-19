@@ -54,7 +54,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 - Ô **Giá vốn** xám lại: bình thường.
 - Bấm **Lưu sản phẩm**.
 
-![Bước 2: Khai bán thành phẩm "Cà phê cốt ủ"](images/03-loai-buoc-3-ban-thanh-pham.png)
+![Bước 2: Khai bán thành phẩm "Cà phê cốt ủ"](images/03-loai-buoc-2-ban-thanh-pham.png)
 
 ## 3. Giải thích các trường
 
