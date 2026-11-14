@@ -10,9 +10,11 @@ Ba màn trong mục này:
 
 | Màn | Đường dẫn | Dùng để |
 | --- | --- | --- |
-| Tồn kho hiện tại | Quản lý kho → Tồn kho (`/stock`) | Khai định mức, xem hàng dưới mức |
-| Kiểm soát vận hành | Báo cáo → Kiểm soát vận hành (`/audit_operation`) | Nhắc việc: tồn âm, cần đặt, cần chế biến |
-| Rà soát | Cùng màn trên, phần dưới | Bắt lỗi khai báo sản phẩm |
+| Tồn kho hiện tại | ==Quản lý kho → Tồn kho== (`/stock`) | Khai định mức, xem hàng dưới mức |
+| Kiểm soát vận hành | ==Báo cáo → Kiểm soát vận hành== (`/audit_operation`) | Nhắc việc: tồn âm, cần đặt, cần chế biến |
+| Rà soát | Cùng màn trên, thẻ **RÀ SOÁT** | Bắt lỗi khai báo sản phẩm |
+
+Màn Tồn kho cũng mở được từ ô **Tồn kho** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
@@ -20,32 +22,34 @@ Ba màn trong mục này:
 >
 > - Mở **Tồn kho** xem tiền tồn và hàng dưới định mức.
 > - Mở **Kiểm soát vận hành** xem việc cần xử lý.
-> - Ví dụ trên máy này: "Cà phê sỉ" bán mà chưa có công thức → bị báo **Bán vô nguồn**.
+> - Ví dụ trên máy này: **Cà phê sữa** bán mà chưa có công thức → bị báo **Bán vô nguồn**.
 
 ### Bước 1: Xem Tồn kho hiện tại
 
-- Bấm **Quản lý kho → Tồn kho**.
+- Ở menu trái, nhóm **Quản lý kho**, bấm **Tồn kho**.
 - Đọc 2 ô: **Tiền tồn kho**, **Dòng dưới định mức**.
-- Lọc theo sản phẩm, loại, kho, hoặc **Chỉ hàng dưới định mức**.
+- Lọc bằng các nút **Sản phẩm**, **Loại**, **Kho**, hoặc bấm **Dưới định mức** để chỉ xem hàng dưới định mức.
+- Cột **Trạng thái**: **Dưới định mức** hoặc **Đủ hàng**.
 - Khai định mức: xem [bài 6.2](6-2-dinh-muc-ton-kho.md).
 
 ![Bước 1: Xem Tồn kho hiện tại](images/08-ton-kho-buoc-1-ton-kho.png)
 
 ### Bước 2: Mở Kiểm soát vận hành
 
-- Bấm **Báo cáo → Kiểm soát vận hành**.
+- Ở menu trái, nhóm **Báo cáo**, bấm **Kiểm soát vận hành**.
 - Đọc 4 ô nhắc việc: **Việc cần xử lý**, **Cần rà soát dữ liệu**, **Tồn âm cần bù**, **Cần chế biến / đặt**.
-- Biểu đồ **Đơn hoàn thành & huỷ**: chọn 30 / 14 / 7 ngày.
-- Dải thẻ bên dưới: **RÀ SOÁT**, **NHẬP**, **CHUYỂN**, **SẢN XUẤT**, **HUỶ**, **KIỂM**, **TỐI ƯU**.
+- Biểu đồ **Đơn hoàn thành & huỷ**: chọn **7 ngày** / **14 ngày** / **30 ngày**. Nhãn *Số liệu mẫu* nghĩa là biểu đồ chưa lấy số thật.
+- Dải thẻ bên dưới: **RÀ SOÁT**, **NHẬP**, **CHUYỂN**, **SẢN XUẤT**, **HUỶ**, **KIỂM**, **TỐI ƯU**. Mỗi thẻ ghi số mục cần xử lý.
 
 ![Bước 2: Mở Kiểm soát vận hành](images/08-ton-kho-buoc-2-kiem-soat.png)
 
 ### Bước 3: Rà soát cây sản phẩm
 
-- Cuộn xuống phần **RÀ SOÁT**.
-- Các bộ lọc lỗi: **Thiếu công thức**, **Bán vô nguồn**, **Mồ côi / Dư thừa**, **Thiếu giá vốn**, **Trùng tên**.
-- Bộ lọc nào có số lớn hơn 0 thì bấm vào xem sản phẩm.
-- Bấm một nút trên cây để xem chi tiết.
+- Cuộn xuống, bấm thẻ **RÀ SOÁT**.
+- Các ô lỗi: **Thiếu công thức**, **Bán vô nguồn**, **Mồ côi / Dư thừa**, **Thiếu giá vốn**, **Trùng tên**.
+- Ô nào có số lớn hơn 0 thì bấm vào: hiện bảng sản phẩm mắc lỗi đó (loại, tên, SKU, lý do). Bấm **Xoá lọc** để quay lại.
+- Cây **Thành phẩm → Bán thành phẩm → Nguyên liệu** gắn nhãn lỗi cạnh từng món.
+- Khung **Mồ côi / Dư thừa** bên phải liệt kê hàng không thành phẩm nào dùng tới. Bấm **Xem** để mở sản phẩm.
 - Sửa lỗi ở màn sản phẩm / công thức rồi mở lại để kiểm tra.
 
 ![Bước 3: Rà soát cây sản phẩm](images/08-ton-kho-buoc-3-ra-soat.png)
@@ -61,7 +65,7 @@ Ba màn trong mục này:
 | Tồn âm cần bù | Có kho đang âm: cần nhập hoặc chuyển kho gấp |
 | Cần chế biến / đặt | Hàng hết hoặc dưới định mức |
 
-Thẻ **TỐI ƯU** / các danh sách bên dưới có **đề xuất nhập hàng**: mặt hàng nào dưới định mức và nên nhập bao nhiêu để về mức tối đa.
+Thẻ **TỐI ƯU** có **đề xuất nhập hàng**: mặt hàng nào dưới định mức (cột *Trạng thái*, VD *Tồn 4 < 20*) và **Gợi ý đặt** bao nhiêu để về mức tối đa.
 
 ### Lỗi mà phần Rà soát bắt
 
@@ -96,7 +100,7 @@ Thẻ **TỐI ƯU** / các danh sách bên dưới có **đề xuất nhập hà
 > - Xử lý: tìm phiếu thiếu và lập bù, hoặc chỉnh bằng **kiểm kê** ([11.6](11-6-kiem-kho.md)).
 
 > [!TIP]
-> Mặt hàng dưới định mức được đánh dấu **"Dưới định mức"** và đếm vào ô *Sản phẩm dưới định mức* ở màn Tổng quan.
+> Mặt hàng dưới định mức được đánh dấu **Dưới định mức** và đếm vào ô *Sản phẩm dưới định mức* ở màn Tổng quan.
 
 > [!TIP]
 > Rà màn Rà soát **một lần mỗi tháng** là đủ.

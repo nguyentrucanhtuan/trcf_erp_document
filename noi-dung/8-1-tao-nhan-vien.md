@@ -6,46 +6,55 @@ crumb: Bước 8 · Cài đặt máy chấm công
 
 ## 1. Đường dẫn vào chức năng
 
-Menu trái: ==Quản lý nhân sự → Nhân viên → Thêm nhân viên== (địa chỉ `/employees`).
+Menu trái: ==Quản lý nhân sự → Nhân viên== (địa chỉ `/employees`, trang thêm mới `/employees/new`).
 
-- Cần có trước: phòng ban (*Quản lý nhân sự → Phòng ban*).
-- Thứ tự cả chương 7: nhân viên → ca làm việc → đăng ký và duyệt ca → chấm công → công việc.
+- Cần có trước: phòng ban (==Quản lý nhân sự → Phòng ban==).
+- Thứ tự bước 8 và 9: nhân viên → máy chấm công ([8.2](8-2-cai-dat-may-cham-cong.md)) → ca làm việc ([9.1](9-1-tao-ca-lam-viec.md)) → đăng ký và duyệt ca ([9.2](9-2-dang-ky-va-duyet-ca.md)) → đồng bộ chấm công ([9.3](9-3-dong-bo-cham-cong.md)).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** thêm nhân viên pha chế "Nguyễn Văn An".
+> **Ví dụ:** thêm nhân viên pha chế **Nguyễn Văn An**.
 >
-> - Chức vụ: "Pha chế". Phòng ban: "Vận hành".
-> - ID Chấm công: "101" (khớp mã trên máy chấm công). Lương giờ: "25000".
+> - Chức vụ: **Pha chế**. Phòng ban: **Vận hành**.
+> - ID Chấm công: **101** (khớp mã trên máy chấm công). Lương giờ: **25000**.
 
 ### Bước 1: Mở trang Nhân viên
 
-- Bấm **Quản lý nhân sự** ở menu trái, chọn **Nhân viên**.
-- Bấm **Thêm nhân viên**.
+- Ở menu trái, nhóm **Quản lý nhân sự**, bấm **Nhân viên**.
+- Xem danh sách: chức vụ, phòng ban, tài khoản, nhóm quyền, lương tháng, ID chấm công, trạng thái.
+- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem nhân viên đã cất đi.
 
 ![Bước 1: Mở trang Nhân viên](images/07-nhan-vien-buoc-1-danh-sach.png)
 
-### Bước 2: Khai hồ sơ
+### Bước 2: Khai hồ sơ và công việc
 
-- **Họ và tên**: nhập "Nguyễn Văn An".
-- **Email**: nhập "an.nguyen@example.com".
-- **Số điện thoại**: nhập "0901234567".
-- **Chức vụ**: chọn "Pha chế".
-- **Phòng ban**: chọn "Vận hành".
-- **Tài khoản đăng nhập**: chọn tài khoản nếu người này đứng quầy, không thì để "Không liên kết".
-- **Lương giờ (₫)**: nhập "25000".
-- **ID Chấm công (ZKTeco)**: nhập "101".
-- Bấm nút **Lưu nhân viên**.
+- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Thêm nhân viên mới** mở ra.
+- **Họ và tên**: nhập **Nguyễn Văn An**.
+- **Email**: nhập **an.nguyen@example.com**.
+- **Số điện thoại**: nhập **0901234567**.
+- **Chức vụ**: bấm vào ô, chọn **Pha chế**.
+- **Phòng ban**: bấm vào ô, chọn **Vận hành**.
+- **Tài khoản đăng nhập (tuỳ chọn)**: chọn tài khoản nếu người này đứng quầy, không thì giữ **Không liên kết**.
 
-![Bước 2: Khai hồ sơ](images/07-nhan-vien-buoc-2-form.png)
+![Bước 2: Khai hồ sơ và công việc](images/07-nhan-vien-buoc-2-form.png)
 
-### Bước 3: Kiểm tra kết quả
+### Bước 3: Khai lương và chấm công
+
+- Kéo xuống phần **Lương & Chấm công**.
+- **Lương giờ (₫)**: nhập **25000**.
+- **ID Chấm công (ZKTeco)**: nhập **101**.
+- Bấm **Lưu nhân viên** ở góc dưới bên phải.
+
+![Bước 3: Khai lương và chấm công](images/07-nhan-vien-buoc-3-luong-cham-cong.png)
+
+### Bước 4: Kiểm tra kết quả
 
 - Nhân viên hiện trong danh sách, trạng thái **Hoạt động**.
-- Cột **ID Chấm công** hiện "101".
-- Cột **Tài khoản** "—" nghĩa là chưa gắn tài khoản đăng nhập.
+- Cột **ID Chấm công** hiện **101**.
+- Cột **Tài khoản** hiện dấu — nghĩa là chưa gắn tài khoản đăng nhập.
+- Đổi thông tin sau này: bấm vào nhân viên, chọn **Sửa**. Có thêm **Lưu trữ** và **Xoá**.
 
-![Bước 3: Kiểm tra kết quả](images/07-nhan-vien-buoc-3-ket-qua.png)
+![Bước 4: Bấm vào nhân viên để mở thao tác](images/07-nhan-vien-buoc-3-ket-qua.png)
 
 ## 3. Giải thích các trường
 
@@ -60,9 +69,9 @@ Menu trái: ==Quản lý nhân sự → Nhân viên → Thêm nhân viên== (đ�
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Chức vụ | Chọn: Pha chế, Thu ngân, Phục vụ, Quản lý, Kho, Marketing | — |
-| Phòng ban | Khai trước ở *Phòng ban* | ✅ |
-| **Tài khoản đăng nhập** | Gắn hồ sơ với một tài khoản hệ thống. **Không gắn thì không mở ca được** | Bắt buộc nếu người này đứng quầy |
+| Chức vụ | Bấm vào ô để chọn: Pha chế, Thu ngân, Phục vụ, Quản lý, Kho, Marketing | — |
+| Phòng ban | Bấm vào ô để chọn. Khai trước ở *Phòng ban* | ✅ |
+| **Tài khoản đăng nhập (tuỳ chọn)** | Gắn hồ sơ với một tài khoản hệ thống. **Không gắn thì không mở ca được** | Bắt buộc nếu người này đứng quầy |
 
 ### Lương & Chấm công
 
@@ -78,7 +87,7 @@ Menu trái: ==Quản lý nhân sự → Nhân viên → Thêm nhân viên== (đ�
 > [!CAUTION]
 > **Chưa gắn tài khoản đăng nhập thì người đó không mở được ca.**
 >
-> - Sẽ nhận thông báo "chưa gắn hồ sơ nhân viên".
+> - Sẽ nhận thông báo *chưa gắn hồ sơ nhân viên*.
 > - Nguyên tắc: *ai bán thì người đó mở ca của mình*.
 
 > [!WARNING]

@@ -13,27 +13,27 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** khai định mức cho "Cà phê hạt" ở "Kho tổng".
+> **Ví dụ:** khai định mức cho **Cà phê hạt Robusta** ở **Kho tổng**, đơn vị Kilogam.
 >
-> - Tồn tối thiểu: "3000" g. Tồn tối đa: "10000" g.
-> - Hàng giao trong 2 ngày, mỗi ngày dùng 1,5 kg: tối thiểu là 1,5 × 2 × 1,5 ≈ 4,5 kg.
+> - Tồn tối thiểu: **3** kg. Tồn tối đa: **10** kg.
+> - Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu là 1 × 2 × 1,5 = 3 kg.
 
 ### Bước 1: Mở trang Tồn kho
 
-- Bấm **Quản lý kho** ở menu trái.
-- Chọn **Tồn kho**.
+- Ở menu trái, nhóm **Quản lý kho**, bấm **Tồn kho**.
 - Đọc 2 ô: **Tiền tồn kho**, **Dòng dưới định mức**.
-- Mỗi dòng là một sản phẩm ở một kho: tồn, giá vốn, định mức tối thiểu, định mức tối đa, trạng thái.
-- Tìm dòng "Cà phê hạt — Kho tổng".
+- Mỗi dòng là một sản phẩm ở một kho: tồn kho, giá vốn, giá trị tồn, định mức tối thiểu, định mức tối đa, trạng thái.
+- Lọc nhanh bằng các nút **Sản phẩm**, **Loại**, **Kho**.
+- Tìm dòng **Cà phê hạt Robusta — KHO-TONG — Kho tổng**.
 
 ![Bước 1: Mở trang Tồn kho](images/06-dinh-muc-buoc-1-ton-kho.png)
 
 ### Bước 2: Khai định mức
 
-- Bấm biểu tượng bút chì ở cuối dòng.
-- Hộp thoại **Chỉnh sửa ngưỡng tồn kho** mở ra.
-- **Tồn tối thiểu**: nhập "3000".
-- **Tồn tối đa**: nhập "10000".
+- Bấm vào dòng đó.
+- Hộp thoại **Chỉnh sửa ngưỡng tồn kho** mở ra, ghi tên sản phẩm và kho.
+- **Tồn tối thiểu (Kilogam)**: nhập **3**.
+- **Tồn tối đa (Kilogam)**: nhập **10**.
 - Bấm **Lưu**.
 
 ![Bước 2: Khai định mức](images/06-dinh-muc-buoc-2-form.png)
@@ -41,18 +41,18 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 ### Bước 3: Kiểm tra kết quả
 
 - Thấy thông báo *“Đã cập nhật ngưỡng tồn kho”*.
-- Dòng "Cà phê hạt — Kho tổng" hiện "3.000" và "10.000".
-- Tồn đang 0, thấp hơn định mức: trạng thái **Dưới định mức** (nhãn đỏ).
-- Ô **Dòng dưới định mức** tăng lên "1".
+- Dòng vừa khai hiện số mới ở cột **Định mức tối thiểu**, **Định mức tối đa**.
+- Tồn thấp hơn tối thiểu: trạng thái **Dưới định mức** (nhãn đỏ), ô **Dòng dưới định mức** đếm cả dòng này.
+- Bấm nút **Dưới định mức** để chỉ xem các dòng cần nhập thêm. Bấm **Xoá bộ lọc** để xem lại tất cả.
 
-![Bước 3: Kiểm tra kết quả](images/06-dinh-muc-buoc-3-ket-qua.png)
+![Bước 3: Lọc các dòng dưới định mức](images/06-dinh-muc-buoc-3-ket-qua.png)
 
 ## 3. Giải thích các trường
 
 | Trường | Điền gì |
 | --- | --- |
 | Tồn tối thiểu | Xuống dưới mức này là phải đặt hàng. Bằng 0: không cảnh báo |
-| Tồn tối đa | Mức đầy kho. Hệ thống dùng để gợi ý đặt bao nhiêu. Bằng 0: không giới hạn |
+| Tồn tối đa | Mức đầy kho. Hệ thống dùng để gợi ý đặt bao nhiêu. Bằng **0**: không giới hạn |
 
 Công thức đặt tồn tối thiểu: `lượng dùng trung bình mỗi ngày × số ngày nhà cung cấp giao hàng × 1,5`. Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu **3 kg**.
 
@@ -66,11 +66,11 @@ Công thức đặt tồn tối thiểu: `lượng dùng trung bình mỗi ngày
 > [!WARNING]
 > **Định mức khai theo từng kho.**
 >
-> - Cùng một sản phẩm ở "Kho tổng" và "Kho quầy" có hai dòng, khai riêng từng dòng.
-> - Đơn vị là đơn vị gốc của sản phẩm (VD "Gram").
+> - Cùng một sản phẩm ở **Kho tổng** và **Kho quầy** có hai dòng, khai riêng từng dòng.
+> - Đơn vị ghi ngay trong nhãn ô, VD *Tồn tối thiểu (Kilogam)*.
 
 > [!TIP]
-> Mặt hàng dưới định mức được đánh dấu **"Dưới định mức"** và đếm vào ô *Sản phẩm dưới định mức* ở màn Tổng quan.
+> Mặt hàng dưới định mức được đánh dấu **Dưới định mức** và đếm vào ô *Sản phẩm dưới định mức* ở màn Tổng quan.
 
 ## Kiểm tra đã đúng
 

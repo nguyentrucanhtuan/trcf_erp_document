@@ -8,31 +8,31 @@ crumb: Bước 5 · Cài đặt màn hình bếp
 
 Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/kitchen-screens`).
 
-- Cần có trước: quầy POS (khai ở **Thiết lập cửa hàng → POS**), danh mục sản phẩm ([mục 2.1](2-1-danh-muc-san-pham.md)).
+- Cần có trước: quầy bán hàng (khai ở **Thiết lập cửa hàng → Quầy bán hàng**), danh mục sản phẩm ([mục 2.1](2-1-danh-muc-san-pham.md)).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Ví dụ:** khu pha chế có 1 màn hình bếp.
 >
-> - Tên: "Bếp pha chế".
-> - Quầy POS áp dụng: "Quầy chính".
-> - Danh mục hiển thị: "Cà phê", "Trà".
+> - Tên: **Bếp pha chế**.
+> - Quầy POS áp dụng: **Quầy chính**.
+> - Danh mục hiển thị: **Cà phê**.
 
 ### Bước 1: Mở trang Màn hình bếp
 
-- Bấm **Thiết lập cửa hàng** ở menu trái.
-- Chọn **Màn hình bếp**.
-- Bấm **Thêm màn hình**.
+- Ở menu trái, nhóm **Thiết lập cửa hàng**, bấm **Màn hình bếp**.
+- Xem danh sách màn hình đã khai: tên, quầy POS, danh mục, trạng thái.
 
 ![Bước 1: Mở trang Màn hình bếp](images/04-man-hinh-bep-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai màn hình bếp
 
-- **Tên màn hình**: nhập "Bếp pha chế".
-- **Quầy POS áp dụng**: chọn "Quầy chính".
-- **Danh mục hiển thị**: chọn "Cà phê", "Trà".
-- **Hoạt động**: để bật.
-- Bấm nút **Thêm màn hình** trong hộp thoại.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- **Tên màn hình**: nhập **Bếp pha chế**.
+- **Quầy POS áp dụng**: bấm vào ô, chọn **Quầy chính**.
+- **Danh mục hiển thị**: bấm vào ô, tích **Cà phê**, bấm **Xong**.
+- **Hoạt động**: để **bật**.
+- Bấm **Thêm màn hình**.
 
 ![Bước 2: Khai màn hình bếp](images/04-man-hinh-bep-buoc-2-form.png)
 
@@ -40,13 +40,15 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 
 - Màn hình hiện trong danh sách, trạng thái **Hoạt động**.
 - Cột **Mở màn hình** có 2 nút: **Màn hình bếp**, **Màn hình tổng hợp**.
+- Đổi ý sau này: bấm vào tên màn hình, chọn **Sửa**.
 
-![Bước 3: Kiểm tra kết quả](images/04-man-hinh-bep-buoc-3-ket-qua.png)
+![Bước 3: Bấm vào màn hình để mở thao tác](images/04-man-hinh-bep-buoc-3-ket-qua.png)
 
 ### Bước 4: Mở màn hình bếp trên thiết bị
 
 - Bấm **Màn hình bếp** trên dòng vừa tạo.
 - Màn hình mở ở tab mới (địa chỉ dạng `/kitchen/…`).
+- Đầu màn hình đếm số **đơn chờ** và số **xong**.
 - Mở trên thiết bị ở khu pha chế, **để nguyên cả ngày**.
 - Khi có đơn, món tự hiện lên, không cần tải lại trang.
 
@@ -56,7 +58,7 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên màn hình | VD "Bếp pha chế", "Bếp nóng" | ✅ |
+| Tên màn hình | VD **Bếp pha chế**, **Bếp nóng** | ✅ |
 | Quầy POS áp dụng | Màn này **chỉ nhận đơn của quầy đó** | ✅ |
 | Danh mục hiển thị | Nhóm món màn này phụ trách. Để trống: nhận mọi món | — |
 | Hoạt động | Tắt: ngừng dùng màn này | — |
@@ -77,7 +79,7 @@ Pha chế xong: bấm vào món, món biến khỏi màn.
 > [!TIP]
 > **Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.**
 >
-> - VD "30ml espresso + 150ml sữa + đá đầy ly".
+> - VD *30ml espresso + 150ml sữa + đá đầy ly*.
 > - Nhân viên mới không cần nhớ, không cần hỏi.
 
 > [!TIP]

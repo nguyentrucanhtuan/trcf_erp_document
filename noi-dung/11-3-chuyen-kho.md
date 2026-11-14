@@ -6,44 +6,47 @@ crumb: Bước 11 · Quy trình vận hành kho
 
 ## 1. Đường dẫn vào chức năng
 
-Menu trái: ==Vận hành → Chuyển kho== (địa chỉ `/stock-transfers`).
+Menu trái: ==Vận hành → Chuyển kho== (địa chỉ `/stock-transfers`, tiêu đề trang **Phiếu chuyển kho**).
+
+hoặc ô **Chuyển kho** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 - Dùng khi: lấy hàng từ kho tổng ra kho quầy, hoặc điều hàng giữa hai chi nhánh.
 - Cần có trước: hai kho khác nhau (khai ở **Quản lý kho → Kho hàng**).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** chuyển 2 kg "Cà phê hạt" từ "Kho tổng" ra "Kho quầy".
+> **Ví dụ:** chuyển 2 kg **Cà phê hạt Robusta** từ **Kho tổng** ra **Kho quầy**.
 >
-> - Kho xuất đi: "Kho tổng". Kho nhập đến: "Kho quầy".
-> - Dòng hàng: "Cà phê hạt", SL "2", đơn vị "Kilogam".
+> - Kho xuất đi: **Kho tổng**. Kho nhập đến: **Kho quầy**.
+> - Dòng hàng: **Cà phê hạt Robusta**, SL **2**, đơn vị **Kilogam**.
 
 ### Bước 1: Mở trang Phiếu chuyển kho
 
-- Bấm **Vận hành** ở menu trái, chọn **Chuyển kho**.
-- Bấm **Tạo phiếu chuyển kho**.
+- Ở menu trái, nhóm **Vận hành**, bấm **Chuyển kho**.
+- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Đã chuyển**, **Đã huỷ**.
+- Quán chưa có phiếu nào thì trang báo *Chưa có phiếu chuyển kho nào*.
 
 ![Bước 1: Mở trang Phiếu chuyển kho](images/06-chuyen-kho-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai phiếu và dòng hàng
 
+- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo phiếu chuyển kho mới** mở ra.
 - **Mã phiếu chuyển**: hệ thống tự sinh, không sửa.
-- **Kho xuất đi**: chọn "Kho tổng".
-- **Kho nhập đến**: chọn "Kho quầy".
-- Bấm **Thêm dòng**.
-- **Sản phẩm**: chọn "Cà phê hạt".
-- **SL**: nhập "2". **ĐVT**: chọn "Kilogam".
+- **Kho xuất đi**: bấm vào ô, chọn **KHO-TONG/Kho tổng**.
+- **Kho nhập đến**: bấm vào ô, chọn **KHO-QUAY/Kho quầy**.
+- Ô **Thêm sản phẩm**: bấm vào, chọn **Cà phê hạt Robusta**. Dòng hàng hiện bên dưới.
+- **SL**: nhập **2**. **ĐVT** tự lấy **Kilogam**, bấm vào để đổi.
 - **Ghi chú**: nhập nếu cần (tuỳ chọn).
-- Bấm **Lưu phiếu (Nháp)**.
+- Bấm **Lưu phiếu (Nháp)** ở góc dưới bên phải.
 
 ![Bước 2: Khai phiếu và dòng hàng](images/06-chuyen-kho-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra rồi xác nhận chuyển
 
-- Phiếu hiện trong danh sách: tuyến chuyển "KHO-TONG → KHO-QUAY", trạng thái **Nháp**.
-- Bấm nút **…** cuối dòng.
-- Menu có: **Sửa**, **Xác nhận chuyển**, **Huỷ phiếu**, **Xoá**.
-- Kiểm tra lại, chọn **Xác nhận chuyển**.
+- Phiếu mới nằm ở tab **Nháp**, kèm tuyến chuyển **KHO-TONG → KHO-QUAY**.
+- Bấm vào phiếu để mở danh sách thao tác: **Sửa**, **Xác nhận chuyển**, **Huỷ phiếu**, **Xoá**.
+- Kiểm tra lại, chọn **Xác nhận chuyển**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
+- Phiếu chuyển sang tab **Đã chuyển**.
 
 ![Bước 3: Kiểm tra rồi xác nhận chuyển](images/06-chuyen-kho-buoc-3-nhap-menu.png)
 
@@ -51,9 +54,10 @@ Menu trái: ==Vận hành → Chuyển kho== (địa chỉ `/stock-transfers`).
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
+| Mã phiếu chuyển | Tự sinh, chỉ đọc | — |
 | Kho xuất đi | Kho lấy hàng ra | ✅ |
 | Kho nhập đến | Kho nhận hàng. **Phải khác kho xuất** | ✅ |
-| Sản phẩm / SL / ĐVT | Từng dòng hàng chuyển. Chọn đơn vị lớn được (hệ thống tự quy đổi) | ✅ |
+| Sản phẩm / SL / ĐVT | Từng dòng hàng chuyển. Chọn đơn vị lớn được (hệ thống tự quy đổi). Bấm thùng rác để bỏ dòng | ✅ |
 | Ghi chú | Ghi thêm (không bắt buộc) | — |
 
 ### Xác nhận làm gì
@@ -67,6 +71,7 @@ Menu trái: ==Vận hành → Chuyển kho== (địa chỉ `/stock-transfers`).
 > **Phiếu đã xác nhận không sửa, không xoá.**
 >
 > - Chuyển nhầm: lập phiếu chuyển ngược lại.
+> - Chỉ xoá được phiếu **Nháp** hoặc **Đã huỷ**.
 
 > [!WARNING]
 > **Chọn cùng một kho cho cả hai ô sẽ bị chặn ngay khi lưu.**

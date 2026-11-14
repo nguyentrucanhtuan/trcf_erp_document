@@ -6,7 +6,7 @@ crumb: Bước 2 · Nhập sản phẩm
 
 ## 1. Đường dẫn vào chức năng
 
-Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== (địa chỉ `/products`).
+Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/products`), bấm nút tròn **+** để mở form thêm mới (`/products/new`).
 
 - Cần có trước: đơn vị tính ([bài 1.1](1-1-thiet-lap-don-vi-tinh.md)).
 
@@ -28,32 +28,40 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 > - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối luợng vỏ hộp là 90 GRAM)
 > - NL - SỮA TƯƠI - 1000 - 70
 
-> **Ví dụ:** thêm nguyên liệu "NL - CÀ PHÊ HẠT - 1000 - 30".
+> **Ví dụ:** thêm nguyên liệu **NL - CÀ PHÊ HẠT - 1000 - 30**.
 >
-> - Tên: "NL - CÀ PHÊ HẠT". Đơn vị: "GRAM". Loại: "NGUYÊN LIỆU".
+> - Mã SP: **NL-CPH**. Đơn vị: **Kilogam (KG)**. Loại: **Nguyên liệu**.
 > - Mua về, dùng làm ra thứ khác, không bán trực tiếp.
 > - Bật **Theo dõi tồn kho** và **Có thể mua**.
 
 ### Bước 1: Mở form và chọn Loại sản phẩm
 
-- Vào **Quản lý sản phẩm → Sản phẩm**.
-- Bấm **Thêm sản phẩm**.
+- Ở menu trái, nhóm **Quản lý sản phẩm**, bấm **Sản phẩm**.
+- Bấm nút tròn **+** ở góc dưới bên phải.
 - Bấm ô **Loại sản phẩm**.
-- Chọn "NGUYÊN LIỆU".
+- Chọn **Nguyên liệu**.
 
 ![Bước 1: Mở form và chọn Loại sản phẩm](images/03-san-pham-nguyen-lieu-1.png)
 
-### Bước 2: Khai nguyên liệu "NL - CÀ PHÊ HẠT - 1000 - 30"
+### Bước 2: Khai thông tin chính
 
-- **Tên sản phẩm**: nhập "NL - CÀ PHÊ HẠT - 1000 - 30".
-- **Đơn vị tính chính**: chọn "GRAM".
-- **Loại sản phẩm**: giữ "NGUYÊN LIỆU".
+- **Tên sản phẩm**: nhập **NL - CÀ PHÊ HẠT - 1000 - 30**.
+- **Mã SP (SKU)**: nhập **NL-CPH**.
+- **Đơn vị tính chính**: bấm vào ô, chọn **Kilogam (KG)**. Đã tạo **GRAM** ở [bài 1.1](1-1-thiet-lap-don-vi-tinh.md) thì chọn **GRAM**.
+- **Loại sản phẩm**: giữ **Nguyên liệu**.
+
+![Bước 2: Khai thông tin chính "NL - CÀ PHÊ HẠT - 1000 - 30"](images/03-san-pham-nguyen-lieu-2.png)
+
+### Bước 3: Gạt các công tắc và lưu
+
+- Cuộn xuống khung **Thiết lập** (cột phải).
 - Bật **Theo dõi tồn kho**.
+- Gạt **Có thể bán** sang tắt.
 - Bật **Có thể mua**.
-- Để tắt **Có thể bán** và **Sản xuất**.
+- Để tắt **Sản xuất (có công thức)**.
 - Bấm **Lưu sản phẩm**.
 
-![Bước 2: Khai nguyên liệu "Cà phê hạt"](images/03-san-pham-nguyen-lieu-2.png)
+![Bước 3: Gạt các công tắc và lưu](images/03-nguyen-lieu-buoc-3-cong-tac.png)
 
 ## 3. Giải thích các trường
 
@@ -61,10 +69,11 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 | Trường                | Điền gì                                                                               |
 | --------------------- | ------------------------------------------------------------------------------------- |
-| Tên sản phẩm          | VD "NL - CÀ PHÊ HẠT - 1000 - 30", "NL - SỮA ĐẶC - 1250 - 90", "NL - ĐƯỜNG CÁT - 1000" |
-| Đơn vị tính chính     | Đơn vị nhỏ nhất dùng trừ kho. VD "GRAM"                                               |
-| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo "KG", trừ theo "GRAM")                       |
-| Loại sản phẩm         | "NGUYÊN LIỆU"                                                                         |
+| Tên sản phẩm          | VD **NL - CÀ PHÊ HẠT - 1000 - 30**, **NL - SỮA ĐẶC - 1250 - 90**, **NL - ĐƯỜNG CÁT - 1000** |
+| Mã SP (SKU)           | Mã ngắn để tra cứu, bắt buộc. VD **NL-CPH**                                           |
+| Đơn vị tính chính     | Đơn vị tính tồn. Nên chọn đơn vị nhỏ nhất dùng trừ kho, VD **GRAM**                   |
+| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo **KG**, trừ theo **GRAM**)                   |
+| Loại sản phẩm         | **Nguyên liệu**                                                                       |
 | Giá vốn               | Giá nhập. Tự cập nhật mỗi lần nhập hàng ([bài 11.2](11-2-nhap-hang.md))               |
 | Theo dõi tồn kho      | **Bật**. Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, chế biến, bán, huỷ                 |
 | Có thể mua            | **Bật**. Chọn được trong phiếu nhập hàng                                              |
@@ -94,6 +103,6 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm → Thêm sản phẩm== 
 
 ## Kiểm tra đã đúng
 
-- [ ] Loại sản phẩm là "Nguyên liệu"
+- [ ] Loại sản phẩm là **Nguyên liệu**
 - [ ] **Theo dõi tồn kho** và **Có thể mua** bật
 - [ ] Sản phẩm hiện trong danh sách
