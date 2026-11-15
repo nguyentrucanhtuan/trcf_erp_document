@@ -12,9 +12,9 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 > **Ví dụ:** quán có máy in tem dán lên ly.
 >
-> - **Máy tem quầy 1**: loại Nhãn dán, mạng LAN, IP **192.168.1.51**, cổng **9100**.
+> - **MÁY IN TEM**: loại Nhãn dán, mạng LAN, IP **192.168.1.230**, cổng **9100**.
 > - Con tem rộng **50** mm, cao **30** mm (đo con tem thật).
-> - In tem cho đơn **MANG VỀ** và **TẠI CHỖ**.
+> - In tem cho đơn mang đi và đơn app: **MANG ĐI**, **GRAB**, **SHOPEE**, **BEEFOOD**, **ZALO**. Đơn **TẠI CHỖ** dùng ly thuỷ tinh, không cần tem.
 
 ### Bước 1: Mở trang Máy in
 
@@ -49,7 +49,7 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên thiết bị | VD **Máy tem quầy 1** | ✅ |
+| Tên thiết bị | VD **MÁY IN TEM** | ✅ |
 | Loại kết nối | *Mạng LAN* (có IP) hoặc *USB* (cắm trực tiếp) | ✅ |
 | Loại máy in | *Hoá đơn* / *Nhãn dán (Label)* / *Phiếu yêu cầu món (KOT)* / *Phiếu đóng ca* | ✅ |
 | Địa chỉ IP, Cổng (Port) | Chỉ hiện khi chọn LAN. Cổng thường **9100** | ✅ nếu LAN |

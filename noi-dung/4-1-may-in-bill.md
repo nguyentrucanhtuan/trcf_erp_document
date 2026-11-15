@@ -10,7 +10,7 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quán có một máy in bill nối mạng LAN ở quầy thu ngân, cuối bill in lời cảm ơn.
+> **Ví dụ:** quán có **MÁY IN BILL QUẦY** cắm USB vào máy tính thu ngân. Cuối bill in lời cảm ơn và tên wifi cho khách.
 
 ### Bước 1: Mở trang Máy in
 
@@ -22,7 +22,7 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
 - Điền như ảnh.
-- **Địa chỉ IP**: nhập IP thật của máy in ở quán.
+- Máy in nối mạng LAN thì chọn **Mạng LAN**, rồi nhập **Địa chỉ IP** thật của máy (xem [bài 4.2](4-2-may-in-nhan.md)).
 
 ![Bước 2: Khai thiết bị](images/04-may-in-buoc-2-hoa-don.png)
 
@@ -39,7 +39,7 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên thiết bị | VD **Máy in bill quầy 1** | ✅ |
+| Tên thiết bị | VD **MÁY IN BILL QUẦY** | ✅ |
 | Loại kết nối | *Mạng LAN* (có IP) hoặc *USB* (cắm trực tiếp) | ✅ |
 | Loại máy in | *Hoá đơn* / *Nhãn dán (Label)* / *Phiếu yêu cầu món (KOT)* / *Phiếu đóng ca* | ✅ |
 | Địa chỉ IP, Cổng (Port) | Chỉ hiện khi chọn LAN. Cổng thường **9100** | ✅ nếu LAN |
@@ -49,7 +49,7 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 | Trường | Điền gì |
 | --- | --- |
-| Chân trang hóa đơn | Câu in ở cuối bill |
+| Chân trang hóa đơn | Câu in ở cuối bill: lời cảm ơn, tên wifi, hotline |
 
 Sau khi khai máy in, gán máy cho quầy ở ==Thiết lập cửa hàng → Quầy bán hàng==: sửa quầy, chọn máy ở ô **Máy in**.
 

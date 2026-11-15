@@ -12,11 +12,11 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** khu pha chế có 1 màn hình bếp.
+> **Ví dụ:** quầy pha chế chia 3 khu, mỗi khu một màn hình bếp. Bài này tạo màn của khu máy espresso.
 >
-> - Tên: **Bếp pha chế**.
-> - Quầy POS áp dụng: **Quầy chính**.
-> - Danh mục hiển thị: **Cà phê**.
+> - **1 - ESPRESSO**: CÀ PHÊ TRUYỀN THỐNG, CÀ PHÊ Ý, CÀ PHÊ SỮA TƯƠI.
+> - Làm tương tự cho **2 - MATCHA** (MATCHA, CHOCOLATE, BƠ, GELATO, SEASONAL, VẬT PHẨM) và **3 - TRA** (TRÀ TRÁI CÂY, COLDBREW, NƯỚC ÉP, BÁNH).
+> - Cả 3 màn nhận đơn của **Quầy chính**.
 
 ### Bước 1: Mở trang Màn hình bếp
 
@@ -50,7 +50,7 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên màn hình | VD **Bếp pha chế**, **Bếp nóng** | ✅ |
+| Tên màn hình | Đặt theo khu pha chế. VD **1 - ESPRESSO**, **2 - MATCHA**, **3 - TRA** | ✅ |
 | Quầy POS áp dụng | Màn này **chỉ nhận đơn của quầy đó** | ✅ |
 | Danh mục hiển thị | Nhóm món màn này phụ trách. Để trống: nhận mọi món | — |
 | Hoạt động | Tắt: ngừng dùng màn này | — |
@@ -59,7 +59,7 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 
 | Thông tin | Từ đâu ra |
 | --- | --- |
-| Tên món + ghi chú trong ngoặc. VD *Trà đào (VỪA + ÍT ĐÁ)* | Thuộc tính |
+| Tên món + ghi chú trong ngoặc. VD *MAY ĐEN ĐÁ (ÍT ĐÁ)* | Thuộc tính |
 | Số lượng | Đơn hàng |
 | Ghi chú của khách | Thu ngân nhập lúc bán |
 | **Ghi chú công thức ⚡** | Trường khai ở [mục 2.2](2-2-thanh-pham.md) |
