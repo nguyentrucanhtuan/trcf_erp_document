@@ -15,10 +15,10 @@ hoặc ô **Huỷ hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** phát hiện 2 hộp **Sữa đặc** hết hạn trong tủ ở **Kho quầy**.
+> **Ví dụ:** cuối ca, trà lài ủ từ sáng ([bài 11.4](11-4-che-bien.md)) còn thừa 280 GR, không dùng sang hôm sau được.
 >
-> - Sản phẩm: **Sữa đặc**. Số lượng: **2** **Hộp**.
-> - Lý do: **Hết hạn**. Ghi chú: **Hết hạn 09/10, phát hiện khi kiểm tủ**.
+> - Kho: **KHO QUẦY**. Sản phẩm: **BTP - TRÀ LÀI**. Số lượng: **280** **GRAM**.
+> - Lý do: **Hết hạn**. Ghi chú: **Trà lài ủ từ sáng còn thừa, đổ cuối ca.**
 
 ### Bước 1: Mở trang Huỷ hàng
 
@@ -52,7 +52,7 @@ hoặc ô **Huỷ hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 | Số lượng huỷ | Số bị huỷ | ✅ |
 | Đơn vị tính | Đơn vị của số lượng. Mặc định là đơn vị của sản phẩm | ✅ |
 | Lý do huỷ | Chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác. Không bắt buộc nhưng **nên chọn** | — |
-| Ghi chú | **Càng cụ thể càng tốt**: **hết hạn 09/08**, **làm rơi khi bưng** | — |
+| Ghi chú | **Càng cụ thể càng tốt**: **ủ từ sáng còn thừa**, **làm rơi khi bưng** | — |
 
 ### Huỷ món pha sẵn
 
