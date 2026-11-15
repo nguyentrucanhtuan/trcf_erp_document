@@ -14,10 +14,11 @@ Menu trái: ==Báo cáo → Lãi lỗ== (địa chỉ `/pnl-report`, tiêu đề
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** chủ quán xem kết quả kinh doanh 6 tháng gần nhất (**Tháng 6/2026** – **Tháng 11/2026**).
+> **Ví dụ:** chủ quán xem kết quả kinh doanh 6 tháng gần nhất (**Tháng 6/2026** – **Tháng 11/2026**), là kỳ mặc định khi mở trang. Số trên ảnh là dữ liệu mẫu.
 >
-> - Đây là kỳ mặc định khi mở trang.
-> - Trên máy này: **Doanh thu bán** **141.000₫**. Chưa có đơn mua hàng và phiếu chi nào, nên **Lãi gộp** và **Lợi nhuận trước thuế** cũng là **141.000₫** (100.0%).
+> - **Lợi nhuận trước thuế** **276.036.000₫**, biên lãi **28,6%**.
+> - Chi phí vận hành lớn nhất là **LƯƠNG NHÂN VIÊN** (17,4% doanh thu) rồi tới **MẶT BẰNG** (11,2%).
+> - Cột **Th11** thấp vì tháng 11 mới tới giữa tháng.
 
 ### Bước 1: Chọn kỳ, đọc 4 ô tổng và bảng Kết quả kinh doanh
 
@@ -47,10 +48,10 @@ Doanh thu bán                 (đơn đã thanh toán − hàng hoàn)
   =  Lợi nhuận trước thuế
 ```
 
-> **Ví dụ minh hoạ** (số giả định, không phải số trên ảnh):
+> **Ví dụ** (theo ảnh bước 1):
 >
-> - Doanh thu bán 100 triệu − chi phí nhập hàng 40 triệu = lãi gộp 60 triệu (60%).
-> - Lãi gộp 60 triệu − chi phí vận hành 35 triệu = lợi nhuận trước thuế 25 triệu (25%).
+> - Doanh thu bán 963.744.000₫ − chi phí nhập hàng 377.958.000₫ = lãi gộp 585.786.000₫ (60,8%).
+> - Lãi gộp 585.786.000₫ − chi phí vận hành 309.750.000₫ = lợi nhuận trước thuế 276.036.000₫ (28,6%).
 
 ### Từng ô lấy số từ đâu
 

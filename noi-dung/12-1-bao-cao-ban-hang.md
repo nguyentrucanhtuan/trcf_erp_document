@@ -13,15 +13,17 @@ Menu trái: ==Báo cáo → Báo cáo bán hàng== (địa chỉ `/sales-report`
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quản lý xem kết quả bán từ đầu tháng tới hôm nay (**01/11/2026** – **14/11/2026**).
+> **Ví dụ:** quản lý xem kết quả bán **tháng 10/2026** (**01/10/2026** – **31/10/2026**), so với tháng 9. Số trên ảnh là dữ liệu mẫu, làm theo menu và giá thật của quán.
 >
-> - Đây là khoảng ngày mặc định khi mở trang.
-> - Trên máy này: **5** đơn đã thanh toán, **Tổng doanh thu** **193.000₫**.
+> - **1.671** đơn, **Tổng doanh thu** **192.590.000₫**.
+> - Số đơn tăng 8,2% nhưng **Giá trị TB/đơn** giảm 3,6%: khách đông hơn mà mỗi khách mua ít hơn → đẩy bán thêm bánh, topping.
+> - Giờ đông nhất: **8h** sáng và **15h** chiều.
+> - **MAY SỮA ĐÁ** đứng đầu doanh thu, còn **MAY ĐEN ĐÁ** bán nhiều ly nhất (258 ly).
 
 ### Bước 1: Chọn kỳ và đọc các ô tổng
 
 - Ở menu trái, nhóm **Báo cáo**, bấm **Báo cáo bán hàng**.
-- Chọn **Từ ngày**, **Đến ngày** ở đầu trang. Trang tự tải lại số.
+- Chọn **Từ ngày**, **Đến ngày** ở đầu trang (mặc định: đầu tháng tới hôm nay). Trang tự tải lại số.
 - Dòng nhỏ dưới mỗi số so với kỳ liền trước cùng độ dài. Kỳ trước chưa bán gì thì hiện *Không có kỳ trước để so*.
 
 ![Bước 1: Chọn kỳ và đọc các ô tổng](images/08-ban-hang-buoc-1-tong-quan.png)
