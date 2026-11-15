@@ -49,7 +49,7 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 ### Bước 3: Gạt các công tắc và lưu
 
 - Cuộn xuống khung **Thiết lập** (cột phải).
-- Gạt công tắc như ảnh. **Có thể bán** mặc định bật, phải gạt tắt.
+- gạt tắt mục **Có thể bán**.
 - Bật **Sản xuất** thì ô **Giá vốn** bị khoá, giá vốn do công thức tính.
 - Bấm **Lưu sản phẩm**.
 
