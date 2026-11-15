@@ -10,9 +10,10 @@ Menu trái: ==Quản lý nhân sự → Mẫu công việc== (địa chỉ `/tas
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** việc lặp mỗi ngày **Vệ sinh máy pha cà phê** từ 07:00 đến 08:00, giao luân phiên cho người có ca.
+> **Ví dụ:** mỗi chiều 15:30–15:45, một người trong ca đếm sữa, bánh, trái cây, kem ở quầy theo mẫu kiểm kho SỮA/BÁNH/TRÁI CÂY/KEM ([mục 6.1](6-1-tao-mau-kiem-kho.md)).
 >
-> - Mẫu: chu kỳ **Hàng ngày**, cách giao **Luân phiên trong ca**.
+> - Mẫu: **KIỂM SỮA/KEM/TRÁI CÂY**, chu kỳ **Hàng ngày**, cách giao **Luân phiên trong ca**.
+> - Việc theo thứ trong tuần làm tương tự, VD **KIỂM NGUYÊN LIỆU - KHO** chọn **Thứ trong tuần** → **Thứ 2**, 12:00–12:30.
 
 ### Bước 1: Mở trang Mẫu công việc
 
@@ -47,9 +48,9 @@ Menu trái: ==Quản lý nhân sự → Mẫu công việc== (địa chỉ `/tas
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên công việc | VD **Vệ sinh máy pha cà phê** | ✅ |
+| Tên công việc | VD **KIỂM SỮA/KEM/TRÁI CÂY**, **VỆ SINH SÂN TRƯỚC** | ✅ |
 | Kích hoạt (dùng khi sinh phân công) | Tắt: tạm ngừng, không sinh việc nữa | — |
-| Mô tả | Hướng dẫn chi tiết cho người làm | — |
+| Mô tả | Hướng dẫn cho người làm: làm gì, ở đâu, xong thì báo ai | — |
 | Chu kỳ | *Hàng ngày* / *Thứ trong tuần* / *Hàng tháng* | ✅ |
 | Thứ **hoặc** Ngày trong tháng | Chỉ hiện khi chọn chu kỳ tương ứng | ✅ theo chu kỳ |
 | Giờ bắt đầu, Giờ kết thúc | Khung giờ nên làm việc này | ✅ |
