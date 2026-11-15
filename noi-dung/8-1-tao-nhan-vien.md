@@ -16,7 +16,8 @@ Menu trái: ==Quản lý nhân sự → Nhân viên== (địa chỉ `/employees`
 > **Ví dụ:** thêm nhân viên pha chế **Nguyễn Văn An**.
 >
 > - Chức vụ: **Pha chế**. Phòng ban: **Vận hành**.
-> - ID Chấm công: **101** (khớp mã trên máy chấm công). Lương giờ: **25000**.
+> - ID Chấm công: **18** — số kế tiếp sau mã lớn nhất đang dùng (17), trùng với số đã khai cho người này trên máy chấm công.
+> - Lương giờ: **28000**, bằng mức của các bạn pha chế khác trong quán.
 
 ### Bước 1: Mở trang Nhân viên
 
