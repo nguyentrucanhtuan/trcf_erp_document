@@ -37,9 +37,15 @@ Quy tắc viết bài hướng dẫn trong thư mục này. Bài mẫu chuẩn: 
 
 ## Ảnh minh hoạ
 
-- **Chụp thật** từ app đang chạy ở `http://localhost:3000` (đăng nhập `admin@trcf.vn`; mật khẩu seed nằm trong `.env` của backend).
+- **Chụp thật** từ app đang chạy ở `http://localhost:3003` (giao diện chính) (đăng nhập `admin@trcf.vn`; mật khẩu seed nằm trong `.env` của backend).
 - Mỗi bước một ảnh, đặt tên `NN-<chủ-đề>-buoc-<n>-<mô-tả>.png` (VD `02-kho-buoc-2-form.png`).
-- Khung hình 1440×900. Chụp đúng phần màn hình của bước đó.
+- **Khung chuẩn (chủ quán đã duyệt: "dễ nhìn, vừa vặn" — giữ đúng khung này cho mọi ảnh):**
+  - Cửa sổ trình duyệt 1440×900, ảnh ra **1440×851**: chỉ phần trang, không thanh địa chỉ.
+  - Tỉ lệ **1x** (không chụp retina 2880 px). Giao diện **sáng**.
+  - Chụp **nguyên màn hình app**: thanh menu trái đang mở + vùng nội dung. Không cắt nhỏ, không chụp cả trang dài cuộn xuống.
+  - Bước điền form: form mở dạng hộp giữa màn, danh sách mờ phía sau.
+  - Ảnh mẫu: `images/02-uom-buoc-1-danh-sach.png` (danh sách), `images/02-uom-buoc-2-don-vi-goc.png` (form).
+- Chụp đúng phần màn hình của bước đó.
 - **Không làm đổi dữ liệu thật** khi chụp: mở form rồi đóng, không bấm lưu. Nếu buộc phải lưu để chụp thông báo, trả lại giá trị cũ ngay và báo cho người dùng.
 - Số liệu và nhãn trong bài phải khớp giao diện hiện tại, đối chiếu với trang thật chứ không chép từ bài cũ.
 
