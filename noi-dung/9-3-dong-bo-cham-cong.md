@@ -12,10 +12,10 @@ Menu trái: ==Quản lý nhân sự → Chấm công== (địa chỉ `/attendanc
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** kéo giờ chấm công từ máy, bù tay khi quên chấm.
+> **Ví dụ:** ngày 15/11/2026, **Bùi Thảo Vy** làm **CA SÁNG** 07:00–14:00, quẹt vào lúc 06:45 nhưng quên quẹt ra.
 >
-> - Nhân viên **Trần Văn An** đã có ID Chấm công trên máy.
-> - Quên chấm giờ ra: quản lý bù tay bằng **Thêm bản ghi chấm công**.
+> - Bảng công báo **1 ngày thiếu giờ**, cột Về ghi **Quên chấm giờ ra**.
+> - Quản lý xác nhận bạn về lúc 14:00 và sửa giờ ra duyệt.
 
 ### Bước 1: Mở Bảng chấm công
 
@@ -29,7 +29,7 @@ Menu trái: ==Quản lý nhân sự → Chấm công== (địa chỉ `/attendanc
 ### Bước 2: Đồng bộ từ máy chấm công
 
 - Bấm biểu tượng hai mũi tên xoay góc trên phải (**Đồng bộ từ máy chấm công**).
-- Chọn máy và khoảng ngày như ảnh. Chọn khoảng **hẹp**.
+- Chọn máy và khoảng ngày như ảnh. Chọn khoảng **hẹp**, ở đây chỉ ngày 15/11.
 - Bấm **Kiểm tra kết nối** trước, rồi bấm **Đồng bộ**.
 - Hệ thống ghép cặp vào–ra theo từng người từng ngày. Lượt lẻ cuối ngày để trống giờ ra.
 
@@ -37,8 +37,9 @@ Menu trái: ==Quản lý nhân sự → Chấm công== (địa chỉ `/attendanc
 
 ### Bước 3: Bù tay khi quên chấm
 
-- Bấm nút tròn **+** ở góc dưới bên phải.
-- Điền như ảnh, bấm **Lưu**.
+- Mở dòng nhân viên, bấm vào ngày có **Quên chấm giờ ra**, chọn **Sửa**.
+- Điền **Giờ ra (duyệt)** và **Ghi chú** như ảnh, bấm **Lưu**. Giờ máy giữ nguyên.
+- Quên chấm cả ngày (không có dòng nào): bấm nút tròn **+** ở góc dưới bên phải để thêm bản ghi mới.
 
 ![Bước 3: Bù tay khi quên chấm](images/07-cham-cong-buoc-5-them-tay.png)
 
