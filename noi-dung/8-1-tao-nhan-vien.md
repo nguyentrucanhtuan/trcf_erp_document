@@ -21,38 +21,29 @@ Menu trái: ==Quản lý nhân sự → Nhân viên== (địa chỉ `/employees`
 ### Bước 1: Mở trang Nhân viên
 
 - Ở menu trái, nhóm **Quản lý nhân sự**, bấm **Nhân viên**.
-- Xem danh sách: chức vụ, phòng ban, tài khoản, nhóm quyền, lương tháng, ID chấm công, trạng thái.
-- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem nhân viên đã cất đi.
 
 ![Bước 1: Mở trang Nhân viên](images/07-nhan-vien-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai hồ sơ và công việc
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Thêm nhân viên mới** mở ra.
-- **Họ và tên**: nhập **Nguyễn Văn An**.
-- **Email**: nhập **an.nguyen@example.com**.
-- **Số điện thoại**: nhập **0901234567**.
-- **Chức vụ**: bấm vào ô, chọn **Pha chế**.
-- **Phòng ban**: bấm vào ô, chọn **Vận hành**.
-- **Tài khoản đăng nhập (tuỳ chọn)**: chọn tài khoản nếu người này đứng quầy, không thì giữ **Không liên kết**.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Điền như ảnh. Chưa bấm lưu.
+- **Tài khoản đăng nhập (tuỳ chọn)**: người này đứng quầy thì chọn tài khoản của họ, không thì giữ **Không liên kết**.
 
 ![Bước 2: Khai hồ sơ và công việc](images/07-nhan-vien-buoc-2-form.png)
 
 ### Bước 3: Khai lương và chấm công
 
 - Kéo xuống phần **Lương & Chấm công**.
-- **Lương giờ (₫)**: nhập **25000**.
-- **ID Chấm công (ZKTeco)**: nhập **101**.
-- Bấm **Lưu nhân viên** ở góc dưới bên phải.
+- Điền như ảnh, bấm **Lưu nhân viên**.
 
 ![Bước 3: Khai lương và chấm công](images/07-nhan-vien-buoc-3-luong-cham-cong.png)
 
 ### Bước 4: Kiểm tra kết quả
 
-- Nhân viên hiện trong danh sách, trạng thái **Hoạt động**.
-- Cột **ID Chấm công** hiện **101**.
+- Nhân viên vừa tạo hiện trong danh sách, cột **ID Chấm công** hiện mã vừa nhập.
 - Cột **Tài khoản** hiện dấu — nghĩa là chưa gắn tài khoản đăng nhập.
-- Đổi thông tin sau này: bấm vào nhân viên, chọn **Sửa**. Có thêm **Lưu trữ** và **Xoá**.
+- Đổi thông tin sau này: bấm vào nhân viên, chọn **Sửa**.
 
 ![Bước 4: Bấm vào nhân viên để mở thao tác](images/07-nhan-vien-buoc-3-ket-qua.png)
 
@@ -84,32 +75,6 @@ Menu trái: ==Quản lý nhân sự → Nhân viên== (địa chỉ `/employees`
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Chưa gắn tài khoản đăng nhập thì người đó không mở được ca.**
->
-> - Sẽ nhận thông báo *chưa gắn hồ sơ nhân viên*.
-> - Nguyên tắc: *ai bán thì người đó mở ca của mình*.
-
-> [!WARNING]
-> **ID chấm công sai hoặc bỏ trống** thì lượt quẹt thẻ không ghép được vào ai.
->
-> - Khi đồng bộ, hệ thống liệt kê những mã chưa gán để bạn bổ sung ([mục 9.3](9-3-dong-bo-cham-cong.md)).
-
-> [!WARNING]
-> **Lương, CCCD và số tài khoản chỉ hiện với người có quyền sửa nhân viên.**
->
-> - Người chỉ có quyền xem không thấy các cột lương.
-> - Đừng cấp quyền sửa chỉ để ai đó xem được tên.
-
-> [!TIP]
-> Nhân viên nghỉ việc thì **xoá được**.
->
-> - Hệ thống dọn bản ghi vận hành (chấm công, đăng ký ca, phân công việc).
-> - Giữ nguyên chứng từ tiền (đơn hàng, phiếu mua, sổ quỹ, ca bán hàng), chỉ bỏ liên kết tên.
-> - Lịch sử tiền không bao giờ mất.
-
-## Kiểm tra đã đúng
-
-- [ ] Người đứng quầy đã gắn **Tài khoản đăng nhập**
-- [ ] Người chấm công bằng máy đã có **ID Chấm công** khớp mã trên máy
-- [ ] Có **Lương giờ** nếu muốn bảng công tính ra tiền
+> - Chưa gắn **Tài khoản đăng nhập** thì người đó không mở được ca.
+> - **ID chấm công** sai hoặc trống thì lượt quẹt không ghép được vào ai.
+> - Lương, CCCD, số tài khoản chỉ hiện với người có quyền sửa nhân viên.

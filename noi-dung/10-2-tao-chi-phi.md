@@ -17,14 +17,12 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 
 > **Ví dụ:** trả tiền điện tháng 10 bằng tiền mặt lấy từ két **Quầy chính**.
 >
-> - Tên chi phí: **Tiền điện tháng 10**. Danh mục: **Tiền điện**.
-> - Số tiền: **1200000**. Phương thức: **Tiền mặt**. Quầy phát sinh: **Quầy chính**.
-> - Trạng thái phiếu: **Hoàn tất**. Trạng thái thanh toán: **Đã thanh toán**.
+> - Số tiền **1.200.000₫**, danh mục **Tiền điện**.
+> - Phiếu **Hoàn tất** và **Đã thanh toán** để trừ vào sổ quỹ.
 
 ### Bước 1: Mở trang Chi phí
 
 - Ở menu trái, nhóm **Chi phí**, bấm **Thu chi**.
-- Quán chưa có phiếu chi nào thì trang báo *Chưa có chi phí nào*.
 - Góc trên phải: biểu tượng hình khối mở nhanh **Danh mục chi phí**, biểu tượng tải xuống để **Xuất Excel**.
 - Biểu tượng ba gạch cạnh ô tìm kiếm mở **Bộ lọc**: ngày lập, loại chi phí, thanh toán, lưu trữ.
 
@@ -32,23 +30,16 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 
 ### Bước 2: Khai nội dung chi
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Hộp thoại **Thêm chi phí** mở ra.
-- **Số tiền (₫)** (ô số lớn trên cùng): nhập **1200000**.
-- **Tên chi phí**: nhập **Tiền điện tháng 10**.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Điền **Số tiền**, **Tên chi phí**, **Ngày thanh toán** như ảnh.
 - **Danh mục chi phí**: bấm vào ô, chọn **Tiền điện**.
-- **Ngày thanh toán**: giữ ngày hôm nay (hoặc chọn ngày trả thật).
 
 ![Bước 2: Khai nội dung chi](images/06-chi-phi-buoc-2-form.png)
 
 ### Bước 3: Khai thanh toán và trạng thái
 
 - Kéo xuống phần **Thanh toán & trạng thái**.
-- **Phương thức thanh toán**: bấm vào ô, chọn **CASH · Tiền mặt**.
-- **Quầy phát sinh**: bấm vào ô, chọn **Quầy chính** (chi từ két quầy).
-- **Trạng thái phiếu**: chọn **Hoàn tất**.
-- **Trạng thái thanh toán**: chọn **Đã thanh toán**.
-- Bấm **Thêm chi phí**.
-- Phiếu hiện trong danh sách: tên, trạng thái phiếu, danh mục, số tiền, thanh toán, quầy, ngày thanh toán.
+- Điền như ảnh, bấm **Thêm chi phí**.
 - Thao tác sau này: bấm vào phiếu. Tuỳ trạng thái sẽ có **Hoàn tất**, **Sửa**, **Lưu trữ**, **Huỷ phiếu**.
 
 ![Bước 3: Khai thanh toán và trạng thái](images/06-chi-phi-buoc-3-thanh-toan.png)
@@ -81,30 +72,6 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Chi tiền mặt lấy từ két thì bắt buộc chọn đúng quầy.**
->
-> - Không chọn thì lúc đóng ca, khoản chi không được trừ khỏi số dự kiến trong két.
-> - Cuối ca hiện thiếu tiền mà không rõ lý do.
-
-> [!CAUTION]
-> **Không được gỡ *Đã thanh toán* rồi bật lại.**
->
-> - Hệ thống chặn và đề nghị lập phiếu mới.
-> - Bút toán sổ quỹ là bản ghi vĩnh viễn.
-> - Gỡ thanh toán sinh bút toán đảo, bật lại thì tiền biến mất khỏi sổ mà không ai thấy.
-
-> [!WARNING]
-> **Phiếu chi không xoá được, chỉ *Huỷ phiếu*.**
->
-> - Phiếu đã huỷ không sửa lại được.
-> - Sai thì tạo phiếu mới.
-
-> [!TIP]
-> Khai danh mục chi phí gọn gàng từ đầu thì báo cáo lãi lỗ ([mục 12.2](12-2-bao-cao-lai-lo.md)) mới đọc có nghĩa.
-
-## Kiểm tra đã đúng
-
-- [ ] Chi từ két quầy: đã chọn đúng **Quầy phát sinh**
-- [ ] Phiếu ở *Hoàn tất* + *Đã thanh toán* nếu tiền đã trả
-- [ ] Số dư sổ quỹ đã giảm đúng số tiền
+> - Chi tiền mặt từ két: **phải chọn đúng quầy**, nếu không cuối ca két lệch.
+> - Đã thanh toán thì không gỡ rồi bật lại được, sai thì lập phiếu mới.
+> - Phiếu chi không xoá, chỉ **Huỷ phiếu**.

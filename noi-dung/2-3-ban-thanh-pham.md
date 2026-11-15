@@ -17,49 +17,40 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 > - BTP - TRÂN CHÂU ĐEN NẤU
 > - BTP - MILKFOAM MATCHA
 
-### Ba loại sản phẩm thường gặp
+### Công tắc theo loại hàng
 
 | Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
 | --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
-| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)) | ❌       | ✅          | ❌          | ✅                       |
+| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)  | ❌       | ✅          | ❌          | ✅                       |
 | CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
 | CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
 | BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quán pha trà lài buổi sáng, cả ngày múc ra pha.
+> **Ví dụ:** quán pha sẵn **TRÀ LÀI PHA SẴN** buổi sáng, tính theo lít, cả ngày múc ra pha.
 >
-> - Tên: **TRÀ LÀI PHA SẴN**. Mã SP: **BTP-TLPS**. Đơn vị: **Lít (LIT)**. Loại: **Bán thành phẩm**.
-> - Quán tự làm, chưa bán cho khách, là đầu vào của món khác.
 > - Bật **Sản xuất (có công thức)** và **Theo dõi tồn kho**.
 
 ### Bước 1: Mở form và chọn Loại sản phẩm
 
 - Ở menu trái, nhóm **Quản lý sản phẩm**, bấm **Sản phẩm**.
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- Bấm ô **Loại sản phẩm**.
-- Chọn **Bán thành phẩm**.
+- Bấm ô **Loại sản phẩm**, chọn **Bán thành phẩm**.
 
 ![Bước 1: Mở form và chọn Loại sản phẩm](images/03-loai-buoc-1-chon-loai.png)
 
 ### Bước 2: Khai thông tin chính
 
-- **Tên sản phẩm**: nhập **TRÀ LÀI PHA SẴN**.
-- **Mã SP (SKU)**: nhập **BTP-TLPS**.
-- **Đơn vị tính chính**: bấm vào ô, chọn **Lít (LIT)**.
-- **Loại sản phẩm**: giữ **Bán thành phẩm**.
+- Điền như ảnh.
+- Ô **Giá vốn** bị khoá là bình thường.
 
 ![Bước 2: Khai thông tin chính "TRÀ LÀI PHA SẴN"](images/03-loai-buoc-2-ban-thanh-pham.png)
 
 ### Bước 3: Gạt các công tắc và lưu
 
 - Cuộn xuống khung **Thiết lập** (cột phải).
-- Bật **Theo dõi tồn kho**.
-- Gạt **Có thể bán** sang tắt.
-- Bật **Sản xuất (có công thức)**.
-- Để tắt **Có thể mua**.
-- Ô **Giá vốn** bị khoá, hiện dòng *“Giá vốn được tính từ BOM (Công thức) sau khi lưu.”*: bình thường.
+- Gạt công tắc như ảnh. **Có thể bán** mặc định bật, phải gạt tắt.
 - Bấm **Lưu sản phẩm**.
 
 ![Bước 3: Gạt các công tắc và lưu](images/03-loai-buoc-3-cong-tac.png)
@@ -81,36 +72,22 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### So sánh ba loại hàng
 
-| Loại               | Là gì                                                    | Ví dụ                                 | Bật công tắc                  |
-| ------------------ | -------------------------------------------------------- | ------------------------------------- | ----------------------------- |
-| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   | Có thể mua · Theo dõi tồn kho |
-| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu | Sản xuất · Theo dõi tồn kho   |
-| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                | Có thể bán · Sản xuất         |
+| Loại               | Là gì                                                    | Ví dụ                                 |
+| ------------------ | -------------------------------------------------------- | ------------------------------------- |
+| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   |
+| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu |
+| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                |
+
+Công tắc cần bật cho từng loại: xem bảng **Công tắc theo loại hàng** ở đầu bài.
 
 ### Khi nào cần bán thành phẩm
 
-Quán ủ sẵn một bình cà phê cốt buổi sáng, cả ngày múc ra pha. Tách thành 2 bước:
+Quán pha sẵn một bình trà lài buổi sáng, cả ngày múc ra pha. Tách thành 2 bước:
 
-- **Sáng**: lập phiếu chế biến, trừ cà phê hạt, cộng **TRÀ LÀI PHA SẴN** vào kho ([mục 11.4](11-4-che-bien.md)).
+- **Sáng**: lập phiếu chế biến, trừ trà lài khô, cộng **TRÀ LÀI PHA SẴN** vào kho ([mục 11.4](11-4-che-bien.md)).
 - **Cả ngày**: mỗi ly bán ra trừ **TRÀ LÀI PHA SẴN** theo công thức.
 
 ## 4. Lưu ý quan trọng
 
-> [!WARNING]
-> **Loại sản phẩm không tự đổi hành vi hệ thống.**
->
-> - Hành vi do các công tắc quyết định.
-> - Loại là cách quán tự phân loại.
-> - Là căn cứ cho màn *Rà soát vận hành* ([mục 11.7](11-7-de-xuat-nhap-hang.md)).
-
-> [!TIP]
-> Tách 2 bước giúp biết bình cốt còn bao nhiêu, và hao hụt nằm ở khâu ủ hay khâu bán.
-
-> [!TIP]
-> Quán nhỏ chưa cần chi tiết vậy: bỏ qua bán thành phẩm, cho món bán trừ thẳng nguyên liệu.
-
-## Kiểm tra đã đúng
-
-- [ ] Loại sản phẩm là **Bán thành phẩm**
-- [ ] **Sản xuất** và **Theo dõi tồn kho** bật, **Có thể bán** tắt
-- [ ] Sản phẩm hiện trong danh sách
+> - Loại sản phẩm chỉ để phân loại, hành vi do các công tắc quyết định.
+> - Quán nhỏ có thể bỏ qua bán thành phẩm, cho món trừ thẳng nguyên liệu.

@@ -23,29 +23,21 @@ hoặc ô **Chuyển kho** ở khối *Tính năng cho bạn* trên Trang chủ.
 ### Bước 1: Mở trang Phiếu chuyển kho
 
 - Ở menu trái, nhóm **Vận hành**, bấm **Chuyển kho**.
-- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Đã chuyển**, **Đã huỷ**.
-- Quán chưa có phiếu nào thì trang báo *Chưa có phiếu chuyển kho nào*.
 
 ![Bước 1: Mở trang Phiếu chuyển kho](images/06-chuyen-kho-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai phiếu và dòng hàng
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo phiếu chuyển kho mới** mở ra.
-- **Mã phiếu chuyển**: hệ thống tự sinh, không sửa.
-- **Kho xuất đi**: bấm vào ô, chọn **KHO-TONG/Kho tổng**.
-- **Kho nhập đến**: bấm vào ô, chọn **KHO-QUAY/Kho quầy**.
-- Ô **Thêm sản phẩm**: bấm vào, chọn **Cà phê hạt Robusta**. Dòng hàng hiện bên dưới.
-- **SL**: nhập **2**. **ĐVT** tự lấy **Kilogam**, bấm vào để đổi.
-- **Ghi chú**: nhập nếu cần (tuỳ chọn).
-- Bấm **Lưu phiếu (Nháp)** ở góc dưới bên phải.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Chọn hai kho, thêm sản phẩm ở ô **Thêm sản phẩm**, điền như ảnh.
+- Bấm **Lưu phiếu (Nháp)**.
 
 ![Bước 2: Khai phiếu và dòng hàng](images/06-chuyen-kho-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra rồi xác nhận chuyển
 
-- Phiếu mới nằm ở tab **Nháp**, kèm tuyến chuyển **KHO-TONG → KHO-QUAY**.
-- Bấm vào phiếu để mở danh sách thao tác: **Sửa**, **Xác nhận chuyển**, **Huỷ phiếu**, **Xoá**.
-- Kiểm tra lại, chọn **Xác nhận chuyển**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
+- Mở tab **Nháp**, bấm vào phiếu vừa lưu.
+- Chọn **Xác nhận chuyển**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 - Phiếu chuyển sang tab **Đã chuyển**.
 
 ![Bước 3: Kiểm tra rồi xác nhận chuyển](images/06-chuyen-kho-buoc-3-nhap-menu.png)
@@ -67,24 +59,5 @@ hoặc ô **Chuyển kho** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Phiếu đã xác nhận không sửa, không xoá.**
->
-> - Chuyển nhầm: lập phiếu chuyển ngược lại.
-> - Chỉ xoá được phiếu **Nháp** hoặc **Đã huỷ**.
-
-> [!WARNING]
-> **Chọn cùng một kho cho cả hai ô sẽ bị chặn ngay khi lưu.**
-
-> [!TIP]
-> **Bê hàng ra quầy mà không lập phiếu** thì kho tổng trên hệ thống vẫn đầy trong khi kệ đã trống.
->
-> - Tới lúc kiểm kho mới lòi ra chênh lệch lớn không truy được.
-
-> [!TIP]
-> Phiếu **Nháp** chưa đụng gì tới kho, xoá thoải mái.
-
-## Kiểm tra đã đúng
-
-- [ ] Tồn kho nguồn giảm đúng số
-- [ ] Tồn kho đích tăng đúng số
+> - Đã xác nhận thì không sửa, không xoá: chuyển nhầm thì lập phiếu ngược lại.
+> - Bê hàng đi mà không lập phiếu thì tồn kho trên hệ thống sai.

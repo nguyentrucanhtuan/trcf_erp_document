@@ -21,28 +21,21 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 ### Bước 1: Mở trang Tồn kho
 
 - Ở menu trái, nhóm **Quản lý kho**, bấm **Tồn kho**.
-- Đọc 2 ô: **Tiền tồn kho**, **Dòng dưới định mức**.
-- Mỗi dòng là một sản phẩm ở một kho: tồn kho, giá vốn, giá trị tồn, định mức tối thiểu, định mức tối đa, trạng thái.
-- Lọc nhanh bằng các nút **Sản phẩm**, **Loại**, **Kho**.
-- Tìm dòng **Cà phê hạt Robusta — KHO-TONG — Kho tổng**.
+- Tìm dòng **Cà phê hạt Robusta** ở kho **KHO-TONG — Kho tổng**. Mỗi dòng là một sản phẩm ở một kho.
 
 ![Bước 1: Mở trang Tồn kho](images/06-dinh-muc-buoc-1-ton-kho.png)
 
 ### Bước 2: Khai định mức
 
 - Bấm vào dòng đó.
-- Hộp thoại **Chỉnh sửa ngưỡng tồn kho** mở ra, ghi tên sản phẩm và kho.
-- **Tồn tối thiểu (Kilogam)**: nhập **3**.
-- **Tồn tối đa (Kilogam)**: nhập **10**.
-- Bấm **Lưu**.
+- Điền như ảnh, bấm **Lưu**.
 
 ![Bước 2: Khai định mức](images/06-dinh-muc-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra kết quả
 
 - Thấy thông báo *“Đã cập nhật ngưỡng tồn kho”*.
-- Dòng vừa khai hiện số mới ở cột **Định mức tối thiểu**, **Định mức tối đa**.
-- Tồn thấp hơn tối thiểu: trạng thái **Dưới định mức** (nhãn đỏ), ô **Dòng dưới định mức** đếm cả dòng này.
+- Tồn thấp hơn tối thiểu thì dòng hiện **Dưới định mức** và được đếm vào ô **Dòng dưới định mức**.
 - Bấm nút **Dưới định mức** để chỉ xem các dòng cần nhập thêm. Bấm **Xoá bộ lọc** để xem lại tất cả.
 
 ![Bước 3: Lọc các dòng dưới định mức](images/06-dinh-muc-buoc-3-ket-qua.png)
@@ -54,25 +47,9 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 | Tồn tối thiểu | Xuống dưới mức này là phải đặt hàng. Bằng 0: không cảnh báo |
 | Tồn tối đa | Mức đầy kho. Hệ thống dùng để gợi ý đặt bao nhiêu. Bằng **0**: không giới hạn |
 
-Công thức đặt tồn tối thiểu: `lượng dùng trung bình mỗi ngày × số ngày nhà cung cấp giao hàng × 1,5`. Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu **3 kg**.
+Công thức đặt tồn tối thiểu: `lượng dùng trung bình mỗi ngày × số ngày nhà cung cấp giao hàng × 1,5`.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Khai định mức trước thì cảnh báo nhập hàng mới có tác dụng.**
->
-> - Chưa khai thì không có gì để so.
-
-> [!WARNING]
-> **Định mức khai theo từng kho.**
->
-> - Cùng một sản phẩm ở **Kho tổng** và **Kho quầy** có hai dòng, khai riêng từng dòng.
-> - Đơn vị ghi ngay trong nhãn ô, VD *Tồn tối thiểu (Kilogam)*.
-
-> [!TIP]
-> Mặt hàng dưới định mức được đánh dấu **Dưới định mức** và đếm vào ô *Sản phẩm dưới định mức* ở màn Tổng quan.
-
-## Kiểm tra đã đúng
-
-- [ ] Đã khai tồn tối thiểu / tối đa cho hàng quan trọng
-- [ ] Dòng đã khai hiện đúng số ở cột định mức
+> - Chưa khai định mức thì không có cảnh báo nhập hàng.
+> - Định mức khai riêng cho từng kho.

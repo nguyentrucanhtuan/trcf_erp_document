@@ -15,25 +15,18 @@ Menu trái: ==Quản lý nhân sự → Đăng ký ca== (địa chỉ `/shift-re
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Ví dụ:** đăng ký **Lê Thị Bình** làm **Ca sáng** ngày 10/08/2026, quản lý duyệt.
->
-> - Đăng ký mới có trạng thái **Chờ duyệt**.
-> - Quản lý bấm **Duyệt** → **Đã duyệt**.
 
 ### Bước 1: Khai phiếu đăng ký ca
 
 - Vào **Quản lý nhân sự → Đăng ký ca**.
-- Bấm nút tròn **+** ở góc dưới bên phải. Hộp thoại **Đăng ký ca làm việc** mở ra.
-- **Nhân viên**: bấm vào ô, chọn **Lê Thị Bình**.
-- **Ca làm việc**: bấm vào ô, chọn **Ca sáng (06:00–14:00)**.
-- **Ngày làm việc**: chọn **10/08/2026**.
-- Bấm **Đăng ký**. Phiếu mới luôn ở trạng thái **Chờ duyệt**.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Điền như ảnh, bấm **Đăng ký**. Phiếu mới luôn ở trạng thái **Chờ duyệt**.
 
 ![Bước 1: Khai phiếu đăng ký ca](images/07-dang-ky-ca-buoc-2-form.png)
 
 ### Bước 2: Xem trên lịch Theo ca
 
-- Thẻ **Theo ca**: hàng là ca, cột là ngày. Bấm mũi tên hai bên để sang tuần trước/sau, **Hôm nay** để về tuần này.
-- Ô **Ca sáng** ngày Thứ 2 10/08 hiện tên **Lê Thị Bình**.
+- Bấm mũi tên hai bên để sang tuần trước/sau, **Hôm nay** để về tuần này.
 - Tên **viền nét đứt**, kèm nút ✓ (duyệt) và ⊘ (từ chối): đang chờ duyệt.
 - Tên **nền đặc** có dấu tích: đã duyệt. Tên **gạch ngang**: bị từ chối.
 - Màu của tên theo phòng ban. Nút **+** trong ô để đăng ký thêm người cho ca đó.
@@ -42,10 +35,8 @@ Menu trái: ==Quản lý nhân sự → Đăng ký ca== (địa chỉ `/shift-re
 
 ### Bước 3: Xem trên Danh sách
 
-- Bấm thẻ **Danh sách**.
-- Gõ tên vào ô **Tìm theo tên nhân viên...** để lọc theo người.
+- Bấm thẻ **Danh sách**, gõ tên vào ô tìm như ảnh.
 - Bấm biểu tượng phễu góc trên phải để lọc theo **Từ ngày / Đến ngày**, **Ca làm việc**, **Trạng thái**.
-- Cột **Trạng thái** hiện nhãn **Chờ duyệt**.
 
 ![Bước 3: Xem trên Danh sách](images/07-dang-ky-ca-buoc-3-danh-sach.png)
 
@@ -76,18 +67,5 @@ Trạng thái **Đã duyệt** là đầu vào của hai việc khác:
 
 ## 4. Lưu ý quan trọng
 
-> [!WARNING]
-> **Bấm duyệt hai lần cho cùng bản ghi sẽ bị chặn.**
->
-> - Trạng thái chỉ đi một chiều từ *Chờ duyệt*.
-
-> [!TIP]
-> Mỗi người chỉ có **một đăng ký còn hiệu lực** cho cùng ca, cùng ngày.
->
-> - Đã có phiếu *Chờ duyệt* hoặc *Đã duyệt* thì đăng ký lại bị chặn, hệ thống báo phiếu đang chắn.
-> - Phiếu bị *Từ chối* không chắn: nhân viên đăng ký lại được.
-
-## Kiểm tra đã đúng
-
-- [ ] Mọi ngày trong tuần tới đều có người được duyệt ca
-- [ ] Lịch tuần hiện đủ người, đúng ca
+> - Mỗi người chỉ có một đăng ký còn hiệu lực cho cùng ca, cùng ngày.
+> - Bị **Từ chối** thì đăng ký lại được.

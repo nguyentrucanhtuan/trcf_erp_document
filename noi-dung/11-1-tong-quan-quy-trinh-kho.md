@@ -24,16 +24,14 @@ hoặc ở màn ==Bán hàng → Vận hành== (địa chỉ `/pos-operations`).
 ### Bước 1: Mở Trang chủ
 
 - Bấm **Trang chủ** ở đầu menu trái.
-- Khối **Tính năng cho bạn** có các ô: **Nhập hàng**, **Chuyển kho**, **Chế biến**, **Huỷ hàng**, **Kiểm kê**, **Tồn kho**, **Chi phí**.
-- Bấm ô đúng với tình huống (xem bảng tra nhanh bên dưới).
+- Ở khối **Tính năng cho bạn**, bấm ô đúng với tình huống (xem bảng tra nhanh bên dưới).
 
 ![Bước 1: Mở Trang chủ](images/05-van-hanh-hub.png)
 
 ### Bước 2: Hoặc chọn ở menu trái
 
-- Ở menu trái, kéo xuống nhóm **Vận hành**.
-- Có đủ các trang: **Mua hàng**, **Chuyển kho**, **Chế biến**, **Huỷ hàng**, **Kiểm kê**.
-- Nhóm **Báo cáo** ngay dưới có **Kiểm soát vận hành** ([bài 11.7](11-7-de-xuat-nhap-hang.md)).
+- Ở menu trái, kéo xuống nhóm **Vận hành**, bấm trang cần dùng.
+- **Kiểm soát vận hành** ở nhóm **Báo cáo** ngay dưới: xem [bài 11.7](11-7-de-xuat-nhap-hang.md).
 
 ![Bước 2: Hoặc chọn ở menu trái](images/05-van-hanh-buoc-2-menu.png)
 
@@ -61,23 +59,6 @@ hoặc ở màn ==Bán hàng → Vận hành== (địa chỉ `/pos-operations`).
 
 ## 4. Lưu ý quan trọng
 
-> [!TIP]
-> **1. Phiếu mới tạo ở trạng thái Nháp.**
->
-> - Chưa đụng gì tới kho.
-> - Tạo nhầm thì xoá thoải mái.
-
-> [!WARNING]
-> **2. Kho chỉ thay đổi khi bấm Xác nhận.**
->
-> - Hoặc *Nhận hàng* / *Hoàn thành* tuỳ loại phiếu.
-
-> [!CAUTION]
-> **3. Phiếu đã xác nhận không sửa, không xoá được.**
->
-> - Sai thì lập phiếu ngược lại.
-
-## Kiểm tra đã đúng
-
-- [ ] Biết tình huống nào dùng ô nào
-- [ ] Phiếu mới tạo vẫn ở trạng thái Nháp cho tới khi bấm Xác nhận
+> - Phiếu **Nháp** chưa đụng tới kho, xoá thoải mái.
+> - Kho chỉ đổi khi bấm **Xác nhận** (hoặc **Nhận hàng** / **Hoàn thành**).
+> - Đã xác nhận thì không sửa, không xoá: sai thì lập phiếu ngược lại.

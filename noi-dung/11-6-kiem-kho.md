@@ -22,19 +22,14 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 ### Bước 1: Mở trang Kiểm kê
 
 - Ở menu trái, nhóm **Vận hành**, bấm **Kiểm kê**.
-- Danh sách phiếu: mã phiếu, kho hàng, trạng thái, số mặt hàng, tổng chênh lệch, nhân viên thực hiện, ngày tạo.
-- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Hoàn thành**, **Đã huỷ**.
 
 ![Bước 1: Mở trang Kiểm kê](images/06-kiem-ke-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai phiếu và đếm hàng
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo phiếu kiểm kê mới** mở ra (mã phiếu tự sinh khi lưu).
-- **Kho hàng kiểm kê**: bấm vào ô, chọn **KHO-TONG/Kho tổng**.
-- Nạp danh sách hàng cần đếm (xem 2 cách bên dưới).
-- Ở đây: bấm ô **Thêm sản phẩm...**, chọn **Cà phê hạt Robusta**, rồi **Sữa đặc**.
-- Mỗi dòng hiện tồn **Hệ thống**. Đi đếm thật, nhập vào ô **Thực đếm**: **1.2** và **3**.
-- Cột **Chênh lệch** tự tính: đỏ là thiếu, xanh là dư.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Chọn kho trước, rồi nạp danh sách hàng (2 cách, xem phần 3).
+- Đi đếm thật, nhập vào ô **Thực đếm** như ảnh.
 - Chưa đếm xong: bấm **Tạo phiếu (nháp)**, quay lại làm tiếp sau.
 - Đếm xong ngay: bấm **Xác nhận**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 
@@ -42,10 +37,9 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 
 ### Bước 3: Hoàn thành phiếu nháp
 
-- Phiếu nháp nằm ở tab **Nháp**: số mặt hàng, **Tổng chênh lệch**.
-- Bấm vào phiếu để mở danh sách thao tác: **Xem / Sửa**, **Hoàn thành**, **Huỷ phiếu**, **Xoá**.
-- Đếm xong hết: **rà lại dòng chênh lệch lớn**, rồi chọn **Hoàn thành**.
-- Phiếu đã hoàn thành chỉ còn **Xem** và **Xuất Excel** (như phiếu **CK260909-001** trong ảnh).
+- Mở tab **Nháp**, bấm vào phiếu để mở danh sách thao tác.
+- Chọn **Xem / Sửa** để đếm tiếp. Đếm xong hết: rà lại dòng chênh lệch lớn, rồi chọn **Hoàn thành**.
+- Phiếu đã hoàn thành chỉ còn **Xem** và **Xuất Excel**, như ảnh.
 
 ![Bước 3: Hoàn thành phiếu nháp](images/06-kiem-ke-buoc-3-nhap-menu.png)
 
@@ -66,7 +60,7 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 | Ghi chú | Ghi thêm (không bắt buộc) |
 | Hệ thống | Tồn hiện tại theo hệ thống, chỉ đọc |
 | Thực đếm | Số bạn đếm được. Mặc định bằng số hệ thống |
-| Chênh lệch | Tự tính = Thực đếm − Hệ thống |
+| Chênh lệch | Tự tính = Thực đếm − Hệ thống. Đỏ là thiếu, xanh là dư |
 
 ### Lịch kiểm kê gợi ý
 
@@ -78,28 +72,5 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Xác nhận là ghi đè tồn kho.**
->
-> - Đếm sai một con số thì tồn kho sai theo.
-> - Phải kiểm lại lần nữa mới sửa được.
-
-> [!WARNING]
-> **Phiếu đã hoàn thành không sửa, không xoá.**
->
-> - Phiếu nháp và phiếu đã huỷ thì xoá được.
-
-> [!TIP]
-> **Dựng mẫu kiểm kho theo khu vực**: **Quầy pha chế**, **Kho khô**, **Tủ đông**.
->
-> - Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.
-
-> [!TIP]
-> Chênh lệch lặp lại ở cùng một mặt hàng thường không do đếm sai.
->
-> - Mà do **thiếu phiếu huỷ** ([mục 11.5](11-5-huy-hang.md)) hoặc **thiếu phiếu chuyển kho** ([mục 11.3](11-3-chuyen-kho.md)) ở khâu trước.
-
-## Kiểm tra đã đúng
-
-- [ ] Đã rà lại mọi dòng chênh lệch lớn trước khi xác nhận
-- [ ] Sau xác nhận, tồn kho bằng đúng số đã đếm
+> - **Xác nhận là ghi đè tồn kho**: rà lại số đếm trước khi bấm.
+> - Đã hoàn thành thì không sửa, không xoá.

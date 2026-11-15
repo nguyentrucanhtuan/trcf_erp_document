@@ -23,29 +23,21 @@ hoặc ô **Huỷ hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 ### Bước 1: Mở trang Huỷ hàng
 
 - Ở menu trái, nhóm **Vận hành**, bấm **Huỷ hàng**.
-- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Đã huỷ** (đã trừ kho), **Huỷ bỏ** (phiếu bị bỏ, không trừ kho).
-- Quán chưa có phiếu nào thì trang báo *Chưa có phiếu huỷ hàng nào*.
+- Tab **Đã huỷ** là phiếu đã trừ kho. Tab **Huỷ bỏ** là phiếu bị bỏ, không trừ kho.
 
 ![Bước 1: Mở trang Huỷ hàng](images/06-huy-hang-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai phiếu huỷ
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo phiếu huỷ hàng mới** mở ra.
-- **Mã phiếu**: hệ thống tự sinh, không sửa.
-- **Kho huỷ hàng**: bấm vào ô, chọn **KHO-QUAY/Kho quầy**.
-- **Sản phẩm huỷ**: bấm vào ô, chọn **Sữa đặc**.
-- **Số lượng huỷ**: nhập **2**. **Đơn vị tính**: tự lấy **Hộp**, bấm vào để đổi.
-- **Lý do huỷ**: bấm vào ô, chọn **Hết hạn** (có 4 lựa chọn: Hỏng / vỡ, Hết hạn, Thất lạc, Khác).
-- **Ghi chú**: nhập **Hết hạn 09/10, phát hiện khi kiểm tủ**.
-- Bấm **Tạo phiếu huỷ** ở góc dưới bên phải.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Điền như ảnh, bấm **Tạo phiếu huỷ**.
 
 ![Bước 2: Khai phiếu huỷ](images/06-huy-hang-buoc-2-form.png)
 
 ### Bước 3: Xác nhận huỷ
 
-- Phiếu mới nằm ở tab **Nháp**.
-- Bấm vào phiếu để mở danh sách thao tác: **Sửa**, **Xác nhận huỷ**, **Huỷ bỏ phiếu**, **Xoá**.
-- Kiểm tra lại, chọn **Xác nhận huỷ**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
+- Mở tab **Nháp**, bấm vào phiếu vừa tạo.
+- Chọn **Xác nhận huỷ**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 - Phiếu chuyển sang tab **Đã huỷ**.
 
 ![Bước 3: Xác nhận huỷ](images/06-huy-hang-buoc-3-nhap-menu.png)
@@ -69,27 +61,5 @@ hoặc ô **Huỷ hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Đã xác nhận thì không sửa, không xoá.**
->
-> - Chỉ xoá được phiếu **Nháp** hoặc **Huỷ bỏ**.
-
-> [!TIP]
-> **Ghi lý do tử tế là phần có giá trị nhất của phiếu huỷ.**
->
-> - Cuối tháng nhìn lại sẽ thấy hao hụt nằm ở đâu.
-> - Hết hạn: mua nhiều quá. Rơi vỡ: thao tác. Pha hỏng: đào tạo.
-
-> [!TIP]
-> Đừng gộp hao hụt vào phiếu kiểm kho.
->
-> - Kiểm kho chỉ nói *thiếu 2 kg*.
-> - Phiếu huỷ nói thiếu **vì sao**.
-
-> [!TIP]
-> Phiếu **Nháp** chưa đụng gì tới kho, xoá thoải mái.
-
-## Kiểm tra đã đúng
-
-- [ ] Tồn kho giảm đúng số huỷ
-- [ ] Lý do ghi đủ rõ để tháng sau đọc vẫn hiểu
+> - Đã xác nhận thì không sửa, không xoá.
+> - Ghi rõ lý do để cuối tháng biết hao hụt nằm ở đâu.

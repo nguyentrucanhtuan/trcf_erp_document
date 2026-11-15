@@ -22,20 +22,16 @@ Menu trái: ==Báo cáo → Lãi lỗ== (địa chỉ `/pnl-report`, tiêu đề
 ### Bước 1: Chọn kỳ, đọc 4 ô tổng và bảng Kết quả kinh doanh
 
 - Ở menu trái, nhóm **Báo cáo**, bấm **Lãi lỗ**.
-- Bấm ô **Từ tháng**, chọn tháng trong danh sách (VD **Tháng 6/2026**). Làm tương tự với **Đến tháng**.
-- Đọc 4 ô: **Doanh thu bán**, **Lãi gộp**, **Chi phí vận hành**, **Lợi nhuận trước thuế**.
-- Ô **Lợi nhuận trước thuế** ghi *Kinh doanh có lãi* hoặc *Kinh doanh lỗ*, kèm biên lợi nhuận (%).
-- Đọc bảng **Kết quả kinh doanh**: cột **Giá trị** và **% Doanh thu** của từng khoản mục.
-- Nhóm dưới đường kẻ (**Đơn chưa thanh toán**, **VAT đầu ra**, **VAT đầu vào**, **Giá trị tồn kho**, **COGS nguyên liệu (tham khảo)**) là chỉ số tham khảo, không tính vào lãi lỗ.
+- Bấm ô **Từ tháng**, chọn tháng trong danh sách. Làm tương tự với **Đến tháng**.
+- Kỳ lỗ thì ô **Lợi nhuận trước thuế** ghi *Kinh doanh lỗ*.
+- Nhóm dòng dưới **LỢI NHUẬN TRƯỚC THUẾ** chỉ để tham khảo, không tính vào lãi lỗ.
 
 ![Bước 1: Chọn kỳ, đọc 4 ô tổng và bảng Kết quả kinh doanh](images/08-pnl-buoc-1-tong-quan.png)
 
 ### Bước 2: Đọc biểu đồ
 
-- Cuộn xuống: **Cơ cấu chi phí vận hành** theo từng nhóm chi phí, xem khoản nào ăn nhiều nhất.
-- Kỳ chưa có phiếu chi: thẻ báo *Chưa có chi phí vận hành trong kỳ đã chọn.*
-- **Xu hướng theo tháng**: cột **Doanh thu**, **Chi phí**, **Lợi nhuận** từng tháng.
-- Dưới biểu đồ có số cụ thể từng tháng (VD **Tháng 11/2026**: doanh thu **141.000₫**).
+- Cuộn xuống: **Cơ cấu chi phí vận hành** cho thấy nhóm chi phí nào ăn nhiều nhất.
+- Cuộn tiếp: dưới **Xu hướng theo tháng** có số cụ thể từng tháng.
 
 ![Bước 2: Đọc biểu đồ](images/08-pnl-buoc-2-bieu-do.png)
 
@@ -77,42 +73,6 @@ Doanh thu bán                 (đơn đã thanh toán − hàng hoàn)
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Chi phí nhập hàng là tiền mua hàng trong kỳ, không phải giá vốn của hàng đã bán.**
->
-> - Tháng nhập nhiều để trữ: lãi gộp thấp giả tạo.
-> - Tháng sau bán hàng tồn đó: lãi gộp cao giả tạo.
-> - Muốn đánh giá đúng: **xem theo quý** hoặc đối chiếu thêm **COGS nguyên liệu** và **Giá trị tồn kho**.
-
-> [!CAUTION]
-> **Chỉ khoản chi có phiếu mới vào báo cáo.**
->
-> - Trả tiền điện bằng tiền túi mà không lập phiếu chi: lợi nhuận trên báo cáo cao hơn thực tế.
-
-> [!WARNING]
-> **Phiếu chi Nháp hoặc Chưa thanh toán vẫn bị trừ vào lợi nhuận.**
->
-> - Phiếu lập nhầm: bấm **Huỷ phiếu** hoặc **Lưu trữ**, đừng để Nháp.
-
-> [!WARNING]
-> **Chưa trừ lương nhân viên** nếu quán không lập phiếu chi cho lương.
->
-> - Muốn P&L đủ: tạo danh mục chi phí **Lương**.
-> - Lập phiếu chi hằng tháng.
-
-> [!TIP]
-> Nhìn **% Doanh thu** ở cột bên phải bảng thay vì con số tuyệt đối.
->
-> - Tỷ lệ chi phí nhập hàng trên doanh thu là chỉ số ổn định để so giữa các tháng.
-> - Kể cả khi quy mô thay đổi.
-
-> [!TIP]
-> Trục số của biểu đồ **Xu hướng theo tháng** ghi theo triệu (**tr**).
->
-> - Tháng doanh thu dưới 1 triệu: trục hiện **0tr**. Đọc số cụ thể ở danh sách dưới biểu đồ.
-
-## Kiểm tra đã đúng
-
-- [ ] Đã chọn đúng kỳ
-- [ ] Đã hiểu mỗi ô lấy số từ đâu
-- [ ] Đã lập đủ phiếu chi (kể cả lương) và dọn phiếu Nháp lập nhầm trước khi tin vào lợi nhuận
+> - Chi phí nhập hàng là tiền mua trong kỳ, không phải giá vốn hàng đã bán: nên xem theo quý.
+> - Chỉ khoản chi có phiếu mới vào báo cáo, kể cả lương.
+> - Phiếu chi **Nháp** vẫn bị trừ: lập nhầm thì **Huỷ phiếu**.

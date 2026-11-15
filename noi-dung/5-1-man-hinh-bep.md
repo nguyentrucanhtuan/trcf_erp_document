@@ -21,36 +21,28 @@ Menu trái: ==Thiết lập cửa hàng → Màn hình bếp== (địa chỉ `/k
 ### Bước 1: Mở trang Màn hình bếp
 
 - Ở menu trái, nhóm **Thiết lập cửa hàng**, bấm **Màn hình bếp**.
-- Xem danh sách màn hình đã khai: tên, quầy POS, danh mục, trạng thái.
 
 ![Bước 1: Mở trang Màn hình bếp](images/04-man-hinh-bep-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai màn hình bếp
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- **Tên màn hình**: nhập **Bếp pha chế**.
-- **Quầy POS áp dụng**: bấm vào ô, chọn **Quầy chính**.
-- **Danh mục hiển thị**: bấm vào ô, tích **Cà phê**, bấm **Xong**.
-- **Hoạt động**: để **bật**.
-- Bấm **Thêm màn hình**.
+- Ô **Danh mục hiển thị**: bấm vào, tích danh mục (chọn được nhiều), bấm **Xong**.
+- Điền như ảnh, bấm **Thêm màn hình**.
 
 ![Bước 2: Khai màn hình bếp](images/04-man-hinh-bep-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra kết quả
 
-- Màn hình hiện trong danh sách, trạng thái **Hoạt động**.
-- Cột **Mở màn hình** có 2 nút: **Màn hình bếp**, **Màn hình tổng hợp**.
+- Màn hình vừa tạo hiện trong danh sách.
 - Đổi ý sau này: bấm vào tên màn hình, chọn **Sửa**.
 
 ![Bước 3: Bấm vào màn hình để mở thao tác](images/04-man-hinh-bep-buoc-3-ket-qua.png)
 
 ### Bước 4: Mở màn hình bếp trên thiết bị
 
-- Bấm **Màn hình bếp** trên dòng vừa tạo.
-- Màn hình mở ở tab mới (địa chỉ dạng `/kitchen/…`).
-- Đầu màn hình đếm số **đơn chờ** và số **xong**.
+- Bấm **Màn hình bếp** trên dòng vừa tạo. Màn hình mở ở tab mới (địa chỉ dạng `/kitchen/…`).
 - Mở trên thiết bị ở khu pha chế, **để nguyên cả ngày**.
-- Khi có đơn, món tự hiện lên, không cần tải lại trang.
 
 ![Bước 4: Mở màn hình bếp trên thiết bị](images/04-man-hinh-bep-buoc-4-man-bep.png)
 
@@ -76,20 +68,5 @@ Pha chế xong: bấm vào món, món biến khỏi màn.
 
 ## 4. Lưu ý quan trọng
 
-> [!TIP]
-> **Ghi chú công thức là chỗ đặt công thức rút gọn cho người mới.**
->
-> - VD *30ml espresso + 150ml sữa + đá đầy ly*.
-> - Nhân viên mới không cần nhớ, không cần hỏi.
-
-> [!TIP]
-> Đơn bị huỷ hoặc đã hoàn tự biến khỏi màn bếp. Pha chế không làm nhầm món của đơn đã huỷ.
-
-> [!WARNING]
-> Mỗi màn hình bếp chỉ nhận đơn của **một quầy**. Quán nhiều quầy thì tạo mỗi quầy một màn hình.
-
-## Kiểm tra đã đúng
-
-- [ ] Màn hình hiện trong danh sách, trạng thái **Hoạt động**
-- [ ] Đã chọn đúng quầy và danh mục
-- [ ] Mở được màn hình bếp trên thiết bị khu pha chế
+> - Mỗi màn hình bếp chỉ nhận đơn của **một quầy**.
+> - Đơn huỷ hoặc đã hoàn tự biến khỏi màn bếp.

@@ -17,33 +17,26 @@ Menu trái: ==Quản lý nhân sự → Mẫu công việc== (địa chỉ `/tas
 ### Bước 1: Mở trang Mẫu công việc
 
 - Ở menu trái, nhóm **Quản lý nhân sự**, bấm **Mẫu công việc**.
-- Xem danh sách mẫu: chu kỳ, cách giao, khung giờ, kích hoạt, trạng thái.
-- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem mẫu đã cất đi.
 
 ![Bước 1: Mở trang Mẫu công việc](images/07-cong-viec-buoc-1-mau.png)
 
 ### Bước 2: Khai nội dung công việc
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- **Tên công việc**: nhập **Vệ sinh máy pha cà phê**.
-- **Kích hoạt (dùng khi sinh phân công)**: để **bật**.
-- **Mô tả**: nhập **Lau máy espresso, xả vòi hơi, đổ khay nước thải.**
+- Điền như ảnh. Chưa bấm lưu.
 
 ![Bước 2: Khai nội dung công việc](images/07-cong-viec-buoc-2-form-mau.png)
 
 ### Bước 3: Khai lịch lặp lại và cách giao
 
 - Kéo xuống phần **Lịch lặp lại**.
-- **Chu kỳ**: chọn **Hàng ngày**.
-- **Giờ bắt đầu**: giữ **07:00**. **Giờ kết thúc**: nhập **08:00**.
-- **Cách giao**: giữ **Luân phiên trong ca**.
-- Bấm **Thêm mẫu công việc**.
+- Điền như ảnh, bấm **Thêm mẫu công việc**.
 
 ![Bước 3: Khai lịch lặp lại và cách giao](images/07-cong-viec-buoc-3-lich-lap.png)
 
 ### Bước 4: Kiểm tra mẫu
 
-- Mẫu hiện trong danh sách: chu kỳ, cách giao, khung giờ, kích hoạt **Đang bật**.
+- Mẫu vừa tạo hiện trong danh sách, cột **Kích hoạt** là **Đang bật**.
 - Đổi ý sau này: bấm vào mẫu, chọn **Sửa**. Ngừng dùng hẳn: chọn **Lưu trữ**.
 
 ![Bước 4: Bấm vào mẫu để mở thao tác](images/07-cong-viec-buoc-3-mau-ket-qua.png)
@@ -74,12 +67,4 @@ Mọi cách giao đều ưu tiên người có ca phủ đúng khung giờ. Khô
 
 ## 4. Lưu ý quan trọng
 
-> [!TIP]
-> Tắt *Kích hoạt* ở mẫu (bấm vào mẫu, chọn **Sửa**) là cách tạm ngừng một việc mà không mất lịch sử.
->
-> - Xoá mẫu thì các việc đã sinh vẫn còn.
-
-## Kiểm tra đã đúng
-
-- [ ] Mẫu hiện trong danh sách, cột **Kích hoạt** là **Đang bật**
-- [ ] Chu kỳ, khung giờ và cách giao đúng như đã khai
+> - Tạm ngừng một việc: tắt **Kích hoạt**, đừng xoá.

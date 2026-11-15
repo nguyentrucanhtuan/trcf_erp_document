@@ -18,32 +18,21 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 ### Bước 1: Mở trang Danh mục
 
 - Ở menu trái, nhóm **Quản lý sản phẩm**, bấm **Danh mục**.
-- Xem danh sách danh mục đang hoạt động.
-- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem danh mục đã cất đi.
 
 ![Bước 1: Mở trang Danh mục](images/03-danh-muc-buoc-1-trang.png)
 
 ### Bước 2: Thêm danh mục hiện trên POS
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- **Tên danh mục**: nhập **Cà phê**.
-- **Màu sắc đại diện**: nhập **#6F4E37**, hoặc bấm ô màu bên phải để chọn.
-- **Mô tả**: nhập **Các món cà phê pha máy và pha phin.**
-- **Hiển thị trên POS**: để **bật**.
-- **Hiển thị menu online**: để **bật** nếu bán qua Zalo Mini App.
-- Bấm **Thêm danh mục**.
+- Điền như ảnh, bấm **Thêm danh mục**.
+- Không bán qua Zalo Mini App thì tắt **Hiển thị menu online**.
 
 ![Bước 2: Thêm danh mục hiện trên POS](images/03-danh-muc-buoc-2-form.png)
 
 ### Bước 3: Thêm danh mục chỉ dùng nội bộ
 
-- Bấm nút tròn **+** lần nữa.
-- **Tên danh mục**: nhập **Nguyên liệu**.
-- **Màu sắc đại diện**: nhập **#8A8A8A**.
-- **Mô tả**: nhập **Cà phê hạt, sữa, đường — chỉ dùng nội bộ.**
-- **Hiển thị trên POS**: gạt sang **tắt**.
-- **Hiển thị menu online**: gạt sang **tắt**.
-- Bấm **Thêm danh mục**.
+- Bấm **+** lần nữa.
+- Điền như ảnh, bấm **Thêm danh mục**. Hai công tắc phải tắt.
 
 ![Bước 3: Thêm danh mục chỉ dùng nội bộ](images/03-danh-muc-buoc-3-tat-hien-thi.png)
 
@@ -52,7 +41,7 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 - Thấy thông báo *“Đã thêm danh mục sản phẩm”*.
 - Danh mục tắt hiển thị có nhãn **Ẩn POS**, **Ẩn online**.
 - Kéo biểu tượng **⠿** bên trái để đổi thứ tự. Xếp nhóm bán chạy lên đầu.
-- Đổi ý sau này: bấm vào danh mục, chọn **Ẩn khỏi POS** hoặc **Sửa**.
+- Đổi ý sau này: bấm vào danh mục để mở bảng thao tác như ảnh.
 
 ![Bước 4: Bấm vào danh mục để mở thao tác](images/03-danh-muc-buoc-4-thao-tac.png)
 
@@ -68,20 +57,5 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Danh mục đang gắn sản phẩm thì không xoá được.**
->
-> - Muốn ẩn khỏi POS: bấm vào danh mục, chọn **Ẩn khỏi POS**.
-> - Ngừng dùng hẳn: chọn **Lưu trữ**, đừng xoá.
-
-> [!TIP]
-> **Gom nguyên liệu vào một danh mục riêng và tắt hiển thị.**
->
-> - Quản lý vẫn lọc được.
-> - Thu ngân không thấy nguyên liệu trên màn bán hàng.
-
-## Kiểm tra đã đúng
-
-- [ ] Danh mục hiện trong danh sách ở bộ lọc **Đang hoạt động**
-- [ ] Danh mục nguyên liệu có nhãn **Ẩn POS**
-- [ ] Nhóm bán chạy đã kéo lên đầu danh sách
+> - Danh mục đang gắn sản phẩm thì không xoá được, chọn **Lưu trữ**.
+> - Nguyên liệu nên gom vào một danh mục riêng và tắt hiển thị POS.

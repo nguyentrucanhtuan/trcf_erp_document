@@ -21,30 +21,20 @@ Menu trái: ==Quản lý kho → Mẫu kiểm kho== (địa chỉ `/stock-templa
 ### Bước 1: Mở trang Mẫu kiểm kho
 
 - Ở menu trái, nhóm **Quản lý kho**, bấm **Mẫu kiểm kho**.
-- Xem danh sách mẫu: mã mẫu, tên, kho hàng, số lượng sản phẩm.
-- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem mẫu đã cất đi.
 
 ![Bước 1: Mở trang Mẫu kiểm kho](images/06-mau-kiem-kho-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai mẫu và thêm sản phẩm
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo mẫu kiểm kho mới** mở ra.
-- **Tên mẫu kiểm**: nhập **Kho khô**.
-- **Vị trí kho**: bấm vào ô, chọn **KHO-TONG/Kho tổng**.
-- **Mã mẫu**: hệ thống tự sinh, không sửa.
-- **Ghi chú**: nhập **Đếm cuối tuần**.
-- Bấm ô **Thêm sản phẩm...**, chọn **Cà phê hạt Robusta**.
-- Bấm ô đó lần nữa, chọn **Sữa đặc**.
-- Giữ biểu tượng ⠿ rồi kéo để đổi thứ tự dòng.
-- **Đơn vị tính** của mỗi dòng: tự lấy đơn vị mặc định của sản phẩm. Bấm vào để đổi đơn vị đếm.
-- Bấm **Tạo mẫu kiểm kho** ở góc dưới bên phải.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Bấm ô **Thêm sản phẩm...**, chọn một sản phẩm. Lặp lại cho từng sản phẩm cần đếm.
+- Điền như ảnh, bấm **Tạo mẫu kiểm kho**.
 
 ![Bước 2: Khai mẫu và thêm sản phẩm](images/06-mau-kiem-kho-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra kết quả
 
-- Mẫu hiện trong danh sách: mã mẫu, tên, kho, số lượng sản phẩm.
-- Mẫu **Kho khô** hiện **2 sản phẩm**.
+- Mẫu vừa tạo hiện trong danh sách, cột **Số lượng SP** đúng số sản phẩm đã chọn.
 - Đổi ý sau này: bấm vào mẫu, chọn **Sửa**. Ngừng dùng: chọn **Lưu trữ**.
 
 ![Bước 3: Bấm vào mẫu để mở thao tác](images/06-mau-kiem-kho-buoc-3-ket-qua.png)
@@ -62,21 +52,5 @@ Menu trái: ==Quản lý kho → Mẫu kiểm kho== (địa chỉ `/stock-templa
 
 ## 4. Lưu ý quan trọng
 
-> [!WARNING]
-> **Mẫu kiểm kho chưa phải phiếu đếm.**
->
-> - Mẫu chỉ là danh sách hàng cần đếm.
-> - Phiếu đếm hàng thật tạo ở [bài 11.6](11-6-kiem-kho.md).
-
-> [!TIP]
-> **Dựng mẫu theo khu vực**: **Quầy pha chế**, **Kho khô**, **Tủ đông**.
->
-> - Đếm theo khu nhanh và ít sót hơn đếm theo danh sách toàn quán.
-
-> [!TIP]
-> Xếp hàng theo thứ tự đặt trên kệ để người đếm đi một vòng là xong.
-
-## Kiểm tra đã đúng
-
-- [ ] Mẫu hiện trong danh sách với đúng kho
-- [ ] Số sản phẩm của mẫu đúng như đã chọn
+> - Mẫu chỉ là danh sách hàng cần đếm, phiếu đếm tạo ở [bài 11.6](11-6-kiem-kho.md).
+> - Nên dựng mẫu theo khu vực và xếp theo thứ tự trên kệ.

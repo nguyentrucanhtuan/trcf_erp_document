@@ -10,11 +10,11 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 - Cần có trước: đơn vị tính ([bài 1.1](1-1-thiet-lap-don-vi-tinh.md)).
 
-### Ba loại sản phẩm thường gặp
+### Công tắc theo loại hàng
 
 | Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
 | --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
-| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)) | ❌       | ✅          | ❌          | ✅                       |
+| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)  | ❌       | ✅          | ❌          | ✅                       |
 | CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
 | CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
 | BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
@@ -24,13 +24,12 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 > **Cách đặt tên**: NL - TÊN NGUYÊN LIỆU - KHỐI LƯỢNG BÊN TRONG - KHỐI LƯỢNG VỎ.
 > 
 > **Ví dụ cách đặt tên:** 
-> - NL - CÀ PHÊ HẠT - 1000 - 30. (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM)
-> - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối luợng vỏ hộp là 90 GRAM)
+> - NL - CÀ PHÊ HẠT - 1000 - 30 (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM)
+> - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối lượng vỏ hộp là 90 GRAM)
 > - NL - SỮA TƯƠI - 1000 - 70
 
 > **Ví dụ:** thêm nguyên liệu **NL - CÀ PHÊ HẠT - 1000 - 30**.
 >
-> - Mã SP: **NL-CPH**. Đơn vị: **Kilogam (KG)**. Loại: **Nguyên liệu**.
 > - Mua về, dùng làm ra thứ khác, không bán trực tiếp.
 > - Bật **Theo dõi tồn kho** và **Có thể mua**.
 
@@ -38,27 +37,21 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 - Ở menu trái, nhóm **Quản lý sản phẩm**, bấm **Sản phẩm**.
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- Bấm ô **Loại sản phẩm**.
-- Chọn **Nguyên liệu**.
+- Bấm ô **Loại sản phẩm**, chọn **Nguyên liệu**.
 
 ![Bước 1: Mở form và chọn Loại sản phẩm](images/03-san-pham-nguyen-lieu-1.png)
 
 ### Bước 2: Khai thông tin chính
 
-- **Tên sản phẩm**: nhập **NL - CÀ PHÊ HẠT - 1000 - 30**.
-- **Mã SP (SKU)**: nhập **NL-CPH**.
-- **Đơn vị tính chính**: bấm vào ô, chọn **Kilogam (KG)**. Đã tạo **GRAM** ở [bài 1.1](1-1-thiet-lap-don-vi-tinh.md) thì chọn **GRAM**.
-- **Loại sản phẩm**: giữ **Nguyên liệu**.
+- Điền như ảnh.
+- Đã tạo **GRAM** ở [bài 1.1](1-1-thiet-lap-don-vi-tinh.md) thì **Đơn vị tính chính** nên chọn **GRAM** thay cho **KG**.
 
 ![Bước 2: Khai thông tin chính "NL - CÀ PHÊ HẠT - 1000 - 30"](images/03-san-pham-nguyen-lieu-2.png)
 
 ### Bước 3: Gạt các công tắc và lưu
 
 - Cuộn xuống khung **Thiết lập** (cột phải).
-- Bật **Theo dõi tồn kho**.
-- Gạt **Có thể bán** sang tắt.
-- Bật **Có thể mua**.
-- Để tắt **Sản xuất (có công thức)**.
+- Gạt công tắc như ảnh. **Có thể bán** mặc định bật, phải gạt tắt.
 - Bấm **Lưu sản phẩm**.
 
 ![Bước 3: Gạt các công tắc và lưu](images/03-nguyen-lieu-buoc-3-cong-tac.png)
@@ -81,28 +74,15 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### So sánh ba loại hàng
 
-| Loại               | Là gì                                                    | Ví dụ                                 | Bật công tắc                  |
-| ------------------ | -------------------------------------------------------- | ------------------------------------- | ----------------------------- |
-| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   | Có thể mua · Theo dõi tồn kho |
-| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu | Sản xuất · Theo dõi tồn kho   |
-| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                | Có thể bán · Sản xuất         |
+| Loại               | Là gì                                                    | Ví dụ                                 |
+| ------------------ | -------------------------------------------------------- | ------------------------------------- |
+| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   |
+| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu |
+| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                |
+
+Công tắc cần bật cho từng loại: xem bảng **Công tắc theo loại hàng** ở đầu bài.
 
 ## 4. Lưu ý quan trọng
 
-> [!WARNING]
-> **Nguyên liệu chưa nhập lần nào thì giá vốn vẫn là 0.**
->
-> - Công thức dùng nguyên liệu này sẽ tính giá vốn món thiếu.
-> - Nhập hàng một lần để có giá vốn.
-
-> [!TIP]
-> Đơn vị trong công thức được phép khác đơn vị tồn kho. Khai 18 gram trong khi kho quản lý theo kg vẫn đúng, hệ thống tự quy đổi.
-
-> [!TIP]
-> Nguyên liệu gom vào một danh mục riêng và tắt hiển thị ngoài POS để thu ngân không thấy trên màn bán hàng.
-
-## Kiểm tra đã đúng
-
-- [ ] Loại sản phẩm là **Nguyên liệu**
-- [ ] **Theo dõi tồn kho** và **Có thể mua** bật
-- [ ] Sản phẩm hiện trong danh sách
+> - Chưa nhập hàng lần nào thì giá vốn là 0, giá vốn món sẽ thiếu.
+> - Đơn vị trong công thức được khác đơn vị tồn kho, hệ thống tự quy đổi.

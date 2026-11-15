@@ -10,36 +10,26 @@ Menu trái: ==Thiết lập cửa hàng → Máy in== (địa chỉ `/printers`)
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quán có máy in bill ở quầy thu ngân.
->
-> - **Máy in bill quầy 1**: loại Hoá đơn, mạng LAN, IP **192.168.1.50**, cổng **9100**.
-> - Chân trang bill: **Cảm ơn quý khách, hẹn gặp lại!**
+> **Ví dụ:** quán có một máy in bill nối mạng LAN ở quầy thu ngân, cuối bill in lời cảm ơn.
 
 ### Bước 1: Mở trang Máy in
 
 - Ở menu trái, nhóm **Thiết lập cửa hàng**, bấm **Máy in**.
-- Xem danh sách máy in đang hoạt động (quán mới thì trống).
-- Bấm **Đã lưu trữ** hoặc **Tất cả** để xem máy đã cất đi.
 
 ![Bước 1: Mở trang Máy in](images/04-may-in-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai thiết bị
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- **Tên thiết bị**: nhập **Máy in bill quầy 1**.
-- **Loại kết nối**: chọn **Mạng LAN**.
-- **Loại máy in**: giữ **Hoá đơn**.
-- **Địa chỉ IP**: nhập **192.168.1.50**.
-- **Cổng (Port)**: giữ **9100**.
-- **Đang bật (cho phép in)**: để **bật**.
+- Điền như ảnh.
+- **Địa chỉ IP**: nhập IP thật của máy in ở quán.
 
 ![Bước 2: Khai thiết bị](images/04-may-in-buoc-2-hoa-don.png)
 
 ### Bước 3: Nhập chân trang và lưu
 
 - Kéo xuống phần **Thiết lập riêng**.
-- **Chân trang hóa đơn**: nhập **Cảm ơn quý khách, hẹn gặp lại!**
-- Bấm **Thêm máy in**.
+- Điền như ảnh, bấm **Thêm máy in**.
 
 ![Bước 3: Nhập chân trang và lưu](images/04-may-in-buoc-3-chan-trang.png)
 
@@ -65,19 +55,5 @@ Sau khi khai máy in, gán máy cho quầy ở ==Thiết lập cửa hàng → Q
 
 ## 4. Lưu ý quan trọng
 
-> [!WARNING]
-> **Máy in nhiệt phổ thông (POS-80) không có bảng mã tiếng Việt.**
->
-> - Hệ thống in tiếng Việt bằng cách vẽ ảnh.
-> - Bill mất dấu: kiểm tra lại loại máy đã khai.
-
-> [!TIP]
-> **Máy in kết nối LAN: kiểm tra máy in và máy tính cùng một mạng.**
->
-> - In thử: bấm vào máy in trong danh sách, chọn **In thử**.
-
-## Kiểm tra đã đúng
-
-- [ ] Máy in hiện trong danh sách, trạng thái đang bật
-- [ ] Máy LAN đã khai đúng IP và cổng
-- [ ] Máy đã gán cho quầy ở **Thiết lập cửa hàng → Quầy bán hàng**
+> - Bill mất dấu tiếng Việt: kiểm tra lại loại máy đã khai.
+> - Máy in LAN phải cùng mạng với máy tính.

@@ -44,7 +44,7 @@ Markdown thường, thêm vài quy ước để ra đúng khung đẹp trên web
 | `crumb: Bước 1 · Nhập đơn vị tính` (đầu tệp, giữa hai dòng `---`) | Dòng chữ xám nhỏ trên tiêu đề |
 | `# 1.1 Tên bài` | Tiêu đề bài |
 | `## 1. Đường dẫn vào chức năng` (có số và dấu chấm) | Mở một **khung trắng** mới |
-| `## Kiểm tra đã đúng` (không số) | Tiêu đề phụ, vẫn nằm trong khung đang mở |
+| `## Bộ đơn vị mẫu cho quán` (không số) | Tiêu đề phụ, vẫn nằm trong khung đang mở |
 | `### Bước 1: Mở trang Đơn vị tính` | **Bước có nhãn xanh**; mọi thứ bên dưới (list, ảnh) thuộc bước đó |
 | `### Hai loại công thức` (không bắt đầu bằng "Bước N:") | Tiêu đề nhỏ |
 | `==Quản lý sản phẩm → Đơn vị tính==` | Nhãn xanh đường dẫn menu |
@@ -52,7 +52,6 @@ Markdown thường, thêm vài quy ước để ra đúng khung đẹp trên web
 | `![Bước 1: …](images/02-uom-buoc-1-danh-sach.png)` (một dòng riêng) | Ảnh chụp màn hình |
 | `[mục 2.2](2-2-thanh-pham.md)` | Link sang bài khác (tự đổi thành `.html`) |
 | Bảng `\| Trường \| Điền gì \|` | Bảng |
-| `- [ ] Đã có đơn vị gốc` | Ô tích "Kiểm tra đã đúng" |
 | Khối ` ``` ` | Khung chữ đều (sơ đồ công thức) |
 
 Khung ví dụ và khung lưu ý viết bằng dấu `>`:

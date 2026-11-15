@@ -24,29 +24,22 @@ hoặc ô **Chế biến** ở khối *Tính năng cho bạn* trên Trang chủ.
 ### Bước 1: Mở trang Chế biến
 
 - Ở menu trái, nhóm **Vận hành**, bấm **Chế biến**.
-- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Đã chế biến**, **Đã huỷ**.
-- Quán chưa có phiếu nào thì trang báo *Chưa có phiếu chế biến nào*.
 
 ![Bước 1: Mở trang Chế biến](images/06-che-bien-buoc-1-danh-sach.png)
 
 ### Bước 2: Khai phiếu chế biến
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo phiếu chế biến mới** mở ra.
-- **Sản phẩm thành phẩm**: bấm vào ô, chọn **THỬ — Cốt trà sữa**. Hệ thống **tự nạp nguyên liệu từ công thức**.
-- Dưới ô hiện dòng *Công thức: Sản xuất · sản lượng 2 Lít*.
-- **Kho trừ nguyên liệu**: chọn **Kho tổng**. **Kho nhập thành phẩm**: chọn **Kho quầy**.
-- **Số lượng thành phẩm**: nhập **4**. **Đơn vị tính** tự lấy theo công thức (**Lít**).
-- Mục **Nguyên liệu tiêu thụ (từ BOM)**: **tự sửa** cột **SL** cho khớp (ở ví dụ: **Trà đen CTC** = **0.4**, **Đường mía** = **1**).
-- Bấm **Lưu phiếu (nháp)** ở góc dưới bên phải.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Chọn thành phẩm trước: hệ thống tự nạp nguyên liệu từ công thức.
+- Điền như ảnh. Nguyên liệu không tự nhân theo số lượng thành phẩm: sửa tay cột **SL**.
+- Bấm **Lưu phiếu (nháp)**.
 
 ![Bước 2: Khai phiếu chế biến](images/06-che-bien-buoc-2-form.png)
 
 ### Bước 3: Xác nhận chế biến
 
-- Phiếu mới nằm ở tab **Nháp**, mã dạng **MO261009-001**.
-- Bấm vào phiếu để mở danh sách thao tác: **Xem**, **Xác nhận chế biến**, **Huỷ phiếu**, **Xoá**.
-- Phiếu nháp không sửa được. Khai sai thì xoá rồi lập lại.
-- Kiểm tra lại, chọn **Xác nhận chế biến**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
+- Mở tab **Nháp**, bấm vào phiếu vừa lưu (mã dạng **MO261009-001**).
+- Chọn **Xác nhận chế biến**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 - Phiếu chuyển sang tab **Đã chế biến**.
 
 ![Bước 3: Xác nhận chế biến](images/06-che-bien-buoc-3-nhap-menu.png)
@@ -64,26 +57,6 @@ hoặc ô **Chế biến** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Số lượng trên phiếu là nguồn sự thật, không phải công thức.**
->
-> - Công thức chỉ điền sẵn cho nhanh.
-> - Đổi *Số lượng thành phẩm* thì danh sách nguyên liệu **không tự đổi theo**: sửa tay.
-> - Hôm nay dùng nhiều hơn định mức thì cứ sửa số trên phiếu.
-> - Hệ thống trừ đúng số bạn khai.
-
-> [!WARNING]
-> **Đã xác nhận thì không xác nhận lại được.**
->
-> - Hệ thống khoá để tránh trừ kho hai lần khi hai người cùng bấm.
-
-> [!TIP]
-> Chế biến **không đụng tới tiền**: chỉ chuyển giá trị từ nguyên liệu sang bán thành phẩm. Phiếu nhẹ nhất chương này.
-
-> [!TIP]
-> Chưa có công thức thì phiếu không tự nạp nguyên liệu được. Tạo công thức trước.
-
-## Kiểm tra đã đúng
-
-- [ ] Tồn nguyên liệu giảm đúng số đã khai
-- [ ] Tồn bán thành phẩm tăng đúng số làm được
+> - Hệ thống trừ đúng số trên phiếu, không theo công thức.
+> - Phiếu nháp khai sai thì xoá rồi lập lại.
+> - Chưa có công thức thì không tự nạp nguyên liệu.

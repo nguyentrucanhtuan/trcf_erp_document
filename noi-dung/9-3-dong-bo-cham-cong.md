@@ -20,9 +20,8 @@ Menu trái: ==Quản lý nhân sự → Chấm công== (địa chỉ `/attendanc
 ### Bước 1: Mở Bảng chấm công
 
 - Ở menu trái, nhóm **Quản lý nhân sự**, bấm **Chấm công**.
-- Bấm biểu tượng phễu góc trên phải để lọc theo **Nhân viên**, **Từ ngày / Đến ngày**, **Trạng thái**. Mặc định là từ đầu tháng đến hôm nay.
-- Bảng gom theo tháng, rồi theo nhân viên, rồi theo ngày. Bấm mũi tên ở dòng tháng/nhân viên để mở hoặc gập.
-- Dòng nhân viên có nhãn **N ngày thiếu giờ** nếu có ngày quên chấm.
+- Bấm biểu tượng phễu góc trên phải để lọc theo **Nhân viên**, **Từ ngày / Đến ngày**, **Trạng thái**.
+- Bấm mũi tên ở dòng tháng/nhân viên để mở hoặc gập.
 - Cần bảng công ra tệp: bấm biểu tượng tải xuống (**Xuất Excel**).
 
 ![Bước 1: Mở Bảng chấm công](images/07-cham-cong-buoc-3-bang-cong.png)
@@ -30,21 +29,16 @@ Menu trái: ==Quản lý nhân sự → Chấm công== (địa chỉ `/attendanc
 ### Bước 2: Đồng bộ từ máy chấm công
 
 - Bấm biểu tượng hai mũi tên xoay góc trên phải (**Đồng bộ từ máy chấm công**).
-- **Máy chấm công**: bấm vào ô, chọn máy. **Từ ngày / Đến ngày**: chọn khoảng **hẹp**.
-- Bấm **Kiểm tra kết nối** trước cho chắc.
-- Đọc kỹ khung cảnh báo vàng, rồi bấm **Đồng bộ**.
+- Chọn máy và khoảng ngày như ảnh. Chọn khoảng **hẹp**.
+- Bấm **Kiểm tra kết nối** trước, rồi bấm **Đồng bộ**.
 - Hệ thống ghép cặp vào–ra theo từng người từng ngày. Lượt lẻ cuối ngày để trống giờ ra.
 
 ![Bước 2: Đồng bộ từ máy chấm công](images/07-cham-cong-buoc-4-dong-bo.png)
 
 ### Bước 3: Bù tay khi quên chấm
 
-- Bấm nút tròn **+** ở góc dưới bên phải. Hộp thoại **Thêm bản ghi chấm công** mở ra.
-- **Nhân viên**: bấm vào ô, chọn **Trần Văn An**.
-- **Ngày công**: chọn ngày làm.
-- **Giờ vào (duyệt)**: nhập **07:00**. **Giờ ra (duyệt, không bắt buộc)**: nhập **12:00**.
-- **Ghi chú**: nhập **Quên chấm giờ ra, quản lý bù tay**.
-- Bấm **Lưu**.
+- Bấm nút tròn **+** ở góc dưới bên phải.
+- Điền như ảnh, bấm **Lưu**.
 
 ![Bước 3: Bù tay khi quên chấm](images/07-cham-cong-buoc-5-them-tay.png)
 
@@ -73,24 +67,10 @@ Bù tay chỉ ghi **giờ duyệt**. Giờ máy để trống, chỉ máy chấm
 | Badge đỏ ở cột Đi | Đi trễ (hổ phách = đến sớm) |
 | Badge xanh ở cột Về | Về muộn = làm thêm (đỏ = về sớm) |
 
-Dung sai trễ/sớm chỉnh ở *Cấu hình hệ thống*, ô **Dung sai chấm công (phút)**, mặc định 5 phút. Lệch trong khoảng này tính là *Đúng giờ*. Các cột: nhóm/nhân viên/ngày, ca, vào, đi, ra, về, giờ làm, lương/giờ, thành tiền.
+Dung sai trễ/sớm chỉnh ở *Cấu hình hệ thống*, ô **Dung sai chấm công (phút)**, mặc định 5 phút. Lệch trong khoảng này tính là *Đúng giờ*. Kéo ngang bảng để xem cột lương/giờ và thành tiền.
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Đồng bộ ghi lại giờ máy trong cả khoảng ngày đã chọn.**
->
-> - Áp cho những nhân viên có lượt chấm trên máy trong khoảng đó.
-> - **Giờ duyệt và ghi chú được giữ lại.** Dòng không còn lượt chấm trên máy mà không có giờ duyệt hay ghi chú thì bị xoá.
-> - Đừng kéo cả tháng nếu chỉ cần bù một ngày.
-
-> [!TIP]
-> Khoảng **10% số ngày công chỉ có một lượt chấm** (quên chấm vào hoặc ra).
->
-> - Rà nhãn **thiếu giờ** **hằng tuần**, đừng đợi cuối tháng.
-
-## Kiểm tra đã đúng
-
-- [ ] Đồng bộ xong không còn báo mã chưa gán nhân viên
-- [ ] Đã rà nhãn **thiếu giờ** và bù tay những ngày quên chấm
-- [ ] Cột thành tiền có số (nếu đã khai Lương giờ)
+> - Đồng bộ ghi lại giờ máy trong cả khoảng ngày đã chọn: chỉ chọn đúng ngày cần.
+> - Giờ duyệt và ghi chú được giữ lại.
+> - Rà nhãn **thiếu giờ** hằng tuần.

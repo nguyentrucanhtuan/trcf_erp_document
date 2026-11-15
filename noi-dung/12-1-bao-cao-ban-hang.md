@@ -22,34 +22,29 @@ Menu trái: ==Báo cáo → Báo cáo bán hàng== (địa chỉ `/sales-report`
 
 - Ở menu trái, nhóm **Báo cáo**, bấm **Báo cáo bán hàng**.
 - Chọn **Từ ngày**, **Đến ngày** ở đầu trang. Trang tự tải lại số.
-- Hàng ô trên: **Tổng doanh thu** (**193.000₫**), **Số đơn** (**5**), **Giá trị TB/đơn** (**38.600₫**), **Số món bán** (**7**).
-- Hàng ô dưới: **Tổng doanh số**, **Chiết khấu voucher**, **Chiết khấu điểm thưởng**, **Lượt dùng voucher**.
-- Dòng nhỏ dưới mỗi số: so với kỳ liền trước cùng độ dài. Kỳ trước chưa bán gì thì hiện *Không có kỳ trước để so*.
+- Dòng nhỏ dưới mỗi số so với kỳ liền trước cùng độ dài. Kỳ trước chưa bán gì thì hiện *Không có kỳ trước để so*.
 
 ![Bước 1: Chọn kỳ và đọc các ô tổng](images/08-ban-hang-buoc-1-tong-quan.png)
 
 ### Bước 2: Đọc doanh thu theo ngày và theo giờ
 
-- Ngay dưới các ô tổng: biểu đồ **Doanh thu theo ngày** (mỗi ngày trong kỳ một điểm).
-- Cuộn xuống: **Doanh thu theo giờ**, từ **00h** đến **23h**.
-- Ví dụ trên máy này: tiền vào lúc **14h** và **15h**.
+- Ngay dưới các ô tổng là **Doanh thu theo ngày**. Cuộn tiếp xuống tới **Doanh thu theo giờ**.
+- Cột cao là giờ đông: đối chiếu với lịch ca (xem lưu ý cuối bài).
 
 ![Bước 2: Đọc doanh thu theo ngày và theo giờ](images/08-ban-hang-buoc-2-bieu-do.png)
 
 ### Bước 3: Đọc theo loại đơn và phương thức thanh toán
 
-- **Doanh thu theo loại đơn**: ví dụ **GRAB** **153.000₫**, **TẠI CHỖ** **40.000₫**.
-- **Doanh thu theo phương thức thanh toán**: ví dụ **Chuyển khoản** **100.000₫** (52%), **Tiền mặt** **93.000₫** (48%).
+- Cuộn xuống dưới biểu đồ theo giờ: hai biểu đồ nằm cạnh nhau.
 
 ![Bước 3: Đọc theo loại đơn và phương thức thanh toán](images/08-ban-hang-buoc-3-loai-don-thanh-toan.png)
 
 ### Bước 4: Đọc Top 10 sản phẩm bán chạy
 
-- Cuộn xuống cuối trang: bảng **Top 10 sản phẩm bán chạy**, cột **Hạng**, **Sản phẩm**, **Số lượng**, **Doanh thu**.
-- Ví dụ: hạng 1 là **Bạc xỉu**, số lượng **3**, doanh thu **80.000₫**.
-- Món có mũi tên bên trái (VD **DEMO Cà phê sữa**): bấm vào để xem tách theo cỡ (VD **LỚN**).
+- Cuộn xuống cuối trang.
+- Món có mũi tên bên trái: bấm vào để xem tách theo cỡ.
 - Bấm **Hiện tất cả** để xem mọi món có doanh thu trong kỳ, kể cả món đã tắt bán.
-- **Xuất Excel** tải về danh sách đầy đủ của kỳ.
+- Bấm **Xuất Excel** để tải danh sách đầy đủ của kỳ.
 
 ![Bước 4: Đọc Top 10 sản phẩm bán chạy](images/08-ban-hang-buoc-4-top-san-pham.png)
 
@@ -101,30 +96,5 @@ Menu trái: ==Báo cáo → Báo cáo bán hàng== (địa chỉ `/sales-report`
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Chỉ tính đơn ĐÃ THANH TOÁN.**
->
-> - Đơn treo trên bàn, đơn đã lưu chưa thu tiền: không nằm trong báo cáo.
-> - Thấy doanh thu thấp hơn cảm nhận: kiểm đơn chưa thu tiền trước khi nghi ngờ số liệu.
-
-> [!WARNING]
-> **Ô Tổng doanh thu chưa trừ hàng khách trả lại từng phần.**
->
-> - Đơn hoàn hết thì tự rời báo cáo. Đơn chỉ trả lại vài món thì vẫn tính đủ tiền.
-> - Muốn doanh thu đã trừ hàng hoàn: đọc báo cáo P&L ([mục 12.2](12-2-bao-cao-lai-lo.md)).
-
-> [!TIP]
-> Đối chiếu doanh thu theo giờ với lịch ca ([bài 9.2](9-2-dang-ky-va-duyet-ca.md)).
->
-> - Giờ cao điểm mà chỉ một người đứng quầy: đó là **doanh thu đang bị bỏ lỡ**, không phải quán vắng.
-
-> [!TIP]
-> Doanh thu ở đây lệch nhiều so với **Doanh thu bán** ở P&L: khách trả hàng nhiều.
->
-> - Kiểm ==Vận hành → Trả hàng== để biết trả vì lý do gì.
-
-## Kiểm tra đã đúng
-
-- [ ] Đã chọn đúng khoảng ngày cần xem
-- [ ] Đã nhìn **Giá trị TB/đơn** và so với kỳ trước
-- [ ] Đã đối chiếu doanh thu theo giờ với lịch ca
+> - Chỉ tính đơn **đã thanh toán**.
+> - Chưa trừ hàng khách trả lại từng phần; muốn số đã trừ thì xem [bài 12.2](12-2-bao-cao-lai-lo.md).

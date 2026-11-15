@@ -18,14 +18,12 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 > **Ví dụ:** nhà cung cấp **Công ty Cà phê An Nhiên** giao 5 kg **Cà phê hạt Robusta**, đơn giá 280.000₫/kg.
 >
 > - Kho nhập: **Kho tổng**. Phương thức thanh toán: **Tiền mặt**.
-> - Dòng hàng: **Cà phê hạt Robusta**, SL **5**, đơn vị **Kilogam**, giá nhập **280000**.
 > - Tổng cộng: 5 × 280.000 = **1.400.000₫**.
 
 ### Bước 1: Mở trang Mua hàng
 
 - Ở menu trái, nhóm **Vận hành**, bấm **Mua hàng**.
-- Các tab trên cùng lọc theo trạng thái: **Tất cả**, **Nháp**, **Đã xác nhận**, **Đã nhập kho**, **Đã trả hàng**, **Đã huỷ**.
-- Quán chưa có đơn nào thì trang báo *Chưa có đơn mua hàng nào*.
+- Bấm các tab trên cùng để lọc theo trạng thái.
 - Biểu tượng ba gạch cạnh ô tìm kiếm mở **Bộ lọc**. Biểu tượng tải xuống góc trên phải để **Xuất Excel**.
 
 ![Bước 1: Mở trang Mua hàng](images/06-nhap-hang-buoc-1-danh-sach.png)
@@ -34,14 +32,8 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 - Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo đơn mua hàng mới** mở ra.
 - **Nhà cung cấp**: bấm vào ô, chọn **Công ty Cà phê An Nhiên**.
-- **Kho nhập hàng**: bấm vào ô, chọn **Kho tổng**.
-- **Ngày đặt hàng**: giữ ngày hôm nay.
-- **Phương thức thanh toán**: bấm vào ô, chọn **Tiền mặt**.
-- Bấm **Thêm dòng**.
-- **Sản phẩm**: bấm vào ô, chọn **Cà phê hạt Robusta**. **Đơn vị** tự lấy **Kilogam**.
-- **SL**: nhập **5**.
-- **Giá nhập**: nhập **280000**. **VAT%**: nhập thuế suất trên hoá đơn NCC (nếu có).
-- Kiểm tra **Thành tiền** và **Tổng cộng** tự tính, rồi bấm **Lưu đơn nháp** ở góc dưới bên phải.
+- Bấm **Thêm dòng**, điền đầu đơn và dòng hàng như ảnh. **Đơn vị** tự lấy theo sản phẩm.
+- Bấm **Lưu đơn nháp** ở góc dưới bên phải.
 
 ![Bước 2: Khai đầu đơn và dòng hàng](images/06-nhap-hang-buoc-2-form.png)
 
@@ -89,29 +81,6 @@ Bấm **Xác nhận nhận hàng**, hệ thống đồng thời:
 
 ## 4. Lưu ý quan trọng
 
-> [!CAUTION]
-> **Nhận hàng chỉ bấm được một lần.**
->
-> - Bấm lần hai bị chặn.
-> - Nếu không, kho sẽ cộng gấp đôi.
-
-> [!CAUTION]
-> **Đơn đã nhập kho thì không sửa dòng hàng, không xoá.**
->
-> - Nhập nhầm số lượng: lập **phiếu trả hàng NCC** cho phần dư.
-> - Menu trái: nhóm **Vận hành** → **Trả hàng NCC**.
-
-> [!WARNING]
-> **Đơn đã thanh toán thì khoá phần tiền.**
->
-> - Không sửa được số lượng, giá nhập, VAT%, phương thức, quầy.
-> - Bút toán sổ quỹ là bản ghi vĩnh viễn, giống phiếu chi ([mục 10.2](10-2-tao-chi-phi.md)).
-
-> [!TIP]
-> Đơn ở trạng thái **Nháp** chưa đụng gì tới kho, xoá thoải mái.
-
-## Kiểm tra đã đúng
-
-- [ ] Đơn ở trạng thái **Đã nhập kho**
-- [ ] Tồn kho đã tăng đúng số lượng
-- [ ] Đã ghi thanh toán nếu đã trả tiền nhà cung cấp
+> - **Nhận hàng** chỉ bấm được một lần.
+> - Đã nhập kho thì không sửa, không xoá: nhập dư thì lập **Trả hàng NCC**.
+> - Đã thanh toán thì khoá số lượng, giá, VAT, phương thức.
