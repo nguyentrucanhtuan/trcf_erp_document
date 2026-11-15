@@ -15,11 +15,11 @@ hoặc ô **Chế biến** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** nấu cốt trà sữa. Trên máy mẫu, sản phẩm có tên **THỬ — Cốt trà sữa**.
+> **Ví dụ:** đầu ca sáng, ủ 2 mẻ **BTP - TRÀ LÀI** ngay tại quầy.
 >
-> - Công thức: 0,2 kg **Trà đen CTC** + 0,5 kg **Đường mía** làm ra 2 lít cốt.
-> - Kho trừ nguyên liệu: **Kho tổng**. Kho nhập thành phẩm: **Kho quầy**.
-> - Hôm nay nấu 4 lít → cần dùng **0,4 kg** trà và **1 kg** đường.
+> - Công thức ([mục 3.1](3-1-cong-thuc-ban-thanh-pham.md)): 35 GR **NL - TRÀ LÀI - 500** + 800 GR **NL - NƯỚC NÓNG** + 200 GR **NL - ĐÁ VIÊN** làm ra 800 GR.
+> - Kho trừ nguyên liệu và kho nhập thành phẩm đều là **KHO QUẦY**.
+> - Ủ 2 mẻ = **1.600 GR** → sửa nguyên liệu thành **70 GR** trà, **1.600 GR** nước nóng, **400 GR** đá.
 
 ### Bước 1: Mở trang Chế biến
 
@@ -38,7 +38,7 @@ hoặc ô **Chế biến** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ### Bước 3: Xác nhận chế biến
 
-- Mở tab **Nháp**, bấm vào phiếu vừa lưu (mã dạng **MO261009-001**).
+- Mở tab **Nháp**, bấm vào phiếu vừa lưu (mã dạng **MO261115-001**).
 - Chọn **Xác nhận chế biến**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 - Phiếu chuyển sang tab **Đã chế biến**.
 
