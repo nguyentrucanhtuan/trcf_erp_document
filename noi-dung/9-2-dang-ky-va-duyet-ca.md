@@ -14,7 +14,7 @@ Menu trái: ==Quản lý nhân sự → Đăng ký ca== (địa chỉ `/shift-re
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** đăng ký **Lê Thị Bình** làm **Ca sáng** ngày 10/08/2026, quản lý duyệt.
+> **Ví dụ:** bạn pha chế **Bùi Thảo Vy** xin làm **CA SÁNG** thứ Hai 16/11/2026, quản lý duyệt.
 
 ### Bước 1: Khai phiếu đăng ký ca
 
@@ -35,14 +35,14 @@ Menu trái: ==Quản lý nhân sự → Đăng ký ca== (địa chỉ `/shift-re
 
 ### Bước 3: Xem trên Danh sách
 
-- Bấm thẻ **Danh sách**, gõ tên vào ô tìm như ảnh.
+- Bấm thẻ **Danh sách**, gõ tên vào ô tìm như ảnh: thấy cả tuần của một người, phiếu mới ở trạng thái **Chờ duyệt**.
 - Bấm biểu tượng phễu góc trên phải để lọc theo **Từ ngày / Đến ngày**, **Ca làm việc**, **Trạng thái**.
 
 ![Bước 3: Xem trên Danh sách](images/07-dang-ky-ca-buoc-3-danh-sach.png)
 
 ### Bước 4: Quản lý duyệt
 
-- Bấm vào tên **Lê Thị Bình** trên lịch (hoặc vào dòng trong **Danh sách**).
+- Bấm vào tên **Bùi Thảo Vy** trên lịch (hoặc vào dòng trong **Danh sách**).
 - Chọn **Duyệt** (hoặc **Từ chối** nếu không đồng ý). Có thể bấm thẳng nút ✓ cạnh tên trên lịch.
 - Tên chuyển sang **nền đặc**, trạng thái **Đã duyệt**.
 
