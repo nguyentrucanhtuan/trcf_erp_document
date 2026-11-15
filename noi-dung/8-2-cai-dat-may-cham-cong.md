@@ -12,10 +12,10 @@ Menu trái: ==Quản lý nhân sự → Máy chấm công== (địa chỉ `/atte
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** máy ZKTeco ở cửa trước quán.
+> **Ví dụ:** máy ZKTeco đặt ở quầy.
 >
-> - Máy: tên **Máy chấm công cửa trước**, IP **192.168.1.201**, cổng **4370**.
-> - Nhân viên **Nguyễn Văn An** có ID Chấm công **101**.
+> - Máy: tên **MÁY CHẤM CÔNG QUẦY**, IP **192.168.1.100**, cổng **8818** (máy này không dùng cổng mặc định 4370).
+> - Nhân viên **Nguyễn Văn An** có ID Chấm công **18** ([bài 8.1](8-1-tao-nhan-vien.md)).
 
 ### Bước 1: Mở trang Máy chấm công
 
@@ -51,12 +51,12 @@ Menu trái: ==Quản lý nhân sự → Máy chấm công== (địa chỉ `/atte
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên thiết bị | VD **Máy chấm công cửa trước** | ✅ |
+| Tên thiết bị | Đặt theo chỗ để máy, VD **MÁY CHẤM CÔNG QUẦY** | ✅ |
 | Địa chỉ IP | IP của máy trong mạng nội bộ quán | ✅ |
 | Cổng (Port) | Mặc định 4370, **nhiều máy đặt khác** | ✅ |
 | Mật khẩu kết nối (nếu có) | Thường để trống | — |
-| Thời gian chờ (giây) | Số giây chờ máy trả lời | — |
-| Ngưỡng lọc trùng (phút) | Hai lần quẹt cách nhau dưới ngưỡng này coi là một | — |
+| Thời gian chờ (giây) | Số giây chờ máy trả lời. Để mặc định 30 | — |
+| Ngưỡng lọc trùng (phút) | Hai lần quẹt cách nhau dưới ngưỡng này coi là một. Để mặc định 15 | — |
 | Kích hoạt | Tắt: hệ thống không kết nối với máy này, cột **Kết nối** hiện **Tắt** | — |
 
 ### Hai thao tác riêng của máy chấm công
