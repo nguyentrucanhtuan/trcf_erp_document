@@ -15,10 +15,10 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** nhà cung cấp **Công ty Cà phê An Nhiên** giao 5 kg **Cà phê hạt Robusta**, đơn giá 280.000₫/kg.
+> **Ví dụ:** ngày 12/11/2026, nhà cung cấp **COFFEetreE** giao 50 cái **CROISSANT CLASSIC**, giá nhập 17.000₫/cái.
 >
-> - Kho nhập: **Kho tổng**. Phương thức thanh toán: **Tiền mặt**.
-> - Tổng cộng: 5 × 280.000 = **1.400.000₫**.
+> - Kho nhập: **KHO CHINH**. Bánh mua sẵn về bán lại nên nhập thẳng, không qua chế biến.
+> - Tổng cộng: 50 × 17.000 = **850.000₫**, trả sau.
 
 ### Bước 1: Mở trang Mua hàng
 
@@ -31,7 +31,7 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 ### Bước 2: Khai đầu đơn và dòng hàng
 
 - Bấm nút tròn **+** ở góc dưới bên phải. Trang **Tạo đơn mua hàng mới** mở ra.
-- **Nhà cung cấp**: bấm vào ô, chọn **Công ty Cà phê An Nhiên**.
+- **Nhà cung cấp**: bấm vào ô, chọn **COFFEetreE**.
 - Bấm **Thêm dòng**, điền đầu đơn và dòng hàng như ảnh. **Đơn vị** tự lấy theo sản phẩm.
 - Bấm **Lưu đơn nháp** ở góc dưới bên phải.
 
@@ -39,7 +39,7 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ### Bước 3: Xác nhận rồi nhận hàng
 
-- Đơn mới nằm ở tab **Nháp**, mã dạng **PO261009-001**.
+- Đơn mới nằm ở tab **Nháp**, mã dạng **PO261115-001** (năm-tháng-ngày lập đơn + số thứ tự).
 - Bấm vào đơn để mở danh sách thao tác: **Sửa**, **Xác nhận**, **Huỷ đơn**, **Xoá**.
 - Kiểm tra lại, chọn **Xác nhận**. Đơn chuyển sang tab **Đã xác nhận**.
 - Khi hàng về tới quán, bấm vào đơn, chọn **Nhận hàng**.
@@ -67,7 +67,7 @@ hoặc ô **Nhập hàng** ở khối *Tính năng cho bạn* trên Trang chủ.
 | Trường | Điền gì |
 | --- | --- |
 | Sản phẩm | Hàng mua (chỉ hiện hàng đã bật *Có thể mua*) |
-| SL, Đơn vị | Nhập theo đơn vị lớn được: mua 5 *Kilogam*, hệ thống quy ra 5000 g. Đơn vị lớn phải khai ở *Đơn vị tính phụ* của sản phẩm |
+| SL, Đơn vị | Nhập theo đơn vị lớn được: mua 12 *HỘP 1250GR* sữa đặc, hệ thống quy ra 15.000 GR. Đơn vị lớn phải khai ở *Đơn vị tính phụ* của sản phẩm |
 | Giá nhập, VAT% | Giá và thuế suất trên hoá đơn NCC |
 | Thành tiền | Tự tính, không sửa |
 
