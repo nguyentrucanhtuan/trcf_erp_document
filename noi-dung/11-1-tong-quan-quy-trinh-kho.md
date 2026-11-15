@@ -16,10 +16,13 @@ hoặc ở màn ==Bán hàng → Vận hành== (địa chỉ `/pos-operations`).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** nhà cung cấp vừa giao 5 kg cà phê hạt tới quán.
+> **Ví dụ:** một ngày ở quán, mỗi việc một phiếu.
 >
-> - Ở Trang chủ, bấm ô **Nhập hàng**.
-> - Lập đơn, bấm **Xác nhận** rồi **Nhận hàng**: kho được cộng 5 kg.
+> - Sáng, nhà cung cấp giao 50 CROISSANT CLASSIC → **Nhập hàng** ([11.2](11-2-nhap-hang.md)). Trả 30.000₫ tiền ship → **Chi phí** ([10.2](10-2-tao-chi-phi.md)).
+> - Lấy 2 túi cà phê pha phin từ KHO CHINH ra KHO QUẦY → **Chuyển kho** ([11.3](11-3-chuyen-kho.md)).
+> - Ủ 1.600 GR trà lài → **Chế biến** ([11.4](11-4-che-bien.md)).
+> - Cuối ca đổ 280 GR trà lài thừa → **Huỷ hàng** ([11.5](11-5-huy-hang.md)).
+> - Tối đếm 18 món bán thành phẩm ở KHO QUẦY → **Kiểm kê** ([11.6](11-6-kiem-kho.md)).
 
 ### Bước 1: Mở Trang chủ
 
@@ -41,12 +44,12 @@ hoặc ở màn ==Bán hàng → Vận hành== (địa chỉ `/pos-operations`).
 
 | Ô / trang | Dùng khi | Kho bị ảnh hưởng | Chi tiết |
 | --- | --- | --- | --- |
-| **Nhập hàng** (Mua hàng) | Nhà cung cấp giao hàng tới quán | Cộng vào kho | [11.2](11-2-nhap-hang.md) |
-| **Chuyển kho** | Lấy hàng từ kho tổng ra quầy | Trừ kho nguồn, cộng kho đích | [11.3](11-3-chuyen-kho.md) |
-| **Chế biến** | Ủ cà phê cốt, nấu syrup | Trừ nguyên liệu, cộng bán thành phẩm | [11.4](11-4-che-bien.md) |
-| **Huỷ hàng** | Hàng hỏng, hết hạn, làm rơi | Trừ kho | [11.5](11-5-huy-hang.md) |
-| **Kiểm kê** | Đếm thực tế, chỉnh cho khớp | Điều chỉnh về đúng số đếm | [11.6](11-6-kiem-kho.md) |
-| **Chi phí** | Trả tiền điện, tiền ship, mua đồ lặt vặt | Không đụng kho, ghi sổ quỹ | [10.2](10-2-tao-chi-phi.md) |
+| **Nhập hàng** (Mua hàng) | Nhà cung cấp giao bánh, sữa, cà phê tới quán | Cộng vào kho | [11.2](11-2-nhap-hang.md) |
+| **Chuyển kho** | Lấy hàng từ KHO CHINH ra KHO QUẦY | Trừ kho nguồn, cộng kho đích | [11.3](11-3-chuyen-kho.md) |
+| **Chế biến** | Ủ trà lài, coldbrew, nấu syrup | Trừ nguyên liệu, cộng bán thành phẩm | [11.4](11-4-che-bien.md) |
+| **Huỷ hàng** | Trà ủ thừa cuối ca, bánh hết hạn, làm rơi | Trừ kho | [11.5](11-5-huy-hang.md) |
+| **Kiểm kê** | Đếm bán thành phẩm cuối ngày, chỉnh cho khớp | Điều chỉnh về đúng số đếm | [11.6](11-6-kiem-kho.md) |
+| **Chi phí** | Trả tiền ship, tiền điện, mua đồ lặt vặt | Không đụng kho, ghi sổ quỹ | [10.2](10-2-tao-chi-phi.md) |
 | **Tồn kho** | Xem nhanh hàng nào sắp hết | Chỉ xem | [11.7](11-7-de-xuat-nhap-hang.md) |
 
 ### Sai thì sửa bằng phiếu ngược lại
