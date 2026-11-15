@@ -9,11 +9,11 @@ Menu trái: ==Quản lý sản phẩm → Đơn vị tính== (địa chỉ `/uom
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** cà phê nhập theo KG, pha chế trừ theo G; ly nhập theo thùng, bán theo cái.
+> **Ví dụ:** siro nhập theo chai 1000GR, pha chế trừ theo gram; ly nhựa nhập theo túi 100 cái, dùng theo cái.
 >
-> - Đơn vị gốc: **G**, **CÁI** (hệ số 1).
-> - Đơn vị lớn: **KG** = 1000 G · **THÙNG 30 CÁI** = 30 CÁI.
-> - Nhập 5 KG → hệ thống ghi tồn 5000 G.
+> - Đơn vị gốc: **GR** (GRAM), **CAI** (CÁI) — hệ số 1.
+> - Đơn vị lớn: **CHAI 1000GR** = 1000 GR · **TÚI 100 CÁI** = 100 CÁI.
+> - Nhập 5 CHAI 1000GR → hệ thống ghi tồn 5000 GR.
 
 ### Bước 1: Mở trang Đơn vị tính
 
@@ -32,7 +32,7 @@ Menu trái: ==Quản lý sản phẩm → Đơn vị tính== (địa chỉ `/uom
 
 - Bấm **+** lần nữa.
 - Điền như ảnh, bấm **Thêm đơn vị**.
-- Làm tương tự cho **KG**: quy đổi về **G**, hệ số **1000**.
+- Làm tương tự cho **KG**: quy đổi về **GRAM**, hệ số **1000**.
 
 ![Bước 3: Thêm đơn vị lớn hơn](images/02-uom-buoc-3-don-vi-quy-doi.png)
 
@@ -41,25 +41,26 @@ Menu trái: ==Quản lý sản phẩm → Đơn vị tính== (địa chỉ `/uom
 
 | Trường         | Điền gì                                                                                                                     | Bắt buộc |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Mã đơn vị      | Ngắn, viết hoa. Ví dụ: **LY**, **KG**, **G**, **TUI-1000**, **CHAI-900**, **HOP-500**                                       | ✅        |
-| Tên đơn vị     | Ví dụ: **LY**, **KILOGRAM**, **GRAM**, **TÚI 1000G**, **CHAI 900G**, **HỘP 500G**                                           | ✅        |
-| Đơn vị quy đổi | Đơn vị gốc mà đơn vị này quy về. **KG** quy về **GRAM**; **THÙNG 30 CÁI** quy về **CÁI**. Đơn vị gốc thì giữ **Đơn vị gốc** | ✅        |
+| Mã đơn vị      | Ngắn, viết hoa. Ví dụ: **GR**, **CHAI-1000**, **HOP-500**, **TUI-1000**, **KG**, **LY**                                   | ✅        |
+| Tên đơn vị     | Ví dụ: **GRAM**, **CHAI 1000GR**, **HỘP 500GR**, **TÚI 1000GR**, **KG**, **LY**                                       | ✅        |
+| Đơn vị quy đổi | Đơn vị gốc mà đơn vị này quy về. **CHAI 1000GR** quy về **GRAM**; **TÚI 100 CÁI** quy về **CÁI**. Đơn vị gốc thì giữ **Đơn vị gốc** | ✅        |
 | Hệ số quy đổi  | Bằng bao nhiêu đơn vị gốc. Nếu là đơn vị gốc thì điền **1**                                                                 | ✅        |
 
 
 ## Bộ đơn vị mẫu cho quán
 
 
-| Mã           | Tên          | Hệ số | Quy đổi về |
-| ------------ | ------------ | ----- | ---------- |
-| LY           | LY           | 1     | *(gốc)*    |
-| G            | GRAM         | 1     | *(gốc)*    |
-| KG           | KILOGRAM     | 1000  | GRAM       |
-| TUI-1000     | TÚI 1000G    | 1000  | GRAM       |
-| CHAI-900     | CHAI 900G    | 900   | GRAM       |
-| HOP-500      | HỘP 500G     | 500   | GRAM       |
-| CAI          | CÁI          | 1     | *(gốc)*    |
-| THUNG-30-CAI | THÙNG 30 CÁI | 30    | CÁI        |
+| Mã          | Tên         | Hệ số | Quy đổi về |
+| ----------- | ----------- | ----- | ---------- |
+| GR          | GRAM        | 1     | *(gốc)*    |
+| CHAI-1000   | CHAI 1000GR | 1000  | GRAM       |
+| CHAI-900    | CHAI 900GR  | 900   | GRAM       |
+| HOP-500     | HỘP 500GR   | 500   | GRAM       |
+| TUI-1000    | TÚI 1000GR  | 1000  | GRAM       |
+| KG          | KG          | 1000  | GRAM       |
+| CAI         | CÁI         | 1     | *(gốc)*    |
+| TUI-100-CAI | TÚI 100 CÁI | 100   | CÁI        |
+| LY          | LY          | 1     | *(gốc)*    |
 
 
 ## 4. Lưu ý quan trọng
