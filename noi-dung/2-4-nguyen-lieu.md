@@ -12,25 +12,25 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### Công tắc theo loại hàng
 
-| Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
-| --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
-| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)  | ❌       | ✅          | ❌          | ✅                       |
-| CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
-| CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
-| BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
+| Loại hàng                                          | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
+| -------------------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
+| MAY ĐEN ĐÁ (THÀNH PHẨM - ĐƯỢC PHA CHẾ)             | ❌       | ✅          | ❌          | ✅                       |
+| NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30 (NGUYÊN LIỆU) | ✅       | ❌          | ✅          | ❌                       |
+| BTP - TRÀ LÀI (BÁN THÀNH PHẨM)                     | ✅       | ❌          | ❌          | ✅                       |
+| CROISSANT CLASSIC (THÀNH PHẨM - MUA SẴN BÁN LẠI)   | ✅       | ✅          | ✅          | ❌                       |
 
 ## 2. Ví dụ nền và các bước thực hiện
 
 > **Cách đặt tên**: NL - TÊN NGUYÊN LIỆU - KHỐI LƯỢNG BÊN TRONG - KHỐI LƯỢNG VỎ.
 > 
 > **Ví dụ cách đặt tên:** 
-> - NL - CÀ PHÊ HẠT - 1000 - 30 (Túi khối lượng 1000 GRAM và khối lượng vỏ là 30 GRAM)
-> - NL - SỮA ĐẶC - 1250 - 90 (Khối lượng bên trong là 1250 GRAM và khối lượng vỏ hộp là 90 GRAM)
-> - NL - SỮA TƯƠI - 1000 - 70
+> - NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30 (túi cà phê 1000 GRAM, vỏ túi 30 GRAM)
+> - NL - SỮA TƯƠI - 950 - 40 (hộp sữa 950 GRAM, vỏ hộp 40 GRAM)
+> - NL - SYRUP MAPLE - 1000 - 617 (chai syrup 1000 GRAM, vỏ chai thuỷ tinh 617 GRAM)
 
-> **Ví dụ:** thêm nguyên liệu **NL - CÀ PHÊ HẠT - 1000 - 30**.
+> **Ví dụ:** thêm nguyên liệu **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30**: nhà cung cấp giao theo túi 1000 GR, pha chế trừ theo gram.
 >
-> - Mua về, dùng làm ra thứ khác, không bán trực tiếp.
+> - Mua về để pha MAY ĐEN ĐÁ, BTP - CÀ PHÊ ĐEN PHA PHIN, không bán trực tiếp.
 > - Bật **Theo dõi tồn kho** và **Có thể mua**.
 
 ### Bước 1: Mở form và chọn Loại sản phẩm
@@ -43,10 +43,10 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### Bước 2: Khai thông tin chính
 
-- Điền như ảnh.
-- Đã tạo **GRAM** ở [bài 1.1](1-1-thiet-lap-don-vi-tinh.md) thì **Đơn vị tính chính** nên chọn **GRAM** thay cho **KG**.
+- Điền như ảnh. **Đơn vị tính phụ** và **Danh mục**: tích xong bấm **Xong**.
+- **Đơn vị tính chính** chọn **GRAM** (đã tạo ở [bài 1.1](1-1-thiet-lap-don-vi-tinh.md)); **TÚI 1000GR** để nhập hàng theo túi.
 
-![Bước 2: Khai thông tin chính "NL - CÀ PHÊ HẠT - 1000 - 30"](images/03-san-pham-nguyen-lieu-2.png)
+![Bước 2: Khai thông tin chính "NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30"](images/03-san-pham-nguyen-lieu-2.png)
 
 ### Bước 3: Gạt các công tắc và lưu
 
@@ -62,10 +62,10 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 | Trường                | Điền gì                                                                               |
 | --------------------- | ------------------------------------------------------------------------------------- |
-| Tên sản phẩm          | VD **NL - CÀ PHÊ HẠT - 1000 - 30**, **NL - SỮA ĐẶC - 1250 - 90**, **NL - ĐƯỜNG CÁT - 1000** |
-| Mã SP (SKU)           | Mã ngắn để tra cứu, bắt buộc. VD **NL-CPH**                                           |
+| Tên sản phẩm          | VD **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30**, **NL - SỮA ĐẶC - 1250**, **NL - ĐƯỜNG CÁT** |
+| Mã SP (SKU)           | Mã ngắn để tra cứu, bắt buộc. VD **NL-CAPHEVIETPHAPHIN**                              |
 | Đơn vị tính chính     | Đơn vị tính tồn. Nên chọn đơn vị nhỏ nhất dùng trừ kho, VD **GRAM**                   |
-| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo **KG**, trừ theo **GRAM**)                   |
+| Đơn vị tính phụ       | Đơn vị khác dùng cho hàng này (nhập theo **TÚI 1000GR**, trừ theo **GRAM**)           |
 | Loại sản phẩm         | **Nguyên liệu**                                                                       |
 | Giá vốn               | Giá nhập. Tự cập nhật mỗi lần nhập hàng ([bài 11.2](11-2-nhap-hang.md))               |
 | Theo dõi tồn kho      | **Bật**. Hiện ở màn Tồn kho, bị cộng/trừ khi nhập, chế biến, bán, huỷ                 |
@@ -76,9 +76,9 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 | Loại               | Là gì                                                    | Ví dụ                                 |
 | ------------------ | -------------------------------------------------------- | ------------------------------------- |
-| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   |
-| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu |
-| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                |
+| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê phin, sữa tươi, trà lài khô, ống hút |
+| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | BTP - TRÀ LÀI, BTP - MILKFOAM MUỐI, BTP - COLDBREW |
+| **Thành phẩm**     | Món bán cho khách                                        | MAY ĐEN ĐÁ, BẠC XỈU MAY, LATTE (ICED) |
 
 Công tắc cần bật cho từng loại: xem bảng **Công tắc theo loại hàng** ở đầu bài.
 

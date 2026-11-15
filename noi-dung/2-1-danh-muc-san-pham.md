@@ -12,8 +12,8 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 
 > **Ví dụ:** quán tạo 2 danh mục.
 >
-> - **Cà phê**: nhóm món bán, hiện trên màn bán hàng.
-> - **Nguyên liệu**: cà phê hạt, sữa, đường — chỉ dùng nội bộ, ẩn khỏi màn bán hàng.
+> - **TRÀ TRÁI CÂY**: trà đào, trà vải, trà chanh dây — món bán, hiện trên màn bán hàng và menu online.
+> - **NGUYÊN LIỆU**: cà phê hạt, sữa tươi, syrup — chỉ dùng nội bộ, ẩn khỏi màn bán hàng.
 
 ### Bước 1: Mở trang Danh mục
 
@@ -49,7 +49,7 @@ Menu trái: ==Quản lý sản phẩm → Danh mục== (địa chỉ `/product-c
 
 | Trường               | Điền gì                                                          | Bắt buộc |
 | -------------------- | ---------------------------------------------------------------- | -------- |
-| Tên danh mục         | VD **Cà phê**, **Trà trái cây**                                  | ✅        |
+| Tên danh mục         | VD **CÀ PHÊ TRUYỀN THỐNG**, **TRÀ TRÁI CÂY**, **NGUYÊN LIỆU**     | ✅        |
 | Màu sắc đại diện     | Màu nút trên màn bán hàng, giúp thu ngân nhận diện nhanh         | —        |
 | Mô tả                | Ghi chú nội bộ                                                   | —        |
 | Hiển thị trên POS    | **Bật**: hiện trên màn bán hàng. **Tắt**: chỉ dùng nội bộ        | —        |

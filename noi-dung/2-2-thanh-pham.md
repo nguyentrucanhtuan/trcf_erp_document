@@ -13,19 +13,19 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### Công tắc theo loại hàng
 
-| Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
-| --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
-| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)  | ❌       | ✅          | ❌          | ✅                       |
-| CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
-| CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
-| BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
+| Loại hàng                                          | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
+| -------------------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
+| MAY ĐEN ĐÁ (THÀNH PHẨM - ĐƯỢC PHA CHẾ)             | ❌       | ✅          | ❌          | ✅                       |
+| NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30 (NGUYÊN LIỆU) | ✅       | ❌          | ✅          | ❌                       |
+| BTP - TRÀ LÀI (BÁN THÀNH PHẨM)                     | ✅       | ❌          | ❌          | ✅                       |
+| CROISSANT CLASSIC (THÀNH PHẨM - MUA SẴN BÁN LẠI)   | ✅       | ✅          | ✅          | ❌                       |
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** thêm món **MAY ĐEN ĐÁ**, bán theo ly, giá 39000.
+> **Ví dụ:** thêm món **MAY ĐEN ĐÁ** vào danh mục **CÀ PHÊ TRUYỀN THỐNG**, bán theo ly, giá 39.000₫, VAT bán ra 8%.
 >
-> - Bán cho khách: bật **Có thể bán**.
-> - Pha chế từ nguyên liệu: bật **Sản xuất (có công thức)**.
+> - Bán tại quầy và trên Zalo Mini App: bật **Có thể bán**, **Bán online**.
+> - Pha từ cà phê phin và đường nước: bật **Sản xuất (có công thức)**. Công thức làm ở [bài 3.2](3-2-cong-thuc-thanh-pham.md).
 
 ### Bước 1: Mở trang Sản phẩm
 

@@ -13,22 +13,22 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 > **Cách đặt tên:** BTP - TÊN BÁN THÀNH PHẨM
 > 
-> - BTP - CỐT TRÀ LÀI
-> - BTP - TRÂN CHÂU ĐEN NẤU
+> - BTP - TRÀ LÀI
+> - BTP - CÀ PHÊ ĐEN PHA PHIN
 > - BTP - MILKFOAM MATCHA
 
 ### Công tắc theo loại hàng
 
-| Loại hàng                               | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
-| --------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
-| CÀ PHÊ SỮA (THÀNH PHẨM - ĐƯỢC PHA CHẾ)  | ❌       | ✅          | ❌          | ✅                       |
-| CÀ PHÊ HẠT (NGUYÊN LIỆU)                | ✅       | ❌          | ✅          | ❌                       |
-| CỐT TRÀ LÀI PHA SẴN (BÁN THÀNH PHẨM)    | ✅       | ❌          | ❌          | ✅                       |
-| BÁNH (THÀNH PHẨM - MUA SẴN BÁN LẠI)     | ✅       | ✅          | ✅          | ❌                       |
+| Loại hàng                                          | Tồn kho | Có thể bán | Có thể mua | Sản xuất (Có công thức) |
+| -------------------------------------------------- | ------- | ---------- | ---------- | ----------------------- |
+| MAY ĐEN ĐÁ (THÀNH PHẨM - ĐƯỢC PHA CHẾ)             | ❌       | ✅          | ❌          | ✅                       |
+| NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30 (NGUYÊN LIỆU) | ✅       | ❌          | ✅          | ❌                       |
+| BTP - TRÀ LÀI (BÁN THÀNH PHẨM)                     | ✅       | ❌          | ❌          | ✅                       |
+| CROISSANT CLASSIC (THÀNH PHẨM - MUA SẴN BÁN LẠI)   | ✅       | ✅          | ✅          | ❌                       |
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quán pha sẵn **TRÀ LÀI PHA SẴN** buổi sáng, tính theo lít, cả ngày múc ra pha.
+> **Ví dụ:** sáng nào quán cũng ủ sẵn **BTP - TRÀ LÀI**, mỗi mẻ 800 GR, cả ngày rót ra pha. Tồn tính theo **GRAM**.
 >
 > - Bật **Sản xuất (có công thức)** và **Theo dõi tồn kho**.
 
@@ -42,15 +42,15 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 ### Bước 2: Khai thông tin chính
 
-- Điền như ảnh.
-- Ô **Giá vốn** bị khoá là bình thường.
+- Điền như ảnh. **Danh mục**: tích **BÁN THÀNH PHẨM**, bấm **Xong**.
 
-![Bước 2: Khai thông tin chính "TRÀ LÀI PHA SẴN"](images/03-loai-buoc-2-ban-thanh-pham.png)
+![Bước 2: Khai thông tin chính "BTP - TRÀ LÀI"](images/03-loai-buoc-2-ban-thanh-pham.png)
 
 ### Bước 3: Gạt các công tắc và lưu
 
 - Cuộn xuống khung **Thiết lập** (cột phải).
 - Gạt công tắc như ảnh. **Có thể bán** mặc định bật, phải gạt tắt.
+- Bật **Sản xuất** thì ô **Giá vốn** bị khoá, giá vốn do công thức tính.
 - Bấm **Lưu sản phẩm**.
 
 ![Bước 3: Gạt các công tắc và lưu](images/03-loai-buoc-3-cong-tac.png)
@@ -61,9 +61,9 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 | Trường                  | Điền gì                                                                     |
 | ----------------------- | --------------------------------------------------------------------------- |
-| Tên sản phẩm            | Tên hiện trên màn bếp và phiếu chế biến. VD **TRÀ LÀI PHA SẴN**             |
-| Mã SP (SKU)             | Mã ngắn để tra cứu, bắt buộc. VD **BTP-TLPS**                               |
-| Đơn vị tính chính       | Đơn vị tính tồn. Chất lỏng, bột: **GRAM** hoặc **Lít**                      |
+| Tên sản phẩm            | Tên hiện trên màn bếp và phiếu chế biến. VD **BTP - TRÀ LÀI**               |
+| Mã SP (SKU)             | Mã ngắn để tra cứu, bắt buộc. VD **BTP-TRALAI**                             |
+| Đơn vị tính chính       | Đơn vị tính tồn. Chất lỏng, bột: **GRAM**                                   |
 | Loại sản phẩm           | **Bán thành phẩm**                                                          |
 | Giá vốn                 | **Bị khoá**, do công thức tính ([bài 3.1](3-1-cong-thuc-ban-thanh-pham.md)) |
 | Sản xuất (có công thức) | **Bật**. Có công thức tạo ra bán thành phẩm                                 |
@@ -74,18 +74,18 @@ Menu trái: ==Quản lý sản phẩm → Sản phẩm== (địa chỉ `/product
 
 | Loại               | Là gì                                                    | Ví dụ                                 |
 | ------------------ | -------------------------------------------------------- | ------------------------------------- |
-| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê hạt, sữa đặc, đường, ly nhựa   |
-| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | Cà phê cốt ủ sẵn, trà ủ, syrup tự nấu |
-| **Thành phẩm**     | Món bán cho khách                                        | Cà phê sữa đá, trà đào                |
+| **Nguyên liệu**    | Mua để dùng, không bán trực tiếp, dùng làm ra thứ khác   | Cà phê phin, sữa tươi, trà lài khô, ống hút |
+| **Bán thành phẩm** | Quán tự làm, chưa bán cho khách, là đầu vào của món khác | BTP - TRÀ LÀI, BTP - MILKFOAM MUỐI, BTP - COLDBREW |
+| **Thành phẩm**     | Món bán cho khách                                        | MAY ĐEN ĐÁ, BẠC XỈU MAY, LATTE (ICED) |
 
 Công tắc cần bật cho từng loại: xem bảng **Công tắc theo loại hàng** ở đầu bài.
 
 ### Khi nào cần bán thành phẩm
 
-Quán pha sẵn một bình trà lài buổi sáng, cả ngày múc ra pha. Tách thành 2 bước:
+Quán ủ sẵn một mẻ trà lài buổi sáng, cả ngày rót ra pha. Tách thành 2 bước:
 
-- **Sáng**: lập phiếu chế biến, trừ trà lài khô, cộng **TRÀ LÀI PHA SẴN** vào kho ([mục 11.4](11-4-che-bien.md)).
-- **Cả ngày**: mỗi ly bán ra trừ **TRÀ LÀI PHA SẴN** theo công thức.
+- **Sáng**: lập phiếu chế biến, trừ **NL - TRÀ LÀI - 500**, nước nóng, đá; cộng 800 GR **BTP - TRÀ LÀI** vào kho ([mục 11.4](11-4-che-bien.md)).
+- **Cả ngày**: mỗi ly bán ra trừ **BTP - TRÀ LÀI** theo công thức.
 
 ## 4. Lưu ý quan trọng
 
