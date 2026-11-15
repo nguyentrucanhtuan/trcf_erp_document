@@ -10,10 +10,10 @@ Menu trái: ==Quản lý nhân sự → Quản lý ca== (địa chỉ `/shifts`,
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** quán có 2 ca.
+> **Ví dụ:** quán mở 07:00–21:00, chia 2 ca nối nhau.
 >
-> - **Ca sáng**: từ **07:00** đến **12:00**.
-> - **Ca qua đêm**: từ **22:00** đến **06:00** (giờ kết thúc sớm hơn giờ bắt đầu, vẫn hợp lệ).
+> - **CA SÁNG**: từ **07:00** đến **14:00**.
+> - **CA CHIỀU**: từ **14:00** đến **21:00**.
 
 ### Bước 1: Mở trang Ca làm việc
 
@@ -21,17 +21,18 @@ Menu trái: ==Quản lý nhân sự → Quản lý ca== (địa chỉ `/shifts`,
 
 ![Bước 1: Mở trang Ca làm việc](images/07-ca-lam-viec-buoc-1-danh-sach.png)
 
-### Bước 2: Khai Ca sáng
+### Bước 2: Khai CA SÁNG
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
 - Điền như ảnh, bấm **Thêm ca làm việc**.
 
-![Bước 2: Khai Ca sáng](images/07-ca-lam-viec-buoc-2-form.png)
+![Bước 2: Khai CA SÁNG](images/07-ca-lam-viec-buoc-2-form.png)
 
 ### Bước 3: Kiểm tra kết quả
 
 - Ca hiện trong danh sách với đúng khung giờ.
-- Lặp lại bước 2 cho từng ca khác, kể cả ca qua đêm (22:00 → 06:00).
+- Lặp lại bước 2 cho **CA CHIỀU**: 14:00 → 21:00, chọn màu khác để dễ phân biệt trên lịch.
+- Quán có ca qua đêm thì giờ kết thúc được phép sớm hơn giờ bắt đầu (VD 22:00 → 06:00).
 - Đổi giờ sau này: bấm vào ca, chọn **Sửa**. Ngừng dùng ca: chọn **Lưu trữ**.
 
 ![Bước 3: Bấm vào ca để mở thao tác](images/07-ca-lam-viec-buoc-3-ket-qua.png)
@@ -40,7 +41,7 @@ Menu trái: ==Quản lý nhân sự → Quản lý ca== (địa chỉ `/shifts`,
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên ca | VD **Ca sáng**, **Ca chiều**, **Ca gãy** | ✅ |
+| Tên ca | VD **CA SÁNG**, **CA CHIỀU** | ✅ |
 | Giờ bắt đầu | Giờ vào ca | ✅ |
 | Giờ kết thúc | Giờ tan ca. **Được phép sớm hơn giờ bắt đầu** (ca qua đêm 22:00 → 06:00, trễ/sớm vẫn tính đúng) | ✅ |
 | Màu sắc | Mã màu, hoặc bấm ô màu để chọn. Màu hiện trên lịch tuần | — |
@@ -48,4 +49,4 @@ Menu trái: ==Quản lý nhân sự → Quản lý ca== (địa chỉ `/shifts`,
 
 ## 4. Lưu ý quan trọng
 
-> - Đặt tên ca theo cách nhân viên hay gọi (**Ca sáng**, **Ca chiều**).
+> - Đặt tên ca theo cách nhân viên hay gọi (**CA SÁNG**, **CA CHIỀU**).
