@@ -10,8 +10,9 @@ Menu trái: ==Chi phí → Danh mục chi phí== (địa chỉ `/expense-categor
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** khai danh mục cho tiền thuê mặt bằng.
+> **Ví dụ:** quán gom chi phí vào 5 danh mục: **ĐIỆN - NƯỚC - INTERNET**, **MẶT BẰNG**, **LƯƠNG NHÂN VIÊN**, **PHÍ VẬN CHUYỂN**, **CHI PHÍ KHÁC**.
 >
+> - Bài này khai **PHÍ VẬN CHUYỂN**, mã **SHIP**, cho tiền ship hàng nhà cung cấp giao tới.
 > - Danh mục để gom các khoản chi cùng loại khi xem báo cáo lãi lỗ.
 
 ### Bước 1: Mở trang Danh mục chi phí
@@ -32,7 +33,7 @@ Menu trái: ==Chi phí → Danh mục chi phí== (địa chỉ `/expense-categor
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Mã danh mục | Ngắn, viết hoa, **không trùng**. VD **THUE**, **DIEN** | ✅ |
+| Mã danh mục | Ngắn, viết hoa, **không trùng**. VD **SHIP**, **FIXCOST** | ✅ |
 | Tên danh mục chi phí | Tên hiện khi chọn ở phiếu chi và trên báo cáo | ✅ |
 
 ## 4. Lưu ý quan trọng
