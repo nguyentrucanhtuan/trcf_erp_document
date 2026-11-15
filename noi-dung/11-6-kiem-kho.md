@@ -14,10 +14,11 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** kiểm **Kho tổng**, đếm 2 mặt hàng.
+> **Ví dụ:** cuối ngày, kiểm **KHO QUẦY** bằng mẫu **KIỂM BÁN THÀNH PHẨM** (18 món). Quán kiểm mẫu này 2 lần mỗi ngày: trưa và tối, như danh sách ở ảnh bước 1.
 >
-> - **Cà phê hạt Robusta**: hệ thống 1,5 kg, đếm thật **1.2** kg → chênh lệch -0,3.
-> - **Sữa đặc**: hệ thống 0 hộp, đếm thật **3** hộp → chênh lệch +3.
+> - **BTP - COLDBREW**: hệ thống 2.464,6 GR, đếm thật **2450** → chênh lệch −14,6.
+> - **BTP - SỮA BÉO**: hệ thống 193,7 GR, đếm thật **180** → chênh lệch −13,7.
+> - Các món còn lại đếm đúng bằng hệ thống, để nguyên.
 
 ### Bước 1: Mở trang Kiểm kê
 
@@ -28,8 +29,8 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 ### Bước 2: Khai phiếu và đếm hàng
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
-- Chọn kho trước, rồi nạp danh sách hàng (2 cách, xem phần 3).
-- Đi đếm thật, nhập vào ô **Thực đếm** như ảnh.
+- Chọn **Nạp từ mẫu kiểm kho** → "KIỂM BÁN THÀNH PHẨM (KHO QUẦY)". Kho tự điền theo mẫu.
+- Đi đếm thật, nhập vào ô **Thực đếm** như ảnh. Món đếm đúng thì để nguyên.
 - Chưa đếm xong: bấm **Tạo phiếu (nháp)**, quay lại làm tiếp sau.
 - Đếm xong ngay: bấm **Xác nhận**, rồi xác nhận lần nữa ở hộp thoại hỏi lại.
 
@@ -66,7 +67,7 @@ Dựng mẫu kiểm kho trước ở [bài 6.1 Tạo mẫu kiểm kho](6-1-tao-m
 
 | Loại hàng | Tần suất |
 | --- | --- |
-| Hàng dễ hỏng | Hằng ngày, cuối ca |
+| Bán thành phẩm, hàng dễ hỏng | Hằng ngày, cuối ca |
 | Hàng khô | Hằng tuần |
 | Toàn bộ | Cuối tháng |
 
