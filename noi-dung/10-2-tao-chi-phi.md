@@ -15,9 +15,9 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** trả tiền điện tháng 10 bằng tiền mặt lấy từ két **Quầy chính**.
+> **Ví dụ:** ngày 12/11/2026, shipper giao bánh CROISSANT CLASSIC, quán trả 30.000₫ tiền ship bằng tiền mặt lấy từ két **Quầy chính**.
 >
-> - Số tiền **1.200.000₫**, danh mục **Tiền điện**.
+> - Danh mục **PHÍ VẬN CHUYỂN** ([bài 10.1](10-1-danh-muc-chi-phi.md)).
 > - Phiếu **Hoàn tất** và **Đã thanh toán** để trừ vào sổ quỹ.
 
 ### Bước 1: Mở trang Chi phí
@@ -32,7 +32,7 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 
 - Bấm nút tròn **+** ở góc dưới bên phải.
 - Điền **Số tiền**, **Tên chi phí**, **Ngày thanh toán** như ảnh.
-- **Danh mục chi phí**: bấm vào ô, chọn **Tiền điện**.
+- **Danh mục chi phí**: bấm vào ô, chọn **SHIP · PHÍ VẬN CHUYỂN**.
 
 ![Bước 2: Khai nội dung chi](images/06-chi-phi-buoc-2-form.png)
 
@@ -51,7 +51,7 @@ hoặc ở màn ==Bán hàng → VẬN HÀNH → Chi phí==.
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
 | Số tiền (₫) | Số tiền chi, nhập ở ô số lớn đầu hộp thoại | ✅ |
-| Tên chi phí | Mô tả ngắn: **Tiền điện tháng 10** | ✅ |
+| Tên chi phí | Mô tả ngắn, có dấu để dễ tìm: **Ship bánh Classic**, **Giấy vệ sinh** | ✅ |
 | Danh mục chi phí | Nhóm để báo cáo lãi lỗ gom đúng chỗ | ✅ |
 | Ngày thanh toán | Ngày trả tiền thật | ✅ |
 
