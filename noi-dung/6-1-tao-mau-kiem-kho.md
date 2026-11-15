@@ -13,10 +13,10 @@ Menu trái: ==Quản lý kho → Mẫu kiểm kho== (địa chỉ `/stock-templa
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** mẫu đếm hàng khô cuối tuần cho **Kho tổng**.
+> **Ví dụ:** mẫu đếm hàng tươi ở quầy: **SỮA/BÁNH/TRÁI CÂY/KEM**, kho **KHO QUẦY**.
 >
-> - Tên: **Kho khô**. Kho: **Kho tổng**. Ghi chú: **Đếm cuối tuần**.
-> - Danh sách: **Cà phê hạt Robusta**, **Sữa đặc**.
+> - Danh sách 24 món: sữa tươi, whipping cream, trái cây, kem gelato, bánh croissant…
+> - Ảnh minh hoạ 6 món đầu. Quán dựng 6 mẫu theo khu: nguyên liệu, bán thành phẩm, dụng cụ, hàng tươi — mỗi kho riêng.
 
 ### Bước 1: Mở trang Mẫu kiểm kho
 
@@ -43,7 +43,7 @@ Menu trái: ==Quản lý kho → Mẫu kiểm kho== (địa chỉ `/stock-templa
 
 | Trường | Điền gì | Bắt buộc |
 | --- | --- | --- |
-| Tên mẫu kiểm | Tên mẫu, đặt theo khu vực. VD **Kho khô**, **Quầy pha chế** | ✅ |
+| Tên mẫu kiểm | Tên mẫu, đặt theo khu vực hoặc nhóm hàng. VD **NGUYÊN LIỆU - KHO QUẦY**, **DỤNG CỤ KHO CHÍNH** | ✅ |
 | Vị trí kho | Kho sẽ đếm bằng mẫu này | ✅ |
 | Mã mẫu | Tự sinh, chỉ đọc | — |
 | Ghi chú | Ghi thêm, VD lịch đếm | — |

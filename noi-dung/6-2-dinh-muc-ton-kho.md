@@ -13,15 +13,16 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** khai định mức cho **Cà phê hạt Robusta** ở **Kho tổng**, đơn vị Kilogam.
+> **Ví dụ:** khai định mức cho **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30** ở **KHO CHINH**, đơn vị GRAM.
 >
-> - Tồn tối thiểu: **3** kg. Tồn tối đa: **10** kg.
-> - Hàng giao trong 2 ngày, mỗi ngày dùng 1 kg: tối thiểu là 1 × 2 × 1,5 = 3 kg.
+> - Tồn tối thiểu: **5.000** GR (5 túi). Tồn tối đa: **20.000** GR (20 túi).
+> - Mỗi ngày dùng khoảng 1.700 GR, nhà cung cấp giao sau 2 ngày: 1.700 × 2 × 1,5 ≈ 5.000 GR.
 
 ### Bước 1: Mở trang Tồn kho
 
 - Ở menu trái, nhóm **Quản lý kho**, bấm **Tồn kho**.
-- Tìm dòng **Cà phê hạt Robusta** ở kho **KHO-TONG — Kho tổng**. Mỗi dòng là một sản phẩm ở một kho.
+- Bấm **Sản phẩm**, chọn **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30**. Bấm **Kho**, chọn **KHO CHINH**.
+- Mỗi dòng là một sản phẩm ở một kho.
 
 ![Bước 1: Mở trang Tồn kho](images/06-dinh-muc-buoc-1-ton-kho.png)
 
@@ -34,11 +35,11 @@ Menu trái: ==Quản lý kho → Tồn kho== (địa chỉ `/stock`).
 
 ### Bước 3: Kiểm tra kết quả
 
-- Thấy thông báo *“Đã cập nhật ngưỡng tồn kho”*.
-- Tồn thấp hơn tối thiểu thì dòng hiện **Dưới định mức** và được đếm vào ô **Dòng dưới định mức**.
+- Thấy thông báo *“Đã cập nhật ngưỡng tồn kho”*. Cột **Trạng thái** hiện **Đủ hàng** (đang tồn 14.000 GR).
+- Tồn xuống dưới 5.000 GR thì dòng hiện **Dưới định mức** và được đếm vào ô **Dòng dưới định mức**.
 - Bấm nút **Dưới định mức** để chỉ xem các dòng cần nhập thêm. Bấm **Xoá bộ lọc** để xem lại tất cả.
 
-![Bước 3: Lọc các dòng dưới định mức](images/06-dinh-muc-buoc-3-ket-qua.png)
+![Bước 3: Kiểm tra trạng thái tồn](images/06-dinh-muc-buoc-3-ket-qua.png)
 
 ## 3. Giải thích các trường
 
