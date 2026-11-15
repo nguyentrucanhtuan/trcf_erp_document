@@ -15,15 +15,15 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 | Loại         | Trừ kho khi nào                                       | Dùng cho                                                               |
 | ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------- |
-| CẦN SẢN XUẤT | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm ủ trước: TRÀ LÀI Ủ SẴN, MILKFOAM, TRÂN CHÂU NẤU SẴN     |
-| KIT          | Ngay **lúc bán**, tự trừ thành phần                   | COMBO, MÓN RÁP TẠI CHỖ: CÀ PHÊ ĐEN, CÀ PHÊ SỮA, BẠC XỈU, TRÀ SỮA OLONG |
+| CẦN SẢN XUẤT | Khi lập **phiếu chế biến** ([11.4](11-4-che-bien.md)) | Bán thành phẩm làm trước: BTP - TRÀ LÀI, BTP - MILKFOAM MUỐI, BTP - COLDBREW |
+| KIT          | Ngay **lúc bán**, tự trừ thành phần                   | Món pha tại chỗ: MAY ĐEN ĐÁ, MAY SỮA ĐÁ, BẠC XỈU MAY, LATTE (ICED)     |
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** công thức Kit cho **THỬ — Cốt trà sữa**, bán theo ly, trừ thành phần ngay lúc bán.
+> **Ví dụ:** công thức Kit cho **MAY ĐEN ĐÁ**, bán ly nào trừ nguyên liệu ly đó.
 >
-> - Công thức: **Sữa tươi Đà Lạt** 0,1 lít + **Đường mía** 0,01 kg.
-> - Sản lượng 1 ly.
+> - Công thức: **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30** 20 GR + **NL - ĐƯỜNG NƯỚC - 25KG - 750** 5 GR.
+> - Sản lượng 1 LY. Giá vốn ra **5.125₫/ly**.
 
 ### Bước 1: Tạo công thức
 
@@ -37,7 +37,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ### Bước 2: Tính giá vốn
 
-- Bấm vào dòng công thức (cột **Giá vốn** đang *Chưa tính*), chọn **Tính giá vốn**.
+- Gõ tên món vào ô tìm kiếm, bấm vào dòng công thức, chọn **Tính giá vốn**.
 - Thấy thông báo *“Đã tính giá vốn công thức”*, cột **Giá vốn** hiện số tiền.
 - Tính cả loạt: bấm biểu tượng **Tính lại giá vốn** ở góc trên bên phải.
 
@@ -59,7 +59,9 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 
 ### Cách tính giá vốn
 
-`giá vốn sản phẩm = tổng giá vốn nguyên liệu cộng lại`
+`giá vốn 1 đơn vị = tổng tiền nguyên liệu ÷ sản lượng`
+
+- Ví dụ MAY ĐEN ĐÁ: (20 × 251₫ + 5 × 21₫) ÷ 1 = **5.125₫/ly**.
 
 - Sản phẩm có nhiều công thức đang hoạt động: lấy **công thức rẻ nhất**.
 
