@@ -24,7 +24,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 > **Ví dụ:** công thức cho **BTP - TRÀ LÀI**, ủ một mẻ được 800 GR.
 >
 > - Nguyên liệu: **NL - TRÀ LÀI - 500** 35 GR + **NL - NƯỚC NÓNG** 800 GR + **NL - ĐÁ VIÊN** 200 GR.
-> - Sản lượng 800 GR. 
+> - Sản lượng 800 GR.
 
 ### Bước 1: Tạo công thức
 
@@ -36,8 +36,7 @@ Menu trái: ==Quản lý sản phẩm → Công thức== (địa chỉ `/boms`).
 ### Bước 2: Tính giá vốn
 
 - Chọn vào công thức, bấm **Tính giá vốn**.
-
--  bấm biểu tượng **Tính lại giá vốn** ở góc trên bên phải.
+- Bấm biểu tượng **Tính lại giá vốn** ở góc trên bên phải.
 
 ![Bước 2: Bấm vào dòng công thức để mở thao tác](images/03-cong-thuc-btp-buoc-2-menu.png)
 
