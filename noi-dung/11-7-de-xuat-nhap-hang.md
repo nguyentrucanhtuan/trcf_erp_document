@@ -18,9 +18,11 @@ Màn Tồn kho cũng mở được từ ô **Tồn kho** ở khối *Tính năng
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** chủ quán rà soát cuối tháng: xem tồn kho, rồi xem việc cần xử lý.
+> **Ví dụ:** chủ quán rà kho cuối tuần.
 >
-> - Trên máy này: **Cà phê sữa** bán mà chưa có công thức → bị báo **Bán vô nguồn**.
+> - **Tồn kho**, lọc **Dưới định mức**: **ALMOND CROISSANT** ở KHO QUẦY còn −169 CÁI, dưới mức tối thiểu 10. KHO CHINH vẫn còn 30 cái.
+> - **Kiểm soát vận hành**, thẻ **CHUYỂN**: các loại croissant ở KHO QUẦY đều âm. Bánh nhập về KHO CHINH ([bài 11.2](11-2-nhap-hang.md)) nhưng chưa làm phiếu chuyển ra quầy ([bài 11.3](11-3-chuyen-kho.md)).
+> - Thẻ **RÀ SOÁT**: **EXTRA - LON** và **EXTRA - SỮA ĐẶC** khai là sản xuất nhưng chưa có công thức.
 
 ### Bước 1: Xem Tồn kho hiện tại
 
@@ -33,15 +35,16 @@ Màn Tồn kho cũng mở được từ ô **Tồn kho** ở khối *Tính năng
 ### Bước 2: Mở Kiểm soát vận hành
 
 - Ở menu trái, nhóm **Báo cáo**, bấm **Kiểm soát vận hành**.
+- Cuộn xuống dải thẻ. Mỗi thẻ ghi số mục cần xử lý.
+- Bấm thẻ **CHUYỂN** để xem hàng đang âm ở kho quầy, như ảnh.
 - Nhãn *Số liệu mẫu* trên biểu đồ nghĩa là biểu đồ chưa lấy số thật. Đừng dựa vào nó.
-- Mỗi thẻ ở dải dưới cùng ghi số mục cần xử lý. Bấm thẻ để xem chi tiết.
 
 ![Bước 2: Mở Kiểm soát vận hành](images/08-ton-kho-buoc-2-kiem-soat.png)
 
 ### Bước 3: Rà soát cây sản phẩm
 
-- Cuộn xuống, bấm thẻ **RÀ SOÁT**.
-- Ô lỗi nào lớn hơn 0 thì bấm vào: hiện bảng sản phẩm mắc lỗi đó. Bấm **Xoá lọc** để quay lại.
+- Bấm thẻ **RÀ SOÁT**.
+- Ô lỗi nào lớn hơn 0 thì bấm vào: hiện bảng sản phẩm mắc lỗi đó, như ảnh ô **THIẾU CÔNG THỨC**. Bấm **Xoá lọc** để quay lại.
 - Ở khung **Mồ côi / Dư thừa**, bấm **Xem** để mở sản phẩm.
 - Sửa lỗi ở màn sản phẩm / công thức rồi mở lại để kiểm tra.
 
@@ -58,16 +61,17 @@ Màn Tồn kho cũng mở được từ ô **Tồn kho** ở khối *Tính năng
 | Tồn âm cần bù | Có kho đang âm: cần nhập hoặc chuyển kho gấp |
 | Cần chế biến / đặt | Hàng hết hoặc dưới định mức |
 
-Thẻ **TỐI ƯU** có **đề xuất nhập hàng**: mặt hàng nào dưới định mức (cột *Trạng thái*, VD *Tồn 4 < 20*) và **Gợi ý đặt** bao nhiêu để về mức tối đa.
+Thẻ **TỐI ƯU** có **đề xuất nhập hàng**: mặt hàng nào dưới định mức (cột *Trạng thái*, VD ALMOND CROISSANT *Tồn -169 < 10*) và **Gợi ý đặt** bao nhiêu để về mức tối đa (VD 199 = 30 − (−169)).
 
 ### Lỗi mà phần Rà soát bắt
 
-| Lỗi | Hậu quả |
-| --- | --- |
-| Món **bán mà không có công thức** (Bán vô nguồn) | Báo cáo lãi lỗ không tính được giá vốn |
-| Nguyên liệu **chưa có giá vốn** | Giá vốn món tính ra bị thiếu |
-| Nguyên liệu **mồ côi** | Khai vào hệ thống nhưng không món nào dùng tới |
-| **Trùng tên** | Hai sản phẩm gần giống tên, dễ chọn nhầm |
+| Lỗi | Nghĩa | Hậu quả |
+| --- | --- | --- |
+| **Thiếu công thức** | Khai là sản xuất nhưng chưa có công thức | Bán không trừ được nguyên liệu, không tính được giá vốn |
+| **Bán vô nguồn** | Đang bán nhưng không mua, không sản xuất, không có công thức | Kho không bao giờ được cộng, chỉ âm dần |
+| **Mồ côi / Dư thừa** | Không bán, không món nào dùng tới, không còn tồn | Rác trong danh sách, dễ chọn nhầm |
+| **Thiếu giá vốn** | Nguyên liệu hoặc hàng bán thẳng chưa có giá vốn | Giá vốn món tính ra bị thiếu |
+| **Trùng tên** | Hai sản phẩm gần giống tên | Dễ chọn nhầm |
 
 ### Lịch xem báo cáo gợi ý
 
