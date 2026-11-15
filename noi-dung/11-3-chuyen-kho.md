@@ -15,10 +15,10 @@ hoặc ô **Chuyển kho** ở khối *Tính năng cho bạn* trên Trang chủ.
 
 ## 2. Ví dụ nền và các bước thực hiện
 
-> **Ví dụ:** chuyển 2 kg **Cà phê hạt Robusta** từ **Kho tổng** ra **Kho quầy**.
+> **Ví dụ:** đầu tuần, cấp 2 túi cà phê phin từ kho chính ra quầy pha chế.
 >
-> - Kho xuất đi: **Kho tổng**. Kho nhập đến: **Kho quầy**.
-> - Dòng hàng: **Cà phê hạt Robusta**, SL **2**, đơn vị **Kilogam**.
+> - Kho xuất đi: **KHO CHINH**. Kho nhập đến: **KHO QUẦY**.
+> - Dòng hàng: **NL - CÀ PHÊ VIỆT PHA PHIN - 1000 - 30**, SL **2**, đơn vị **TÚI 1000GR**. Hệ thống quy ra 2.000 GR.
 
 ### Bước 1: Mở trang Phiếu chuyển kho
 
